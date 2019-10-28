@@ -84,7 +84,7 @@ local.properties
 .idea/**/vcs.xml
 .idea/**/modules.xml
 .idea/**/misc.xml
-.idea/**/$PRODUCT_WORKSPACE_FILES$
+.idea/**/$PRODUCT_WORKSPACE_FILE$.xml
 
 # Generated files
 .idea/**/contentModel.xml
