@@ -81,6 +81,10 @@ local.properties
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/**/vcs.xml
+.idea/**/modules.xml
+.idea/**/misc.xml
+.idea/**/$PRODUCT_WORKSPACE_FILES$
 
 # Generated files
 .idea/**/contentModel.xml
