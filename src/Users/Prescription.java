@@ -1,6 +1,5 @@
 package Users;
 import java.util.Date;
-
 /**
  * Prescription.java - A class for storing prescription information
  * @author Aidan Johnston
