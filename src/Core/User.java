@@ -219,6 +219,10 @@ public class User {
      * @return boolean
      */
     public boolean comparePassword(String password) {
-        return this.password == password;
+        if (this.password == password)
+            return true;
+        else {
+            return false;
+        }
     }
 }
