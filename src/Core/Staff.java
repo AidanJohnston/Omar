@@ -1,17 +1,19 @@
-package Users;
+package Core;
 
 import java.util.Date;
 
 /**
  * Staff.java - A class for storing information relative to staff members
+ *
  * @author Aidan Johnston
  * @version 1.0
  * @see User
  */
-public class Staff extends User{
+public class Staff extends User {
 
     /**
      * Constructor for the Staff class
+     *
      * @param username
      * @param password
      * @param Fname

@@ -1,9 +1,10 @@
-package Users;
+package Core;
 
 import java.util.List;
 
 /**
  * Schedule.java - A class for store a list of appointments
+ *
  * @author Aidan Johnston
  * @version 1.0
  */
@@ -21,6 +22,7 @@ public class Schedule {
 
     /**
      * Gets the List of appointments
+     *
      * @return List of appointments
      */
     public List<Appointment> getAppointmentList() {
@@ -29,6 +31,7 @@ public class Schedule {
 
     /**
      * Adds an appointment to the appointment list
+     *
      * @param appointment
      */
     public void addAppointment(Appointment appointment) {

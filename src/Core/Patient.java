@@ -1,15 +1,16 @@
-package Users;
+package Core;
 
 import java.util.Date;
 import java.util.List;
 
 /**
  * Patient.java - A class for storing information relative to patients
+ *
  * @author Aidan Johnston
  * @version 1.0
  * @see User
  */
-public class Patient extends User{
+public class Patient extends User {
 
     private int healthCardNumber;
     private Date healthCardExpiry;
@@ -21,6 +22,7 @@ public class Patient extends User{
 
     /**
      * Constructor for the patient class
+     *
      * @param username
      * @param password
      * @param Fname
@@ -67,6 +69,7 @@ public class Patient extends User{
 
     /**
      * Gets the health care number of the patient
+     *
      * @return healthCardNumber
      */
     public int getHealthCardNumber() {
@@ -75,6 +78,7 @@ public class Patient extends User{
 
     /**
      * Sets the patients health care number
+     *
      * @param healthCardNumber
      */
     public void setHealthCardNumber(int healthCardNumber) {
@@ -83,6 +87,7 @@ public class Patient extends User{
 
     /**
      * Gets the expiry date of the patients health card
+     *
      * @return
      */
     public Date getHealthCardExpiry() {
@@ -91,6 +96,7 @@ public class Patient extends User{
 
     /**
      * Sets the expriy date of the patients health card
+     *
      * @param healthCardExpiry
      */
     public void setHealthCardExpiry(Date healthCardExpiry) {
@@ -99,6 +105,7 @@ public class Patient extends User{
 
     /**
      * Gets thes province of the patient
+     *
      * @return province
      */
     public String getProvince() {
@@ -107,6 +114,7 @@ public class Patient extends User{
 
     /**
      * Sets the province of the patient
+     *
      * @param province
      */
     public void setProvince(String province) {
@@ -115,6 +123,7 @@ public class Patient extends User{
 
     /**
      * Gets the schedule of the patients upcoming appointments
+     *
      * @return schedule
      * @see Schedule
      */
@@ -124,6 +133,7 @@ public class Patient extends User{
 
     /**
      * Sets the schedule of upcoming appointments for the patient
+     *
      * @param schedule
      */
     public void setSchedule(Schedule schedule) {
@@ -132,6 +142,7 @@ public class Patient extends User{
 
     /**
      * Gets a list of doctors that the patient has previously had, currently has, and will have in the future
+     *
      * @return doctors
      * @see Doctor
      */
@@ -141,6 +152,7 @@ public class Patient extends User{
 
     /**
      * Sets the list of previous doctors, current doctors, and future doctors for the patient
+     *
      * @param doctors
      * @see Doctor
      */
@@ -150,6 +162,7 @@ public class Patient extends User{
 
     /**
      * Gets a list of all diagnoses given to the patient
+     *
      * @return diagnoses
      * @see Diagnosis
      */
@@ -159,6 +172,7 @@ public class Patient extends User{
 
     /**
      * Sets a list of diagnoses given to the patient
+     *
      * @param diagnoses
      * @see Diagnosis
      */
@@ -168,6 +182,7 @@ public class Patient extends User{
 
     /**
      * Gets the list of all prescriptions given to the patient
+     *
      * @return prescriptions
      * @see Prescription
      */
@@ -177,6 +192,7 @@ public class Patient extends User{
 
     /**
      * Sets a list of prescriptions given to the patient
+     *
      * @param prescriptions
      * @see Prescription
      */
@@ -186,6 +202,7 @@ public class Patient extends User{
 
     /**
      * Added a doctor to the Doctors list
+     *
      * @param doctor
      * @see Doctor
      */
@@ -195,6 +212,7 @@ public class Patient extends User{
 
     /**
      * Added a diagnosis to the diagnosis list
+     *
      * @param diagnosis
      * @see Diagnosis
      */
@@ -204,6 +222,7 @@ public class Patient extends User{
 
     /**
      * Added a prescription to the prescription list
+     *
      * @param prescription
      * @see Prescription
      */

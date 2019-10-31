@@ -1,15 +1,16 @@
-package Users;
+package Core;
 
 import java.util.Date;
 import java.util.List;
 
 /**
  * Doctor.java - A class for storing information relative to doctors
+ *
  * @author Aidan Johnston
  * @version 1.0
  * @see User
  */
-public class Doctor extends User{
+public class Doctor extends User {
     private String speciatly;
     private String rank;
     private double startHour;
@@ -19,6 +20,7 @@ public class Doctor extends User{
 
     /**
      * Constructor for the Doctor class
+     *
      * @param username
      * @param password
      * @param Fname
@@ -36,21 +38,21 @@ public class Doctor extends User{
      * @param patients
      */
     public Doctor(
-                String username,
-                String password,
-                String Fname,
-                String LName,
-                Date brithday,
-                int SIN,
-                String adress,
-                int ID,
-                int phoneNumber,
-                String speciatly,
-                String rank,
-                double startHour,
-                double endHour,
-                Schedule schedule,
-                List<Patient> patients) {
+            String username,
+            String password,
+            String Fname,
+            String LName,
+            Date brithday,
+            int SIN,
+            String adress,
+            int ID,
+            int phoneNumber,
+            String speciatly,
+            String rank,
+            double startHour,
+            double endHour,
+            Schedule schedule,
+            List<Patient> patients) {
         super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
         this.speciatly = speciatly;
         this.rank = rank;
@@ -62,6 +64,7 @@ public class Doctor extends User{
 
     /**
      * Gets the doctors speciatly
+     *
      * @return speciatly
      */
     public String getSpeciatly() {
@@ -70,6 +73,7 @@ public class Doctor extends User{
 
     /**
      * Sets the doctors speciatly
+     *
      * @param speciatly
      */
     public void setSpeciatly(String speciatly) {
@@ -78,6 +82,7 @@ public class Doctor extends User{
 
     /**
      * Gets the doctors rank
+     *
      * @return rank
      */
     public String getRank() {
@@ -86,6 +91,7 @@ public class Doctor extends User{
 
     /**
      * Sets the doctor rank
+     *
      * @param rank
      */
     public void setRank(String rank) {
@@ -94,6 +100,7 @@ public class Doctor extends User{
 
     /**
      * Gets the doctors starts hours for work
+     *
      * @return startHours
      */
     public double getStartHour() {
@@ -102,6 +109,7 @@ public class Doctor extends User{
 
     /**
      * Sets the doctors start time
+     *
      * @param startHour
      */
     public void setStartHour(double startHour) {
@@ -110,6 +118,7 @@ public class Doctor extends User{
 
     /**
      * Gets the doctors end time
+     *
      * @return endHour
      */
     public double getEndHour() {
@@ -118,6 +127,7 @@ public class Doctor extends User{
 
     /**
      * Sets the doctors end work hours
+     *
      * @param endHour
      */
     public void setEndHour(double endHour) {
@@ -126,6 +136,7 @@ public class Doctor extends User{
 
     /**
      * Gets the doctor schedule
+     *
      * @return schedule
      * @see Schedule
      */
@@ -135,6 +146,7 @@ public class Doctor extends User{
 
     /**
      * Sets the doctors schedule
+     *
      * @param schedule
      * @see Schedule
      */
@@ -144,6 +156,7 @@ public class Doctor extends User{
 
     /**
      * Gets a list of the doctors patients, included all patients.  Current, pass, and future
+     *
      * @return List of Patients
      * @see Patient
      */
@@ -153,6 +166,7 @@ public class Doctor extends User{
 
     /**
      * Added a patient to the doctors list of patients
+     *
      * @param patient
      * @see Patient
      */

@@ -1,9 +1,10 @@
-package Users;
+package Core;
 
 import java.util.Date;
 
 /**
  * User.java - A class for storing basic information about members of the clinic
+ *
  * @author Aidan Johnston
  * @version 1.0
  * @see Doctor
@@ -23,6 +24,7 @@ public class User {
 
     /**
      * Constructor for the user class
+     *
      * @param username
      * @param password
      * @param Fname
@@ -48,6 +50,7 @@ public class User {
 
     /**
      * Gets the username
+     *
      * @return username
      */
     public String getUsername() {
@@ -56,6 +59,7 @@ public class User {
 
     /**
      * Sets the username
+     *
      * @param username
      */
     public void setUsername(String username) {
@@ -64,6 +68,7 @@ public class User {
 
     /**
      * Gets the users password
+     *
      * @return password
      */
     public String getPassword() {
@@ -72,6 +77,7 @@ public class User {
 
     /**
      * Sets the users password
+     *
      * @param password
      */
     public void setPassword(String password) {
@@ -80,6 +86,7 @@ public class User {
 
     /**
      * Gets the users first name
+     *
      * @return firstName
      */
     public String getFname() {
@@ -88,6 +95,7 @@ public class User {
 
     /**
      * Sets the users first name
+     *
      * @param fname
      */
     public void setFname(String fname) {
@@ -96,6 +104,7 @@ public class User {
 
     /**
      * Gets the users last name
+     *
      * @return lastName
      */
     public String getLName() {
@@ -104,6 +113,7 @@ public class User {
 
     /**
      * Sets the users last name
+     *
      * @param LName
      */
     public void setLName(String LName) {
@@ -112,6 +122,7 @@ public class User {
 
     /**
      * Gets the users birthday
+     *
      * @return birthday
      * @see Date
      */
@@ -121,6 +132,7 @@ public class User {
 
     /**
      * Setes the users birthday
+     *
      * @param brithday
      * @see Date
      */
@@ -130,6 +142,7 @@ public class User {
 
     /**
      * Gets the users SIN
+     *
      * @return SIN
      */
     public int getSIN() {
@@ -138,6 +151,7 @@ public class User {
 
     /**
      * Sets the users SIN
+     *
      * @param SIN
      */
     public void setSIN(int SIN) {
@@ -146,6 +160,7 @@ public class User {
 
     /**
      * Gets the users address
+     *
      * @return address
      */
     public String getAddress() {
@@ -154,6 +169,7 @@ public class User {
 
     /**
      * Sets the users address
+     *
      * @param adress
      */
     public void setAdress(String adress) {
@@ -162,6 +178,7 @@ public class User {
 
     /**
      * Gets the users ID
+     *
      * @return ID
      */
     public int getID() {
@@ -170,6 +187,7 @@ public class User {
 
     /**
      * Sets the users ID
+     *
      * @param ID
      */
     public void setID(int ID) {
@@ -178,6 +196,7 @@ public class User {
 
     /**
      * Gets the users phone number
+     *
      * @return phoneNumber
      */
     public int getPhoneNumber() {
@@ -186,6 +205,7 @@ public class User {
 
     /**
      * Sets the users phoneNumber
+     *
      * @param phoneNumber
      */
     public void setPhoneNumber(int phoneNumber) {
@@ -194,15 +214,11 @@ public class User {
 
     /**
      * Compares the given password and the users password, will return true if they are the same
+     *
      * @param password
      * @return boolean
      */
     public boolean comparePassword(String password) {
-        if(this.password == password) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.password == password;
     }
 }

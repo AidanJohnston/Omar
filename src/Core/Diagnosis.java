@@ -1,9 +1,10 @@
-package Users;
+package Core;
 
 import java.util.Date;
 
 /**
  * Diagnosis.java - A class for storing diagnosis data from appointments
+ *
  * @author Aidan Johnston
  * @version 1.0
  */
@@ -16,6 +17,7 @@ public class Diagnosis {
 
     /**
      * Constructor for the Diagnosis class
+     *
      * @param name
      * @param date
      * @param doctor
@@ -30,6 +32,7 @@ public class Diagnosis {
 
     /**
      * Gets the name of the diagnosis
+     *
      * @return name
      */
     public String getName() {
@@ -38,6 +41,7 @@ public class Diagnosis {
 
     /**
      * Sets the name of the diagnosis
+     *
      * @param name
      */
     public void setName(String name) {
@@ -46,6 +50,7 @@ public class Diagnosis {
 
     /**
      * Gets the date of the diagnosis
+     *
      * @return date
      */
     public Date getDate() {
@@ -54,6 +59,7 @@ public class Diagnosis {
 
     /**
      * Sets the date of the diagnosis
+     *
      * @param date
      */
     public void setDate(Date date) {
@@ -62,6 +68,7 @@ public class Diagnosis {
 
     /**
      * Gets the doctor who gave the diagnosis
+     *
      * @return doctor
      */
     public Doctor getDoctor() {
@@ -70,6 +77,7 @@ public class Diagnosis {
 
     /**
      * Sets the doctor who gave the diagnosis
+     *
      * @param doctor
      */
     public void setDoctor(Doctor doctor) {
@@ -78,6 +86,7 @@ public class Diagnosis {
 
     /**
      * Gets the notes for the diagnosis given by the doctor
+     *
      * @return notes
      */
     public String getNotes() {
@@ -86,6 +95,7 @@ public class Diagnosis {
 
     /**
      * Sets the notes for the diagnosis
+     *
      * @param notes
      */
     public void setNotes(String notes) {

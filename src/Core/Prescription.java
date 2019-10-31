@@ -1,7 +1,10 @@
-package Users;
+package Core;
+
 import java.util.Date;
+
 /**
  * Prescription.java - A class for storing prescription information
+ *
  * @author Aidan Johnston
  * @version 1.0
  */
@@ -13,6 +16,7 @@ public class Prescription {
 
     /**
      * Constructor for Prescription Class
+     *
      * @param name
      * @param date
      * @param note
@@ -27,6 +31,7 @@ public class Prescription {
 
     /**
      * Gets the name of the prescription
+     *
      * @return Name of prescription
      */
     public String getName() {
@@ -35,6 +40,7 @@ public class Prescription {
 
     /**
      * Sets the name of the prescription
+     *
      * @param name
      */
     public void setName(String name) {
@@ -43,6 +49,7 @@ public class Prescription {
 
     /**
      * Gets the date the prescription was given
+     *
      * @return Date of the prescription
      */
     public Date getDate() {
@@ -51,6 +58,7 @@ public class Prescription {
 
     /**
      * Sets the date the prescription wave given
+     *
      * @param date
      */
     public void setDate(Date date) {
@@ -59,6 +67,7 @@ public class Prescription {
 
     /**
      * Gets the note the doctor left for the prescription
+     *
      * @return note
      */
     public String getNote() {
@@ -67,6 +76,7 @@ public class Prescription {
 
     /**
      * Sets a note for the prescription
+     *
      * @param note
      */
     public void setNote(String note) {
@@ -75,6 +85,7 @@ public class Prescription {
 
     /**
      * Gets the prescription instructions ie. when to take the prescription, how much
+     *
      * @return instruction
      */
     public String getInstructions() {
@@ -83,6 +94,7 @@ public class Prescription {
 
     /**
      * Sets the instructions for taking the prescription
+     *
      * @param instructions
      */
     public void setInstructions(String instructions) {

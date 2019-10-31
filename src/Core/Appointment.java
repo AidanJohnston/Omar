@@ -1,8 +1,9 @@
-package Users;
+package Core;
 
 /**
  * Appointment.java - A class for storing the time, patient, doctor, diagnosis, and prescription from an appointment.
  * Can be used to store upcoming appointments or to see appointment history
+ *
  * @author Aidan Johnston
  * @version 1.0
  */
@@ -15,6 +16,7 @@ public class Appointment {
 
     /**
      * Constructor for Appointment class
+     *
      * @param patient
      * @param doctor
      * @param diagnosis
@@ -29,6 +31,7 @@ public class Appointment {
 
     /**
      * Gets the concerned patient involved in the appointment
+     *
      * @return patient
      */
     public Patient getPatient() {
@@ -37,6 +40,7 @@ public class Appointment {
 
     /**
      * Sets the patient for the appointment
+     *
      * @param patient
      */
     public void setPatient(Patient patient) {
@@ -45,6 +49,7 @@ public class Appointment {
 
     /**
      * Gets the concerned doctor for the appointment
+     *
      * @return doctor
      */
     public Doctor getDoctor() {
@@ -53,6 +58,7 @@ public class Appointment {
 
     /**
      * Sets the doctor for the appointment
+     *
      * @param doctor
      */
     public void setDoctor(Doctor doctor) {
@@ -61,6 +67,7 @@ public class Appointment {
 
     /**
      * Sets the diagnosis from the appointment
+     *
      * @return diagnosis
      */
     public Diagnosis getDiagnosis() {
@@ -69,6 +76,7 @@ public class Appointment {
 
     /**
      * Sets the diagnosis for the appointment
+     *
      * @param diagnosis
      */
     public void setDiagnosis(Diagnosis diagnosis) {
@@ -77,6 +85,7 @@ public class Appointment {
 
     /**
      * Gets the prescription for the appointment
+     *
      * @return prescription
      */
     public Prescription getPrescription() {
@@ -85,6 +94,7 @@ public class Appointment {
 
     /**
      * Sets the prescription for the appointment
+     *
      * @param prescription
      */
     public void setPrescription(Prescription prescription) {
