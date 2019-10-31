@@ -11,6 +11,13 @@ public class Prescription {
     private String note;
     private String instructions;
 
+    /**
+     * Constructor for Prescription Class
+     * @param name
+     * @param date
+     * @param note
+     * @param instructions
+     */
     public Prescription(String name, Date date, String note, String instructions) {
         this.name = name;
         this.date = date;
