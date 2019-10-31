@@ -1,8 +1,9 @@
 package Users;
 
+import java.util.Date;
 import java.util.List;
 
-public class Doctor {
+public class Doctor extends User{
     private String speciatly;
     private String rank;
     private double startHour;
@@ -10,7 +11,23 @@ public class Doctor {
     private Schedule schedule;
     private List<Patient> patients;
 
-    public Doctor(String speciatly, String rank, double startHour, double endHour, Schedule schedule, List<Patient> patients) {
+    public Doctor(
+                String username,
+                String password,
+                String Fname,
+                String LName,
+                Date brithday,
+                int SIN,
+                String adress,
+                int ID,
+                int phoneNumber,
+                String speciatly,
+                String rank,
+                double startHour,
+                double endHour,
+                Schedule schedule,
+                List<Patient> patients) {
+        super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
         this.speciatly = speciatly;
         this.rank = rank;
         this.startHour = startHour;

@@ -5,7 +5,7 @@ import org.omg.PortableServer.LIFESPAN_POLICY_ID;
 import java.util.Date;
 import java.util.List;
 
-public class Patient {
+public class Patient extends User{
 
     private int healthCardNumber;
     private Date healthCardExpiry;
@@ -15,7 +15,24 @@ public class Patient {
     private List<Diagnosis> diagnoses;
     private List<Prescription> prescriptions;
 
-    public Patient(int healthCardNumber, Date healthCardExpiry, String province, Schedule schedule, List<Doctor> doctors, List<Diagnosis> diagnoses, List<Prescription> prescriptions) {
+    public Patient(
+            String username,
+            String password,
+            String Fname,
+            String LName,
+            Date brithday,
+            int SIN,
+            String adress,
+            int ID,
+            int phoneNumber,
+            int healthCardNumber,
+            Date healthCardExpiry,
+            String province,
+            Schedule schedule,
+            List<Doctor> doctors,
+            List<Diagnosis> diagnoses,
+            List<Prescription> prescriptions) {
+        super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
         this.healthCardNumber = healthCardNumber;
         this.healthCardExpiry = healthCardExpiry;
         this.province = province;
