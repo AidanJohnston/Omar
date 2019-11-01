@@ -9,6 +9,7 @@ package Core;
  */
 public class Appointment {
 
+    private int ID;
     private Patient patient;
     private Doctor doctor;
     private Diagnosis diagnosis;
@@ -17,16 +18,32 @@ public class Appointment {
     /**
      * Constructor for Appointment class
      *
-     * @param patient
-     * @param doctor
-     * @param diagnosis
-     * @param prescription
+     * @param patient the patient
+     * @param doctor the doctor
+     * @param diagnosis the diagnosis
+     * @param prescription the prescription
      */
     public Appointment(Patient patient, Doctor doctor, Diagnosis diagnosis, Prescription prescription) {
         this.patient = patient;
         this.doctor = doctor;
         this.diagnosis = diagnosis;
         this.prescription = prescription;
+    }
+
+    /**
+     * Gets the appointment ID
+     * @return ID
+     */
+    public int getID() {
+        return ID;
+    }
+
+    /**
+     * Sets the appointment ID
+     * @param ID
+     */
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     /**
