@@ -16,6 +16,7 @@ import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
  *
  * <h3>Type</h3>
  * The type defines the quest from the client.  The type of requests from the client can be broken down into these categories:
+ *      <div>
  *      <b>Error checking</b>
  *      <ul style="list-style-type:none;">
  *          <li>Type 0: Update confirmation</li>
@@ -56,7 +57,7 @@ import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
  *          <li>Type 32: Request list of patients given a specific doctor</li>
  *          <li>Type 33: </li>
  *      </ul>
- *
+ *      </div>
  *
  *
  *
@@ -64,19 +65,19 @@ import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Package {
+public class Payload {
 
     private int id;
     private int type;
     Object object;
 
-    public Package(int id, int type, Object object) {
+    public Payload(int id, int type, Object object) {
         this.id = id;
         this.type = type;
         this.object = object;
     }
 
-    public Package(int id, int type) {
+    public Payload(int id, int type) {
         this.id = id;
         this.type = type;
     }
