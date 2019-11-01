@@ -22,6 +22,8 @@ public class User {
     private int ID;
     private int phoneNumber;
 
+    private String loginToken;
+
     /**
      * Constructor for the user class
      *
@@ -210,6 +212,14 @@ public class User {
      */
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getLoginToken() {
+        return loginToken;
+    }
+
+    public void setLoginToken(String loginToken) {
+        this.loginToken = loginToken;
     }
 
     /**
