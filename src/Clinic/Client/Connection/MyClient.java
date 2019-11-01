@@ -2,6 +2,7 @@ package Clinic.Client.Connection;
 
 import Clinic.Client.ClientSecretary;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * MyClient.java - The MyClient class is used as the head of the connection between the client and the server.  My Clinic.Client
@@ -12,7 +13,7 @@ import java.io.IOException;
  * @version 1.0
  * @see AbstractClient
  */
-public class MyClient extends AbstractClient {
+public class MyClient extends AbstractClient{
 
 	private ClientSecretary secretary;
 
