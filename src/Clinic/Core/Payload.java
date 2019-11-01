@@ -2,6 +2,8 @@ package Clinic.Core;
 
 import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 
+import java.io.Serializable;
+
 /**
  * Package.java - The Package is used to generalize the sending and receiving of data between client and server
  *
@@ -67,7 +69,7 @@ import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Payload {
+public class Payload implements Serializable {
 
     private int id;
     private int type;
