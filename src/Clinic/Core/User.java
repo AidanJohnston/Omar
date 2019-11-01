@@ -50,6 +50,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     /**
      * Gets the username
      *
