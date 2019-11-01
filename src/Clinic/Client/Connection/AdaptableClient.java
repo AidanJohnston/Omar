@@ -2,14 +2,14 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Client.Connection;
+package Clinic.Client.Connection;
 
 /**
 * The <code> AdaptableClient </code> is a class
 * that extends the <code> AbstractClient </code> in place of
 * the <code> ObservableClient </code>.<p>
 *
-* Project Name: OCSF (Object Client-Server Framework)<p>
+* Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p>
 *
 * @author Dr. Robert Lagani&egrave;re
 * @version Febuary 2001

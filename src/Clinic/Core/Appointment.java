@@ -1,4 +1,4 @@
-package Core;
+package Clinic.Core;
 
 /**
  * Appointment.java - A class for storing the time, patient, doctor, diagnosis, and prescription from an appointment.

@@ -38,7 +38,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -48,10 +48,10 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Server/Connection/AbstractConnectionFactory.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Server/Connection/AbstractConnectionFactory.html" target="_top">Frames</a></li>
 <li><a href="AbstractConnectionFactory.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -90,7 +90,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">Server.Connection</div>
+<div class="subTitle">Clinic.Server.Connection</div>
 <h2 title="Class AbstractConnectionFactory" class="title">Class AbstractConnectionFactory</h2>
 </div>
 <div class="contentContainer">
@@ -98,7 +98,7 @@ var activeTableTab = "activeTableTab";
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>Server.Connection.AbstractConnectionFactory</li>
+<li>Clinic.Server.Connection.AbstractConnectionFactory</li>
 </ul>
 </li>
 </ul>
@@ -124,7 +124,7 @@ extends java.lang.Object</pre>
  <code>AbstractServer.handleMessageFromClient()</code>
  method.
 
- Project Name: OCSF (Object Client-Server Framework)<p></div>
+ Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p></div>
 <dl>
 <dt><span class="simpleTagLabel">Version:</span></dt>
 <dd>August 2003 (2.3)</dd>
@@ -152,7 +152,7 @@ extends java.lang.Object</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../Server/Connection/AbstractConnectionFactory.html#AbstractConnectionFactory--">AbstractConnectionFactory</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AbstractConnectionFactory.html#AbstractConnectionFactory--">AbstractConnectionFactory</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -170,10 +170,10 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>protected abstract <a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AbstractConnectionFactory.html#createConnection-java.lang.ThreadGroup-java.net.Socket-Server.Connection.AbstractServer-">createConnection</a></span>(java.lang.ThreadGroup&nbsp;group,
+<td class="colFirst"><code>protected abstract <a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AbstractConnectionFactory.html#createConnection-java.lang.ThreadGroup-java.net.Socket-Clinic.Server.Connection.AbstractServer-">createConnection</a></span>(java.lang.ThreadGroup&nbsp;group,
                 java.net.Socket&nbsp;clientSocket,
-                <a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a>&nbsp;server)</code>
+                <a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a>&nbsp;server)</code>
 <div class="block">Hook method called each time a new client connection must
  be created.</div>
 </td>
@@ -217,15 +217,15 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="createConnection-java.lang.ThreadGroup-java.net.Socket-Server.Connection.AbstractServer-">
+<a name="createConnection-java.lang.ThreadGroup-java.net.Socket-Clinic.Server.Connection.AbstractServer-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createConnection</h4>
-<pre>protected abstract&nbsp;<a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;createConnection(java.lang.ThreadGroup&nbsp;group,
+<pre>protected abstract&nbsp;<a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;createConnection(java.lang.ThreadGroup&nbsp;group,
                                                        java.net.Socket&nbsp;clientSocket,
-                                                       <a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a>&nbsp;server)
+                                                       <a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a>&nbsp;server)
                                                 throws java.io.IOException</pre>
 <div class="block">Hook method called each time a new client connection must
  be created. This method should simply call the constructor
@@ -258,7 +258,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -268,10 +268,10 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Server/Connection/AbstractConnectionFactory.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Server/Connection/AbstractConnectionFactory.html" target="_top">Frames</a></li>
 <li><a href="AbstractConnectionFactory.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">

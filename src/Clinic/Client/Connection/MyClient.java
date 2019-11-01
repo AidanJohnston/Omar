@@ -1,10 +1,10 @@
-package Client.Connection;
+package Clinic.Client.Connection;
 
-import Client.ClientSecretary;
+import Clinic.Client.ClientSecretary;
 import java.io.IOException;
 
 /**
- * MyClient.java - The MyClient class is used as the head of the connection between the client and the server.  My Client
+ * MyClient.java - The MyClient class is used as the head of the connection between the client and the server.  My Clinic.Client
  * doesn't worry about the logic of the message it sends or receives.  When MyClient receives a message from the server
  * it hands it off the the client secretary to handle the processing of the message.
  *

@@ -2,7 +2,7 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Client.Connection;
+package Clinic.Client.Connection;
 
 import java.io.*;
 import java.net.*;
@@ -48,7 +48,7 @@ import java.net.*;
 * that connection is really closed when this callback is called.
 * </ul><p>
 *
-* Project Name: OCSF (Object Client-Server Framework)<p>
+* Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p>
 *
 * @author Dr. Robert Lagani&egrave;re
 * @author Dr. Timothy C. Lethbridge
@@ -265,7 +265,7 @@ public abstract class AbstractClient implements Runnable
     {
       while(!readyToStop)
       {
-        // Get data from Server and send it to the handler
+        // Get data from Clinic.Server and send it to the handler
         // The thread waits indefinitely at the following
         // statement until something is received from the server
         

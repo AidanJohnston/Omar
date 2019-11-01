@@ -2,7 +2,7 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Server.Connection;
+package Clinic.Server.Connection;
 
 import java.net.*;
 import java.io.*;
@@ -23,7 +23,7 @@ import java.io.*;
 * <code>AbstractServer.handleMessageFromClient()</code>
 * method.
 *
-* Project Name: OCSF (Object Client-Server Framework)<p>
+* Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p>
 *
 * @author Dr Robert Lagani&egrave;re
 * @author Dr Timothy C. Lethbridge

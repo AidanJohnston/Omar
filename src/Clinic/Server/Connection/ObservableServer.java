@@ -2,7 +2,7 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Server.Connection;
+package Clinic.Server.Connection;
 
 import java.util.*;
 import java.io.*;
@@ -26,18 +26,18 @@ public class ObservableServer extends Observable
   /**
    * The string sent to the observers when a client has connected.
    */
-  public static final String CLIENT_CONNECTED= "#OS:Client connected.";
+  public static final String CLIENT_CONNECTED= "#OS:Clinic.Client connected.";
 
   /**
    * The string sent to the observers when a client has disconnected.
    */
-  public static final String CLIENT_DISCONNECTED= "#OS:Client disconnected.";
+  public static final String CLIENT_DISCONNECTED= "#OS:Clinic.Client disconnected.";
 
   /**
    * The string sent to the observers when an exception occurred with a client.
    * The error message of that exception will be appended to this string.
    */
-  public static final String CLIENT_EXCEPTION= "#OS:Client exception.";
+  public static final String CLIENT_EXCEPTION= "#OS:Clinic.Client exception.";
 
   /**
    * The string sent to the observers when a listening exception occurred.
@@ -48,17 +48,17 @@ public class ObservableServer extends Observable
   /**
    * The string sent to the observers when the server has closed.
    */
-  public static final String SERVER_CLOSED= "#OS:Server closed.";
+  public static final String SERVER_CLOSED= "#OS:Clinic.Server closed.";
 
   /**
    * The string sent to the observers when the server has started.
    */
-  public static final String SERVER_STARTED= "#OS:Server started.";
+  public static final String SERVER_STARTED= "#OS:Clinic.Server started.";
 
   /**
    * The string sent to the observers when the server has stopped.
    */
-  public static final String SERVER_STOPPED= "#OS:Server stopped.";
+  public static final String SERVER_STOPPED= "#OS:Clinic.Server stopped.";
 
 
   //Instance variables **********************************************

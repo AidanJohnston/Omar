@@ -2,7 +2,7 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Client.Connection;
+package Clinic.Client.Connection;
 
 import java.util.*;
 import java.io.*;

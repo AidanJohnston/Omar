@@ -1,3 +1,5 @@
+package Clinic;
+
 import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 
 /**
@@ -20,7 +22,7 @@ import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
  *      <b>Error checking</b>
  *      <ul style="list-style-type:none;">
  *          <li>Type 0: Update confirmation</li>
- *          <li>Type 99: Error - Server Object contains error information</li>
+ *          <li>Type 99: Error - Clinic.Server Object contains error information</li>
  *      </ul>
  *      <b>Appointments</b>
  *      <ul style="list-style-type:none;">

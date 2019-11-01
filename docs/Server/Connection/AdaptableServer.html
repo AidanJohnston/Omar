@@ -38,7 +38,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -47,11 +47,11 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Server/Connection/AdaptableServer.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Server/Connection/AdaptableServer.html" target="_top">Frames</a></li>
 <li><a href="AdaptableServer.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -90,7 +90,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">Server.Connection</div>
+<div class="subTitle">Clinic.Server.Connection</div>
 <h2 title="Class AdaptableServer" class="title">Class AdaptableServer</h2>
 </div>
 <div class="contentContainer">
@@ -98,10 +98,10 @@ var activeTableTab = "activeTableTab";
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">Server.Connection.AbstractServer</a></li>
+<li><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">Clinic.Server.Connection.AbstractServer</a></li>
 <li>
 <ul class="inheritance">
-<li>Server.Connection.AdaptableServer</li>
+<li>Clinic.Server.Connection.AdaptableServer</li>
 </ul>
 </li>
 </ul>
@@ -117,12 +117,12 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>class <span class="typeNameLabel">AdaptableServer</span>
-extends <a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></pre>
+extends <a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></pre>
 <div class="block">The <code> AdaptableServer </code> is an adapter class
  that extends the <code> AbstractServer </code> class in place of
  the <code> AbstractObservableServer </code>.<p>
 
- Project Name: OCSF (Object Client-Server Framework)<p></div>
+ Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p></div>
 <dl>
 <dt><span class="simpleTagLabel">Version:</span></dt>
 <dd>Febuary 2001</dd>
@@ -148,8 +148,8 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>private <a href="../../Server/Connection/ObservableServer.html" title="class in Server.Connection">ObservableServer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#server">server</a></span></code>
+<td class="colFirst"><code>private <a href="../../Clinic.Server/Connection/ObservableServer.html" title="class in Clinic.Server.Connection">ObservableServer</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#server">server</a></span></code>
 <div class="block">The adapter used to simulate multiple class inheritance.</div>
 </td>
 </tr>
@@ -168,8 +168,8 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#AdaptableServer-int-Server.Connection.ObservableServer-">AdaptableServer</a></span>(int&nbsp;port,
-               <a href="../../Server/Connection/ObservableServer.html" title="class in Server.Connection">ObservableServer</a>&nbsp;server)</code>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#AdaptableServer-int-Clinic.Server.Connection.ObservableServer-">AdaptableServer</a></span>(int&nbsp;port,
+               <a href="../../Clinic.Server/Connection/ObservableServer.html" title="class in Clinic.Server.Connection">ObservableServer</a>&nbsp;server)</code>
 <div class="block">Constructs the server adapter.</div>
 </td>
 </tr>
@@ -190,20 +190,20 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#clientConnected-Server.Connection.ConnectionToClient-">clientConnected</a></span>(<a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#clientConnected-Clinic.Server.Connection.ConnectionToClient-">clientConnected</a></span>(<a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client)</code>
 <div class="block">Hook method called each time a new client connection is
  accepted.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#clientDisconnected-Server.Connection.ConnectionToClient-">clientDisconnected</a></span>(<a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#clientDisconnected-Clinic.Server.Connection.ConnectionToClient-">clientDisconnected</a></span>(<a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client)</code>
 <div class="block">Hook method called each time a client disconnects.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#clientException-Server.Connection.ConnectionToClient-java.lang.Throwable-">clientException</a></span>(<a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#clientException-Clinic.Server.Connection.ConnectionToClient-java.lang.Throwable-">clientException</a></span>(<a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client,
                java.lang.Throwable&nbsp;exception)</code>
 <div class="block">Hook method called each time an exception
  is raised in a client thread.</div>
@@ -211,45 +211,45 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#handleMessageFromClient-java.lang.Object-Server.Connection.ConnectionToClient-">handleMessageFromClient</a></span>(java.lang.Object&nbsp;msg,
-                       <a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#handleMessageFromClient-java.lang.Object-Clinic.Server.Connection.ConnectionToClient-">handleMessageFromClient</a></span>(java.lang.Object&nbsp;msg,
+                       <a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client)</code>
 <div class="block">Handles a command sent from the client to the server.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#listeningException-java.lang.Throwable-">listeningException</a></span>(java.lang.Throwable&nbsp;exception)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#listeningException-java.lang.Throwable-">listeningException</a></span>(java.lang.Throwable&nbsp;exception)</code>
 <div class="block">Hook method called when the server stops accepting
  connections because an exception has been raised.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#serverClosed--">serverClosed</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#serverClosed--">serverClosed</a></span>()</code>
 <div class="block">Hook method called when the server is closed.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#serverStarted--">serverStarted</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#serverStarted--">serverStarted</a></span>()</code>
 <div class="block">Hook method called when the server starts listening for
  connections.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Server/Connection/AdaptableServer.html#serverStopped--">serverStopped</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Server/Connection/AdaptableServer.html#serverStopped--">serverStopped</a></span>()</code>
 <div class="block">Hook method called when the server stops accepting
  connections.</div>
 </td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.Server.Connection.AbstractServer">
+<li class="blockList"><a name="methods.inherited.from.class.Clinic.Server.Connection.AbstractServer">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;Server.Connection.<a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></h3>
-<code><a href="../../Server/Connection/AbstractServer.html#close--">close</a>, <a href="../../Server/Connection/AbstractServer.html#getClientConnections--">getClientConnections</a>, <a href="../../Server/Connection/AbstractServer.html#getNumberOfClients--">getNumberOfClients</a>, <a href="../../Server/Connection/AbstractServer.html#getPort--">getPort</a>, <a href="../../Server/Connection/AbstractServer.html#isClosed--">isClosed</a>, <a href="../../Server/Connection/AbstractServer.html#isListening--">isListening</a>, <a href="../../Server/Connection/AbstractServer.html#listen--">listen</a>, <a href="../../Server/Connection/AbstractServer.html#receiveMessageFromClient-java.lang.Object-Server.Connection.ConnectionToClient-">receiveMessageFromClient</a>, <a href="../../Server/Connection/AbstractServer.html#run--">run</a>, <a href="../../Server/Connection/AbstractServer.html#sendToAllClients-java.lang.Object-">sendToAllClients</a>, <a href="../../Server/Connection/AbstractServer.html#setBacklog-int-">setBacklog</a>, <a href="../../Server/Connection/AbstractServer.html#setConnectionFactory-Server.Connection.AbstractConnectionFactory-">setConnectionFactory</a>, <a href="../../Server/Connection/AbstractServer.html#setPort-int-">setPort</a>, <a href="../../Server/Connection/AbstractServer.html#setTimeout-int-">setTimeout</a>, <a href="../../Server/Connection/AbstractServer.html#stopListening--">stopListening</a></code></li>
+<h3>Methods inherited from class&nbsp;Clinic.Server.Connection.<a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></h3>
+<code><a href="../../Clinic.Server/Connection/AbstractServer.html#close--">close</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#getClientConnections--">getClientConnections</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#getNumberOfClients--">getNumberOfClients</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#getPort--">getPort</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#isClosed--">isClosed</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#isListening--">isListening</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#listen--">listen</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#receiveMessageFromClient-java.lang.Object-Clinic.Server.Connection.ConnectionToClient-">receiveMessageFromClient</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#run--">run</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#sendToAllClients-java.lang.Object-">sendToAllClients</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#setBacklog-int-">setBacklog</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#setConnectionFactory-Clinic.Server.Connection.AbstractConnectionFactory-">setConnectionFactory</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#setPort-int-">setPort</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#setTimeout-int-">setTimeout</a>, <a href="../../Clinic.Server/Connection/AbstractServer.html#stopListening--">stopListening</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -278,7 +278,7 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 <ul class="blockListLast">
 <li class="blockList">
 <h4>server</h4>
-<pre>private&nbsp;<a href="../../Server/Connection/ObservableServer.html" title="class in Server.Connection">ObservableServer</a> server</pre>
+<pre>private&nbsp;<a href="../../Clinic.Server/Connection/ObservableServer.html" title="class in Clinic.Server.Connection">ObservableServer</a> server</pre>
 <div class="block">The adapter used to simulate multiple class inheritance.</div>
 </li>
 </ul>
@@ -290,14 +290,14 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="AdaptableServer-int-Server.Connection.ObservableServer-">
+<a name="AdaptableServer-int-Clinic.Server.Connection.ObservableServer-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AdaptableServer</h4>
 <pre>public&nbsp;AdaptableServer(int&nbsp;port,
-                       <a href="../../Server/Connection/ObservableServer.html" title="class in Server.Connection">ObservableServer</a>&nbsp;server)</pre>
+                       <a href="../../Clinic.Server/Connection/ObservableServer.html" title="class in Clinic.Server.Connection">ObservableServer</a>&nbsp;server)</pre>
 <div class="block">Constructs the server adapter.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -314,70 +314,70 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="clientConnected-Server.Connection.ConnectionToClient-">
+<a name="clientConnected-Clinic.Server.Connection.ConnectionToClient-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>clientConnected</h4>
-<pre>protected final&nbsp;void&nbsp;clientConnected(<a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client)</pre>
+<pre>protected final&nbsp;void&nbsp;clientConnected(<a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client)</pre>
 <div class="block">Hook method called each time a new client connection is
  accepted.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#clientConnected-Server.Connection.ConnectionToClient-">clientConnected</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#clientConnected-Clinic.Server.Connection.ConnectionToClient-">clientConnected</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>client</code> - the connection connected to the client.</dd>
 </dl>
 </li>
 </ul>
-<a name="clientDisconnected-Server.Connection.ConnectionToClient-">
+<a name="clientDisconnected-Clinic.Server.Connection.ConnectionToClient-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>clientDisconnected</h4>
-<pre>protected final&nbsp;void&nbsp;clientDisconnected(<a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client)</pre>
+<pre>protected final&nbsp;void&nbsp;clientDisconnected(<a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client)</pre>
 <div class="block">Hook method called each time a client disconnects.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#clientDisconnected-Server.Connection.ConnectionToClient-">clientDisconnected</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#clientDisconnected-Clinic.Server.Connection.ConnectionToClient-">clientDisconnected</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>client</code> - the connection with the client.</dd>
 </dl>
 </li>
 </ul>
-<a name="clientException-Server.Connection.ConnectionToClient-java.lang.Throwable-">
+<a name="clientException-Clinic.Server.Connection.ConnectionToClient-java.lang.Throwable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>clientException</h4>
-<pre>protected final&nbsp;void&nbsp;clientException(<a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client,
+<pre>protected final&nbsp;void&nbsp;clientException(<a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client,
                                      java.lang.Throwable&nbsp;exception)</pre>
 <div class="block">Hook method called each time an exception
  is raised in a client thread.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#clientException-Server.Connection.ConnectionToClient-java.lang.Throwable-">clientException</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#clientException-Clinic.Server.Connection.ConnectionToClient-java.lang.Throwable-">clientException</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>client</code> - the client that raised the exception.</dd>
 <dd><code>exception</code> - the exception raised.</dd>
 </dl>
 </li>
 </ul>
-<a name="handleMessageFromClient-java.lang.Object-Server.Connection.ConnectionToClient-">
+<a name="handleMessageFromClient-java.lang.Object-Clinic.Server.Connection.ConnectionToClient-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>handleMessageFromClient</h4>
 <pre>protected final&nbsp;void&nbsp;handleMessageFromClient(java.lang.Object&nbsp;msg,
-                                             <a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection">ConnectionToClient</a>&nbsp;client)</pre>
+                                             <a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection">ConnectionToClient</a>&nbsp;client)</pre>
 <div class="block">Handles a command sent from the client to the server.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#handleMessageFromClient-java.lang.Object-Server.Connection.ConnectionToClient-">handleMessageFromClient</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#handleMessageFromClient-java.lang.Object-Clinic.Server.Connection.ConnectionToClient-">handleMessageFromClient</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>msg</code> - the message sent.</dd>
 <dd><code>client</code> - the connection connected to the client that
@@ -396,7 +396,7 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
  connections because an exception has been raised.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#listeningException-java.lang.Throwable-">listeningException</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#listeningException-java.lang.Throwable-">listeningException</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>exception</code> - the exception raised.</dd>
 </dl>
@@ -412,7 +412,7 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 <div class="block">Hook method called when the server is closed.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#serverClosed--">serverClosed</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#serverClosed--">serverClosed</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -427,7 +427,7 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
  connections.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#serverStarted--">serverStarted</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#serverStarted--">serverStarted</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -442,7 +442,7 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
  connections.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Server/Connection/AbstractServer.html#serverStopped--">serverStopped</a></code>&nbsp;in class&nbsp;<code><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection">AbstractServer</a></code></dd>
+<dd><code><a href="../../Clinic.Server/Connection/AbstractServer.html#serverStopped--">serverStopped</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection">AbstractServer</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -463,7 +463,7 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -472,11 +472,11 @@ extends <a href="../../Server/Connection/AbstractServer.html" title="class in Se
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../Server/Connection/AbstractServer.html" title="class in Server.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../Server/Connection/ConnectionToClient.html" title="class in Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Server/Connection/AbstractServer.html" title="class in Clinic.Server.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Server/Connection/ConnectionToClient.html" title="class in Clinic.Server.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Server/Connection/AdaptableServer.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Server/Connection/AdaptableServer.html" target="_top">Frames</a></li>
 <li><a href="AdaptableServer.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">

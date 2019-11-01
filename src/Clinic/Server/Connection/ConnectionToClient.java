@@ -2,7 +2,7 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Server.Connection;
+package Clinic.Server.Connection;
 
 import java.io.*;
 import java.net.*;
@@ -48,7 +48,7 @@ import java.util.*;
 * that connection is really closed when this callback is called.
 * </ul><p>
 *
-* Project Name: OCSF (Object Client-Server Framework)<p>
+* Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p>
 *
 * @author Dr Robert Lagani&egrave;re
 * @author Dr Timothy C. Lethbridge
@@ -61,7 +61,7 @@ public class ConnectionToClient extends Thread
 // INSTANCE VARIABLES ***********************************************
 
   /**
-  * A reference to the Server that created this instance.
+  * A reference to the Clinic.Server that created this instance.
   */
   private AbstractServer server;
 

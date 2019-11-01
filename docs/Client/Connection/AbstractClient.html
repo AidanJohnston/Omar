@@ -38,7 +38,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -48,10 +48,10 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../Client/Connection/AdaptableClient.html" title="class in Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Client/Connection/AdaptableClient.html" title="class in Clinic.Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Client/Connection/AbstractClient.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Client/Connection/AbstractClient.html" target="_top">Frames</a></li>
 <li><a href="AbstractClient.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -90,7 +90,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">Client.Connection</div>
+<div class="subTitle">Clinic.Client.Connection</div>
 <h2 title="Class AbstractClient" class="title">Class AbstractClient</h2>
 </div>
 <div class="contentContainer">
@@ -98,7 +98,7 @@ var activeTableTab = "activeTableTab";
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>Client.Connection.AbstractClient</li>
+<li>Clinic.Client.Connection.AbstractClient</li>
 </ul>
 </li>
 </ul>
@@ -111,7 +111,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../Client/Connection/AdaptableClient.html" title="class in Client.Connection">AdaptableClient</a>, <a href="../../Client/Connection/MyClient.html" title="class in Client.Connection">MyClient</a></dd>
+<dd><a href="../../Clinic.Client/Connection/AdaptableClient.html" title="class in Clinic.Client.Connection">AdaptableClient</a>, <a href="../../Clinic.Client/Connection/MyClient.html" title="class in Clinic.Client.Connection">MyClient</a></dd>
 </dl>
 <hr>
 <br>
@@ -158,7 +158,7 @@ implements java.lang.Runnable</pre>
  that connection is really closed when this callback is called.
  </ul><p>
 
- Project Name: OCSF (Object Client-Server Framework)<p></div>
+ Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p></div>
 <dl>
 <dt><span class="simpleTagLabel">Version:</span></dt>
 <dd>December 2003 (2.31)</dd>
@@ -185,44 +185,44 @@ implements java.lang.Runnable</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>private java.lang.Thread</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#clientReader">clientReader</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#clientReader">clientReader</a></span></code>
 <div class="block">The thread created to read data from the server.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>private java.net.Socket</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#clientSocket">clientSocket</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#clientSocket">clientSocket</a></span></code>
 <div class="block">Sockets are used in the operating system as channels
  of communication between two processes.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>private java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#host">host</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#host">host</a></span></code>
 <div class="block">The server's host name.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>private java.io.ObjectInputStream</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#input">input</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#input">input</a></span></code>
 <div class="block">The stream to handle data from the server.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>private java.io.ObjectOutputStream</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#output">output</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#output">output</a></span></code>
 <div class="block">The stream to handle data going to the server.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>private int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#port">port</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#port">port</a></span></code>
 <div class="block">The port number.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>private boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#readyToStop">readyToStop</a></span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#readyToStop">readyToStop</a></span></code>
 <div class="block">Indicates if the thread is ready to stop.</div>
 </td>
 </tr>
@@ -241,7 +241,7 @@ implements java.lang.Runnable</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#AbstractClient-java.lang.String-int-">AbstractClient</a></span>(java.lang.String&nbsp;host,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#AbstractClient-java.lang.String-int-">AbstractClient</a></span>(java.lang.String&nbsp;host,
               int&nbsp;port)</code>
 <div class="block">Constructs the client.</div>
 </td>
@@ -263,86 +263,86 @@ implements java.lang.Runnable</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>private void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#closeAll--">closeAll</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#closeAll--">closeAll</a></span>()</code>
 <div class="block">Closes all aspects of the connection to the server.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#closeConnection--">closeConnection</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#closeConnection--">closeConnection</a></span>()</code>
 <div class="block">Closes the connection to the server.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#connectionClosed--">connectionClosed</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#connectionClosed--">connectionClosed</a></span>()</code>
 <div class="block">Hook method called after the connection has been closed.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#connectionEstablished--">connectionEstablished</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#connectionEstablished--">connectionEstablished</a></span>()</code>
 <div class="block">Hook method called after a connection has been established.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#connectionException-java.lang.Exception-">connectionException</a></span>(java.lang.Exception&nbsp;exception)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#connectionException-java.lang.Exception-">connectionException</a></span>(java.lang.Exception&nbsp;exception)</code>
 <div class="block">Hook method called each time an exception is thrown by the
  client's thread that is reading messages from the server.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#getHost--">getHost</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#getHost--">getHost</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>java.net.InetAddress</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#getInetAddress--">getInetAddress</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#getInetAddress--">getInetAddress</a></span>()</code>
 <div class="block">returns the client's description.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#getPort--">getPort</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#getPort--">getPort</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#handleMessageFromServer-java.lang.Object-">handleMessageFromServer</a></span>(java.lang.Object&nbsp;msg)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#handleMessageFromServer-java.lang.Object-">handleMessageFromServer</a></span>(java.lang.Object&nbsp;msg)</code>
 <div class="block">Handles a message sent from the server to this client.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#isConnected--">isConnected</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#isConnected--">isConnected</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#openConnection--">openConnection</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#openConnection--">openConnection</a></span>()</code>
 <div class="block">Opens the connection with the server.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#run--">run</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#run--">run</a></span>()</code>
 <div class="block">Waits for messages from the server.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#sendToServer-java.lang.Object-">sendToServer</a></span>(java.lang.Object&nbsp;msg)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#sendToServer-java.lang.Object-">sendToServer</a></span>(java.lang.Object&nbsp;msg)</code>
 <div class="block">Sends an object to the server.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#setHost-java.lang.String-">setHost</a></span>(java.lang.String&nbsp;host)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#setHost-java.lang.String-">setHost</a></span>(java.lang.String&nbsp;host)</code>
 <div class="block">Sets the server host for the next connection.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AbstractClient.html#setPort-int-">setPort</a></span>(int&nbsp;port)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AbstractClient.html#setPort-int-">setPort</a></span>(int&nbsp;port)</code>
 <div class="block">Sets the server port number for the next connection.</div>
 </td>
 </tr>
@@ -725,7 +725,7 @@ implements java.lang.Runnable</pre>
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -735,10 +735,10 @@ implements java.lang.Runnable</pre>
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../Client/Connection/AdaptableClient.html" title="class in Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Client/Connection/AdaptableClient.html" title="class in Clinic.Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Client/Connection/AbstractClient.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Client/Connection/AbstractClient.html" target="_top">Frames</a></li>
 <li><a href="AbstractClient.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">

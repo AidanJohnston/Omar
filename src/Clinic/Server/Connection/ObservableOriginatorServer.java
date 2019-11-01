@@ -2,7 +2,7 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Server.Connection;
+package Clinic.Server.Connection;
 
 /**
 * The <code> ObservableOriginatorServer </code> is a subclass
@@ -12,7 +12,7 @@ package Server.Connection;
 * the orginator of the messages received. The originator
 * is null when the message sent concerns the server.
 *
-* Project Name: OCSF (Object Client-Server Framework)<p>
+* Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p>
 *
 * @author Dr Robert Lagani&egrave;re
 * @author Dr Timothy C. Lethbridge

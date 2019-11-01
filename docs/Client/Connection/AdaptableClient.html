@@ -38,7 +38,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -47,11 +47,11 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../Client/Connection/MyClient.html" title="class in Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Client/Connection/MyClient.html" title="class in Clinic.Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Client/Connection/AdaptableClient.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Client/Connection/AdaptableClient.html" target="_top">Frames</a></li>
 <li><a href="AdaptableClient.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -90,7 +90,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">Client.Connection</div>
+<div class="subTitle">Clinic.Client.Connection</div>
 <h2 title="Class AdaptableClient" class="title">Class AdaptableClient</h2>
 </div>
 <div class="contentContainer">
@@ -98,10 +98,10 @@ var activeTableTab = "activeTableTab";
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection">Client.Connection.AbstractClient</a></li>
+<li><a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection">Clinic.Client.Connection.AbstractClient</a></li>
 <li>
 <ul class="inheritance">
-<li>Client.Connection.AdaptableClient</li>
+<li>Clinic.Client.Connection.AdaptableClient</li>
 </ul>
 </li>
 </ul>
@@ -117,12 +117,12 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>class <span class="typeNameLabel">AdaptableClient</span>
-extends <a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection">AbstractClient</a></pre>
+extends <a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection">AbstractClient</a></pre>
 <div class="block">The <code> AdaptableClient </code> is a class
  that extends the <code> AbstractClient </code> in place of
  the <code> ObservableClient </code>.<p>
 
- Project Name: OCSF (Object Client-Server Framework)<p></div>
+ Project Name: OCSF (Object Clinic.Client-Clinic.Server Framework)<p></div>
 <dl>
 <dt><span class="simpleTagLabel">Version:</span></dt>
 <dd>Febuary 2001</dd>
@@ -148,8 +148,8 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>private <a href="../../Client/Connection/ObservableClient.html" title="class in Client.Connection">ObservableClient</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AdaptableClient.html#client">client</a></span></code>
+<td class="colFirst"><code>private <a href="../../Clinic.Client/Connection/ObservableClient.html" title="class in Clinic.Client.Connection">ObservableClient</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AdaptableClient.html#client">client</a></span></code>
 <div class="block">The proxy used to simulate multiple class inheritance.</div>
 </td>
 </tr>
@@ -168,9 +168,9 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../Client/Connection/AdaptableClient.html#AdaptableClient-java.lang.String-int-Client.Connection.ObservableClient-">AdaptableClient</a></span>(java.lang.String&nbsp;host,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AdaptableClient.html#AdaptableClient-java.lang.String-int-Clinic.Client.Connection.ObservableClient-">AdaptableClient</a></span>(java.lang.String&nbsp;host,
                int&nbsp;port,
-               <a href="../../Client/Connection/ObservableClient.html" title="class in Client.Connection">ObservableClient</a>&nbsp;client)</code>
+               <a href="../../Clinic.Client/Connection/ObservableClient.html" title="class in Clinic.Client.Connection">ObservableClient</a>&nbsp;client)</code>
 <div class="block">Constructs the client adapter.</div>
 </td>
 </tr>
@@ -191,36 +191,36 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AdaptableClient.html#connectionClosed--">connectionClosed</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AdaptableClient.html#connectionClosed--">connectionClosed</a></span>()</code>
 <div class="block">Hook method called after the connection has been closed.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AdaptableClient.html#connectionEstablished--">connectionEstablished</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AdaptableClient.html#connectionEstablished--">connectionEstablished</a></span>()</code>
 <div class="block">Hook method called after a connection has been established.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AdaptableClient.html#connectionException-java.lang.Exception-">connectionException</a></span>(java.lang.Exception&nbsp;exception)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AdaptableClient.html#connectionException-java.lang.Exception-">connectionException</a></span>(java.lang.Exception&nbsp;exception)</code>
 <div class="block">Hook method called after an exception
  is raised by the client listening thread.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../Client/Connection/AdaptableClient.html#handleMessageFromServer-java.lang.Object-">handleMessageFromServer</a></span>(java.lang.Object&nbsp;msg)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../Clinic.Client/Connection/AdaptableClient.html#handleMessageFromServer-java.lang.Object-">handleMessageFromServer</a></span>(java.lang.Object&nbsp;msg)</code>
 <div class="block">Handles a message sent from the server to this client.</div>
 </td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.Client.Connection.AbstractClient">
+<li class="blockList"><a name="methods.inherited.from.class.Clinic.Client.Connection.AbstractClient">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;Client.Connection.<a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection">AbstractClient</a></h3>
-<code><a href="../../Client/Connection/AbstractClient.html#closeConnection--">closeConnection</a>, <a href="../../Client/Connection/AbstractClient.html#getHost--">getHost</a>, <a href="../../Client/Connection/AbstractClient.html#getInetAddress--">getInetAddress</a>, <a href="../../Client/Connection/AbstractClient.html#getPort--">getPort</a>, <a href="../../Client/Connection/AbstractClient.html#isConnected--">isConnected</a>, <a href="../../Client/Connection/AbstractClient.html#openConnection--">openConnection</a>, <a href="../../Client/Connection/AbstractClient.html#run--">run</a>, <a href="../../Client/Connection/AbstractClient.html#sendToServer-java.lang.Object-">sendToServer</a>, <a href="../../Client/Connection/AbstractClient.html#setHost-java.lang.String-">setHost</a>, <a href="../../Client/Connection/AbstractClient.html#setPort-int-">setPort</a></code></li>
+<h3>Methods inherited from class&nbsp;Clinic.Client.Connection.<a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection">AbstractClient</a></h3>
+<code><a href="../../Clinic.Client/Connection/AbstractClient.html#closeConnection--">closeConnection</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#getHost--">getHost</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#getInetAddress--">getInetAddress</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#getPort--">getPort</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#isConnected--">isConnected</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#openConnection--">openConnection</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#run--">run</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#sendToServer-java.lang.Object-">sendToServer</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#setHost-java.lang.String-">setHost</a>, <a href="../../Clinic.Client/Connection/AbstractClient.html#setPort-int-">setPort</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -249,7 +249,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>client</h4>
-<pre>private&nbsp;<a href="../../Client/Connection/ObservableClient.html" title="class in Client.Connection">ObservableClient</a> client</pre>
+<pre>private&nbsp;<a href="../../Clinic.Client/Connection/ObservableClient.html" title="class in Clinic.Client.Connection">ObservableClient</a> client</pre>
 <div class="block">The proxy used to simulate multiple class inheritance.</div>
 </li>
 </ul>
@@ -261,7 +261,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="AdaptableClient-java.lang.String-int-Client.Connection.ObservableClient-">
+<a name="AdaptableClient-java.lang.String-int-Clinic.Client.Connection.ObservableClient-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -269,7 +269,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <h4>AdaptableClient</h4>
 <pre>public&nbsp;AdaptableClient(java.lang.String&nbsp;host,
                        int&nbsp;port,
-                       <a href="../../Client/Connection/ObservableClient.html" title="class in Client.Connection">ObservableClient</a>&nbsp;client)</pre>
+                       <a href="../../Clinic.Client/Connection/ObservableClient.html" title="class in Clinic.Client.Connection">ObservableClient</a>&nbsp;client)</pre>
 <div class="block">Constructs the client adapter.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -296,7 +296,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <div class="block">Hook method called after the connection has been closed.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Client/Connection/AbstractClient.html#connectionClosed--">connectionClosed</a></code>&nbsp;in class&nbsp;<code><a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection">AbstractClient</a></code></dd>
+<dd><code><a href="../../Clinic.Client/Connection/AbstractClient.html#connectionClosed--">connectionClosed</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection">AbstractClient</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -310,7 +310,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <div class="block">Hook method called after a connection has been established.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Client/Connection/AbstractClient.html#connectionEstablished--">connectionEstablished</a></code>&nbsp;in class&nbsp;<code><a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection">AbstractClient</a></code></dd>
+<dd><code><a href="../../Clinic.Client/Connection/AbstractClient.html#connectionEstablished--">connectionEstablished</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection">AbstractClient</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -325,7 +325,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
  is raised by the client listening thread.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../Client/Connection/AbstractClient.html#connectionException-java.lang.Exception-">connectionException</a></code>&nbsp;in class&nbsp;<code><a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection">AbstractClient</a></code></dd>
+<dd><code><a href="../../Clinic.Client/Connection/AbstractClient.html#connectionException-java.lang.Exception-">connectionException</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection">AbstractClient</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>exception</code> - the exception raised.</dd>
 </dl>
@@ -341,7 +341,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 <div class="block">Handles a message sent from the server to this client.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../Client/Connection/AbstractClient.html#handleMessageFromServer-java.lang.Object-">handleMessageFromServer</a></code>&nbsp;in class&nbsp;<code><a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection">AbstractClient</a></code></dd>
+<dd><code><a href="../../Clinic.Client/Connection/AbstractClient.html#handleMessageFromServer-java.lang.Object-">handleMessageFromServer</a></code>&nbsp;in class&nbsp;<code><a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection">AbstractClient</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>msg</code> - the message sent.</dd>
 </dl>
@@ -364,7 +364,7 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 </a>
 <ul class="navList" title="Navigation">
 <li><a href="../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Payload</a></li>
+<li><a href="package-summary.html">Clinic.Payload</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../index-files/index-1.html">Index</a></li>
@@ -373,11 +373,11 @@ extends <a href="../../Client/Connection/AbstractClient.html" title="class in Cl
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../Client/Connection/AbstractClient.html" title="class in Client.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../Client/Connection/MyClient.html" title="class in Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Client/Connection/AbstractClient.html" title="class in Clinic.Client.Connection"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../Clinic.Client/Connection/MyClient.html" title="class in Clinic.Client.Connection"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?Client/Connection/AdaptableClient.html" target="_top">Frames</a></li>
+<li><a href="../../index.html?Clinic.Client/Connection/AdaptableClient.html" target="_top">Frames</a></li>
 <li><a href="AdaptableClient.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">

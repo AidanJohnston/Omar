@@ -1,4 +1,4 @@
-package Server.Connection;
+package Clinic.Server.Connection;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class MyServer extends AbstractServer  {
 	
 	@Override
 	protected void handleMessageFromClient(Object msg, ConnectionToClient client) {
-			System.out.println(String.format("Client " + client.getName() + ": " + msg));
+			System.out.println(String.format("Clinic/Client " + client.getName() + ": " + msg));
 	} 
 	
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ public class MyServer extends AbstractServer  {
 		System.out.println("MyServer: MyServer1 has been created.");
 		try {
 			MyServer1.listen();
-			System.out.println("MyServer: Server should now be running");
+			System.out.println("MyServer: Clinic.Server should now be running");
 			
 		} catch (IOException e) {
 			e.printStackTrace();

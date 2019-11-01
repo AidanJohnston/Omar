@@ -1,6 +1,6 @@
-package Server;
+package Clinic.Client;
 
-public class Server {
+public class Client {
 
     public static void main(String args[]) {
 

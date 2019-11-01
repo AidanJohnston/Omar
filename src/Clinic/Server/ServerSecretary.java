@@ -1,4 +1,4 @@
-package Server;
+package Clinic.Server;
 
 public class ServerSecretary {
 }

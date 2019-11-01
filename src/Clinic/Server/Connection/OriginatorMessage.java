@@ -2,7 +2,7 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com
 
-package Server.Connection;
+package Clinic.Server.Connection;
 
 /**
  * A message class used by the Observable layer of the OCSF in order to conserve

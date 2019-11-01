@@ -1,4 +1,4 @@
-package Core;
+package Clinic.Core;
 
 import java.util.List;
 
