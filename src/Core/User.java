@@ -216,7 +216,7 @@ public class User {
      * Compares the given password and the users password, will return true if they are the same
      *
      * @param password
-     * @return boolean
+     * @return boolean - True if passwords are the same, False if password are not the same
      */
     public boolean comparePassword(String password) {
         if (this.password == password)
