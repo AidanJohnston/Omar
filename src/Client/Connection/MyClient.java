@@ -15,6 +15,7 @@ public class MyClient extends AbstractClient {
 		System.out.println(String.format("Server: " + msg));
 	}
 
+	//TODO Redo main as constructor
 	public static void main(String[] args) throws IOException   {
 		MyClient Client1 = new MyClient("localhost", 8989);
 		String s;

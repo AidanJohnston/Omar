@@ -15,9 +15,9 @@ public class MyServer extends AbstractServer  {
 	} 
 	
 	//////////////////////////////////////////////////////////////////////////////////////////
-	
+
+	//TODO Re write main as constructor
 	public static void main(String[] args)   {
-		// TODO Auto-generated method stub
 		String msg;
 		Scanner myObj = new Scanner(System.in);
 		MyServer MyServer1 = new MyServer(8989); // will use port 8989
@@ -27,7 +27,6 @@ public class MyServer extends AbstractServer  {
 			System.out.println("MyServer: Server should now be running");
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		while(true) {
