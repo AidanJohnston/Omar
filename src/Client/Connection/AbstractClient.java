@@ -6,7 +6,6 @@ package Client.Connection;
 
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 /**
 * The <code> AbstractClient </code> contains all the

@@ -1,40 +1,62 @@
 package Client.Connection;
 
+import Client.ClientSecretary;
 import java.io.IOException;
-import java.util.Scanner;
 
+/**
+ * MyClient.java - The MyClient class is used as the head of the connection between the client and the server.  My Client
+ * doesn't worry about the logic of the message it sends or receives.  When MyClient receives a message from the server
+ * it hands it off the the client secretary to handle the processing of the message.
+ *
+ * @author Aidan Johnston
+ * @version 1.0
+ * @see AbstractClient
+ */
 public class MyClient extends AbstractClient {
 
-	public MyClient(String host, int port)
-	  { 
-	    super(host, port); 
-	}
+	private ClientSecretary secretary;
 
+	/**
+	 * The constructor for MyClient.  The constructor will try to connect to the server.  If it fails the program wille
+	 * exit.
+	 * @param host Host address to try to connect to
+	 * @param port Host port number
+	 * @param secretary Reference to the clients secretary
+	 */
+	public MyClient(String host, int port, ClientSecretary secretary)
+	  { 
+	    super(host, port);
+		this.secretary = secretary;
+
+	    try {
+	        this.openConnection();
+	    }
+	    catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("ERROR while attempting to open connection, exiting...");
+            System.exit(1); // on error exit
+        }
+      }
+
+	/**
+	 * Handles messages received from the server, passes them off to the clients secretary
+	 * @param msg   the message sent.
+	 */
 	@Override
 	protected void handleMessageFromServer(Object msg) {
-		System.out.println(String.format("Server: " + msg));
+		this.secretary.handleMessageFromServer(msg);
 	}
 
-	//TODO Redo main as constructor
-	public static void main(String[] args) throws IOException   {
-		MyClient Client1 = new MyClient("localhost", 8989);
-		String s;
-		Scanner myObj = new Scanner(System.in);
+	/**
+	 * MyClient received a message from the client secretary to try to sent to the server
+	 * @param payload The message to send to the server
+	 */
+	public void sendMessageToServer(Object payload) {
 		try {
-			Client1.openConnection();
-		} catch (IOException e1) { 
-			e1.printStackTrace();
-			System.out.println("ERROR while attempting to open connection, exiting...");
-			System.exit(1); // on error exit
+			this.sendToServer(payload);
 		}
-		while(true) {
-			try {
-				s = myObj.nextLine();
-				Client1.sendToServer(s);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		catch(IOException e) {
+			e.printStackTrace();
 		}
-	    
-	} 
+    }
 }
