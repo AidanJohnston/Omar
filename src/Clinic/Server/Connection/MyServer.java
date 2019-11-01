@@ -13,7 +13,7 @@ public class MyServer extends AbstractServer  {
 	
 	@Override
 	protected void handleMessageFromClient(Object msg, ConnectionToClient client) throws InterruptedException {
-        Payload payload = (Payload) msg;
+	    Payload payload = (Payload) msg;
         if(payload.getType() == 1) {
             try {
                 client.sendToClient(new Payload(payload.getId(), 1, (Object) "Orange"));
@@ -22,6 +22,7 @@ public class MyServer extends AbstractServer  {
                 e.printStackTrace();
             }
         }
+
 
 	} 
 	

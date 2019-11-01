@@ -24,6 +24,7 @@ import java.io.Serializable;
  *      <b>Error checking</b>
  *      <ul style="list-style-type:none;">
  *          <li>Type 0: Update confirmation</li>
+ *          <li>Type 1: Login - Returns login token token</>
  *          <li>Type 99: Error - Clinic.Server Object contains error information</li>
  *      </ul>
  *      <b>Appointments</b>

@@ -4,19 +4,19 @@ import Clinic.Core.Payload;
 
 public class ClientTask extends Thread {
 
-    Payload paylaod;
+    Payload payload;
     Object returnValue;
     Boolean flag;
     int count;
-    public ClientTask(Payload paylaod) {
-        this.paylaod = paylaod;
+    public ClientTask(Payload payload) {
+        this.payload = payload;
         this.flag = false;
         this.count = 10;
     }
 
     @Override
     public void run() {
-        while(!this.flag || count < 0) {
+        while(!this.flag && !(count < 0)) {
             count--;
             try {
                 this.sleep(1000);
@@ -27,7 +27,7 @@ public class ClientTask extends Thread {
 
         //Situation 1: Count is 0, therefore no answer from sever, set return value to error message;
         if (count < 0)
-            this.returnValue = (Object)"Error Server didnt answer";
+            this.returnValue = (Object) new Payload(payload.getId(), 99, (Object)"Error, server didn't answer");
 
         //Situation 2: The flag was raised. This means the server responded.  The secretary will update the return value;
     }
@@ -48,11 +48,11 @@ public class ClientTask extends Thread {
         this.flag = flag;
     }
 
-    public Payload getPaylaod() {
-        return paylaod;
+    public Payload getPayload() {
+        return this.payload;
     }
 
-    public void setPaylaod(Payload paylaod) {
-        this.paylaod = paylaod;
+    public void setPayload(Payload payload) {
+        this.payload = payload;
     }
 }

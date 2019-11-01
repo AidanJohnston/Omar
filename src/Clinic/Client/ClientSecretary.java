@@ -3,6 +3,7 @@ package Clinic.Client;
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
 import Clinic.Core.Payload;
+import Clinic.Core.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,16 +29,8 @@ public class ClientSecretary {
         tasklist = new ArrayList<ClientTask>();
     }
 
-    public MyClient getMyClient() {
-        return myClient;
-    }
-
     public void setMyClient(MyClient myClient) {
         this.myClient = myClient;
-    }
-
-    public MyGUI getMyGUI() {
-        return myGUI;
     }
 
     public void setMyGUI(MyGUI myGUI) {
@@ -45,13 +38,12 @@ public class ClientSecretary {
     }
 
     /**
-     * Test fucntion, given a persons ID, return their name.
-     * @return String - Name
+     * Login interfact between the GUI and client server.
+     * @return will return the user data for the
      */
-    public String requestName(int id) throws InterruptedException {
+    public String login(String username, String password) throws InterruptedException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, 1, (Object) id);
-
+        Payload payload = new Payload(avaiableID, 1, new User(username, password));
         ClientTask task = new ClientTask(payload);
         tasklist.add(task);
         task.start();
@@ -59,9 +51,7 @@ public class ClientSecretary {
         myClient.sendMessageToServer(payload);
 
         task.join();
-
         return (String) task.getReturnValue();
-
     }
 
     public void handleMessageFromServer(Object payloadFromServer) {
@@ -69,7 +59,7 @@ public class ClientSecretary {
         Boolean flag = false;
         int i = 0;
         for(i = 0; i < tasklist.size(); i++) {
-            if(tasklist.get(i).getPaylaod().getId() == payload.getId()) {
+            if(tasklist.get(i).getPayload().getId() == payload.getId()) {
                 ClientTask task = tasklist.get(i);
 
                 task.setReturnValue(payload.getObject());
