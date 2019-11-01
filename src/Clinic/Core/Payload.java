@@ -1,4 +1,4 @@
-package Clinic;
+package Clinic.Core;
 
 import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 
@@ -73,6 +73,12 @@ public class Payload {
     private int type;
     Object object;
 
+    /**
+     * Constructor for when data is need to be transfered the
+     * @param id
+     * @param type
+     * @param object
+     */
     public Payload(int id, int type, Object object) {
         this.id = id;
         this.type = type;
