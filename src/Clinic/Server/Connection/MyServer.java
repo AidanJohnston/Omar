@@ -1,5 +1,7 @@
 package Clinic.Server.Connection;
 
+import Clinic.Core.Payload;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -10,8 +12,17 @@ public class MyServer extends AbstractServer  {
 	}
 	
 	@Override
-	protected void handleMessageFromClient(Object msg, ConnectionToClient client) {
-			System.out.println(String.format("Clinic/Client " + client.getName() + ": " + msg));
+	protected void handleMessageFromClient(Object msg, ConnectionToClient client) throws InterruptedException {
+        Payload payload = (Payload) msg;
+        if(payload.getType() == 1) {
+            try {
+                client.sendToClient(new Payload(payload.getId(), 1, (Object) "Orange"));
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
 	} 
 	
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +31,7 @@ public class MyServer extends AbstractServer  {
 	public static void main(String[] args)   {
 		String msg;
 		Scanner myObj = new Scanner(System.in);
-		MyServer MyServer1 = new MyServer(8989); // will use port 8989
+		MyServer MyServer1 = new MyServer(6969); // will use port 8989
 		System.out.println("MyServer: MyServer1 has been created.");
 		try {
 			MyServer1.listen();
@@ -29,15 +40,5 @@ public class MyServer extends AbstractServer  {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		while(true) {
-			msg = myObj.nextLine();
-			try {
-				MyServer1.sendToAllClients(msg);
-			}
-			catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
-		
 	} 
 }
