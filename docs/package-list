@@ -1,1 +1,7 @@
-
+Clinic
+Clinic.Client
+Clinic.Client.Connection
+Clinic.Client.GUI
+Clinic.Core
+Clinic.Server
+Clinic.Server.Connection
