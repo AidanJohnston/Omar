@@ -74,6 +74,7 @@ public class Payload implements Serializable {
 
     private int id;
     private int type;
+    private String token;
     Object object;
 
     /**
@@ -87,6 +88,14 @@ public class Payload implements Serializable {
         this.type = type;
         this.object = object;
     }
+
+    public Payload(int id, int type, String token, Object object) {
+        this.id = id;
+        this.type = type;
+        this.token = token;
+        this.object = object;
+    }
+
 
     public Payload(int id, int type) {
         this.id = id;
@@ -115,5 +124,13 @@ public class Payload implements Serializable {
 
     public void setObject(Object object) {
         this.object = object;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
