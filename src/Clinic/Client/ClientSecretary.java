@@ -37,13 +37,7 @@ public class ClientSecretary {
         this.myGUI = myGUI;
     }
 
-    /**
-     * Login interfact between the GUI and client server.
-     * @return will return the user data for the
-     */
-    public String login(String username, String password) throws InterruptedException {
-        avaiableID++;
-        Payload payload = new Payload(avaiableID, 1, new User(username, password));
+    private ClientTask prepareTask(Payload payload) throws InterruptedException {
         ClientTask task = new ClientTask(payload);
         tasklist.add(task);
         task.start();
@@ -51,7 +45,7 @@ public class ClientSecretary {
         myClient.sendMessageToServer(payload);
 
         task.join();
-        return (String) task.getReturnValue();
+        return task;
     }
 
     public void handleMessageFromServer(Object payloadFromServer) {
@@ -69,4 +63,29 @@ public class ClientSecretary {
         }
 
     }
+
+    /**
+     * Login interface between the GUI and client server.
+     * @return will return the user data for the
+     */
+    public String login(String username, String password) throws InterruptedException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, 1, new User(username, password));
+
+        return (String) prepareTask(payload).getReturnValue();
+    }
+
+    /**
+     * Logout interface between the GUI and the client server.  Returns true if logout was successful.
+     * @param token
+     * @return Boolean
+     * @throws InterruptedException
+     */
+    public boolean logout(String token) throws InterruptedException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, 2, new User(token));
+
+        return (boolean) prepareTask(payload).getReturnValue();
+    }
+
 }
