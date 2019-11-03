@@ -50,9 +50,22 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+    /**
+     * Constructor used for logging in
+     * @param username
+     * @param password
+     */
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    /**
+     * Constructor used for logging out.a
+     * @param loginToken
+     */
+    public User(String loginToken) {
+        this.loginToken = loginToken;
     }
 
     /**
