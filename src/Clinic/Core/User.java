@@ -1,6 +1,6 @@
 package Clinic.Core;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * User.java - A class for storing basic information about members of the clinic
@@ -16,11 +16,11 @@ public class User {
     private String password;
     private String Fname;
     private String LName;
-    private Date brithday;
+    private LocalDate brithday;
     private int SIN;
     private String adress;
     private int ID;
-    private int phoneNumber;
+    private float phoneNumber;
 
     private String loginToken;
 
@@ -37,7 +37,7 @@ public class User {
      * @param ID
      * @param phoneNumber
      */
-    public User(String username, String password, String Fname, String LName, Date brithday, int SIN, String adress, int ID, int phoneNumber) {
+    public User(String username, String password, String Fname, String LName, LocalDate brithday, int SIN, String adress, int ID, float phoneNumber) {
 
         this.username = username;
         this.password = password;
@@ -144,9 +144,9 @@ public class User {
      * Gets the users birthday
      *
      * @return birthday
-     * @see Date
+     * @see LocalDate
      */
-    public Date getBrithday() {
+    public LocalDate getBrithday() {
         return brithday;
     }
 
@@ -154,9 +154,9 @@ public class User {
      * Setes the users birthday
      *
      * @param brithday
-     * @see Date
+     * @see LocalDate
      */
-    public void setBrithday(Date brithday) {
+    public void setBrithday(LocalDate brithday) {
         this.brithday = brithday;
     }
 
@@ -219,7 +219,7 @@ public class User {
      *
      * @return phoneNumber
      */
-    public int getPhoneNumber() {
+    public float getPhoneNumber() {
         return phoneNumber;
     }
 
