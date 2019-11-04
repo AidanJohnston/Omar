@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,6 @@ public class Patient extends User {
 
     /**
      * Constructor for the patient class
-     *
      * @param username
      * @param password
      * @param Fname
@@ -45,11 +45,11 @@ public class Patient extends User {
             String password,
             String Fname,
             String LName,
-            Date brithday,
+            LocalDate brithday,
             int SIN,
             String adress,
             int ID,
-            int phoneNumber,
+            float phoneNumber,
             int healthCardNumber,
             Date healthCardExpiry,
             String province,
