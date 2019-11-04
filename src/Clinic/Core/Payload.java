@@ -36,7 +36,7 @@ import java.io.Serializable;
  *      </ul>
  *      <b>Doctor</b>
  *      <ul style="list-style-type:none;">
- *          <li>Type 20: Doctor login confirmation</li>
+ *          <li>Type 20: Request doctor given patient</li>
  *          <li>Type 21: Request all doctors</li>
  *          <li>Type 22: Update a doctor with a given doctor</li>
  *          <li>Type 23: Create a doctor with a given doctor</li>
@@ -47,10 +47,9 @@ import java.io.Serializable;
  *      </ul>
  *      <b>Patient</b>
  *      <ul style="list-style-type:none;">
- *          <li>Type 30: Patient login confirmation</li>
- *          <li>Type 31: Request all patients</li>
- *          <li>Type 32: Request list of patients given a specific doctor</li>
- *          <li>Type 33: </li>
+ *          <li>Type 30: Request all patients</li>
+ *          <li>Type 31: Request list of patients given a specific doctor</li>
+ *          <li>Type 31: </li>
  *      </ul>
  *      <b>Appointments</b>
  *  *      <ul style="list-style-type:none;">
@@ -75,11 +74,33 @@ public class Payload implements Serializable {
     private int type;
     private Token token;
     Object object;
+
+    public static final int UPDATE = 0;
+    public static final int LOGIN = 1;
+    public static final int LOGOUT = 2;
+    public static final int ERROR = 3;
+
+    public static final int DIAGNOSIS_GET_ALL_PATIENT = 10;
+    public static final int DIAGNOSIS_GET_ALL_DOCTOR = 11;
+    public static final int DIAGNOSIS_UPDATE_GIVEN_REFERENCE = 12;
+    public static final int DIAGNOSIS_CREATE_GIVEN_REFERENCE = 13;
+    public static final int DIAGNOSIS_REMOVE_GIVEN_REFERENCE = 14;
+
+    public static final int DOCTOR_GET_GIVEN_PATIENT = 20;
+    public static final int DOCTOR_GET_ALL = 21;
+    public static final int DOCTOR_UPDATE_GIVEN_DOCTOR = 22;
+    public static final int DOCTOR_CREATE_GIVEN_DOCTOR = 23;
+    public static final int DOCTOR_REQUEST_GIVEN_NAME = 24;
+    public static final int DOCTOR_REQUEST_GIVEN_TIME = 25;
+    public static final int DOCTOR_REQUEST_GIVEN_DATE = 26;
+    public static final int DOCTOR_REMOVE_GIVEN_DOCTOR = 27;
+
+    public static final int PATIENT_GET_ALL = 30;
     /**
      * Constructor used for login
      * @param id
      * @param type
-     * @param token
+     * @param object
      */
     public Payload(int id, int type, Object object) {
         this.id = id;
@@ -87,6 +108,13 @@ public class Payload implements Serializable {
         this.object = object;
     }
 
+    /**
+     * Constructor used for requesting data
+     * @param id
+     * @param type
+     * @param token
+     * @param object
+     */
     public Payload(int id, int type, Token token, Object object) {
         this.id = id;
         this.type = type;
@@ -95,6 +123,12 @@ public class Payload implements Serializable {
     }
 
 
+    /**
+     * Constructor used for requested data when no parameters are needed, or the server is responding with error/update confirmation
+     * @param id
+     * @param type
+     * @param token
+     */
     public Payload(int id, int type, Token token) {
         this.id = id;
         this.type = type;
