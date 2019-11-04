@@ -10,7 +10,7 @@ public class Client {
         MyClient myClient = new MyClient("localhost", 6969, clientSecretary);
         clientSecretary.setMyClient(myClient);
 
-        String a = clientSecretary.requestName(1);
+        String a = clientSecretary.login("orange", "AIdan");
         System.out.println(a);
     }
 }

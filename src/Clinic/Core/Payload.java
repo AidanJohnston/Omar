@@ -73,19 +73,13 @@ public class Payload implements Serializable {
 
     private int id;
     private int type;
-    private String token;
+    private Token token;
     Object object;
-
-    //STORING REQUEST TYPES
-    //ERROR CHECKING
-    public static final int UPDATE = 0;
-    public static final int LOGIN = 1;
-
     /**
-     * Constructor for when data is need to be transfered the
+     * Constructor used for login
      * @param id
      * @param type
-     * @param object
+     * @param token
      */
     public Payload(int id, int type, Object object) {
         this.id = id;
@@ -93,7 +87,7 @@ public class Payload implements Serializable {
         this.object = object;
     }
 
-    public Payload(int id, int type, String token, Object object) {
+    public Payload(int id, int type, Token token, Object object) {
         this.id = id;
         this.type = type;
         this.token = token;
@@ -101,7 +95,7 @@ public class Payload implements Serializable {
     }
 
 
-    public Payload(int id, int type, String token) {
+    public Payload(int id, int type, Token token) {
         this.id = id;
         this.type = type;
         this.token = token;
@@ -131,11 +125,11 @@ public class Payload implements Serializable {
         this.object = object;
     }
 
-    public String getToken() {
+    public Token getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(Token token) {
         this.token = token;
     }
 }

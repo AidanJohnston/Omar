@@ -9,15 +9,23 @@ import java.lang.reflect.Type;
 public class Token {
 
     private Type type;
-    private int tokenid;
+    private int userID;
 
     /**
      * The constructor for the login token
      * @param type Type of user logged in
-     * @param tokenid Their unique id
+     * @param userID Their unique id
      */
-    public Token (Type type, int tokenid) {
+    public Token (Type type, int userID) {
         this.type = type;
-        this.tokenid = tokenid;
+        this.userID = userID;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 }
