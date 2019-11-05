@@ -6,6 +6,7 @@ import Clinic.Core.IncorrectPayloadException;
 import Clinic.Core.Payload;
 import Clinic.Core.Token;
 import Clinic.Core.User;
+import Util.RequestType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class ClientSecretary {
             e.printStackTrace();
         }
 
-        if(task.getPayload().getType() == 3) {
+        if(task.getPayload().getType() == RequestType.ERROR) {
             throw new IncorrectPayloadException((String)task.getPayload().getObject());
         }
         return task;
@@ -85,7 +86,7 @@ public class ClientSecretary {
      */
     public Token login(String username, String password) throws IncorrectPayloadException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, 1, new User(username, password));
+        Payload payload = new Payload(avaiableID, RequestType.LOGIN, new User(username, password));
 
         return (Token) prepareTask(payload).getReturnValue();
     }
@@ -98,7 +99,7 @@ public class ClientSecretary {
      */
     public boolean logout(String token) throws IncorrectPayloadException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, 2, new User(token));
+        Payload payload = new Payload(avaiableID, RequestType.LOGOUT, new User(token));
 
         return (boolean) prepareTask(payload).getReturnValue();
     }

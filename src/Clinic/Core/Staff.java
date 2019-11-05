@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -29,7 +30,7 @@ public class Staff extends User {
             String password,
             String Fname,
             String LName,
-            Date brithday,
+            LocalDate brithday,
             int SIN,
             String adress,
             int ID,

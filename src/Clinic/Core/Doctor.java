@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @see User
  */
 public class Doctor extends User {
-    private String speciatly;
+    private String specialty;
     private String rank;
     private double startHour;
     private double endHour;
@@ -25,12 +26,12 @@ public class Doctor extends User {
      * @param password
      * @param Fname
      * @param LName
-     * @param brithday
+     * @param birthday
      * @param SIN
      * @param adress
      * @param ID
      * @param phoneNumber
-     * @param speciatly
+     * @param specialty
      * @param rank
      * @param startHour
      * @param endHour
@@ -42,19 +43,19 @@ public class Doctor extends User {
             String password,
             String Fname,
             String LName,
-            Date brithday,
+            LocalDate birthday,
             int SIN,
             String adress,
             int ID,
             int phoneNumber,
-            String speciatly,
+            String specialty,
             String rank,
             double startHour,
             double endHour,
             Schedule schedule,
             List<Patient> patients) {
-        super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
-        this.speciatly = speciatly;
+        super(username, password, Fname, LName, birthday, SIN, adress, ID, phoneNumber);
+        this.specialty = specialty;
         this.rank = rank;
         this.startHour = startHour;
         this.endHour = endHour;
@@ -68,16 +69,16 @@ public class Doctor extends User {
      * @return speciatly
      */
     public String getSpeciatly() {
-        return speciatly;
+        return specialty;
     }
 
     /**
      * Sets the doctors speciatly
      *
-     * @param speciatly
+     * @param specialty
      */
-    public void setSpeciatly(String speciatly) {
-        this.speciatly = speciatly;
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
     }
 
     /**

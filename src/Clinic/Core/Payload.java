@@ -2,6 +2,8 @@ package Clinic.Core;
 
 import java.io.Serializable;
 
+import Util.RequestType;
+
 /**
  * Package.java - The Package is used to generalize the sending and receiving of data between client and server
  *
@@ -71,38 +73,16 @@ import java.io.Serializable;
 public class Payload implements Serializable {
 
     private int id;
-    private int type;
+    private RequestType type;
     private Token token;
     Object object;
-
-    public static final int UPDATE = 0;
-    public static final int LOGIN = 1;
-    public static final int LOGOUT = 2;
-    public static final int ERROR = 3;
-
-    public static final int DIAGNOSIS_GET_ALL_PATIENT = 10;
-    public static final int DIAGNOSIS_GET_ALL_DOCTOR = 11;
-    public static final int DIAGNOSIS_UPDATE_GIVEN_REFERENCE = 12;
-    public static final int DIAGNOSIS_CREATE_GIVEN_REFERENCE = 13;
-    public static final int DIAGNOSIS_REMOVE_GIVEN_REFERENCE = 14;
-
-    public static final int DOCTOR_GET_GIVEN_PATIENT = 20;
-    public static final int DOCTOR_GET_ALL = 21;
-    public static final int DOCTOR_UPDATE_GIVEN_DOCTOR = 22;
-    public static final int DOCTOR_CREATE_GIVEN_DOCTOR = 23;
-    public static final int DOCTOR_REQUEST_GIVEN_NAME = 24;
-    public static final int DOCTOR_REQUEST_GIVEN_TIME = 25;
-    public static final int DOCTOR_REQUEST_GIVEN_DATE = 26;
-    public static final int DOCTOR_REMOVE_GIVEN_DOCTOR = 27;
-
-    public static final int PATIENT_GET_ALL = 30;
     /**
      * Constructor used for login
      * @param id
      * @param type
      * @param object
      */
-    public Payload(int id, int type, Object object) {
+    public Payload(int id, RequestType type, Object object) {
         this.id = id;
         this.type = type;
         this.object = object;
@@ -115,7 +95,7 @@ public class Payload implements Serializable {
      * @param token
      * @param object
      */
-    public Payload(int id, int type, Token token, Object object) {
+    public Payload(int id, RequestType type, Token token, Object object) {
         this.id = id;
         this.type = type;
         this.token = token;
@@ -129,7 +109,7 @@ public class Payload implements Serializable {
      * @param type
      * @param token
      */
-    public Payload(int id, int type, Token token) {
+    public Payload(int id, RequestType type, Token token) {
         this.id = id;
         this.type = type;
         this.token = token;
@@ -143,11 +123,11 @@ public class Payload implements Serializable {
         this.id = id;
     }
 
-    public int getType() {
+    public RequestType getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(RequestType type) {
         this.type = type;
     }
 

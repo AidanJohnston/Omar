@@ -1,6 +1,7 @@
 package Clinic.Client;
 
 import Clinic.Core.Payload;
+import Util.RequestType;
 
 public class ClientTask extends Thread {
 
@@ -27,7 +28,7 @@ public class ClientTask extends Thread {
 
         //Situation 1: Count is 0, therefore no answer from sever, set return value to error message;
         if (count < 0) {
-            this.getPayload().setType(3);
+            this.getPayload().setType(RequestType.ERROR);
             this.getPayload().setObject((Object) "Server didn't answer.");
         }
 
