@@ -22,7 +22,7 @@ public class User {
     private int ID;
     private float phoneNumber;
 
-    private String loginToken;
+    private Token loginToken;
 
     /**
      * Constructor for the user class
@@ -64,9 +64,10 @@ public class User {
      * Constructor used for logging out.a
      * @param loginToken
      */
-    public User(String loginToken) {
+    public User(Token loginToken) {
         this.loginToken = loginToken;
     }
+    public User(String Fname) { this.Fname = Fname;}
 
     /**
      * Gets the username
@@ -232,11 +233,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getLoginToken() {
+    public Token getLoginToken() {
         return loginToken;
     }
 
-    public void setLoginToken(String loginToken) {
+    public void setLoginToken(Token loginToken) {
         this.loginToken = loginToken;
     }
 

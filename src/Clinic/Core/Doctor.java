@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import javax.print.Doc;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -61,6 +62,9 @@ public class Doctor extends User {
         this.endHour = endHour;
         this.schedule = schedule;
         this.patients = patients;
+    }
+    public Doctor(String Fname) {
+        super(Fname);
     }
 
     /**
