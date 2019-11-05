@@ -1,6 +1,6 @@
 package Clinic.Core;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * Staff.java - A class for storing information relative to staff members
@@ -13,7 +13,8 @@ public class Staff extends User {
 
     /**
      * Constructor for the Staff class
-     *  @param username
+     *
+     * @param username
      * @param password
      * @param Fname
      * @param LName
@@ -28,7 +29,7 @@ public class Staff extends User {
             String password,
             String Fname,
             String LName,
-            LocalDate brithday,
+            Date brithday,
             int SIN,
             String adress,
             int ID,
