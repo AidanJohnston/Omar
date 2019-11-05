@@ -6,6 +6,7 @@ import Clinic.Core.Payload;
 import Clinic.Core.Token;
 import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
+import Util.RequestType;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -31,11 +32,11 @@ public class ServerSecretary {
 
           //LOGIN
 
-          if (payload.getType() == 1) {
+          if (payload.getType() == RequestType.LOGIN) {
                this.login(payload,client);
           }
 
-          if(payload.getType() == 2) {
+          if(payload.getType() == RequestType.LOGOUT) {
               this.logout(payload, client);
           }
 
@@ -80,7 +81,7 @@ public class ServerSecretary {
                if(clientTokens.get(i).getUserID() == payload.getToken().getUserID()) {
                     clientTokens.remove(i);
                     try {
-                         client.sendToClient(new Payload(payload.getId(),0,"Successfully logged out."));
+                         client.sendToClient(new Payload(payload.getId(),RequestType.LOGOUT,"Successfully logged out."));
                     }
                     catch (IOException e) {
                          e.printStackTrace();
