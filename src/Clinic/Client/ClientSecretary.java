@@ -2,9 +2,12 @@ package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
+import Clinic.Core.IncorrectPayloadException;
 import Clinic.Core.Payload;
+import Clinic.Core.Token;
 import Clinic.Core.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,14 +40,23 @@ public class ClientSecretary {
         this.myGUI = myGUI;
     }
 
-    private ClientTask prepareTask(Payload payload) throws InterruptedException {
+    private ClientTask prepareTask(Payload payload) throws IncorrectPayloadException {
         ClientTask task = new ClientTask(payload);
         tasklist.add(task);
         task.start();
 
         myClient.sendMessageToServer(payload);
 
-        task.join();
+        try {
+            task.join();
+        }
+        catch(InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        if(task.getPayload().getType() == 3) {
+            throw new IncorrectPayloadException((String)task.getPayload().getObject());
+        }
         return task;
     }
 
@@ -66,22 +78,25 @@ public class ClientSecretary {
 
     /**
      * Login interface between the GUI and client server.
-     * @return will return the user data for the
+     * @param username
+     * @param password
+     * @return will return a token that can be used for making other requests to the server
+     * @throws IncorrectPayloadException
      */
-    public String login(String username, String password) throws InterruptedException {
+    public Token login(String username, String password) throws IncorrectPayloadException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, 1, new User(username, password));
 
-        return (String) prepareTask(payload).getReturnValue();
+        return (Token) prepareTask(payload).getReturnValue();
     }
 
     /**
      * Logout interface between the GUI and the client server.  Returns true if logout was successful.
      * @param token
      * @return Boolean
-     * @throws InterruptedException
+     * @throws IncorrectPayloadException
      */
-    public boolean logout(String token) throws InterruptedException {
+    public boolean logout(String token) throws IncorrectPayloadException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, 2, new User(token));
 
