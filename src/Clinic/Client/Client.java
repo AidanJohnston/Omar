@@ -2,6 +2,7 @@ package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
 import Util.IncorrectPayloadException;
+import Clinic.Core.Doctor;
 import Clinic.Core.Token;
 
 public class Client {
@@ -13,7 +14,9 @@ public class Client {
         clientSecretary.setMyClient(myClient);
 
             Token a = clientSecretary.login("orange", "AIdan");
-
+        
+        Doctor d = clientSecretary.getDoctorWithID(1, new Token(Doctor.class, 1)); //this is bad, stop
         System.out.println(a);
+        System.out.println(d.getFname());
     }
 }
