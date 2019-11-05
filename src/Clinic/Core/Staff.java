@@ -1,7 +1,10 @@
 package Clinic.Core;
 
 import java.time.LocalDate;
+<<<<<<< HEAD
 import java.util.Date;
+=======
+>>>>>>> branch 'master' of https://github.com/AidanJohnston/ESOF-3050DesignProject.git
 
 /**
  * Staff.java - A class for storing information relative to staff members
@@ -14,8 +17,7 @@ public class Staff extends User {
 
     /**
      * Constructor for the Staff class
-     *
-     * @param username
+     *  @param username
      * @param password
      * @param Fname
      * @param LName

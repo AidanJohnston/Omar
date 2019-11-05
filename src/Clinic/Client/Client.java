@@ -1,7 +1,7 @@
 package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
-import Clinic.Core.IncorrectPayloadException;
+import Util.IncorrectPayloadException;
 import Clinic.Core.Token;
 
 public class Client {

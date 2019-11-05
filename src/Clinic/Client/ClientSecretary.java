@@ -2,13 +2,12 @@ package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
-import Clinic.Core.IncorrectPayloadException;
+import Util.IncorrectPayloadException;
 import Clinic.Core.Payload;
 import Clinic.Core.Token;
 import Clinic.Core.User;
 import Util.RequestType;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
