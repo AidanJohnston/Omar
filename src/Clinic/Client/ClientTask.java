@@ -26,8 +26,10 @@ public class ClientTask extends Thread {
         }
 
         //Situation 1: Count is 0, therefore no answer from sever, set return value to error message;
-        if (count < 0)
-            this.returnValue = (Object) new Payload(payload.getId(), 99, (Object)"Error, server didn't answer");
+        if (count < 0) {
+            this.getPayload().setType(3);
+            this.getPayload().setObject((Object) "Server didn't answer.");
+        }
 
         //Situation 2: The flag was raised. This means the server responded.  The secretary will update the return value;
     }
