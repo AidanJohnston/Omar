@@ -28,7 +28,7 @@ public class ServerSecretary {
           this.myServer = myServer;
      }
 
-     public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
+     public void handleMessageFromClient(Payload payload, ConnectionToClient client) throws IOException {
 
           //LOGIN
 
@@ -40,9 +40,8 @@ public class ServerSecretary {
               this.logout(payload, client);
           }
 
-
-
-
+          if(payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID)
+               client.sendToClient(new Payload(payload.getId(), payload.getType(), new Doctor("AIdan")));
      }
 
      /**
