@@ -16,10 +16,8 @@ public class Client {
 
         Token a = clientSecretary.login("orange", "AIdan");
         
-        Doctor d = clientSecretary.getDoctorWithID(1, a); //this is bad, stop
+        System.out.println(a.getUserID());
         
         System.out.println(a);
-        System.out.println(d.getFname());
-        
     }
 }
