@@ -25,12 +25,12 @@ public class Doctor extends User {
      * @param password
      * @param Fname
      * @param LName
-     * @param brithday
+     * @param birthday
      * @param SIN
-     * @param adress
+     * @param address
      * @param ID
      * @param phoneNumber
-     * @param speciatly
+     * @param specialty
      * @param rank
      * @param startHour
      * @param endHour
@@ -42,19 +42,19 @@ public class Doctor extends User {
             String password,
             String Fname,
             String LName,
-            Date brithday,
+            Date birthday,
             int SIN,
-            String adress,
+            String address,
             int ID,
             int phoneNumber,
-            String speciatly,
+            String specialty,
             String rank,
             double startHour,
             double endHour,
             Schedule schedule,
             List<Patient> patients) {
-        super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
-        this.speciatly = speciatly;
+        super(username, password, Fname, LName, birthday, SIN, address, ID, phoneNumber);
+        this.speciatly = specialty;
         this.rank = rank;
         this.startHour = startHour;
         this.endHour = endHour;
