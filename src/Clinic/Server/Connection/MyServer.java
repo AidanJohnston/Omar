@@ -13,6 +13,12 @@ public class MyServer extends AbstractServer  {
 	public MyServer(int port, ServerSecretary serverSecretary)   { // Constructor
 		super(port);
 
+		try {
+			this.listen();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 		this.serverSecretary = serverSecretary;
 	}
 	
