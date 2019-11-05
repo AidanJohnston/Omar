@@ -18,6 +18,7 @@ public class Client {
         
         Doctor d = clientSecretary.getDoctorWithID(1, a); //this is bad, stop
         
+        System.out.println(a);
         System.out.println(d.getFname());
         
     }
