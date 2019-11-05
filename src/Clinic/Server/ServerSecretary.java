@@ -7,6 +7,8 @@ import Clinic.Core.Token;
 import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
 import Util.RequestType;
+import Util.UserType;
+
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.io.IOException;
@@ -37,6 +39,11 @@ public class ServerSecretary {
               this.logout(payload, client);
           }
 
+          
+          if(payload.getType() == RequestType.LOGIN) {
+        	  this.login(payload, client);
+          }
+          
           if(payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID)
                try {
                     client.sendToClient(new Payload(payload.getId(), payload.getType(), new Doctor("AIdan")));
@@ -56,7 +63,7 @@ public class ServerSecretary {
           //TODO - GET TYPE OF USER
 
           //THIS IS WRONG, USING AS PLACE HOLDER, ASSUMING LOGIN WAS SUCCESSFUL
-          Type type = payload.getClass();
+          UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
           int userID = 1;
 
 

@@ -1,14 +1,17 @@
 package Clinic.Core;
 
 
+import java.io.Serializable;
 import java.lang.reflect.Type;
+
+import Util.UserType;
 
 /**
  * Token.java - used to store token data for logged in users
  */
-public class Token {
+public class Token implements Serializable{
 
-    private Type type;
+    private UserType type;
     private int userID;
 
     /**
@@ -16,7 +19,7 @@ public class Token {
      * @param type Type of user logged in
      * @param userID Their unique id
      */
-    public Token (Type type, int userID) {
+    public Token (UserType type, int userID) {
         this.type = type;
         this.userID = userID;
     }
