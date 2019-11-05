@@ -7,6 +7,7 @@ import Clinic.Core.Token;
 import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
 import Util.RequestType;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -28,7 +29,7 @@ public class ServerSecretary {
           this.myServer = myServer;
      }
 
-     public void handleMessageFromClient(Payload payload, ConnectionToClient client) throws IOException {
+     public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
 
           //LOGIN
 
@@ -41,7 +42,12 @@ public class ServerSecretary {
           }
 
           if(payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID)
-               client.sendToClient(new Payload(payload.getId(), payload.getType(), new Doctor("AIdan")));
+               try {
+                    client.sendToClient(new Payload(payload.getId(), payload.getType(), new Doctor("AIdan")));
+               }
+               catch (IOException e) {
+                    e.printStackTrace();
+               }
      }
 
      /**
