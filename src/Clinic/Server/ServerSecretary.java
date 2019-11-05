@@ -6,29 +6,53 @@ import Clinic.Server.Connection.MyServer;
 import Util.RequestType;
 import Util.UserType;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ServerSecretary.java - This class handles the requests from clients, such as finding information, removing information
+ * or updating information from the database.
+ *
+ * @author Aidan Johnston
+ * @version 1.0
+ */
 public class ServerSecretary {
-     private List<Token> clientTokens = new ArrayList<Token>();
+
+     private List<Token> clientTokens;
      private MyServer myServer;
      private int avaiableID;
+
+     /**
+      * Constructor for ServerSecretary, sets up the list of login tokens and the available ids
+      */
      public ServerSecretary() {
           this.avaiableID = 0;
+          clientTokens = new ArrayList<Token>();
      }
 
+     /**
+      * Returns the instance of myServer the secretary is currently using
+      * @return myServer
+      */
      public MyServer getMyServer() {
           return myServer;
      }
 
+     /**
+      * Sets an instance of myServer
+      * @param myServer
+      */
      public void setMyServer(MyServer myServer) {
           this.myServer = myServer;
      }
 
+     /**
+      * Looks through the list clientTokens and tries to find one with the same ID.  If one is found it returns true.
+      * If none is found false is returned.
+      * @param token
+      * @return boolean
+      */
      private boolean findToken(Token token) {
           boolean flag = false;
 
@@ -39,6 +63,12 @@ public class ServerSecretary {
           return flag;
      }
 
+     /**
+      * Information passed from myServer when message from client is triggered.  Messages are first checked to ensure that
+      * the user is currently logged in, then it filters it down into its message type and performs the task.
+      * @param payload
+      * @param client
+      */
      public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
 
 
@@ -56,12 +86,10 @@ public class ServerSecretary {
                     this.logout(payload, client);
                }
 
-               if (payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID)
-                    try {
-                         client.sendToClient(new Payload(payload.getId(), payload.getType(), new Doctor("AIdan")));
-                    } catch (IOException e) {
-                         e.printStackTrace();
-                    }
+               if (payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID) {
+                    //this.getDoctorWithID(payload, client);
+               }
+
           }
      }
 
