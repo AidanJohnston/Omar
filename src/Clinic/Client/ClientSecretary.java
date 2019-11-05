@@ -117,4 +117,12 @@ public class ClientSecretary {
         return (List<Doctor>) prepareTask(payload).getReturnValue();
     }
 
+    public Doctor getDoctorWithID(int id, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_GET_GIVEN_ID, id);
+
+        return (Doctor) prepareTask(payload).getReturnValue();
+    }
+
+
 }
