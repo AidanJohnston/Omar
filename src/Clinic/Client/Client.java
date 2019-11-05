@@ -1,16 +1,19 @@
 package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
+import Clinic.Core.IncorrectPayloadException;
+import Clinic.Core.Token;
 
 public class Client {
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String args[]) throws IncorrectPayloadException {
         ClientSecretary clientSecretary = new ClientSecretary();
 
         MyClient myClient = new MyClient("localhost", 6969, clientSecretary);
         clientSecretary.setMyClient(myClient);
 
-        String a = clientSecretary.login("orange", "AIdan");
+            Token a = clientSecretary.login("orange", "AIdan");
+
         System.out.println(a);
     }
 }
