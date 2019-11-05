@@ -124,5 +124,9 @@ public class ClientSecretary {
         return (Doctor) prepareTask(payload).getReturnValue();
     }
 
+    public Doctor ge
+
+            //COMMMENT HECK YEAH
+
 
 }
