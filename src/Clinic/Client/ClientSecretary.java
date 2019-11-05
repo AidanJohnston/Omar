@@ -12,6 +12,8 @@ import Util.RequestType;
 import java.util.ArrayList;
 import java.util.List;
 
+//merge this test - Sean
+
 /**
  * ClientSecretary.java - The client secretary stands as a mediator between the GUI and the connection to the server.
  * The secretary provides the business logic between the GUI and the connection to the server.  The GUI can invoke
