@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -11,7 +12,7 @@ import java.time.LocalDate;
  * @see Patient
  * @see Staff
  */
-public class User {
+public class User implements Serializable{
     private String username;
     private String password;
     private String Fname;
@@ -55,7 +56,7 @@ public class User {
      * @param username
      * @param password
      */
-    public User(String username, String password) {
+    public User(String username, String password){
         this.username = username;
         this.password = password;
     }

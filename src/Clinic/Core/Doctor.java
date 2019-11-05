@@ -1,6 +1,8 @@
 package Clinic.Core;
 
 import javax.print.Doc;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
  * @version 1.0
  * @see User
  */
-public class Doctor extends User {
+public class Doctor extends User implements Serializable{
     private String specialty;
     private String rank;
     private double startHour;
