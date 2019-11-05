@@ -1,4 +1,4 @@
-package Clinic.Core;
+package Util;
 
 public class IncorrectPayloadException extends Exception {
     public IncorrectPayloadException(String s) {
