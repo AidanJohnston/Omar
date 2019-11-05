@@ -1,9 +1,6 @@
 package Clinic.Server;
 
-import Clinic.Core.Doctor;
-import Clinic.Core.Patient;
-import Clinic.Core.Payload;
-import Clinic.Core.Token;
+import Clinic.Core.*;
 import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
 import Util.RequestType;
@@ -13,10 +10,11 @@ import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServerSecretary {
-     private List<Token> clientTokens;
+     private List<Token> clientTokens = new ArrayList<Token>();
      private MyServer myServer;
      private int avaiableID;
      public ServerSecretary() {
@@ -31,26 +29,40 @@ public class ServerSecretary {
           this.myServer = myServer;
      }
 
+     private boolean findToken(Token token) {
+          boolean flag = false;
+
+          for(int i = 0; i < clientTokens.size(); i++) {
+               if(clientTokens.get(i).getUserID() == token.getUserID())
+                    flag = true;
+          }
+          return flag;
+     }
+
      public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
 
-          //LOGI
 
-          if(payload.getType() == RequestType.LOGOUT) {
-              this.logout(payload, client);
-          }
+          System.out.println("Handling Request from: " + client.getName());
 
-          
+
           if(payload.getType() == RequestType.LOGIN) {
-        	  this.login(payload, client);
+               System.out.println("LOGIN TRIGGERED");
+               this.login(payload, client);
           }
-          
-          if(payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID)
-               try {
-                    client.sendToClient(new Payload(payload.getId(), payload.getType(), new Doctor("AIdan")));
+
+          else if(findToken(payload.getToken())) {
+
+               if (payload.getType() == RequestType.LOGOUT) {
+                    this.logout(payload, client);
                }
-               catch (IOException e) {
-                    e.printStackTrace();
-               }
+
+               if (payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID)
+                    try {
+                         client.sendToClient(new Payload(payload.getId(), payload.getType(), new Doctor("AIdan")));
+                    } catch (IOException e) {
+                         e.printStackTrace();
+                    }
+          }
      }
 
      /**
@@ -62,16 +74,19 @@ public class ServerSecretary {
           //TODO - CONNECT TO DATABASE AND CONFIRM LOGIN
           //TODO - GET TYPE OF USER
 
+
           //THIS IS WRONG, USING AS PLACE HOLDER, ASSUMING LOGIN WAS SUCCESSFUL
           UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
           int userID = 1;
-
 
           Token token = new Token(type, userID);
           clientTokens.add(token);
 
           payload.setObject(token);
+
+          System.out.println("ID is " + payload.getId());
           try {
+               System.out.println("SEND TO CLIENT TIRGGERED");
                client.sendToClient(payload);
           }
           catch (IOException e) {
@@ -97,4 +112,6 @@ public class ServerSecretary {
                }
           }
      }
+
+
 }
