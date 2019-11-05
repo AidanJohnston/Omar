@@ -18,9 +18,9 @@ public class Staff extends User {
      * @param password
      * @param Fname
      * @param LName
-     * @param brithday
+     * @param birthday
      * @param SIN
-     * @param adress
+     * @param address
      * @param ID
      * @param phoneNumber
      */
@@ -29,11 +29,11 @@ public class Staff extends User {
             String password,
             String Fname,
             String LName,
-            Date brithday,
+            Date birthday,
             int SIN,
-            String adress,
+            String address,
             int ID,
             int phoneNumber) {
-        super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
+        super(username, password, Fname, LName, birthday, SIN, address, ID, phoneNumber);
     }
 }
