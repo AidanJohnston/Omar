@@ -31,11 +31,7 @@ public class ServerSecretary {
 
      public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
 
-          //LOGIN
-
-          if (payload.getType() == RequestType.LOGIN) {
-               this.login(payload,client);
-          }
+          //LOGI
 
           if(payload.getType() == RequestType.LOGOUT) {
               this.logout(payload, client);
