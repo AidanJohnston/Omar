@@ -104,6 +104,12 @@ public class ClientSecretary {
         return (boolean) prepareTask(payload).getReturnValue();
     }
 
+    /**
+     * Returns a list of all doctors
+     * @param token
+     * @return List<Doctor>
+     * @throws IncorrectPayloadException
+     */
     public List<Doctor> getDoctorAll(Token token) throws IncorrectPayloadException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DOCTOR_GET_ALL, token);
