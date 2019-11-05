@@ -2,6 +2,7 @@ package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
+import Clinic.Core.Doctor;
 import Util.IncorrectPayloadException;
 import Clinic.Core.Payload;
 import Clinic.Core.Token;
@@ -96,11 +97,18 @@ public class ClientSecretary {
      * @return Boolean
      * @throws IncorrectPayloadException
      */
-    public boolean logout(String token) throws IncorrectPayloadException {
+    public boolean logout(Token token) throws IncorrectPayloadException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.LOGOUT, new User(token));
+        Payload payload = new Payload(avaiableID, RequestType.LOGOUT, token);
 
         return (boolean) prepareTask(payload).getReturnValue();
+    }
+
+    public List<Doctor> getDoctorAll(Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_GET_ALL, token);
+
+        return (List<Doctor>) prepareTask(payload).getReturnValue();
     }
 
 }
