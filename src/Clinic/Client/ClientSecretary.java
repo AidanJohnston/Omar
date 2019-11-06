@@ -100,6 +100,7 @@ public class ClientSecretary {
         return null;
     }
 
+    //TODO TAKEN FROM INTERNET - WILL DO MYSELF AT SOME POINT -AIDAN
     public static String md5(String salt, String password) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("MD5");
 
