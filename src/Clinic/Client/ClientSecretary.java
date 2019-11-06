@@ -9,6 +9,8 @@ import Clinic.Core.Token;
 import Clinic.Core.User;
 import Util.RequestType;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,9 +90,32 @@ public class ClientSecretary {
      */
     public Token login(String username, String password) throws IncorrectPayloadException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.LOGIN, new User(username, password));
+        try {
+            Payload payload = new Payload(avaiableID, RequestType.LOGIN, new User(username, this.md5(username, password)));
+            return (Token) prepareTask(payload).getReturnValue();
+        }
+        catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-        return (Token) prepareTask(payload).getReturnValue();
+    public static String md5(String salt, String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+
+        if (salt != null) {
+            md.update(salt.getBytes());
+        }
+        md.update(password.getBytes());
+
+        byte byteData[] = md.digest();
+
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16)
+                    .substring(1));
+        }
+        return sb.toString();
     }
 
     /**
