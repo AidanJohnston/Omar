@@ -82,17 +82,19 @@ public class ServerSecretary {
                this.login(payload, client);
           }
 
-          else if(findToken(payload.getToken())) {
 
-               if (payload.getType() == RequestType.LOGOUT) {
-                    this.logout(payload, client);
-               }
-
-               if (payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID) {
-                    this.getDoctorWithID(payload, client);
-               }
-
+          if (payload.getType() == RequestType.LOGOUT) {
+               this.logout(payload, client);
           }
+
+          if (payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID) {
+
+
+
+               this.getDoctorWithID(payload, client);
+          }
+
+
      }
 
      /**

@@ -12,7 +12,7 @@ public class Client {
     public static void main(String args[]) throws IncorrectPayloadException {
         ClientSecretary clientSecretary = new ClientSecretary();
 
-        MyClient myClient = new MyClient("192.168.1.21", 6969, clientSecretary);
+        MyClient myClient = new MyClient("localhost", 6969, clientSecretary);
         clientSecretary.setMyClient(myClient);
 
         Token a = clientSecretary.login("orange", "AIdan");
