@@ -59,6 +59,7 @@ public class ClientSecretary {
             e.printStackTrace();
         }
 
+        System.out.println(task.getPayload().getType());
         if(task.getPayload().getType() == RequestType.ERROR) {
             throw new IncorrectPayloadException((String)task.getPayload().getObject());
         }

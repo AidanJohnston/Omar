@@ -44,7 +44,6 @@ public class DoctorSearch extends JPanel
 		this.setLayout(new FlowLayout());
 		
 	}
-	
 	private ArrayList<Doctor> getDoctorResults(int id) {
 		try
 		{
