@@ -166,10 +166,16 @@ public class ServerSecretary {
           payload.setObject(doctorList);
           try {
                client.sendToClient(payload);
+               System.out.println("STUFF SENT");
           }
           catch (IOException e) {
+               System.out.println("STUFF DOESNT SEND");
                e.printStackTrace();
-
           }
+          catch (Exception e) {
+               System.out.println("STUFF DOESNT SEND");
+               e.printStackTrace();
+          }
+          System.out.println("I made it this far hehe");
      }
 }
