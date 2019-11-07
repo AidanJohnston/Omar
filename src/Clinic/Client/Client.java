@@ -1,12 +1,10 @@
 package Clinic.Client;
 
-import Clinic.Client.Connection.MyClient;
-import Clinic.Client.GUI.MyGUI;
+import Clinic.Client.Connection.*;
+import Clinic.Client.GUI.*;
 import Util.*;
 import Util.Exceptions.*;
-import Util.UserType;
-import Clinic.Core.Doctor;
-import Clinic.Core.Token;
+import Clinic.Core.*;
 
 public class Client {
 
