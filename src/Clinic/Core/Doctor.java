@@ -74,7 +74,7 @@ public class Doctor extends User implements Serializable{
      *
      * @return speciatly
      */
-    public String getSpeciatly() {
+    public String getSpecialty() {
         return specialty;
     }
 
