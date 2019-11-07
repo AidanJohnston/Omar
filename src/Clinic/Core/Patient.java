@@ -49,7 +49,7 @@ public class Patient extends User {
             int SIN,
             String adress,
             int ID,
-            float phoneNumber,
+            String phoneNumber,
             int healthCardNumber,
             Date healthCardExpiry,
             String province,

@@ -5,8 +5,10 @@ import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
 import Util.RequestType;
 import Util.UserType;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,7 +89,7 @@ public class ServerSecretary {
                }
 
                if (payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID) {
-                    //this.getDoctorWithID(payload, client);
+                    this.getDoctorWithID(payload, client);
                }
 
           }
@@ -141,5 +143,33 @@ public class ServerSecretary {
           }
      }
 
+     private void getDoctorWithID(Payload payload, ConnectionToClient client) {
 
+          System.out.println("Call doctor with id was called wow");
+
+          if(findToken(payload.getToken())) {
+               ArrayList<Doctor> doctorList = new ArrayList<>();
+
+               doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+               doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+               doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+               doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+               doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+               doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+               doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+               payload.setObject(doctorList);
+          }
+          else {
+               payload.setType(RequestType.ERROR);
+               payload.setObject("You are not logged in dumbass");
+          }
+
+          try {
+               client.sendToClient(payload);
+          }
+          catch (IOException e) {
+               e.printStackTrace();
+
+          }
+     }
 }

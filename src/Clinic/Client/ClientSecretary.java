@@ -152,10 +152,10 @@ public class ClientSecretary {
      * @return Doctor
      * @throws IncorrectPayloadException
      */
-    public Doctor getDoctorWithID(int id, Token token) throws IncorrectPayloadException {
+    public ArrayList<Doctor> getDoctorWithID(int id, Token token) throws IncorrectPayloadException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DOCTOR_GET_GIVEN_ID, id);
 
-        return (Doctor) prepareTask(payload).getReturnValue();
+        return (ArrayList<Doctor>) prepareTask(payload).getReturnValue();
     }
 }

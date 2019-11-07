@@ -21,7 +21,7 @@ public class User implements Serializable{
     private int SIN;
     private String adress;
     private int ID;
-    private float phoneNumber;
+    private String phoneNumber;
 
     private Token loginToken;
 
@@ -38,7 +38,7 @@ public class User implements Serializable{
      * @param ID
      * @param phoneNumber
      */
-    public User(String username, String password, String Fname, String LName, LocalDate brithday, int SIN, String adress, int ID, float phoneNumber) {
+    public User(String username, String password, String Fname, String LName, LocalDate brithday, int SIN, String adress, int ID, String phoneNumber) {
 
         this.username = username;
         this.password = password;
@@ -47,6 +47,16 @@ public class User implements Serializable{
         this.brithday = brithday;
         this.SIN = SIN;
         this.adress = adress;
+        this.ID = ID;
+        this.phoneNumber = phoneNumber;
+    }
+    public User(String username, String Fname, String Lname, LocalDate birthday, int SIN, String address, int ID, String phoneNumber) {
+        this.username = username;
+        this.Fname = Fname;
+        this.LName = Lname;
+        this.brithday = birthday;
+        this.SIN = SIN;
+        this.adress = address;
         this.ID = ID;
         this.phoneNumber = phoneNumber;
     }
@@ -221,7 +231,7 @@ public class User implements Serializable{
      *
      * @return phoneNumber
      */
-    public float getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -230,7 +240,7 @@ public class User implements Serializable{
      *
      * @param phoneNumber
      */
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
