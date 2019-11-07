@@ -34,7 +34,7 @@ public class Staff extends User {
             int SIN,
             String adress,
             int ID,
-            int phoneNumber) {
+            String phoneNumber) {
         super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
     }
 }

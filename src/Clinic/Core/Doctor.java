@@ -50,7 +50,7 @@ public class Doctor extends User implements Serializable{
             int SIN,
             String adress,
             int ID,
-            int phoneNumber,
+            String phoneNumber,
             String specialty,
             String rank,
             double startHour,
@@ -68,7 +68,10 @@ public class Doctor extends User implements Serializable{
     public Doctor(String Fname) {
         super(Fname);
     }
-
+    public Doctor(String username, String Fname, String Lname, LocalDate birthday, int SIN, String address, int ID, String phoneNumber, String specialty) {
+        super(username, Fname, Lname, birthday, SIN, address, ID, phoneNumber);
+        this.specialty = specialty;
+    }
     /**
      * Gets the doctors speciatly
      *
