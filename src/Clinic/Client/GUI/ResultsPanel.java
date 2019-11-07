@@ -23,7 +23,7 @@ public class ResultsPanel <T> extends JPanel
 		for(ResultsEntry e : entries){
 			add(e);
 		}
-	
+		revalidate();
 	}
 	
 }
