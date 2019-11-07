@@ -154,15 +154,8 @@ public class ServerSecretary {
 
           ArrayList<Doctor> doctorList = new ArrayList<>();
 
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 69, 420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999,  69,420), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-
+          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 12, 2), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 12, 2), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
           payload.setObject(doctorList);
           try {
                client.sendToClient(payload);
