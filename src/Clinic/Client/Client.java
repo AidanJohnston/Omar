@@ -2,7 +2,8 @@ package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
-import Util.IncorrectPayloadException;
+import Util.*;
+import Util.Exceptions.*;
 import Util.UserType;
 import Clinic.Core.Doctor;
 import Clinic.Core.Token;
