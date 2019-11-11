@@ -70,6 +70,7 @@ public class ClientSecretary {
     public void handleMessageFromServer(Object payloadFromServer) {
         Payload payload = (Payload) payloadFromServer;
         Boolean flag = false;
+        payload.setEndTime();
         int i = 0;
         for(i = 0; i < tasklist.size(); i++) {
             if(tasklist.get(i).getPayload().getId() == payload.getId()) {
