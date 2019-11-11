@@ -1,0 +1,188 @@
+@startuml
+
+title __CONNECTION's Class Diagram__\n
+
+  namespace Clinic.Server {
+    namespace Connection {
+      abstract class Clinic.Server.Connection.AbstractConnectionFactory {
+          {abstract} # createConnection()
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
+    namespace Connection {
+      abstract class Clinic.Server.Connection.AbstractServer {
+          - backlog : int
+          - clientThreadGroup : ThreadGroup
+          - connectionListener : Thread
+          - port : int
+          - readyToStop : boolean
+          - serverSocket : ServerSocket
+          - timeout : int
+          + AbstractServer()
+          + close()
+          + getClientConnections()
+          + getNumberOfClients()
+          + getPort()
+          + isClosed()
+          + isListening()
+          + listen()
+          + run()
+          + sendToAllClients()
+          + setBacklog()
+          + setConnectionFactory()
+          + setPort()
+          + setTimeout()
+          + stopListening()
+          # clientConnected()
+          # clientDisconnected()
+          # clientException()
+          {abstract} # handleMessageFromClient()
+          # listeningException()
+          # serverClosed()
+          # serverStarted()
+          # serverStopped()
+          ~ receiveMessageFromClient()
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
+    namespace Connection {
+      class Clinic.Server.Connection.AdaptableServer {
+          + AdaptableServer()
+          # clientConnected()
+          # clientDisconnected()
+          # clientException()
+          # handleMessageFromClient()
+          # listeningException()
+          # serverClosed()
+          # serverStarted()
+          # serverStopped()
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
+    namespace Connection {
+      class Clinic.Server.Connection.ConnectionToClient {
+          - clientSocket : Socket
+          - input : ObjectInputStream
+          - output : ObjectOutputStream
+          - readyToStop : boolean
+          - savedInfo : HashMap
+          + close()
+          + getInetAddress()
+          + getInfo()
+          + run()
+          + sendToClient()
+          + setInfo()
+          + toString()
+          # ConnectionToClient()
+          # finalize()
+          # handleMessageFromClient()
+          - closeAll()
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
+    namespace Connection {
+      class Clinic.Server.Connection.MyServer {
+          + MyServer()
+          # handleMessageFromClient()
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
+    namespace Connection {
+      class Clinic.Server.Connection.ObservableOriginatorServer {
+          + ObservableOriginatorServer()
+          # clientConnected()
+          # clientDisconnected()
+          # clientException()
+          # handleMessageFromClient()
+          # listeningException()
+          # serverClosed()
+          # serverStarted()
+          # serverStopped()
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
+    namespace Connection {
+      class Clinic.Server.Connection.ObservableServer {
+          {static} + CLIENT_CONNECTED : String
+          {static} + CLIENT_DISCONNECTED : String
+          {static} + CLIENT_EXCEPTION : String
+          {static} + LISTENING_EXCEPTION : String
+          {static} + SERVER_CLOSED : String
+          {static} + SERVER_STARTED : String
+          {static} + SERVER_STOPPED : String
+          + ObservableServer()
+          + close()
+          + getClientConnections()
+          + getNumberOfClients()
+          + getPort()
+          + isListening()
+          + listen()
+          + sendToAllClients()
+          + setBacklog()
+          + setPort()
+          + setTimeout()
+          + stopListening()
+          # clientConnected()
+          # clientDisconnected()
+          # clientException()
+          # handleMessageFromClient()
+          # listeningException()
+          # serverClosed()
+          # serverStarted()
+          # serverStopped()
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
+    namespace Connection {
+      class Clinic.Server.Connection.OriginatorMessage {
+          - message : Object
+          + OriginatorMessage()
+          + getMessage()
+          + getOriginator()
+      }
+    }
+  }
+  
+
+  Clinic.Server.Connection.AbstractServer .up.|> java.lang.Runnable
+  Clinic.Server.Connection.AbstractServer o-- Clinic.Server.Connection.AbstractConnectionFactory : connectionFactory
+  Clinic.Server.Connection.AdaptableServer -up-|> Clinic.Server.Connection.AbstractServer
+  Clinic.Server.Connection.AdaptableServer o-- Clinic.Server.Connection.ObservableServer : server
+  Clinic.Server.Connection.ConnectionToClient o-- Clinic.Server.Connection.AbstractServer : server
+  Clinic.Server.Connection.MyServer -up-|> Clinic.Server.Connection.AbstractServer
+  Clinic.Server.Connection.MyServer o-- Clinic.Server.ServerSecretary : serverSecretary
+  Clinic.Server.Connection.ObservableOriginatorServer -up-|> Clinic.Server.Connection.ObservableServer
+  Clinic.Server.Connection.ObservableServer -up-|> java.util.Observable
+  Clinic.Server.Connection.ObservableServer o-- Clinic.Server.Connection.AdaptableServer : service
+  Clinic.Server.Connection.OriginatorMessage o-- Clinic.Server.Connection.ConnectionToClient : originator
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

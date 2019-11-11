@@ -1,0 +1,230 @@
+@startuml
+
+title __CORE's Class Diagram__\n
+
+  namespace Clinic.Core {
+    class Clinic.Core.Appointment {
+        - ID : int
+        + Appointment()
+        + getDiagnosis()
+        + getDoctor()
+        + getID()
+        + getPatient()
+        + getPrescription()
+        + setDiagnosis()
+        + setDoctor()
+        + setID()
+        + setPatient()
+        + setPrescription()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Diagnosis {
+        - date : Date
+        - name : String
+        - notes : String
+        + Diagnosis()
+        + getDate()
+        + getDoctor()
+        + getName()
+        + getNotes()
+        + setDate()
+        + setDoctor()
+        + setName()
+        + setNotes()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Doctor {
+        - endHour : double
+        - patients : List<Patient>
+        - rank : String
+        - specialty : String
+        - startHour : double
+        + Doctor()
+        + Doctor()
+        + Doctor()
+        + addCurrentPatient()
+        + getEndHour()
+        + getPatients()
+        + getRank()
+        + getSchedule()
+        + getSpecialty()
+        + getStartHour()
+        + setEndHour()
+        + setRank()
+        + setSchedule()
+        + setSpecialty()
+        + setStartHour()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Patient {
+        - diagnoses : List<Diagnosis>
+        - doctors : List<Doctor>
+        - healthCardExpiry : Date
+        - healthCardNumber : int
+        - prescriptions : List<Prescription>
+        - province : String
+        + Patient()
+        + addDiagnose()
+        + addDoctor()
+        + addPrescription()
+        + getDiagnoses()
+        + getDoctors()
+        + getHealthCardExpiry()
+        + getHealthCardNumber()
+        + getPrescriptions()
+        + getProvince()
+        + getSchedule()
+        + setDiagnoses()
+        + setDoctors()
+        + setHealthCardExpiry()
+        + setHealthCardNumber()
+        + setPrescriptions()
+        + setProvince()
+        + setSchedule()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Payload {
+        ~ object : Object
+        - id : int
+        + Payload()
+        + Payload()
+        + Payload()
+        + getId()
+        + getObject()
+        + getToken()
+        + getType()
+        + setId()
+        + setObject()
+        + setToken()
+        + setType()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Prescription {
+        - date : Date
+        - instructions : String
+        - name : String
+        - note : String
+        + Prescription()
+        + getDate()
+        + getInstructions()
+        + getName()
+        + getNote()
+        + setDate()
+        + setInstructions()
+        + setName()
+        + setNote()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Schedule {
+        - appointmentList : List<Appointment>
+        + Schedule()
+        + addAppointment()
+        + getAppointmentList()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Staff {
+        + Staff()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.Token {
+        - userID : int
+        + Token()
+        + getUserID()
+        + setUserID()
+    }
+  }
+  
+
+  namespace Clinic.Core {
+    class Clinic.Core.User {
+        - Fname : String
+        - ID : int
+        - LName : String
+        - SIN : int
+        - adress : String
+        - brithday : LocalDate
+        - password : String
+        - phoneNumber : String
+        - username : String
+        + User()
+        + User()
+        + User()
+        + User()
+        + User()
+        + comparePassword()
+        + getAddress()
+        + getBrithday()
+        + getFname()
+        + getID()
+        + getLName()
+        + getLoginToken()
+        + getPassword()
+        + getPhoneNumber()
+        + getSIN()
+        + getUsername()
+        + setAdress()
+        + setBrithday()
+        + setFname()
+        + setID()
+        + setLName()
+        + setLoginToken()
+        + setPassword()
+        + setPhoneNumber()
+        + setSIN()
+        + setUsername()
+    }
+  }
+  
+
+  Clinic.Core.Appointment o-- Clinic.Core.Diagnosis : diagnosis
+  Clinic.Core.Appointment o-- Clinic.Core.Doctor : doctor
+  Clinic.Core.Appointment o-- Clinic.Core.Patient : patient
+  Clinic.Core.Appointment o-- Clinic.Core.Prescription : prescription
+  Clinic.Core.Diagnosis o-- Clinic.Core.Doctor : doctor
+  Clinic.Core.Doctor .up.|> java.io.Serializable
+  Clinic.Core.Doctor -up-|> Clinic.Core.User
+  Clinic.Core.Doctor o-- Clinic.Core.Schedule : schedule
+  Clinic.Core.Patient -up-|> Clinic.Core.User
+  Clinic.Core.Patient o-- Clinic.Core.Schedule : schedule
+  Clinic.Core.Payload .up.|> java.io.Serializable
+  Clinic.Core.Payload o-- Clinic.Core.Token : token
+  Clinic.Core.Payload o-- Util.RequestType : type
+  Clinic.Core.Staff -up-|> Clinic.Core.User
+  Clinic.Core.Token .up.|> java.io.Serializable
+  Clinic.Core.Token o-- Util.UserType : type
+  Clinic.Core.User .up.|> java.io.Serializable
+  Clinic.Core.User o-- Clinic.Core.Token : loginToken
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
