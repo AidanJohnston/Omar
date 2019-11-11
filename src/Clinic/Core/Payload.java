@@ -77,7 +77,6 @@ public class Payload implements Serializable {
     private Token token;
     Object object;
     private long startTime;
-    private long endTime;
     /**
      * Constructor used for login
      * @param id
@@ -120,12 +119,9 @@ public class Payload implements Serializable {
         this.startTime = System.currentTimeMillis();
     }
 
-    public void setEndTime() {
-        this.endTime = System.currentTimeMillis();
-    }
 
     public long getPing() {
-        return this.endTime - this.startTime;
+        return System.currentTimeMillis() - this.startTime;
     }
 
     public int getId() {

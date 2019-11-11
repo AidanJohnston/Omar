@@ -64,7 +64,6 @@ public class ServerSecretary {
                if(var.getUserID() == token.getUserID())
                     flag = true;
           }
-          System.out.println("DONE");
           return flag;
      }
 
@@ -81,7 +80,6 @@ public class ServerSecretary {
 
 
           if(payload.getType() == RequestType.LOGIN) {
-               System.out.println("LOGIN TRIGGERED");
                this.login(payload, client);
           }
 
@@ -119,9 +117,7 @@ public class ServerSecretary {
 
           payload.setObject(token);
 
-          System.out.println("ID is " + payload.getId());
           try {
-               System.out.println("SEND TO CLIENT TIRGGERED");
                client.sendToClient(payload);
           }
           catch (IOException e) {
@@ -150,7 +146,6 @@ public class ServerSecretary {
 
      private void getDoctorWithID(Payload payload, ConnectionToClient client) {
 
-          System.out.println("Call doctor with id was called wow");
 
           ArrayList<Doctor> doctorList = new ArrayList<>();
 
@@ -159,16 +154,12 @@ public class ServerSecretary {
           payload.setObject(doctorList);
           try {
                client.sendToClient(payload);
-               System.out.println("STUFF SENT");
           }
           catch (IOException e) {
-               System.out.println("STUFF DOESNT SEND");
                e.printStackTrace();
           }
           catch (Exception e) {
-               System.out.println("STUFF DOESNT SEND");
                e.printStackTrace();
           }
-          System.out.println("I made it this far hehe");
      }
 }

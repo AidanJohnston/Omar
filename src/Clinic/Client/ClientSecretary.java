@@ -60,7 +60,9 @@ public class ClientSecretary {
             e.printStackTrace();
         }
 
-        System.out.println(task.getPayload().getType());
+        System.out.println("Client: received response from server: ");
+        System.out.println("Type: " + task.getPayload().getType());
+        System.out.println("Ping: " +  task.getPayload().getPing() + "ms");
         if(task.getPayload().getType() == RequestType.ERROR) {
             throw new IncorrectPayloadException((String)task.getPayload().getObject());
         }
@@ -70,7 +72,6 @@ public class ClientSecretary {
     public void handleMessageFromServer(Object payloadFromServer) {
         Payload payload = (Payload) payloadFromServer;
         Boolean flag = false;
-        payload.setEndTime();
         int i = 0;
         for(i = 0; i < tasklist.size(); i++) {
             if(tasklist.get(i).getPayload().getId() == payload.getId()) {

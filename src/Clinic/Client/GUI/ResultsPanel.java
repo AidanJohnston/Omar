@@ -35,8 +35,7 @@ class ResultsEntry extends JPanel
 	private JButton button;
 	
 	public ResultsEntry(String _text) {
-		
-		System.out.println(_text + "was recieved");
+
 		text = _text;
 		label = new JLabel(text);
 		button = new JButton("Go");
