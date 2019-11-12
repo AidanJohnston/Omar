@@ -76,6 +76,7 @@ public class ServerSecretary {
       */
      public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
           System.out.println("Handling Request from: " + client.getName());
+          System.out.println("Type: " + payload.getType());
           System.out.println("Ping: " + payload.getPing() + "ms");
 
           //*/

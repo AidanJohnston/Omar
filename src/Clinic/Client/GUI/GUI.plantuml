@@ -3,7 +3,7 @@
 title __GUI's Class Diagram__\n
 
   namespace Clinic.Client {
-    namespace GUI {
+        namespace GUI {
       class Clinic.Client.GUI.DoctorSearch {
           - enter : JButton
           - input : JTextField

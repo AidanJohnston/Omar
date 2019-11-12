@@ -15,7 +15,7 @@ public class ServerDirector {
         System.out.println("Login Params: " + params.toString());
         Token token = new Token(type, userID);
 
-        Payload payload = new Payload(1, "login", token);
+        Payload payload = new Payload(1, RequestType.LOGIN, token);
         
         return payload;
     }

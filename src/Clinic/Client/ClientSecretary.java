@@ -10,6 +10,7 @@ import Clinic.Core.Token;
 import Clinic.Core.User;
 import Util.RequestType;
 
+import javax.print.Doc;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -107,7 +108,7 @@ public class ClientSecretary {
     }
 
     //TODO TAKEN FROM INTERNET - WILL DO MYSELF AT SOME POINT -AIDAN
-    public static String md5(String salt, String password) throws NoSuchAlgorithmException {
+    private static String md5(String salt, String password) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("MD5");
 
         if (salt != null) {
@@ -158,10 +159,20 @@ public class ClientSecretary {
      * @return Doctor
      * @throws IncorrectPayloadException
      */
-    public ArrayList<Doctor> getDoctorWithID(int id, Token token) throws IncorrectPayloadException {
+    public Doctor getDoctorWithID(int id, Token token) throws IncorrectPayloadException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_GET_GIVEN_ID, id);
+        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_GET_GIVEN_ID, token, id);
 
-        return (ArrayList<Doctor>) prepareTask(payload).getReturnValue();
+        return (Doctor) prepareTask(payload).getReturnValue();
+    }
+
+    public void setDoctor(Doctor doctor, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_UPDATE_GIVEN_DOCTOR, token, doctor);
+        prepareTask(payload);
+    }
+
+    public void addDoctor() {
+
     }
 }
