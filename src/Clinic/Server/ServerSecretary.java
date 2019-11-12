@@ -77,7 +77,7 @@ public class ServerSecretary {
 
 
           System.out.println("Handling Request from: " + client.getName());
-
+          System.out.println("Ping: " + payload.getPing() + "ms");
 
           if(payload.getType() == RequestType.LOGIN) {
                this.login(payload, client);
@@ -123,6 +123,7 @@ public class ServerSecretary {
           catch (IOException e) {
                e.printStackTrace();
           }
+
      }
 
      /**

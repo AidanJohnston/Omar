@@ -16,10 +16,6 @@ public class Client {
 
         Token a = clientSecretary.login("orange", "AIdan");
         
-        System.out.println(a.getUserID());
-        
-        System.out.println(a);
-        
         MyGUI gui = new MyGUI(clientSecretary, a);
     }
 }
