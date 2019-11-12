@@ -28,6 +28,14 @@ public class LoginPanel extends JPanel {
         token = _token;
         client = _client;
 
+        title = new JLabel();
+        userLabel = new JLabel();
+        passLabel = new JLabel();
+
+        userField = new JTextField();
+        passField = new JTextField();
+
+
         title.setText("Clinic Login");
         userLabel.setText("Username");
         passLabel.setText("Password");
