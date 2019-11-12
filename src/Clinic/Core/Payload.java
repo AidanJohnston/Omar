@@ -105,6 +105,13 @@ public class Payload implements Serializable {
         this.startTime = System.currentTimeMillis();
     }
 
+    public Payload(int id, String type, Object object, long startTime) {
+        this.id = id;
+        this.type = type;
+        this.object = object;
+        this.startTime = startTime;
+    }
+
 
     /**
      * Constructor used for requested data when no parameters are needed, or the server is responding with error/update confirmation
@@ -133,6 +140,14 @@ public class Payload implements Serializable {
 
     public int getId() {
         return id;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 
     public String getType() {
