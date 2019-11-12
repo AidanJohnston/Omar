@@ -119,6 +119,13 @@ public class Payload implements Serializable {
         this.startTime = System.currentTimeMillis();
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setObject(Object object) {
+        this.object = object;
+    }
 
     public long getPing() {
         return System.currentTimeMillis() - this.startTime;
