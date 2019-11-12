@@ -17,6 +17,7 @@ public class MyGUI {
 		
 		
 		frame.getContentPane().add(BorderLayout.NORTH, new DoctorSearch(_client, _token));
+		frame.getContentPane().add(BorderLayout.SOUTH, new LoginPanel(_client, _token));
 		frame.setVisible(true);
 		
 		
