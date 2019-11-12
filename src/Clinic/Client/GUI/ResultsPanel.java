@@ -16,10 +16,11 @@ public class ResultsPanel <T> extends JPanel
 		
 		entries = new ArrayList<ResultsEntry>();
 		for (T item : items) {
-			entries.add(new ResultsEntry(item));
+			entries.add(new ResultsEntry((T)item));
 		}
 		
-		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		this.add(new JLabel("Results:"));
 		for(ResultsEntry e : entries){
 			add(e);
 		}
@@ -36,7 +37,7 @@ class ResultsEntry extends JPanel
 	
 	public ResultsEntry(String _text) {
 		
-		System.out.println(_text + "was recieved");
+		System.out.println(_text + "was received");
 		text = _text;
 		label = new JLabel(text);
 		button = new JButton("Go");
@@ -49,7 +50,7 @@ class ResultsEntry extends JPanel
 	public ResultsEntry(Object o) 
 	{
 		this(o.toString());
-		
+		System.out.print("Oops you used the object constructor");
 	}
 	
 	public ResultsEntry(Doctor d) {

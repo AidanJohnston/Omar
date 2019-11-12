@@ -19,7 +19,7 @@ public class DoctorSearch extends JPanel
 	private JButton enter;
 	private JLabel label;
 	private ClientSecretary client;
-	
+	private ResultsPanel<Doctor> results;
 	public DoctorSearch(ClientSecretary _client, Token _token) 
 	{
 		client = _client;
@@ -27,20 +27,24 @@ public class DoctorSearch extends JPanel
 		input = new JTextField(25);
 		enter = new JButton("Enter");
 		label = new JLabel("Enter Doctor ID");
-		
+		results = new ResultsPanel<Doctor>(new ArrayList<Doctor>());
+
 		enter.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0)
 			{
-				add(new ResultsPanel<Doctor>(getDoctorResults(Integer.parseInt(input.getText()))));
+				remove(results);
+				results = new ResultsPanel<Doctor>(getDoctorResults(Integer.parseInt(input.getText())));
+				add(results);
+				revalidate();
 			}
 		});
 		
 		add(label);
 		add(input);
 		add(enter);
-		
+		add(results);
 		this.setLayout(new FlowLayout());
 		
 	}
