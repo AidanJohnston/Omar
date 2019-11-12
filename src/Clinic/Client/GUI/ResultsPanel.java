@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import Clinic.Core.*;
 
-import java.awt.*;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 
@@ -16,7 +16,16 @@ public class ResultsPanel <T> extends JPanel
 		
 		entries = new ArrayList<ResultsEntry>();
 		for (T item : items) {
-			entries.add(new ResultsEntry(item));
+
+			try {
+				entries.add(ResultsEntry.class.getConstructor(item.getClass()).newInstance(item));
+			} catch (InstantiationException | IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -46,23 +55,22 @@ class ResultsEntry extends JPanel
 		add(button);
 		
 	}
-	
-	public ResultsEntry(Object o) 
+
+	public ResultsEntry(Object o)
 	{
 		this(o.toString());
 		System.out.print("Oops you used the object constructor");
 	}
-	
+
 	public ResultsEntry(Doctor d) {
-		
+
 		this(String.format("%s %s : %s", d.getFname(), d.getLName(), d.getSpecialty()));
-		
+
 	}
-	
+
 	public ResultsEntry(Patient p) {
-		
+
 		this(String.format("%s %s", p.getFname(), p.getLName()));
-		
+
 	}
-	
 }

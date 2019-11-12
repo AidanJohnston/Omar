@@ -35,7 +35,7 @@ public class DoctorSearch extends JPanel
 			public void actionPerformed(ActionEvent arg0)
 			{
 				remove(results);
-				results = new ResultsPanel<Doctor>(getDoctorResults(Integer.parseInt(input.getText())));
+				results = new ResultsPanel<Doctor>(getAllDoctors());
 				add(results);
 				revalidate();
 			}
@@ -48,13 +48,22 @@ public class DoctorSearch extends JPanel
 		this.setLayout(new FlowLayout());
 		
 	}
-	private ArrayList<Doctor> getDoctorResults(int id) {
+	private ArrayList<Doctor> getAllDoctors() {
+		try {
+			return client.getDoctorAll(token);
+		} catch (IncorrectPayloadException e) {
+			System.out.println("Payload failed");
+			return new ArrayList<Doctor>();
+		}
+	}
+
+	private Doctor getDoctorResults(int id) {
 		try
 		{
 		return client.getDoctorWithID(id, token);
 		} catch (IncorrectPayloadException e)
 		{
-			return new ArrayList<Doctor>();
+			return null;
 		}
 	}
 }

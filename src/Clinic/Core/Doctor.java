@@ -72,6 +72,9 @@ public class Doctor extends User implements Serializable{
         super(username, Fname, Lname, birthday, SIN, address, ID, phoneNumber);
         this.specialty = specialty;
     }
+
+
+
     /**
      * Gets the doctors speciatly
      *
