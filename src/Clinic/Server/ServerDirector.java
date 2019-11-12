@@ -1,6 +1,9 @@
 package Clinic.Server;
 
+import Clinic.Core.*;
 import Clinic.Server.Connection.MyServer;
+import Util.*;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,7 +13,14 @@ public class ServerDirector {
         return null;
     }
     public Object login(Object params){
-        return null;
+        UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
+        int userID = 1;
+        System.out.println("Login Params: " + params.toString());
+        Token token = new Token(type, userID);
+
+        Payload payload = new Payload(1, "login", token);
+        
+        return payload;
     }
     public Object logout(Object params){
         return null;
