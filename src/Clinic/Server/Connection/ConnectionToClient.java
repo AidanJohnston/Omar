@@ -20,10 +20,10 @@ import java.util.*;
 * this framework, and several hook methods are also available<p>
 *
 * The modifications made to this class in version 2.2 are:
-* <ul>
-* <li> A new hook method called <code>handleMessageFromClient()</code>
-* has been added. It allows to handle messages inside the client
-* thread when possible.
+ * * <ul>
+ * * <li> A new hook method called <code>handleMessageFromClient()</code>
+ * * has been added. It allows to handle messages inside the client
+ * * thread when possible.
 * <li> Constructor is now protected.
 * <li> Method <code>sendToClient()</code> is not
 * declared final anymore. This allows user of the

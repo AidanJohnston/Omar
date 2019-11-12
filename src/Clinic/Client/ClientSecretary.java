@@ -49,6 +49,8 @@ public class ClientSecretary {
     }
 
     private ClientTask prepareTask(Payload payload) throws IncorrectPayloadException {
+
+        System.out.println("Sending request to server.");
         ClientTask task = new ClientTask(payload);
         tasklist.add(task);
         task.start();
