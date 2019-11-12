@@ -23,6 +23,7 @@ import java.util.List;
  * specific functions and perform predetermined actions.
  *
  *
+ *
  * @author Aidan Johnsotn
  * @version 1.0
  */
@@ -70,6 +71,7 @@ public class ClientSecretary {
     }
 
     public void handleMessageFromServer(Object payloadFromServer) {
+        System.out.println("Received a Payload");
         Payload payload = (Payload) payloadFromServer;
         Boolean flag = false;
         int i = 0;
