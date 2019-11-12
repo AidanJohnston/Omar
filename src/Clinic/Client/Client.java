@@ -11,11 +11,11 @@ public class Client {
     public static void main(String args[]) throws IncorrectPayloadException {
         ClientSecretary clientSecretary = new ClientSecretary();
 
-        MyClient myClient = new MyClient("localhost", 42069, clientSecretary);
+        MyClient myClient = new MyClient("192.168.1.21", 42069, clientSecretary);
         clientSecretary.setMyClient(myClient);
 
         Token a = clientSecretary.login("orange", "AIdan");
-
+        
         MyGUI gui = new MyGUI(clientSecretary, a);
     }
 }
