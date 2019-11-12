@@ -46,7 +46,7 @@ class ResultsEntry extends JPanel
 	
 	public ResultsEntry(String _text) {
 		
-		System.out.println(_text + "was received");
+		System.out.println(_text + " was received");
 		text = _text;
 		label = new JLabel(text);
 		button = new JButton("Go");
