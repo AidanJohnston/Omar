@@ -4,14 +4,11 @@ import Clinic.Core.*;
 import Clinic.Server.Connection.MyServer;
 import Util.*;
 
-
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ServerDirector {
-    public Object update(Object params){
-        return null;
-    }
     public Object login(Object params){
         UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
         int userID = 1;
@@ -23,9 +20,6 @@ public class ServerDirector {
         return payload;
     }
     public Object logout(Object params){
-        return null;
-    }
-    public Object error(Object params){
         return null;
     }
     public Object diagnosisGetAllPatient(Object params){
@@ -47,7 +41,11 @@ public class ServerDirector {
         return null;
     }
     public Object doctorGetAll(Object params){
-        return null;
+        ArrayList<Doctor> doctorList = new ArrayList<>();
+
+        doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 12, 2), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+        doctorList.add(new Doctor("aidanJohnston[", "Dawson", "Gilmore", LocalDate.of(2000, 3, 26), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
+        return new Payload(1, RequestType.SUCCESS, doctorList);
     }
     public Object doctorGetGivenId(Object params){
         return null;

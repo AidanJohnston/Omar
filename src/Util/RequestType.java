@@ -1,12 +1,15 @@
 package Util;
 
+import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
 public final class RequestType //Yo we're using this one its like 10000000 times better
 {
-    public static final String  UPDATE,
+    public static final String  SUCCESS,
                                 LOGIN,
                                 LOGOUT,
                                 ERROR,
@@ -27,10 +30,12 @@ public final class RequestType //Yo we're using this one its like 10000000 times
                                 PATIENT_GET_ALL;
     // etc.
 
+    public ArrayList<Method> methods = new ArrayList<>();
+
 public static final Collection<String> ALL_PATHS;
     static {
         ALL_PATHS = Collections.unmodifiableCollection(Arrays.asList(
-            UPDATE = "update",
+            SUCCESS = "update",
             LOGIN = "login",
             LOGOUT = "logout",
             ERROR = "error",

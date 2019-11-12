@@ -90,7 +90,13 @@ public class ServerSecretary {
                );
           }
           catch (Exception e) {
-               e.printStackTrace();
+               payload.setType(RequestType.ERROR);
+               payload.setObject(e);
+               try {
+                    client.sendToClient(payload);
+               } catch (IOException e1) {
+                    e1.printStackTrace();
+               }
           }
           /*/
           if(payload.getType() == RequestType.LOGIN) {
@@ -109,34 +115,6 @@ public class ServerSecretary {
                this.getDoctorWithID(payload, client);
           }
           //*/
-     }
-
-     /**
-      * Adds the user to the list of logged in users.  If it can not find the user sends an error to the client.
-      * @param payload
-      * @param client
-      */
-     private void login(Payload payload, ConnectionToClient client) {
-          //TODO - CONNECT TO DATABASE AND CONFIRM LOGIN
-          //TODO - GET TYPE OF USER
-
-
-          //THIS IS WRONG, USING AS PLACE HOLDER, ASSUMING LOGIN WAS SUCCESSFUL
-          UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
-          int userID = 1;
-
-          Token token = new Token(type, userID);
-          clientTokens.add(token);
-
-          payload.setObject(token);
-
-          try {
-               client.sendToClient(payload);
-          }
-          catch (IOException e) {
-               e.printStackTrace();
-          }
-
      }
 
      /**
