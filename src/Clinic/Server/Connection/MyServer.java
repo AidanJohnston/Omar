@@ -24,6 +24,7 @@ public class MyServer extends AbstractServer  {
 	
 	@Override
 	protected void handleMessageFromClient(Object payload, ConnectionToClient client) {
+		System.out.println("CLIENT SENT ME SOMETHING");
 		serverSecretary.handleMessageFromClient((Payload) payload, client);
 	}
 }

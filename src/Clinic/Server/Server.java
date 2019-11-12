@@ -11,6 +11,6 @@ public class Server {
     public static void main(String args[]) {
         ServerSecretary serverSecretary = new ServerSecretary();
         System.out.println("Starting server...");
-        MyServer myServer = new MyServer(42069, serverSecretary);
+        MyServer myServer = new MyServer(6969, serverSecretary);
     }
 }
