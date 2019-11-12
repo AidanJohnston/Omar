@@ -29,8 +29,6 @@ public final class RequestType //Yo we're using this one its like 10000000 times
                                 PATIENT_GET_ALL;
     // etc.
 
-    public ArrayList<Method> methods = new ArrayList<>();
-
 public static final Collection<String> ALL_PATHS;
     static {
         ALL_PATHS = Collections.unmodifiableCollection(Arrays.asList(
