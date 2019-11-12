@@ -15,9 +15,7 @@ public class ServerDirector {
         System.out.println("Login Params: " + params.toString());
         Token token = new Token(type, userID);
 
-        Payload payload = new Payload(1, RequestType.LOGIN, token);
-        
-        return payload;
+        return token;
     }
     public Object logout(Object params){
         return null;
@@ -45,7 +43,7 @@ public class ServerDirector {
 
         doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 12, 2), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
         doctorList.add(new Doctor("aidanJohnston[", "Dawson", "Gilmore", LocalDate.of(2000, 3, 26), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-        return new Payload(1, RequestType.SUCCESS, doctorList);
+        return doctorList;
     }
     public Object doctorGetGivenId(Object params){
         return null;
