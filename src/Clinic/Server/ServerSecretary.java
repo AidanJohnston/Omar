@@ -83,20 +83,10 @@ public class ServerSecretary {
           try {
                client.sendToClient(
                     new Payload(
-                         payload.getId(), 
-                         RequestType.SUCCESS, 
-                         director
-                              .getClass()
-                              .getMethod(
-                                        payload.getType(), 
-                                        Object.class
-                                   )
-                              .invoke(
-                                        director, 
-                                        payload.getObject()
-                                   )
-                    )
-               );
+                            payload.getId(),
+                            RequestType.SUCCESS,
+                            director.getClass().getMethod(payload.getType(), Object.class).invoke(director, payload.getObject()),
+                            payload.getStartTime()));
           }
           catch (Exception e) {
                try {
