@@ -73,7 +73,7 @@ import Util.RequestType;
 public class Payload implements Serializable {
 
     private int id;
-    private RequestType type;
+    private String type;
     private Token token;
     Object object;
     /**
@@ -82,7 +82,7 @@ public class Payload implements Serializable {
      * @param type
      * @param object
      */
-    public Payload(int id, RequestType type, Object object) {
+    public Payload(int id, String type, Object object) {
         this.id = id;
         this.type = type;
         this.object = object;
@@ -95,7 +95,7 @@ public class Payload implements Serializable {
      * @param token
      * @param object
      */
-    public Payload(int id, RequestType type, Token token, Object object) {
+    public Payload(int id, String type, Token token, Object object) {
         this.id = id;
         this.type = type;
         this.token = token;
@@ -109,7 +109,7 @@ public class Payload implements Serializable {
      * @param type
      * @param token
      */
-    public Payload(int id, RequestType type, Token token) {
+    public Payload(int id, String type, Token token) {
         this.id = id;
         this.type = type;
         this.token = token;
@@ -123,11 +123,11 @@ public class Payload implements Serializable {
         this.id = id;
     }
 
-    public RequestType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(RequestType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
