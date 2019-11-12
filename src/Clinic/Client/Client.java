@@ -1,26 +1,21 @@
 package Clinic.Client;
 
-import Clinic.Client.Connection.MyClient;
-import Clinic.Client.GUI.MyGUI;
-import Util.IncorrectPayloadException;
-import Util.UserType;
-import Clinic.Core.Doctor;
-import Clinic.Core.Token;
+import Clinic.Client.Connection.*;
+import Clinic.Client.GUI.*;
+import Util.*;
+import Util.Exceptions.*;
+import Clinic.Core.*;
 
 public class Client {
 
     public static void main(String args[]) throws IncorrectPayloadException {
         ClientSecretary clientSecretary = new ClientSecretary();
 
-        MyClient myClient = new MyClient("172.17.10.92", 42069, clientSecretary);
+        MyClient myClient = new MyClient("localhost", 42069, clientSecretary);
         clientSecretary.setMyClient(myClient);
 
         Token a = clientSecretary.login("orange", "AIdan");
-        
-        System.out.println(a.getUserID());
-        
-        System.out.println(a);
-        
+
         MyGUI gui = new MyGUI(clientSecretary, a);
     }
 }

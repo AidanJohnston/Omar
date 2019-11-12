@@ -12,15 +12,18 @@ public class ClientTask extends Thread {
     public ClientTask(Payload payload) {
         this.payload = payload;
         this.flag = false;
-        this.count = 10;
+        this.count = 1000;
     }
 
     @Override
     public void run() {
-        while(!this.flag && !(count < 0)) {
+        while(!(count < 0)) {
             count--;
             try {
-                this.sleep(1000);
+                if(this.flag) {
+                    break;
+                }
+                this.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

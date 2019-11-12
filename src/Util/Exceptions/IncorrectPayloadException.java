@@ -1,4 +1,6 @@
-package Util;
+package Util.Exceptions;
+
+
 
 public class IncorrectPayloadException extends Exception {
     public IncorrectPayloadException(String s) {

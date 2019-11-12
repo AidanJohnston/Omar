@@ -3,9 +3,9 @@ package Clinic.Client.GUI;
 import javax.swing.*;
 
 import Clinic.Client.ClientSecretary;
-import Clinic.Core.Doctor;
-import Clinic.Core.Token;
-import Util.IncorrectPayloadException;
+import Clinic.Core.*;
+import Util.*;
+import Util.Exceptions.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

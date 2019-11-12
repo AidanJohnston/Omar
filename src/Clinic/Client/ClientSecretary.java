@@ -3,7 +3,8 @@ package Clinic.Client;
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
 import Clinic.Core.Doctor;
-import Util.IncorrectPayloadException;
+import Util.*;
+import Util.Exceptions.*;
 import Clinic.Core.Payload;
 import Clinic.Core.Token;
 import Clinic.Core.User;
@@ -60,7 +61,9 @@ public class ClientSecretary {
             e.printStackTrace();
         }
 
-        System.out.println(task.getPayload().getType());
+        System.out.println("Client: received response from server: ");
+        System.out.println("Type: " + task.getPayload().getType());
+        System.out.println("Ping: " +  task.getPayload().getPing() + "ms");
         if(task.getPayload().getType() == RequestType.ERROR) {
             throw new IncorrectPayloadException((String)task.getPayload().getObject());
         }
