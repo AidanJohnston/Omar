@@ -16,7 +16,7 @@ public class ResultsPanel <T> extends JPanel
 		
 		entries = new ArrayList<ResultsEntry>();
 		for (T item : items) {
-			entries.add(new ResultsEntry((T)item));
+			entries.add(new ResultsEntry(item));
 		}
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
