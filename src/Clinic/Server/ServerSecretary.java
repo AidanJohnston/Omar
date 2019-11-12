@@ -25,13 +25,14 @@ public class ServerSecretary {
      private List<Token> clientTokens;
      private MyServer myServer;
      private int avaiableID;
-
+     private ServerDirector director;
      /**
       * Constructor for ServerSecretary, sets up the list of login tokens and the available ids
       */
      public ServerSecretary() {
           this.avaiableID = 0;
           clientTokens = new ArrayList<Token>();
+          director = new ServerDirector();
      }
 
      /**
@@ -74,11 +75,24 @@ public class ServerSecretary {
       * @param client
       */
      public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
-
-
           System.out.println("Handling Request from: " + client.getName());
           System.out.println("Ping: " + payload.getPing() + "ms");
 
+          //*/
+          try {
+               client.sendToClient(
+                    director.getClass()
+                         .getMethod
+                              (payload.getType(), Object.class)
+                         .invoke
+                              (director, payload.getObject()
+                         )
+               );
+          }
+          catch (Exception e) {
+               e.printStackTrace();
+          }
+          /*/
           if(payload.getType() == RequestType.LOGIN) {
                this.login(payload, client);
           }
@@ -94,8 +108,7 @@ public class ServerSecretary {
 
                this.getDoctorWithID(payload, client);
           }
-
-
+          //*/
      }
 
      /**
