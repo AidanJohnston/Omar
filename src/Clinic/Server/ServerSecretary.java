@@ -82,19 +82,25 @@ public class ServerSecretary {
           //*/
           try {
                client.sendToClient(
-                    director.getClass()
-                         .getMethod
-                              (payload.getType(), Object.class)
-                         .invoke
-                              (director, payload.getObject()
-                         )
+                    new Payload(
+                         payload.getId(), 
+                         RequestType.SUCCESS, 
+                         director
+                              .getClass()
+                              .getMethod(
+                                        payload.getType(), 
+                                        Object.class
+                                   )
+                              .invoke(
+                                        director, 
+                                        payload.getObject()
+                                   )
+                    )
                );
           }
           catch (Exception e) {
-               payload.setType(RequestType.ERROR);
-               payload.setObject(e);
                try {
-                    client.sendToClient(payload);
+                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e));
                } catch (IOException e1) {
                     e1.printStackTrace();
                }
@@ -134,25 +140,6 @@ public class ServerSecretary {
                          e.printStackTrace();
                     }
                }
-          }
-     }
-
-     private void getDoctorWithID(Payload payload, ConnectionToClient client) {
-
-
-          ArrayList<Doctor> doctorList = new ArrayList<>();
-
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 12, 2), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-          doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 12, 2), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-          payload.setObject(doctorList);
-          try {
-               client.sendToClient(payload);
-          }
-          catch (IOException e) {
-               e.printStackTrace();
-          }
-          catch (Exception e) {
-               e.printStackTrace();
           }
      }
 }
