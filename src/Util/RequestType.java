@@ -1,8 +1,5 @@
 package Util;
 
-import java.lang.reflect.*;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -13,6 +10,9 @@ public final class RequestType //Yo we're using this one its like 10000000 times
                                 LOGIN,
                                 LOGOUT,
                                 ERROR,
+                                APPOINTMENT_CREATE,
+                                SCHEDULE_GET_ALL,
+                                SCHEDULE_GET_DOCTOR,
                                 DIAGNOSIS_GET_ALL_PATIENT,
                                 DIAGNOSIS_GET_ALL_DOCTOR,
                                 DIAGNOSIS_UPDATE_GIVEN_REFERENCE,
@@ -36,6 +36,9 @@ public static final Collection<String> ALL_PATHS;
             LOGIN = "login",
             LOGOUT = "logout",
             ERROR = "error",
+            APPOINTMENT_CREATE = "appointmentCreate",
+            SCHEDULE_GET_ALL = "scheduleGetAll",
+            SCHEDULE_GET_DOCTOR = "scheduleGetDoctor",
             DIAGNOSIS_GET_ALL_PATIENT = "diagnosisGetAllPatient",
             DIAGNOSIS_GET_ALL_DOCTOR = "diagnosisGetAllDoctor",
             DIAGNOSIS_UPDATE_GIVEN_REFERENCE = "diagnosisUpdateGivenReference",
