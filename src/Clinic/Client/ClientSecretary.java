@@ -3,11 +3,9 @@ package Clinic.Client;
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
 import Clinic.Core.*;
-import Util.*;
 import Util.Exceptions.*;
 import Util.RequestType;
 
-import javax.print.Doc;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -186,9 +184,31 @@ public class ClientSecretary {
         return (Schedule) prepareTask(payload).getReturnValue();
     }
 
+    /**
+     * getCurrentAppointmentPatient returns all current appointments the patient has.
+     * @param token
+     * @param patient
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public List<Appointment> getCurrentAppointmentPatient(Token token, Patient patient) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATENT_CURRENT_ALL, token, patient);
+        return (List<Appointment>) prepareTask(payload).getReturnValue();
+    }
 
-
-
+    /**
+     * Gets a list of all appointments the patient has had
+     * @param token
+     * @param patient
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public List<Appointment> getAppointmentPatientAll(Token token, Patient patient) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATIENT_ALL, token, patient);
+        return (List<Appointment>) prepareTask(payload).getReturnValue();
+    }
     /**
      * Returns a list of all doctors
      * @param token
