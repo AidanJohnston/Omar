@@ -2,12 +2,9 @@ package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
-import Clinic.Core.Doctor;
+import Clinic.Core.*;
 import Util.*;
 import Util.Exceptions.*;
-import Clinic.Core.Payload;
-import Clinic.Core.Token;
-import Clinic.Core.User;
 import Util.RequestType;
 
 import javax.print.Doc;
@@ -140,6 +137,57 @@ public class ClientSecretary {
 
         return (boolean) prepareTask(payload).getReturnValue();
     }
+
+    /**
+     * make account will not do anything
+     * @param object
+     * @return
+     */
+    @Deprecated
+    public boolean makeAccount(Object object) throws NotImplementedYetException {
+        throw new NotImplementedYetException("You dumb fuck");
+    }
+
+    /**
+     * Makes an appointment given an instance of an appointment
+     * @param token
+     * @param appointment
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public boolean makeAppointment(Token token, Appointment appointment) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_CREATE, token, appointment);
+        return (boolean) prepareTask(payload).getReturnValue();
+    }
+
+    /**
+     * Gets the schedule of all doctors
+     * @param token
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public List<Schedule> getScheduleAll(Token token) throws IncorrectPayloadException{
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_GET_ALL, token);
+        return (List<Schedule>) prepareTask(payload).getReturnValue();
+    }
+
+    /**
+     * Gets the schedule of a specific doctor
+     * @param token
+     * @param id
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public Schedule getScheduleDoctor(Token token, int id) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_GET_DOCTOR, token, id);
+        return (Schedule) prepareTask(payload).getReturnValue();
+    }
+
+
+
 
     /**
      * Returns a list of all doctors
