@@ -251,6 +251,14 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
   
 
   namespace Util {
+    namespace Exceptions {
+      class Util.Exceptions.NotImplementedYetException {
+      }
+    }
+  }
+  
+
+  namespace Util {
     class Util.RequestType {
     }
   }
@@ -281,6 +289,7 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
   Clinic.Client.GUI.LoginPanel o-- Clinic.Core.Token : token
   Clinic.Client.GUI.ResultsEntry -up-|> javax.swing.JPanel
   Clinic.Client.GUI.ResultsPanel -up-|> javax.swing.JPanel
+  Clinic.Core.Appointment .up.|> java.io.Serializable
   Clinic.Core.Appointment o-- Clinic.Core.Diagnosis : diagnosis
   Clinic.Core.Appointment o-- Clinic.Core.Doctor : doctor
   Clinic.Core.Appointment o-- Clinic.Core.Patient : patient

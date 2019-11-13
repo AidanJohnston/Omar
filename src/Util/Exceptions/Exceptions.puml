@@ -11,6 +11,15 @@ title __EXCEPTIONS's Class Diagram__\n
   }
   
 
+  namespace Util {
+    namespace Exceptions {
+      class Util.Exceptions.NotImplementedYetException {
+          + NotImplementedYetException()
+      }
+    }
+  }
+  
+
 
 
 right footer

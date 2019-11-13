@@ -55,7 +55,7 @@ title __GUI's Class Diagram__\n
       }
     }
   }
-
+  
 
   namespace Clinic.Client {
     namespace GUI {
