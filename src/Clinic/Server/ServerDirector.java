@@ -5,11 +5,17 @@ import Clinic.Server.Connection.MyServer;
 import Util.*;
 
 import java.io.Serializable;
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ServerDirector {
-    public Object login(Object params){
+    /*  This should stay dead, but just in case everything goes wrong and we need to do this  
+    public Method login(){
+        return this.getClass().getEnclosingMethod();
+    }
+    //*/
+    public Token login(Object params){
         UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
         int userID = 1;
         System.out.println("Login Params: " + params.toString());
