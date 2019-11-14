@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language JavaScript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.fxml.FXMLLoader.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Clinic.Client.fxGUI.mainPageController"
+            fx:id="mainpage"
+            prefHeight="400.0" prefWidth="600.0">
+
+            <VBox>
+                <Label fx:id="output"></Label>
+                <Button text="Push" fx:id="pushbutton" onAction="#doOutput"></Button>
+                <Button text="Logout" fx:id="logoutbutton" onAction="#logout"></Button>
+            </VBox>
+</AnchorPane>

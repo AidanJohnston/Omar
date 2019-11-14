@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?language JavaScript?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.fxml.FXMLLoader.*?>
 
 <?import javafx.scene.text.Text?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Clinic.Client.fxGUI.sampleController"
+            fx:controller="Clinic.Client.fxGUI.loginController"
+            fx:id = "loginPage"
             prefHeight="400.0" prefWidth="600.0">
 
             <VBox>
@@ -17,8 +19,10 @@
                 <TextField promptText="username" focusTraversable="true" fx:id="userField"/>
                 <PasswordField promptText="password" focusTraversable="true" fx:id="passField" onAction="#tryLogin"/>
                 <Button text="Login" onAction="#tryLogin"></Button>
-x
+                <Button text="push" onAction="#switchScene"></Button>
                 <Label text="Do it" fx:id="output"></Label>
             </VBox>
+            <fx:script>
 
+            </fx:script>
 </AnchorPane>

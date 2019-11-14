@@ -15,14 +15,15 @@ public class FxGUI extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
             primaryStage.setTitle("Clinic UI");
             primaryStage.setScene(new Scene(root, 300, 275));
             primaryStage.show();
         }catch(IOException e){
             System.out.println("GUI machine broke");
+            throw new Exception("GUI MACHINE BROKE");
         }
 
     }
