@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Clinic.Client.fxGUI.sampleController"
+            prefHeight="400.0" prefWidth="600.0">
+
+            <VBox>
+                <Label text="Clinic Login" />
+                <TextField promptText="username" focusTraversable="true" fx:id="userField"/>
+                <PasswordField promptText="password" focusTraversable="true" fx:id="passField" onAction="#tryLogin"/>
+                <Button text="Login" onAction="#tryLogin"></Button>
+x
+                <Label text="Do it" fx:id="output"></Label>
+            </VBox>
+
+</AnchorPane>
