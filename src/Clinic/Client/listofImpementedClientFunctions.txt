@@ -1,0 +1,15 @@
+[Implemented Functions]
+-login
+-logout
+-makeAccount*
+-makeAppointment
+-getScheduleAll
+-getScheduleDoctor
+-getDoctorAll
+-getDoctorWithId
+-setDoctor
+-getCurrentAppointmentPatient
+-getAppointmenPatientAll
+
+
+[Not Implemented Functions]

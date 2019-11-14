@@ -1,5 +1,7 @@
 package Clinic.Core;
 
+import java.io.Serializable;
+
 /**
  * Appointment.java - A class for storing the time, patient, doctor, diagnosis, and prescription from an appointment.
  * Can be used to store upcoming appointments or to see appointment history
@@ -7,7 +9,7 @@ package Clinic.Core;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Appointment {
+public class Appointment implements Serializable {
 
     private int ID;
     private Patient patient;

@@ -13,9 +13,8 @@ public class Client {
 
         MyClient myClient = new MyClient("172.17.11.181", 6969, clientSecretary);
         clientSecretary.setMyClient(myClient);
-
         Token a = clientSecretary.login("orange", "AIdan");
 
-        MyGUI gui = new MyGUI(clientSecretary, a);
+        //MyGUI gui = new MyGUI(clientSecretary, a);
     }
 }

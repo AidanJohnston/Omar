@@ -2,15 +2,10 @@ package Clinic.Client;
 
 import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
-import Clinic.Core.Doctor;
-import Util.*;
+import Clinic.Core.*;
 import Util.Exceptions.*;
-import Clinic.Core.Payload;
-import Clinic.Core.Token;
-import Clinic.Core.User;
 import Util.RequestType;
 
-import javax.print.Doc;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -141,6 +136,79 @@ public class ClientSecretary {
         return (boolean) prepareTask(payload).getReturnValue();
     }
 
+    /**
+     * make account will not do anything
+     * @param object
+     * @return
+     */
+    @Deprecated
+    public boolean makeAccount(Object object) throws NotImplementedYetException {
+        throw new NotImplementedYetException("You dumb fuck");
+    }
+
+    /**
+     * Makes an appointment given an instance of an appointment
+     * @param token
+     * @param appointment
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public boolean makeAppointment(Token token, Appointment appointment) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_CREATE, token, appointment);
+        return (boolean) prepareTask(payload).getReturnValue();
+    }
+
+    /**
+     * Gets the schedule of all doctors
+     * @param token
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public List<Schedule> getScheduleAll(Token token) throws IncorrectPayloadException{
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_GET_ALL, token);
+        return (List<Schedule>) prepareTask(payload).getReturnValue();
+    }
+
+    /**
+     * Gets the schedule of a specific doctor
+     * @param token
+     * @param id
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public Schedule getScheduleDoctor(Token token, int id) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_GET_DOCTOR, token, id);
+        return (Schedule) prepareTask(payload).getReturnValue();
+    }
+
+    /**
+     * getCurrentAppointmentPatient returns all current appointments the patient has.
+     * @param token
+     * @param patient
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public List<Appointment> getCurrentAppointmentPatient(Token token, Patient patient) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATENT_CURRENT_ALL, token, patient);
+        return (List<Appointment>) prepareTask(payload).getReturnValue();
+    }
+
+    /**
+     * Gets a list of all appointments the patient has had
+     * @param token
+     * @param patient
+     * @return
+     * @throws IncorrectPayloadException
+     */
+    public List<Appointment> getAppointmentPatientAll(Token token, Patient patient) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATIENT_ALL, token, patient);
+        return (List<Appointment>) prepareTask(payload).getReturnValue();
+    }
     /**
      * Returns a list of all doctors
      * @param token

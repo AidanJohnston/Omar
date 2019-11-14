@@ -15,9 +15,9 @@ public class MyGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1200,1200);
 		
-		
-		frame.getContentPane().add(BorderLayout.NORTH, new DoctorSearch(_client, _token));
-		frame.getContentPane().add(BorderLayout.SOUTH, new LoginPanel(_client, _token));
+		//frame.setLayout(null);
+		//frame.getContentPane().add(BorderLayout.NORTH, new DoctorSearch(_client, _token));
+		frame.getContentPane().add(new LoginPanel(_client, _token));
 		frame.setVisible(true);
 		
 		
