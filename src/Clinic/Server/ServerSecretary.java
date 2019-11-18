@@ -7,6 +7,7 @@ import Util.RequestType;
 import Util.UserType;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,22 +77,26 @@ public class ServerSecretary {
           System.out.println("Handling Request from: " + client.getName());
           System.out.println("Type: " + payload.getType());
           System.out.println("Ping: " + payload.getPing() + "ms");
-
+          Object object;
           //*/
-          try {
+          try{
+               if(payload.getObject() == null) {
+                    Method method = director.getClass().getMethod(payload.getType());
+                    object = method.invoke(director);
+               }
+               else {
+                    Method method = director.getClass().getMethod(payload.getType(), payload.getObject().getClass());
+                    object = method.invoke(director, payload.getObject());
+               }
                client.sendToClient(
                     new Payload(
                             payload.getId(),
                             RequestType.SUCCESS,
-                            director.getClass().getMethod(payload.getType(), Object.class).invoke(director, payload.getObject()),
+                            object,
                             payload.getStartTime()));
           }
           catch (Exception e) {
-               try {
-                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e));
-               } catch (IOException e1) {
-                    e1.printStackTrace();
-               }
+               e.printStackTrace();
           }
           /*/
           if(payload.getType() == RequestType.LOGIN) {
