@@ -13,12 +13,12 @@ public abstract class baseController {
     public Stage stage;
     public Parent root;
 
-    public abstract <T extends Object> void initWithData(T input);
+    public abstract void initWithData(Session _session);
     public <R extends baseController>void switchScene(Parent newRoot, String newFile, R type){
-        switchScene(newRoot, newFile, type.getClass(), new Object());
+        switchScene(newRoot, newFile, type.getClass(), new Session(null,null, null));
     }
 
-    public <R extends baseController> void switchScene(Parent newRoot, String newFile, Class<R> type, Object dataObject){
+    public <R extends baseController> void switchScene(Parent newRoot, String newFile, Class<R> type, Session _session){
 
         try{
             stage = (Stage)newRoot.getScene().getWindow();
@@ -27,7 +27,7 @@ public abstract class baseController {
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
             R controller = loader.<R>getController();
-            controller.initWithData(dataObject);
+            controller.initWithData(_session);
 
             stage.show();
 

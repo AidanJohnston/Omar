@@ -14,8 +14,8 @@ import javax.swing.*;
 public class mainPageController extends baseController {
     public String data;
     public Label output;
-    public <T extends Object> void initWithData(T input){
-        data = input.toString();
+    public void initWithData(Session session){
+        data = session.getDataObject().toString();
     }
 
     public void doOutput(ActionEvent e){

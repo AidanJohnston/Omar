@@ -1,5 +1,7 @@
 package Clinic.Client.fxGUI;
 
+import Clinic.Client.ClientSecretary;
+import Clinic.Client.Connection.MyClient;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,15 +18,26 @@ public class FxGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        ClientSecretary clientSecretary = new ClientSecretary();
+
+        MyClient myClient = new MyClient("172.17.11.181", 6969, clientSecretary);
+        //clientSecretary.setMyClient(myClient);
+
+
         try{
             Parent root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("loginPage.fxml"));
             primaryStage.setTitle("Clinic UI");
-            primaryStage.setScene(new Scene(root, 300, 275));
+            primaryStage.setScene(new Scene(loader.load()));
+            loginController controller = loader.<loginController>getController();
+            controller.initWithData(new Session(null,clientSecretary, null));
             primaryStage.show();
         }catch(IOException e){
             System.out.println("GUI machine broke");
             throw new Exception("GUI MACHINE BROKE");
         }
+
 
     }
 }

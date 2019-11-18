@@ -20,9 +20,10 @@ public class loginController extends baseController{
 
     private Stage stage;
     private Parent root;
+    private Session session;
 
-    public <T extends Object>void initWithData(T input){
-
+    public void initWithData(Session _session){
+        session = _session;
     }
 
     public void switchScene(ActionEvent e){
@@ -34,12 +35,12 @@ public class loginController extends baseController{
     public void tryLogin(ActionEvent e){
         if(userField.getText().equalsIgnoreCase("sean") && passField.getText().equalsIgnoreCase("password")){
             output.setText("You did it!");
-            switchScene(loginPage, "mainpage.fxml", mainPageController.class, "Logged in as " + userField.getText());
+            session.setDataObject("Logged in as " + userField.getText());
+            switchScene(loginPage, "mainpage.fxml", mainPageController.class, session);
         }
         else{
             output.setText("Wrong :" + userField.getText() + " " + passField.getText());
         }
     }
 
-    //public
 }
