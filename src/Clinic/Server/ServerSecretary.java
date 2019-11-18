@@ -3,12 +3,12 @@ package Clinic.Server;
 import Clinic.Core.*;
 import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
+import Util.Exceptions.IncorrectPayloadException;
 import Util.RequestType;
 import Util.UserType;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,47 +74,63 @@ public class ServerSecretary {
       * @param client
       */
      public void handleMessageFromClient(Payload payload, ConnectionToClient client) {
+
+          //Printing out about message relieved
           System.out.println("Handling Request from: " + client.getName());
           System.out.println("Type: " + payload.getType());
           System.out.println("Ping: " + payload.getPing() + "ms");
           Object object;
-          //*/
+
+
+          //Attempting to send back to the server
           try{
+
+               //Invoking when method takes no parma
                if(payload.getObject() == null) {
                     Method method = director.getClass().getMethod(payload.getType());
                     object = method.invoke(director);
                }
+               //When method takes parma
                else {
                     Method method = director.getClass().getMethod(payload.getType(), payload.getObject().getClass());
                     object = method.invoke(director, payload.getObject());
                }
+               //Sending message to client
                client.sendToClient(
                     new Payload(
                             payload.getId(),
                             RequestType.SUCCESS,
                             object,
                             payload.getStartTime()));
+
+               //This statement is here to calm the compiler, because we are using reflection it doesn't know what method that it is going to be run.
+               //Because of this, it doesn't think that IncorrectPayload exception will be thrown, even thought every one of the ServerDirector methods throws IncorrectPayloadException
+               if(false){
+                    throw new IncorrectPayloadException("This should never happen");
+               }
           }
-          catch (Exception e) {
+          catch (IOException e) {
                e.printStackTrace();
           }
-          /*/
-          if(payload.getType() == RequestType.LOGIN) {
-               this.login(payload, client);
+          catch (NoSuchMethodException e) {
+               try {
+                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, "Unknown method name dumbass", payload.getStartTime()));
+               }
+               catch (IOException e1) {
+                    e1.printStackTrace();
+               }
           }
-
-
-          if (payload.getType() == RequestType.LOGOUT) {
-               this.logout(payload, client);
+          catch (IncorrectPayloadException e ) {
+               try {
+                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e.getMessage(), payload.getStartTime()));
+               }
+               catch (IOException e1) {
+                    e1.printStackTrace();
+               }
           }
-
-          if (payload.getType() == RequestType.DOCTOR_GET_GIVEN_ID) {
-
-
-
-               this.getDoctorWithID(payload, client);
+          catch (Exception e ) {
+               e.printStackTrace();
           }
-          //*/
      }
 
      /**
@@ -122,6 +138,7 @@ public class ServerSecretary {
       * @param payload
       * @param client
       */
+     @Deprecated
      private void logout(Payload payload, ConnectionToClient client) {
           for (int i = 0; i < clientTokens.size(); i++) {
                if(clientTokens.get(i).getUserID() == payload.getToken().getUserID()) {
