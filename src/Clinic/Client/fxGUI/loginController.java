@@ -1,5 +1,4 @@
 package Clinic.Client.fxGUI;
-import com.sun.xml.internal.fastinfoset.tools.FI_SAX_XML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

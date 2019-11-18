@@ -1,5 +1,7 @@
 package Clinic.Core;
 
+import Util.RequestType;
+
 import java.io.Serializable;
 
 /**
@@ -30,6 +32,8 @@ public class Appointment implements Serializable {
         this.doctor = doctor;
         this.diagnosis = diagnosis;
         this.prescription = prescription;
+
+        RequestType.class.getMethods();
     }
 
     /**

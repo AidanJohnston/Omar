@@ -21,7 +21,7 @@ public class FxGUI extends Application {
 
         ClientSecretary clientSecretary = new ClientSecretary();
 
-        MyClient myClient = new MyClient("172.17.11.181", 6969, clientSecretary);
+        MyClient myClient = new MyClient("localhost", 6969, clientSecretary);
         //clientSecretary.setMyClient(myClient);
 
 

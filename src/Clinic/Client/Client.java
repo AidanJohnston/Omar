@@ -15,6 +15,6 @@ public class Client {
         clientSecretary.setMyClient(myClient);
         Token a = clientSecretary.login("orange", "AIdan");
 
-        //MyGUI gui = new MyGUI(clientSecretary, a);
+        MyGUI gui = new MyGUI(clientSecretary, a);
     }
 }
