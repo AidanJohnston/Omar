@@ -1,5 +1,6 @@
 package Clinic.Client.fxGUI;
 
+import Clinic.Client.Client;
 import Clinic.Client.ClientSecretary;
 import Clinic.Core.Token;
 
@@ -19,5 +20,17 @@ public class Session {
     }
     public void setDataObject(Object o){
         dataObject = o;
+    }
+
+    public Token getToken(){
+        return token;
+    }
+
+    public void setToken(Token _token){
+        token = _token;
+    }
+
+    public ClientSecretary getClient() {
+        return client;
     }
 }
