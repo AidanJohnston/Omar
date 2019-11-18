@@ -1,14 +1,8 @@
 package Clinic.Server;
 
 import Clinic.Core.*;
-import Clinic.Server.Connection.MyServer;
 import Util.*;
-
-import java.io.Serializable;
-import java.lang.reflect.Method;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ServerDirector {
     /*  This should stay dead, but just in case everything goes wrong and we need to do this  
@@ -16,10 +10,10 @@ public class ServerDirector {
         return this.getClass().getEnclosingMethod();
     }
     //*/
-    public Token login(Object params){
+    public Token login(User user){
         UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
         int userID = 1;
-        System.out.println("Login Params: " + params.toString());
+        System.out.println("Login Params: " + user.toString());
         Token token = new Token(type, userID);
 
         return token;
@@ -32,7 +26,7 @@ public class ServerDirector {
     public Object getScheduleOfDoctor(Object params) {return null;}
     public Object getCurrentAppointmentOfPatient(Object params) {return null;}
     public Object getAllAppointmentOfPatient(Object params) {return null;}
-    public Object getAllDoctor(Object params) {
+    public Object getAllDoctor() {
 
         ArrayList<Doctor> list = new ArrayList<>();
         list.add(new Doctor("Aidan"));
@@ -41,9 +35,8 @@ public class ServerDirector {
         list.add(new Doctor("John"));
         list.add(new Doctor("Mai"));
 
-
-
-        return list;}
+        return list;
+    }
     public Object getDoctorWithId(Object params) {return null;}
     public Object setDoctor(Object params) {return null;}
     public Object getAllDiagnosisFromPatient(Object params) {return null;}
