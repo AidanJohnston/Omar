@@ -251,7 +251,7 @@ public class ClientSecretary {
 
     public List<Prescription> getPrescriptionAll(Patient patient, Token token) throws IncorrectPayloadException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATIENT_ALL, token, patient);
+        Payload payload = new Payload(avaiableID, RequestType.PRESCRIPTION_GET_ALL_PATIENT, token, patient);
         return (List<Prescription>) prepareTask(payload);
     }
 
@@ -259,5 +259,23 @@ public class ClientSecretary {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DIAGNOSIS_GET_ALL_PATIENT, token, patient);
         return (List<Diagnosis>) prepareTask(payload);
+    }
+
+    public void setScheduleDoctor(Schedule schedule, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_SET_GIVEN_SCHEDULE, token, schedule);
+        prepareTask(payload);
+    }
+
+    public List<Appointment> getAppointmentsCurrentDoctor(int id, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_DOCTOR_CURRENT_ALL, token, id);
+        return (List<Appointment>) prepareTask(payload);
+    }
+
+    public List<Patient> getPatientAll(Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.PATIENT_GET_ALL, token);
+        return (List<Patient>) prepareTask(payload);
     }
 }
