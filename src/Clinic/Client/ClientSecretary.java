@@ -212,7 +212,7 @@ public class ClientSecretary {
     /**
      * Returns a list of all doctors
      * @param token
-     * @return List<Doctor>
+     * @return ArrayList<Doctor>
      * @throws IncorrectPayloadException
      */
     public ArrayList<Doctor> getDoctorAll(Token token) throws IncorrectPayloadException {
@@ -236,13 +236,46 @@ public class ClientSecretary {
         return (Doctor) prepareTask(payload).getReturnValue();
     }
 
+
+    /**
+     * Sets a doctor value in the database
+     * @param doctor
+     * @param token
+     * @throws IncorrectPayloadException
+     */
     public void setDoctor(Doctor doctor, Token token) throws IncorrectPayloadException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DOCTOR_UPDATE_GIVEN_DOCTOR, token, doctor);
         prepareTask(payload);
     }
 
-    public void addDoctor() {
+    public List<Prescription> getPrescriptionAll(Patient patient, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.PRESCRIPTION_GET_ALL_PATIENT, token, patient);
+        return (List<Prescription>) prepareTask(payload);
+    }
 
+    public List<Diagnosis> getDiagnosisAll(Patient patient, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.DIAGNOSIS_GET_ALL_PATIENT, token, patient);
+        return (List<Diagnosis>) prepareTask(payload);
+    }
+
+    public void setScheduleDoctor(Schedule schedule, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_SET_GIVEN_SCHEDULE, token, schedule);
+        prepareTask(payload);
+    }
+
+    public List<Appointment> getAppointmentsCurrentDoctor(int id, Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_DOCTOR_CURRENT_ALL, token, id);
+        return (List<Appointment>) prepareTask(payload);
+    }
+
+    public List<Patient> getPatientAll(Token token) throws IncorrectPayloadException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.PATIENT_GET_ALL, token);
+        return (List<Patient>) prepareTask(payload);
     }
 }

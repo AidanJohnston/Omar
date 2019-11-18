@@ -6,58 +6,46 @@ import java.util.Collections;
 
 public final class RequestType //Yo we're using this one its like 10000000 times better
 {
-    public static final String  SUCCESS,
-                                LOGIN,
-                                LOGOUT,
-                                ERROR,
-                                APPOINTMENT_CREATE,
-                                SCHEDULE_GET_ALL,
-                                SCHEDULE_GET_DOCTOR,
-                                APPOINTMENT_PATENT_CURRENT_ALL,
-                                APPOINTMENT_PATIENT_ALL,
-                                DIAGNOSIS_GET_ALL_PATIENT,
-                                DIAGNOSIS_GET_ALL_DOCTOR,
-                                DIAGNOSIS_UPDATE_GIVEN_REFERENCE,
-                                DIAGNOSIS_CREATE_GIVEN_REFERENCE,
-                                DIAGNOSIS_REMOVE_GIVEN_REFERENCE,
-                                DOCTOR_GET_ALL,
-                                DOCTOR_GET_GIVEN_ID,
-                                DOCTOR_UPDATE_GIVEN_DOCTOR,
-                                DOCTOR_CREATE_GIVEN_DOCTOR,
-                                DOCTOR_REQUEST_GIVEN_NAME,
-                                DOCTOR_REQUEST_GIVEN_TIME,
-                                DOCTOR_REQUEST_GIVEN_DATE,
-                                DOCTOR_REMOVE_GIVEN_DOCTOR,
-                                PATIENT_GET_ALL;
+    public static final String SUCCESS,
+            LOGIN,
+            LOGOUT,
+            ERROR,
+            APPOINTMENT_CREATE,
+            SCHEDULE_GET_ALL,
+            SCHEDULE_GET_DOCTOR,
+            APPOINTMENT_PATENT_CURRENT_ALL,
+            APPOINTMENT_PATIENT_ALL,
+            DOCTOR_GET_ALL,
+            DOCTOR_GET_GIVEN_ID,
+            DOCTOR_UPDATE_GIVEN_DOCTOR,
+            DIAGNOSIS_GET_ALL_PATIENT,
+            PRESCRIPTION_GET_ALL_PATIENT,
+            SCHEDULE_SET_GIVEN_SCHEDULE,
+            APPOINTMENT_DOCTOR_CURRENT_ALL,
+            PATIENT_GET_ALL;
+
     // etc.
 
 public static final Collection<String> ALL_PATHS;
     static {
         ALL_PATHS = Collections.unmodifiableCollection(Arrays.asList(
-            SUCCESS = "update",
-            LOGIN = "login",
-            LOGOUT = "logout",
-            ERROR = "error",
-            APPOINTMENT_CREATE = "appointmentCreate",
-            SCHEDULE_GET_ALL = "scheduleGetAll",
-            SCHEDULE_GET_DOCTOR = "scheduleGetDoctor",
-            APPOINTMENT_PATENT_CURRENT_ALL = "getAppointmentPatientCurrent",
-            APPOINTMENT_PATIENT_ALL = "getAppointmentPatient",
-            DIAGNOSIS_GET_ALL_PATIENT = "diagnosisGetAllPatient",
-            DIAGNOSIS_GET_ALL_DOCTOR = "diagnosisGetAllDoctor",
-            DIAGNOSIS_UPDATE_GIVEN_REFERENCE = "diagnosisUpdateGivenReference",
-            DIAGNOSIS_CREATE_GIVEN_REFERENCE = "diagnosisCreateGivenReference",
-            DIAGNOSIS_REMOVE_GIVEN_REFERENCE = "diagnosisRemoveGivenReference",
-            DOCTOR_GET_ALL = "doctorGetAll",
-            DOCTOR_GET_GIVEN_ID = "doctorGetGivenId",
-            DOCTOR_UPDATE_GIVEN_DOCTOR = "doctorUpdateGivenDoctor",
-            DOCTOR_CREATE_GIVEN_DOCTOR = "doctorCreateGivenDoctor",
-            DOCTOR_REQUEST_GIVEN_NAME = "doctorRequestGivenName",
-            DOCTOR_REQUEST_GIVEN_TIME = "doctorRequestGivenTime",
-            DOCTOR_REQUEST_GIVEN_DATE = "doctorRequestGivenDate",
-            DOCTOR_REMOVE_GIVEN_DOCTOR = "doctorRemoveGivenDoctor",
-            PATIENT_GET_ALL = "patientGetAll"
-            // etc.
+                SUCCESS = "update",
+                LOGIN = "login",
+        LOGOUT = "logout",
+        ERROR = "error",
+        APPOINTMENT_CREATE = "createAppointment",
+        SCHEDULE_GET_ALL = "getAllSchedule",
+        SCHEDULE_GET_DOCTOR = "getScheduleOfDoctor",
+        APPOINTMENT_PATENT_CURRENT_ALL = "getCurrentAppointmentOfPatient",
+        APPOINTMENT_PATIENT_ALL = "getAllAppointmentOfPatient",
+        DOCTOR_GET_ALL = "getAllDoctor",
+        DOCTOR_GET_GIVEN_ID = "getDoctorWithId",
+        DOCTOR_UPDATE_GIVEN_DOCTOR = "setDoctor",
+        DIAGNOSIS_GET_ALL_PATIENT = "getAllDiagnosisFromPatient",
+        PRESCRIPTION_GET_ALL_PATIENT = "getAllPrescriptionFromPatient",
+        SCHEDULE_SET_GIVEN_SCHEDULE = "setSchedule",
+        APPOINTMENT_DOCTOR_CURRENT_ALL = "getCurrentAppointmentDoctor",
+        PATIENT_GET_ALL = "getAllPatient"
         ));
     }
 }

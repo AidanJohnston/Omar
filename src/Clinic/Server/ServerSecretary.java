@@ -5,8 +5,6 @@ import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
 import Util.RequestType;
 import Util.UserType;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.IOException;
 import java.time.LocalDate;

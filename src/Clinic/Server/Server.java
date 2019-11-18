@@ -17,6 +17,7 @@ public class Server {
         System.out.print(".");
         Thread.sleep(1000);
         System.out.print(".\n");
+        Thread.sleep(1000);
         MyServer myServer = new MyServer(6969, serverSecretary);
         System.out.println("Server Started");
     }
