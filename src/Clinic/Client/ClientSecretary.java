@@ -212,7 +212,7 @@ public class ClientSecretary {
     /**
      * Returns a list of all doctors
      * @param token
-     * @return List<Doctor>
+     * @return ArrayList<Doctor>
      * @throws IncorrectPayloadException
      */
     public ArrayList<Doctor> getDoctorAll(Token token) throws IncorrectPayloadException {

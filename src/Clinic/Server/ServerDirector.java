@@ -34,7 +34,7 @@ public class ServerDirector {
     public Object getAllAppointmentOfPatient(Object params) {return null;}
     public Object getAllDoctor(Object params) {
 
-        List<Doctor> list = new ArrayList<>();
+        ArrayList<Doctor> list = new ArrayList<>();
         list.add(new Doctor("Aidan"));
         list.add(new Doctor("Sean"));
         list.add(new Doctor("Dawson"));
