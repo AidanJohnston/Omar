@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ServerDirector {
     /*  This should stay dead, but just in case everything goes wrong and we need to do this  
@@ -26,53 +27,28 @@ public class ServerDirector {
     public Object logout(Object params){
         return null;
     }
-    public Object diagnosisGetAllPatient(Object params){
-        return null;
-    }
-    public Object diagnosisGetAllDoctor(Object params){
-        return null;
-    }
-    public Object diagnosisUpdateGivenReference(Object params){
-        return null;
-    }
-    public Object diagnosisCreateGivenReference(Object params){
-        return null;
-    }
-    public Object diagnosisRemoveGivenReference(Object params){
-        return null;
-    }
-    public Object doctorGetGivenPatient(Object params){
-        return null;
-    }
-    public Object doctorGetAll(Object params){
-        ArrayList<Doctor> doctorList = new ArrayList<>();
+    public Object createAppointment(Object params) {return null;}
+    public Object getAllSchedule(Object params) {return null;}
+    public Object getScheduleOfDoctor(Object params) {return null;}
+    public Object getCurrentAppointmentOfPatient(Object params) {return null;}
+    public Object getAllAppointmentOfPatient(Object params) {return null;}
+    public Object getAllDoctor(Object params) {
 
-        doctorList.add(new Doctor("aidanJohnston[", "Aidan", "Johnston", LocalDate.of(1999, 12, 2), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-        doctorList.add(new Doctor("aidanJohnston[", "Dawson", "Gilmore", LocalDate.of(2000, 3, 26), 420, "69 suck my ass street", 59, "807-630-3284", "Fucking bitches"));
-        return doctorList;
-    }
-    public Object doctorGetGivenId(Object params){
-        return null;
-    }
-    public Object doctorUpdateGivenDoctor(Object params){
-        return null;
-    }
-    public Object doctorCreateGivenDoctor(Object params){
-        return null;
-    }
-    public Object doctorRequestGivenName(Object params){
-        return null;
-    }
-    public Object doctorRequestGivenTime(Object params){
-        return null;
-    }
-    public Object doctorRequestGivenDate(Object params){
-        return null;
-    }
-    public Object doctorRemoveGivenDoctor(Object params){
-        return null;
-    }
-    public Object patientGetAll(Object params){
-        return null;
-    }
+        List<Doctor> list = new ArrayList<>();
+        list.add(new Doctor("Aidan"));
+        list.add(new Doctor("Sean"));
+        list.add(new Doctor("Dawson"));
+        list.add(new Doctor("John"));
+        list.add(new Doctor("Mai"));
+
+
+
+        return list;}
+    public Object getDoctorWithId(Object params) {return null;}
+    public Object setDoctor(Object params) {return null;}
+    public Object getAllDiagnosisFromPatient(Object params) {return null;}
+    public Object getAllPrescriptionFromPatient(Object params) {return null;}
+    public Object setSchedule(Object params) {return null;}
+    public Object getCurrentAppointmentDoctor(Object params) {return null;}
+    public Object getAllPatient(Object params) {return null;}
 }
