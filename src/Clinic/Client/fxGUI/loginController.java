@@ -41,7 +41,6 @@ public class loginController extends baseController{
         if(userField.getText().equalsIgnoreCase("sean") && passField.getText().equalsIgnoreCase("password")){
             output.setText("You did it!");
             try{
-                //session.setToken(session.getClient().login(user, pass));
                 ClientSecretary client = session.getClient();
                 Token token = client.login(user, pass);
                 session.setToken(token);
