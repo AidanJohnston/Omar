@@ -22,7 +22,7 @@ public class FxGUI extends Application {
         ClientSecretary clientSecretary = new ClientSecretary();
 
         MyClient myClient = new MyClient("localhost", 6969, clientSecretary);
-        //clientSecretary.setMyClient(myClient);
+        clientSecretary.setMyClient(myClient);
 
 
         try{
