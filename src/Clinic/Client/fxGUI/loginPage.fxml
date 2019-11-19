@@ -19,7 +19,6 @@
                 <TextField promptText="username" focusTraversable="true" fx:id="userField"/>
                 <PasswordField promptText="password" focusTraversable="true" fx:id="passField" onAction="#tryLogin"/>
                 <Button text="Login" onAction="#tryLogin"></Button>
-                <Button text="push" onAction="#switchScene"></Button>
                 <Label text="Do it" fx:id="output"></Label>
             </VBox>
             <fx:script>
