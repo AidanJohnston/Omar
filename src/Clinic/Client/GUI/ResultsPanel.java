@@ -64,13 +64,13 @@ class ResultsEntry extends JPanel
 
 	public ResultsEntry(Doctor d) {
 
-		this(String.format("%s %s : %s", d.getFname(), d.getLName(), d.getSpecialty()));
+		this(String.format("%s %s : %s", d.getFName(), d.getLName(), d.getSpecialty()));
 
 	}
 
 	public ResultsEntry(Patient p) {
 
-		this(String.format("%s %s", p.getFname(), p.getLName()));
+		this(String.format("%s %s", p.getFName(), p.getLName()));
 
 	}
 }

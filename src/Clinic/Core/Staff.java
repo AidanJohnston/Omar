@@ -17,7 +17,7 @@ public class Staff extends User {
      * Constructor for the Staff class
      *  @param username
      * @param password
-     * @param Fname
+     * @param FName
      * @param LName
      * @param brithday
      * @param SIN
@@ -28,13 +28,13 @@ public class Staff extends User {
     public Staff(
             String username,
             String password,
-            String Fname,
+            String FName,
             String LName,
             LocalDate brithday,
             int SIN,
             String adress,
             int ID,
             String phoneNumber) {
-        super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
+        super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
     }
 }

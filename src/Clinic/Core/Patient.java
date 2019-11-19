@@ -25,7 +25,7 @@ public class Patient extends User {
      * Constructor for the patient class
      * @param username
      * @param password
-     * @param Fname
+     * @param FName
      * @param LName
      * @param brithday
      * @param SIN
@@ -43,7 +43,7 @@ public class Patient extends User {
     public Patient(
             String username,
             String password,
-            String Fname,
+            String FName,
             String LName,
             LocalDate brithday,
             int SIN,
@@ -57,7 +57,7 @@ public class Patient extends User {
             List<Doctor> doctors,
             List<Diagnosis> diagnoses,
             List<Prescription> prescriptions) {
-        super(username, password, Fname, LName, brithday, SIN, adress, ID, phoneNumber);
+        super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
         this.healthCardNumber = healthCardNumber;
         this.healthCardExpiry = healthCardExpiry;
         this.province = province;
