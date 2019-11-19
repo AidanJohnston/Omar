@@ -1,14 +1,10 @@
 package Clinic.Server;
 
 import Clinic.Core.*;
-import Clinic.Server.Connection.MyServer;
 import Util.*;
+import Util.Exceptions.IncorrectPayloadException;
 
-import java.io.Serializable;
-import java.lang.reflect.Method;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ServerDirector {
     /*  This should stay dead, but just in case everything goes wrong and we need to do this  
@@ -16,23 +12,23 @@ public class ServerDirector {
         return this.getClass().getEnclosingMethod();
     }
     //*/
-    public Token login(Object params){
+    public Token login(User user) throws IncorrectPayloadException {
         UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
         int userID = 1;
-        System.out.println("Login Params: " + params.toString());
+        System.out.println("Login Params: " + user.toString());
         Token token = new Token(type, userID);
 
         return token;
     }
-    public Object logout(Object params){
+    public Object logout(Object params)throws IncorrectPayloadException {
         return null;
     }
-    public Object createAppointment(Object params) {return null;}
-    public Object getAllSchedule(Object params) {return null;}
-    public Object getScheduleOfDoctor(Object params) {return null;}
-    public Object getCurrentAppointmentOfPatient(Object params) {return null;}
-    public Object getAllAppointmentOfPatient(Object params) {return null;}
-    public Object getAllDoctor(Object params) {
+    public Object createAppointment(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllSchedule(Object params) throws IncorrectPayloadException {return null;}
+    public Object getScheduleOfDoctor(Object params) throws IncorrectPayloadException {return null;}
+    public Object getCurrentAppointmentOfPatient(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllAppointmentOfPatient(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllDoctor() throws IncorrectPayloadException {
 
         ArrayList<Doctor> list = new ArrayList<>();
         list.add(new Doctor("Aidan"));
@@ -41,14 +37,13 @@ public class ServerDirector {
         list.add(new Doctor("John"));
         list.add(new Doctor("Mai"));
 
-
-
-        return list;}
-    public Object getDoctorWithId(Object params) {return null;}
-    public Object setDoctor(Object params) {return null;}
-    public Object getAllDiagnosisFromPatient(Object params) {return null;}
-    public Object getAllPrescriptionFromPatient(Object params) {return null;}
-    public Object setSchedule(Object params) {return null;}
-    public Object getCurrentAppointmentDoctor(Object params) {return null;}
-    public Object getAllPatient(Object params) {return null;}
+        return list;
+    }
+    public Object getDoctorWithId(Object params) throws IncorrectPayloadException {return null;}
+    public Object setDoctor(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllDiagnosisFromPatient(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {return null;}
+    public Object setSchedule(Object params) throws IncorrectPayloadException {return null;}
+    public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllPatient(Object params) throws IncorrectPayloadException {return null;}
 }

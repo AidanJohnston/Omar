@@ -11,23 +11,21 @@ title __SERVER's Class Diagram__\n
 
   namespace Clinic.Server {
     class Clinic.Server.ServerDirector {
-        + diagnosisCreateGivenReference()
-        + diagnosisGetAllDoctor()
-        + diagnosisGetAllPatient()
-        + diagnosisRemoveGivenReference()
-        + diagnosisUpdateGivenReference()
-        + doctorCreateGivenDoctor()
-        + doctorGetAll()
-        + doctorGetGivenId()
-        + doctorGetGivenPatient()
-        + doctorRemoveGivenDoctor()
-        + doctorRequestGivenDate()
-        + doctorRequestGivenName()
-        + doctorRequestGivenTime()
-        + doctorUpdateGivenDoctor()
+        + createAppointment()
+        + getAllAppointmentOfPatient()
+        + getAllDiagnosisFromPatient()
+        + getAllDoctor()
+        + getAllPatient()
+        + getAllPrescriptionFromPatient()
+        + getAllSchedule()
+        + getCurrentAppointmentDoctor()
+        + getCurrentAppointmentOfPatient()
+        + getDoctorWithId()
+        + getScheduleOfDoctor()
         + login()
         + logout()
-        + patientGetAll()
+        + setDoctor()
+        + setSchedule()
     }
   }
   

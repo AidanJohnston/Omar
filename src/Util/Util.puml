@@ -6,27 +6,21 @@ title __UTIL's Class Diagram__\n
     class Util.RequestType {
         {static} + ALL_PATHS : Collection<String>
         {static} + APPOINTMENT_CREATE : String
+        {static} + APPOINTMENT_DOCTOR_CURRENT_ALL : String
         {static} + APPOINTMENT_PATENT_CURRENT_ALL : String
         {static} + APPOINTMENT_PATIENT_ALL : String
-        {static} + DIAGNOSIS_CREATE_GIVEN_REFERENCE : String
-        {static} + DIAGNOSIS_GET_ALL_DOCTOR : String
         {static} + DIAGNOSIS_GET_ALL_PATIENT : String
-        {static} + DIAGNOSIS_REMOVE_GIVEN_REFERENCE : String
-        {static} + DIAGNOSIS_UPDATE_GIVEN_REFERENCE : String
-        {static} + DOCTOR_CREATE_GIVEN_DOCTOR : String
         {static} + DOCTOR_GET_ALL : String
         {static} + DOCTOR_GET_GIVEN_ID : String
-        {static} + DOCTOR_REMOVE_GIVEN_DOCTOR : String
-        {static} + DOCTOR_REQUEST_GIVEN_DATE : String
-        {static} + DOCTOR_REQUEST_GIVEN_NAME : String
-        {static} + DOCTOR_REQUEST_GIVEN_TIME : String
         {static} + DOCTOR_UPDATE_GIVEN_DOCTOR : String
         {static} + ERROR : String
         {static} + LOGIN : String
         {static} + LOGOUT : String
         {static} + PATIENT_GET_ALL : String
+        {static} + PRESCRIPTION_GET_ALL_PATIENT : String
         {static} + SCHEDULE_GET_ALL : String
         {static} + SCHEDULE_GET_DOCTOR : String
+        {static} + SCHEDULE_SET_GIVEN_SCHEDULE : String
         {static} + SUCCESS : String
     }
   }

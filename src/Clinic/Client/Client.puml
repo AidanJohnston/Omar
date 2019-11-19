@@ -14,11 +14,14 @@ title __CLIENT's Class Diagram__\n
         ~ avaiableID : int
         ~ tasklist : List<ClientTask>
         + ClientSecretary()
-        + addDoctor()
         + getAppointmentPatientAll()
+        + getAppointmentsCurrentDoctor()
         + getCurrentAppointmentPatient()
+        + getDiagnosisAll()
         + getDoctorAll()
         + getDoctorWithID()
+        + getPatientAll()
+        + getPrescriptionAll()
         + getScheduleAll()
         + getScheduleDoctor()
         + handleMessageFromServer()
@@ -29,6 +32,7 @@ title __CLIENT's Class Diagram__\n
         + setDoctor()
         + setMyClient()
         + setMyGUI()
+        + setScheduleDoctor()
         {static} - md5()
         - prepareTask()
     }

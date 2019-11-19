@@ -110,7 +110,31 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.sampleController {
+      class Clinic.Client.fxGUI.Session {
+      }
+    }
+  }
+  
+
+  namespace Clinic.Client {
+    namespace fxGUI {
+      abstract class Clinic.Client.fxGUI.baseController {
+      }
+    }
+  }
+  
+
+  namespace Clinic.Client {
+    namespace fxGUI {
+      class Clinic.Client.fxGUI.loginController {
+      }
+    }
+  }
+  
+
+  namespace Clinic.Client {
+    namespace fxGUI {
+      class Clinic.Client.fxGUI.mainPageController {
       }
     }
   }
@@ -241,6 +265,14 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
   
 
   namespace Clinic.Server {
+    namespace Data {
+      class Clinic.Server.Data.DataWriter {
+      }
+    }
+  }
+  
+
+  namespace Clinic.Server {
     class Clinic.Server.Server {
     }
   }
@@ -305,6 +337,12 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
   Clinic.Client.GUI.LoginPanel o-- Clinic.Core.Token : token
   Clinic.Client.GUI.ResultsEntry -up-|> javax.swing.JPanel
   Clinic.Client.GUI.ResultsPanel -up-|> javax.swing.JPanel
+  Clinic.Client.fxGUI.FxGUI -up-|> javafx.application.Application
+  Clinic.Client.fxGUI.Session o-- Clinic.Client.ClientSecretary : client
+  Clinic.Client.fxGUI.Session o-- Clinic.Core.Token : token
+  Clinic.Client.fxGUI.loginController -up-|> Clinic.Client.fxGUI.baseController
+  Clinic.Client.fxGUI.loginController o-- Clinic.Client.fxGUI.Session : session
+  Clinic.Client.fxGUI.mainPageController -up-|> Clinic.Client.fxGUI.baseController
   Clinic.Core.Appointment .up.|> java.io.Serializable
   Clinic.Core.Appointment o-- Clinic.Core.Diagnosis : diagnosis
   Clinic.Core.Appointment o-- Clinic.Core.Doctor : doctor
