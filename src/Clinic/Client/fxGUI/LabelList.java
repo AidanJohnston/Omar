@@ -21,7 +21,7 @@ public class LabelList extends FlowPane {
         //d is unused because java is dumb and thinks all methods with arraylist params are the same signature
         ArrayList<String> data = new ArrayList<String>();
         for(Doctor doc : doctors){
-            data.add(doc.getFname());
+            data.add(doc.getFName());
         }
         init(data);
     }
