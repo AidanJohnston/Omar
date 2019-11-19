@@ -25,16 +25,9 @@ public class DataWriter {
         return s;
     }
 
-    public void writeDoctors(ArrayList<Doctor> doctors) throws IllegalArgumentException, IllegalAccessException {
-        try {
+    public void writeDoctors(ArrayList<Doctor> doctors) throws IllegalArgumentException, IllegalAccessException, IOException {
             FileOutputStream fout = new FileOutputStream("doctors.xml");
             ObjectOutputStream oout = new ObjectOutputStream(fout);
             oout.writeObject(doctors);
-        }catch (UnsupportedEncodingException e) {
-                System.out.println("This VM does not support the Latin-1 character set.");
-            }catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
-        
     }
 }
