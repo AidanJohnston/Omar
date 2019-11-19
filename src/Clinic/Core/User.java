@@ -13,9 +13,7 @@ import java.time.LocalDate;
  * @see Staff
  */
 public class User implements Serializable{
-    private String username;
-    private String password;
-    private String Fname;
+    private String FName;
     private String LName;
     private LocalDate brithday;
     private int SIN;
@@ -28,9 +26,7 @@ public class User implements Serializable{
     /**
      * Constructor for the user class
      *
-     * @param username
-     * @param password
-     * @param Fname
+     * @param FName
      * @param LName
      * @param brithday
      * @param SIN
@@ -38,11 +34,8 @@ public class User implements Serializable{
      * @param ID
      * @param phoneNumber
      */
-    public User(String username, String password, String Fname, String LName, LocalDate brithday, int SIN, String adress, int ID, String phoneNumber) {
-
-        this.username = username;
-        this.password = password;
-        this.Fname = Fname;
+    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, int ID, String phoneNumber) {
+        this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
         this.SIN = SIN;
@@ -50,27 +43,6 @@ public class User implements Serializable{
         this.ID = ID;
         this.phoneNumber = phoneNumber;
     }
-    public User(String username, String Fname, String Lname, LocalDate birthday, int SIN, String address, int ID, String phoneNumber) {
-        this.username = username;
-        this.Fname = Fname;
-        this.LName = Lname;
-        this.brithday = birthday;
-        this.SIN = SIN;
-        this.adress = address;
-        this.ID = ID;
-        this.phoneNumber = phoneNumber;
-    }
-
-    /**
-     * Constructor used for logging in
-     * @param username
-     * @param password
-     */
-    public User(String username, String password){
-        this.username = username;
-        this.password = password;
-    }
-
     /**
      * Constructor used for logging out.a
      * @param loginToken
@@ -78,51 +50,14 @@ public class User implements Serializable{
     public User(Token loginToken) {
         this.loginToken = loginToken;
     }
-    public User(String Fname) { this.Fname = Fname;}
-
-    /**
-     * Gets the username
-     *
-     * @return username
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * Sets the username
-     *
-     * @param username
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
-     * Gets the users password
-     *
-     * @return password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * Sets the users password
-     *
-     * @param password
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
+    public User(String FName) { this.FName = FName;}
     /**
      * Gets the users first name
      *
      * @return firstName
      */
-    public String getFname() {
-        return Fname;
+    public String getFName() {
+        return FName;
     }
 
     /**
@@ -130,8 +65,8 @@ public class User implements Serializable{
      *
      * @param fname
      */
-    public void setFname(String fname) {
-        Fname = fname;
+    public void setFName(String _FName) {
+        FName = _FName;
     }
 
     /**
@@ -250,19 +185,5 @@ public class User implements Serializable{
 
     public void setLoginToken(Token loginToken) {
         this.loginToken = loginToken;
-    }
-
-    /**
-     * Compares the given password and the users password, will return true if they are the same
-     *
-     * @param password
-     * @return boolean - True if passwords are the same, False if password are not the same
-     */
-    public boolean comparePassword(String password) {
-        if (this.password == password)
-            return true;
-        else {
-            return false;
-        }
     }
 }

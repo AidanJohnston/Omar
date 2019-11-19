@@ -165,7 +165,7 @@ title __CORE's Class Diagram__\n
 
   namespace Clinic.Core {
     class Clinic.Core.User {
-        - Fname : String
+        - FName : String
         - ID : int
         - LName : String
         - SIN : int
@@ -182,7 +182,7 @@ title __CORE's Class Diagram__\n
         + comparePassword()
         + getAddress()
         + getBrithday()
-        + getFname()
+        + getFName()
         + getID()
         + getLName()
         + getLoginToken()
@@ -192,7 +192,7 @@ title __CORE's Class Diagram__\n
         + getUsername()
         + setAdress()
         + setBrithday()
-        + setFname()
+        + setFName()
         + setID()
         + setLName()
         + setLoginToken()

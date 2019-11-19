@@ -4,6 +4,7 @@ import Clinic.Client.Connection.MyClient;
 import Clinic.Client.GUI.MyGUI;
 import Clinic.Core.*;
 import Util.Exceptions.*;
+import Util.PayloadBoys.login;
 import Util.RequestType;
 
 import java.security.MessageDigest;
@@ -94,35 +95,11 @@ public class ClientSecretary {
      */
     public Token login(String username, String password) throws IncorrectPayloadException {
         avaiableID++;
-        try {
-            Payload payload = new Payload(avaiableID, RequestType.LOGIN, new User(username, this.md5(username, password)));
-            return (Token) prepareTask(payload).getReturnValue();
-        }
-        catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return null;
+        Payload payload = new Payload(avaiableID, RequestType.LOGIN, new login(username, password));
+        return (Token) prepareTask(payload).getReturnValue();
     }
 
-    //TODO TAKEN FROM INTERNET - WILL DO MYSELF AT SOME POINT -AIDAN
-    private static String md5(String salt, String password) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("MD5");
-
-        if (salt != null) {
-            md.update(salt.getBytes());
-        }
-        md.update(password.getBytes());
-
-        byte byteData[] = md.digest();
-
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < byteData.length; i++) {
-            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16)
-                    .substring(1));
-        }
-        return sb.toString();
-    }
-
+    
     /**
      * Logout interface between the GUI and the client server.  Returns true if logout was successful.
      * @param token

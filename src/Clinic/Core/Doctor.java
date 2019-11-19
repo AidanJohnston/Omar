@@ -27,7 +27,7 @@ public class Doctor extends User implements Serializable{
      *
      * @param username
      * @param password
-     * @param Fname
+     * @param FName
      * @param LName
      * @param birthday
      * @param SIN
@@ -42,9 +42,7 @@ public class Doctor extends User implements Serializable{
      * @param patients
      */
     public Doctor(
-            String username,
-            String password,
-            String Fname,
+            String FName,
             String LName,
             LocalDate birthday,
             int SIN,
@@ -57,7 +55,7 @@ public class Doctor extends User implements Serializable{
             double endHour,
             Schedule schedule,
             List<Patient> patients) {
-        super(username, password, Fname, LName, birthday, SIN, adress, ID, phoneNumber);
+        super(FName, LName, birthday, SIN, adress, ID, phoneNumber);
         this.specialty = specialty;
         this.rank = rank;
         this.startHour = startHour;
@@ -65,11 +63,11 @@ public class Doctor extends User implements Serializable{
         this.schedule = schedule;
         this.patients = patients;
     }
-    public Doctor(String Fname) {
-        super(Fname);
+    public Doctor(String FName) {
+        super(FName);
     }
-    public Doctor(String username, String Fname, String Lname, LocalDate birthday, int SIN, String address, int ID, String phoneNumber, String specialty) {
-        super(username, Fname, Lname, birthday, SIN, address, ID, phoneNumber);
+    public Doctor(String FName, String Lname, LocalDate birthday, int SIN, String address, int ID, String phoneNumber, String specialty) {
+        super(FName, Lname, birthday, SIN, address, ID, phoneNumber);
         this.specialty = specialty;
     }
 
