@@ -4,8 +4,9 @@ import Clinic.Core.Doctor;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.*;
 
+import java.awt.*;
 import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,12 +37,15 @@ public class LabelList extends FlowPane {
         this.setOrientation(Orientation.VERTICAL);
         labels = new ArrayList<Label>();
         for(String s : data){
+            HBox box = new HBox();
+            box.setStyle("-fx-border-color: #504f50; -fx-border-width: 3");
             Label label = new Label(s);
             labels.add(label);
-            getChildren().add(label);
-            this.setOrientation(Orientation.HORIZONTAL);
+            //getChildren().add(label);
+            box.getChildren().add(label);
             Button button = new Button("Go");
-            getChildren().add(button);
+            box.getChildren().add(button);
+            this.getChildren().add(box);
         }
             //getChildren().addAll(labels);
 
