@@ -25,8 +25,6 @@ public class Doctor extends User implements Serializable{
     /**
      * Constructor for the Doctor class
      *
-     * @param username
-     * @param password
      * @param FName
      * @param LName
      * @param birthday
@@ -183,5 +181,9 @@ public class Doctor extends User implements Serializable{
      */
     public void addCurrentPatient(Patient patient) {
         this.patients.add(patient);
+    }
+
+    public String getFname() {
+        return super.getFName();
     }
 }
