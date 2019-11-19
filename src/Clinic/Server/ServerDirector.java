@@ -1,6 +1,7 @@
 package Clinic.Server;
 
 import Clinic.Core.*;
+import Clinic.Server.Data.DataReader;
 import Clinic.Server.Data.DataWriter;
 import Util.*;
 import Util.Exceptions.IncorrectPayloadException;
@@ -55,12 +56,22 @@ public class ServerDirector {
         list.add(new Doctor("John"));
         list.add(new Doctor("Mai"));
         DataWriter d = new DataWriter();
+        DataReader dd = new DataReader();
         try {
-            d.writeDoctors(list);
+            return dd.readDoctors();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return e;
+        }
+        
+        /*
+        try {
+            //d.writeDoctors(list);
         } catch (Exception e) {
             return e;
         }
         return list;
+        */
     }
     public Object getDoctorWithId(Object params) throws IncorrectPayloadException {return null;}
     public Object setDoctor(Object params) throws IncorrectPayloadException {return null;}
