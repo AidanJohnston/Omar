@@ -12,10 +12,10 @@ public class ServerDirector {
         return this.getClass().getEnclosingMethod();
     }
     //*/
-    public Token login(User user) throws IncorrectPayloadException {
+    public Token login(Util.PayloadBoys.login l) throws IncorrectPayloadException {
         UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
         int userID = 1;
-        System.out.println("Login Params: " + user.toString());
+        System.out.println("Login Params: " + l.username + " " + l.password);
         Token token = new Token(type, userID);
 
         return token;

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class DataWriter {
     private String writeTag(String tagName, String value){
-        return "<" + tagName + ">" + value + "</" + tagName + ">";
+        return "<" + tagName + ">" + value + "</" + tagName + ">\r\n";
     }
 
     private String indent(int i){
@@ -33,6 +33,7 @@ public class DataWriter {
                 outfile.write("<Doctor>\r\n");
                 outfile.write(indent(1));
                 outfile.write(writeTag("FName", d.getFName()));
+
             }        
             outfile.flush();
             outfile.close();
