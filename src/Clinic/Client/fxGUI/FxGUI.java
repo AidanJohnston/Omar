@@ -19,7 +19,7 @@ public class FxGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        ClientSecretary clientSecretary = new ClientSecretary();
+        ClientSecretary clientSecretary = new ClientSecretary(); 
 
         MyClient myClient = new MyClient("localhost", 6969, clientSecretary);
         clientSecretary.setMyClient(myClient);

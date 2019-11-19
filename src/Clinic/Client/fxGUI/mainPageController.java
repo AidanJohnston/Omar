@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sun.plugin.javascript.navig.Anchor;
+//import sun.plugin.javascript.navig.Anchor;
 
 import javax.swing.*;
 
