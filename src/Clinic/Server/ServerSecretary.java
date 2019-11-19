@@ -106,7 +106,7 @@ public class ServerSecretary {
                //This statement is here to calm the compiler, because we are using reflection it doesn't know what method that it is going to be run.
                //Because of this, it doesn't think that IncorrectPayload exception will be thrown, even thought every one of the ServerDirector methods throws IncorrectPayloadException
                if(false){
-                    throw new IncorrectPayloadException("This should never happen");
+                    throw new IncorrectPayloadException("You dumb fuck how did you get here");
                }
           }
           catch (IOException e) {
