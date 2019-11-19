@@ -15,7 +15,7 @@
 
             <VBox fx:id = "mainbox">
                 <Label fx:id="output"></Label>
-                <Button text="Push" fx:id="pushbutton" onAction="#showAllDoctors"></Button>
+                <Button text="Show all Doctors" fx:id="pushbutton" onAction="#showAllDoctors"></Button>
                 <Button text="Logout" fx:id="logoutbutton" onAction="#logout"></Button>
             </VBox>
 </AnchorPane>

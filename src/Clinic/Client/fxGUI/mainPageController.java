@@ -41,7 +41,9 @@ public class mainPageController extends baseController {
 
     }
 
-    public void logout(ActionEvent e){
-        switchScene(output, "loginPage.fxml", loginController.class, null);
+    public void logout(ActionEvent e)
+    {
+        switchScene(output, "loginPage.fxml", loginController.class, session);
+
     }
 }
