@@ -199,8 +199,9 @@ public class ClientSecretary {
     public ArrayList<Doctor> getDoctorAll(Token token) throws IncorrectPayloadException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DOCTOR_GET_ALL, token);
-
-        return (ArrayList<Doctor>) prepareTask(payload).getReturnValue();
+        Object docs = prepareTask(payload).getReturnValue();
+        return(ArrayList<Doctor>)docs;
+        //return (ArrayList<Doctor>) prepareTask(payload).getReturnValue();
     }
 
     /**
