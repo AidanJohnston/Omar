@@ -16,11 +16,11 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class mainPageController extends baseController {
+public class doctorHomePageController extends baseController {
     private String data;
     private Session session;
 
-    public GridPane mainpage;
+    public GridPane doctorHomePage;
     public VBox mainbox;
 
     public void initWithData(Session _session){
@@ -41,7 +41,7 @@ public class mainPageController extends baseController {
 
     public void logout(ActionEvent e)
     {
-        switchScene(mainpage, "loginPage.fxml", loginController.class, session);
+        switchScene(doctorHomePage, "loginPage.fxml", loginController.class, session);
 
     }
 }

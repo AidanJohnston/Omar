@@ -134,7 +134,7 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.mainPageController {
+      class Clinic.Client.fxGUI.doctorHomePageController {
       }
     }
   }
@@ -342,7 +342,7 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
   Clinic.Client.fxGUI.Session o-- Clinic.Core.Token : token
   Clinic.Client.fxGUI.loginController -up-|> Clinic.Client.fxGUI.baseController
   Clinic.Client.fxGUI.loginController o-- Clinic.Client.fxGUI.Session : session
-  Clinic.Client.fxGUI.mainPageController -up-|> Clinic.Client.fxGUI.baseController
+  Clinic.Client.fxGUI.doctorHomePageController -up-|> Clinic.Client.fxGUI.baseController
   Clinic.Core.Appointment .up.|> java.io.Serializable
   Clinic.Core.Appointment o-- Clinic.Core.Diagnosis : diagnosis
   Clinic.Core.Appointment o-- Clinic.Core.Doctor : doctor

@@ -56,7 +56,7 @@ title __FXGUI's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.mainPageController {
+      class Clinic.Client.fxGUI.doctorHomePageController {
           + data : String
           + output : Label
           + doOutput()
@@ -72,7 +72,7 @@ title __FXGUI's Class Diagram__\n
   Clinic.Client.fxGUI.Session o-- Clinic.Core.Token : token
   Clinic.Client.fxGUI.loginController -up-|> Clinic.Client.fxGUI.baseController
   Clinic.Client.fxGUI.loginController o-- Clinic.Client.fxGUI.Session : session
-  Clinic.Client.fxGUI.mainPageController -up-|> Clinic.Client.fxGUI.baseController
+  Clinic.Client.fxGUI.doctorHomePageController -up-|> Clinic.Client.fxGUI.baseController
 
 
 right footer

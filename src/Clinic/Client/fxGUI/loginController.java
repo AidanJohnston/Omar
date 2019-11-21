@@ -1,19 +1,13 @@
 package Clinic.Client.fxGUI;
 import Clinic.Core.Token;
 import Util.Exceptions.IncorrectPayloadException;
-import com.sun.xml.internal.fastinfoset.tools.FI_SAX_XML;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import Clinic.Client.ClientSecretary;
-
-import java.io.IOException;
 
 
 public class loginController extends baseController{
@@ -32,7 +26,7 @@ public class loginController extends baseController{
 
     public void switchScene(ActionEvent e){
 
-        switchScene(loginPage, "mainpage.fxml", mainPageController.class, null);
+        switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, null);
 
     }
 
@@ -50,7 +44,7 @@ public class loginController extends baseController{
             }
 
             session.setDataObject("Logged in as " + userField.getText());
-            switchScene(loginPage, "mainpage.fxml", mainPageController.class, session);
+            switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, session);
         }
         else{
             output.setText("Wrong :" + userField.getText() + " " + passField.getText());
