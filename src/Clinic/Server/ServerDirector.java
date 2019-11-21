@@ -46,7 +46,11 @@ public class ServerDirector {
     public Object getAllAppointmentOfPatient(Object params) throws IncorrectPayloadException {
         return null;
     }
-    public Object getAllDoctor() throws IncorrectPayloadException {
+
+    public Object getAllDoctor(Object params) throws IncorrectPayloadException {
+        if(params.getClass() == astupididea.class){
+            return this.getClass().getEnclosingMethod();
+        }
         ArrayList<Doctor> list = new ArrayList<>();
         list.add(new Doctor("Aidan"));
         list.add(new Doctor("Sean"));
