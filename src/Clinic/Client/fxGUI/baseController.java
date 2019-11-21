@@ -14,6 +14,7 @@ public abstract class baseController {
     public Parent root;
 
     public abstract void initWithData(Session _session);
+
     public <R extends baseController>void switchScene(Parent newRoot, String newFile, R type){
         switchScene(newRoot, newFile, type.getClass(), new Session(null,null, null));
     }

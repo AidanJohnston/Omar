@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import Clinic.Client.ClientSecretary;
 
@@ -16,7 +17,7 @@ import java.io.IOException;
 
 
 public class loginController extends baseController{
-    public AnchorPane loginPage;
+    public GridPane loginPage;
     public TextField passField;
     public TextField userField;
     public Label output;
