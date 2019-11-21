@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane hgap="10" vgap="10" alignment="CENTER"
+          xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Clinic.Client.fxGUI.patientHomePageController"
+          fx:id="patientHomePage"
+          prefHeight="400.0" prefWidth="600.0">
+
+    <padding><Insets top="25" left="25" right="25" bottom="25"></Insets> </padding>
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50">
+        </ColumnConstraints>
+        <ColumnConstraints  hgrow="ALWAYS" percentWidth="50">
+        </ColumnConstraints>
+    </columnConstraints>
+
+    <Label text="Patient Home" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+
+    <Button text="Logout" fx:id="logoutbutton" onAction="#logout" GridPane.columnIndex="1" GridPane.rowIndex="4"
+            maxWidth="Infinity" ></Button>
+
+</GridPane>

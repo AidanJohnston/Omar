@@ -33,7 +33,7 @@ public class loginController extends baseController{
     public void tryLogin(ActionEvent e){
         String user = userField.getText();
         String pass = passField.getText();
-        if(userField.getText().equalsIgnoreCase("sean") && passField.getText().equalsIgnoreCase("password")){
+        if(userField.getText().equalsIgnoreCase("sean")){
             output.setText("You did it!");
             try{
                 ClientSecretary client = session.getClient();
@@ -44,7 +44,12 @@ public class loginController extends baseController{
             }
 
             session.setDataObject("Logged in as " + userField.getText());
-            switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, session);
+            if(pass.equalsIgnoreCase("d")){
+                switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, session);
+            }
+            if(pass.equalsIgnoreCase("p")){
+                switchScene(loginPage, "patientHomePage.fxml", patientHomePageController.class, session);
+            }
         }
         else{
             output.setText("Wrong :" + userField.getText() + " " + passField.getText());
