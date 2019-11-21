@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -19,16 +20,12 @@ public class mainPageController extends baseController {
     private String data;
     private Session session;
 
-    public Label output;
+    public GridPane mainpage;
     public VBox mainbox;
 
     public void initWithData(Session _session){
         session = _session;
         data = session.getDataObject().toString();
-    }
-
-    public void doOutput(ActionEvent e){
-        output.setText(data);
     }
 
     public void showAllDoctors(){
@@ -44,7 +41,7 @@ public class mainPageController extends baseController {
 
     public void logout(ActionEvent e)
     {
-        switchScene(output, "loginPage.fxml", loginController.class, session);
+        switchScene(mainpage, "loginPage.fxml", loginController.class, session);
 
     }
 }
