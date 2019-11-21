@@ -13,9 +13,6 @@ public class DataPopulate {
         list.add(new Doctor("John"));
         list.add(new Doctor("Mai"));
         DataWriter d = new DataWriter();
-        DataReader dd = new DataReader();
-
-
         //write some example info to the database xml
         try {
             d.writeDoctors(list);
