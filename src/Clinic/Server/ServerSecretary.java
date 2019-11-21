@@ -84,17 +84,9 @@ public class ServerSecretary {
 
           //Attempting to send back to the server
           try{
-
-               //Invoking when method takes no parma
-               if(payload.getObject() == null) {
-                    Method method = director.getClass().getMethod(payload.getType());
-                    object = method.invoke(director);
-               }
-               //When method takes parma
-               else {
-                    Method method = director.getClass().getMethod(payload.getType(), payload.getObject().getClass());
-                    object = method.invoke(director, payload.getObject());
-               }
+               Method method = director.getClass().getMethod(payload.getType(), payload.getObject().getClass());
+               object = method.invoke(director, payload.getObject());
+     
                //Sending message to client
                client.sendToClient(
                     new Payload(
@@ -109,27 +101,13 @@ public class ServerSecretary {
                     throw new IncorrectPayloadException("You dumb fuck how did you get here");
                }
           }
-          catch (IOException e) {
-               e.printStackTrace();
-          }
-          catch (NoSuchMethodException e) {
-               try {
-                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, "Unknown method name dumbass", payload.getStartTime()));
-               }
-               catch (IOException e1) {
-                    e1.printStackTrace();
-               }
-          }
-          catch (IncorrectPayloadException e ) {
+          catch (Exception e ) {
                try {
                     client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e.getMessage(), payload.getStartTime()));
                }
                catch (IOException e1) {
                     e1.printStackTrace();
                }
-          }
-          catch (Exception e ) {
-               e.printStackTrace();
           }
      }
 

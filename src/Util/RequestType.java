@@ -23,7 +23,6 @@ public final class RequestType //Yo we're using this one its like 10000000 times
             SCHEDULE_SET_GIVEN_SCHEDULE,
             APPOINTMENT_DOCTOR_CURRENT_ALL,
             PATIENT_GET_ALL;
-
     // etc.
 
 public static final Collection<String> ALL_PATHS;
