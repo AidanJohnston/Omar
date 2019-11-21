@@ -8,21 +8,22 @@
 <?import javafx.fxml.FXMLLoader.*?>
 
 <?import javafx.scene.text.Text?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Clinic.Client.fxGUI.loginController"
-            fx:id = "loginPage"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.Insets?>
+                <GridPane alignment="CENTER" hgap="10" vgap="10"
+                          xmlns="http://javafx.com/javafx"
+                          xmlns:fx="http://javafx.com/fxml"
+                          fx:controller="Clinic.Client.fxGUI.loginController"
+                          fx:id="loginPage"
+                          prefHeight="400.0" prefWidth="600.0">
+                    <padding><Insets top="25" left="25" right="25" bottom="25"></Insets> </padding>
 
-            <VBox>
-                <Label text="Clinic Login" />
-                <TextField promptText="username" focusTraversable="true" fx:id="userField"/>
-                <PasswordField promptText="password" focusTraversable="true" fx:id="passField" onAction="#tryLogin"/>
-                <Button text="Login" onAction="#tryLogin"></Button>
-                <Button text="push" onAction="#switchScene"></Button>
-                <Label text="Do it" fx:id="output"></Label>
-            </VBox>
-            <fx:script>
+                    <Label text="Clinic Login" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+                    <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+                    <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="2"></Label>
+                    <TextField promptText="username" focusTraversable="true" fx:id="userField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <PasswordField promptText="password" focusTraversable="true" fx:id="passField" onAction="#tryLogin" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Button text="Login" onAction="#tryLogin" GridPane.rowIndex="3" GridPane.columnIndex="1"></Button>
+                    <Label fx:id="output" GridPane.columnIndex="0" GridPane.rowIndex="4"></Label>
+                </GridPane>
 
-            </fx:script>
-</AnchorPane>
+

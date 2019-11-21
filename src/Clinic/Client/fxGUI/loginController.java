@@ -2,20 +2,16 @@ package Clinic.Client.fxGUI;
 import Clinic.Core.Token;
 import Util.Exceptions.IncorrectPayloadException;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import Clinic.Client.ClientSecretary;
 
-import java.io.IOException;
-
 
 public class loginController extends baseController{
-    public AnchorPane loginPage;
+    public GridPane loginPage;
     public TextField passField;
     public TextField userField;
     public Label output;
@@ -30,14 +26,14 @@ public class loginController extends baseController{
 
     public void switchScene(ActionEvent e){
 
-        switchScene(loginPage, "mainpage.fxml", mainPageController.class, null);
+        switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, null);
 
     }
 
     public void tryLogin(ActionEvent e){
         String user = userField.getText();
         String pass = passField.getText();
-        if(userField.getText().equalsIgnoreCase("sean") && passField.getText().equalsIgnoreCase("password")){
+        if(userField.getText().equalsIgnoreCase("sean")){
             output.setText("You did it!");
             try{
                 ClientSecretary client = session.getClient();
@@ -48,7 +44,12 @@ public class loginController extends baseController{
             }
 
             session.setDataObject("Logged in as " + userField.getText());
-            switchScene(loginPage, "mainpage.fxml", mainPageController.class, session);
+            if(pass.equalsIgnoreCase("d")){
+                switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, session);
+            }
+            if(pass.equalsIgnoreCase("p")){
+                switchScene(loginPage, "patientHomePage.fxml", patientHomePageController.class, session);
+            }
         }
         else{
             output.setText("Wrong :" + userField.getText() + " " + passField.getText());
