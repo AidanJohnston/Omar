@@ -1,10 +1,11 @@
-package Clinic.Client.fxGUI;
+package Clinic.Client.fxGUI.controllers;
 
+import Clinic.Client.fxGUI.util.Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 
-public class patientHomePageController extends baseController{
+public class patientHomePageController extends baseController {
 
     private Session session;
     @FXML

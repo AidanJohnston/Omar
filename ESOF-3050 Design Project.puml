@@ -110,7 +110,7 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.Session {
+      class Clinic.Client.fxGUI.util.Session {
       }
     }
   }
@@ -118,7 +118,7 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      abstract class Clinic.Client.fxGUI.baseController {
+      abstract class Clinic.Client.fxGUI.controllers.baseController {
       }
     }
   }
@@ -126,7 +126,7 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.loginController {
+      class Clinic.Client.fxGUI.controllers.loginController {
       }
     }
   }
@@ -134,7 +134,7 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.doctorHomePageController {
+      class Clinic.Client.fxGUI.controllers.doctorHomePageController {
       }
     }
   }
@@ -338,11 +338,11 @@ title __ESOF-3050 DESIGN PROJECT's Class Diagram__\n
   Clinic.Client.GUI.ResultsEntry -up-|> javax.swing.JPanel
   Clinic.Client.GUI.ResultsPanel -up-|> javax.swing.JPanel
   Clinic.Client.fxGUI.FxGUI -up-|> javafx.application.Application
-  Clinic.Client.fxGUI.Session o-- Clinic.Client.ClientSecretary : client
-  Clinic.Client.fxGUI.Session o-- Clinic.Core.Token : token
-  Clinic.Client.fxGUI.loginController -up-|> Clinic.Client.fxGUI.baseController
-  Clinic.Client.fxGUI.loginController o-- Clinic.Client.fxGUI.Session : session
-  Clinic.Client.fxGUI.doctorHomePageController -up-|> Clinic.Client.fxGUI.baseController
+  Clinic.Client.fxGUI.util.Session o-- Clinic.Client.ClientSecretary : client
+  Clinic.Client.fxGUI.util.Session o-- Clinic.Core.Token : token
+  Clinic.Client.fxGUI.controllers.loginController -up-|> Clinic.Client.fxGUI.controllers.baseController
+  Clinic.Client.fxGUI.controllers.loginController o-- Clinic.Client.fxGUI.util.Session : session
+  Clinic.Client.fxGUI.controllers.doctorHomePageController -up-|> Clinic.Client.fxGUI.controllers.baseController
   Clinic.Core.Appointment .up.|> java.io.Serializable
   Clinic.Core.Appointment o-- Clinic.Core.Diagnosis : diagnosis
   Clinic.Core.Appointment o-- Clinic.Core.Doctor : doctor

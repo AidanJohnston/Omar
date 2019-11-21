@@ -12,7 +12,7 @@
                 <GridPane alignment="CENTER" hgap="10" vgap="10"
                           xmlns="http://javafx.com/javafx"
                           xmlns:fx="http://javafx.com/fxml"
-                          fx:controller="Clinic.Client.fxGUI.loginController"
+                          fx:controller="Clinic.Client.fxGUI.controllers.loginController"
                           fx:id="loginPage"
                           prefHeight="400.0" prefWidth="600.0">
                     <padding><Insets top="25" left="25" right="25" bottom="25"></Insets> </padding>

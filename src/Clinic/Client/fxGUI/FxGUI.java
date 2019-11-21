@@ -2,6 +2,8 @@ package Clinic.Client.fxGUI;
 
 import Clinic.Client.ClientSecretary;
 import Clinic.Client.Connection.MyClient;
+import Clinic.Client.fxGUI.controllers.loginController;
+import Clinic.Client.fxGUI.util.Session;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,8 +28,8 @@ public class FxGUI extends Application {
 
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("loginPage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("pages/loginPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("pages/loginPage.fxml"));
             primaryStage.setTitle("Clinic UI");
             primaryStage.setScene(new Scene(loader.load()));
             loginController controller = loader.<loginController>getController();

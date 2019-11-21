@@ -1,4 +1,5 @@
-package Clinic.Client.fxGUI;
+package Clinic.Client.fxGUI.controllers;
+import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Token;
 import Util.Exceptions.IncorrectPayloadException;
 import javafx.event.ActionEvent;
