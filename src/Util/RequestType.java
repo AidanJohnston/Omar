@@ -1,15 +1,12 @@
 package Util;
 
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
-import Clinic.Server.ServerDirector;
-
 public final class RequestType //Yo we're using this one its like 10000000 times better
 {
-    public static final Method SUCCESS,
+    public static final String SUCCESS,
             LOGIN,
             LOGOUT,
             ERROR,
@@ -28,26 +25,26 @@ public final class RequestType //Yo we're using this one its like 10000000 times
             PATIENT_GET_ALL;
     // etc.
 
-public static final Collection<Method> ALL_PATHS;
+public static final Collection<String> ALL_PATHS;
     static {
         ALL_PATHS = Collections.unmodifiableCollection(Arrays.asList(
-            SUCCESS = "update",
-            LOGIN = "login",
-            LOGOUT = "logout",
-            ERROR = "error",
-            APPOINTMENT_CREATE = "createAppointment",
-            SCHEDULE_GET_ALL = "getAllSchedule",
-            SCHEDULE_GET_DOCTOR = "getScheduleOfDoctor",
-            APPOINTMENT_PATENT_CURRENT_ALL = "getCurrentAppointmentOfPatient",
-            APPOINTMENT_PATIENT_ALL = "getAllAppointmentOfPatient",
-            DOCTOR_GET_ALL = (Method)(new ServerDirector().getAllDoctor(new astupididea())),
-            DOCTOR_GET_GIVEN_ID = "getDoctorWithId",
-            DOCTOR_UPDATE_GIVEN_DOCTOR = "setDoctor",
-            DIAGNOSIS_GET_ALL_PATIENT = "getAllDiagnosisFromPatient",
-            PRESCRIPTION_GET_ALL_PATIENT = "getAllPrescriptionFromPatient",
-            SCHEDULE_SET_GIVEN_SCHEDULE = "setSchedule",
-            APPOINTMENT_DOCTOR_CURRENT_ALL = "getCurrentAppointmentDoctor",
-            PATIENT_GET_ALL = "getAllPatient"
+                SUCCESS = "update",
+                LOGIN = "login",
+        LOGOUT = "logout",
+        ERROR = "error",
+        APPOINTMENT_CREATE = "createAppointment",
+        SCHEDULE_GET_ALL = "getAllSchedule",
+        SCHEDULE_GET_DOCTOR = "getScheduleOfDoctor",
+        APPOINTMENT_PATENT_CURRENT_ALL = "getCurrentAppointmentOfPatient",
+        APPOINTMENT_PATIENT_ALL = "getAllAppointmentOfPatient",
+        DOCTOR_GET_ALL = "getAllDoctor",
+        DOCTOR_GET_GIVEN_ID = "getDoctorWithId",
+        DOCTOR_UPDATE_GIVEN_DOCTOR = "setDoctor",
+        DIAGNOSIS_GET_ALL_PATIENT = "getAllDiagnosisFromPatient",
+        PRESCRIPTION_GET_ALL_PATIENT = "getAllPrescriptionFromPatient",
+        SCHEDULE_SET_GIVEN_SCHEDULE = "setSchedule",
+        APPOINTMENT_DOCTOR_CURRENT_ALL = "getCurrentAppointmentDoctor",
+        PATIENT_GET_ALL = "getAllPatient"
         ));
     }
 }
