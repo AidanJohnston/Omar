@@ -29,6 +29,7 @@
     <Button text="Logout" fx:id="logoutbutton" onAction="#logout" GridPane.columnIndex="1" GridPane.rowIndex="4"
             maxWidth="Infinity" ></Button>
 
+
     <Button text="Request Appointment" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
     <Button text="View Active Appointments" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity" ></Button>
     <Button text="Browse Appointment History" GridPane.rowIndex="3" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
