@@ -24,11 +24,11 @@
                     </ColumnConstraints>
                 </columnConstraints>
 
-                <Label text="Doctor Home" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" ></Label>
-                <Button text="Logout" fx:id="logoutbutton" onAction="#logout" GridPane.columnIndex="1" maxWidth="Infinity" ></Button>
-                <Button text="View/Edit Schedule" GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
-                <Button text="View Appointments" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity" ></Button>
-                <Button text="Browse Patients"  GridPane.columnIndex="0" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
-                <Button text="Switch to Patient View" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
+                <Label text="Doctor Home" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2" alignment="CENTER" style="-fx-font-size: 28"></Label>
+                <Button text="Logout" fx:id="logoutbutton" onAction="#logout" GridPane.columnIndex="1" GridPane.rowIndex="4" maxWidth="Infinity" ></Button>
+                <Button text="View/Edit Schedule" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
+                <Button text="View Appointments" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
+                <Button text="Browse Patients"  GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
+                <Button text="Switch to Patient View" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
             </GridPane>
 
