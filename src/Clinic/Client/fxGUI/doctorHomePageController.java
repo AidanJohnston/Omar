@@ -9,17 +9,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-//import sun.plugin.javascript.navig.Anchor;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
-public class mainPageController extends baseController {
+public class doctorHomePageController extends baseController {
     private String data;
     private Session session;
 
-    public Label output;
+    public GridPane doctorHomePage;
     public VBox mainbox;
 
     public void initWithData(Session _session){
@@ -27,13 +28,10 @@ public class mainPageController extends baseController {
         data = session.getDataObject().toString();
     }
 
-    public void doOutput(ActionEvent e){
-        output.setText(data);
-    }
-
     public void showAllDoctors(){
         try{
-            LabelList results = new LabelList(session.getClient().getDoctorAll(session.getToken()), new Doctor(null));
+            ArrayList<Doctor> doctors = session.getClient().getDoctorAll(session.getToken());
+            LabelList results = new LabelList(doctors,  new Doctor(null));
             mainbox.getChildren().add(results);
         }catch(IncorrectPayloadException ex){
             System.out.println("Payload machine broke");
@@ -43,7 +41,6 @@ public class mainPageController extends baseController {
 
     public void logout(ActionEvent e)
     {
-        switchScene(output, "loginPage.fxml", loginController.class, session);
-
+        switchScene(doctorHomePage, "loginPage.fxml", loginController.class, session);
     }
 }
