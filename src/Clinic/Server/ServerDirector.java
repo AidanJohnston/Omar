@@ -46,9 +46,7 @@ public class ServerDirector {
     public Object getAllAppointmentOfPatient(Object params) throws IncorrectPayloadException {
         return null;
     }
-
     public Object getAllDoctor() throws IncorrectPayloadException {
-
         ArrayList<Doctor> list = new ArrayList<>();
         list.add(new Doctor("Aidan"));
         list.add(new Doctor("Sean"));

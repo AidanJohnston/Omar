@@ -15,7 +15,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class DataReader {
-
     public ArrayList<Doctor> readDoctors() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Doctor> doctors = null;
         try {
