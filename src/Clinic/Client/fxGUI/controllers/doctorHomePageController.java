@@ -1,19 +1,13 @@
-package Clinic.Client.fxGUI;
+package Clinic.Client.fxGUI.controllers;
 
+import Clinic.Client.fxGUI.util.LabelList;
+import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Doctor;
 import Util.Exceptions.IncorrectPayloadException;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.util.ArrayList;
 
 public class doctorHomePageController extends baseController {

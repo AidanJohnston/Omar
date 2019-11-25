@@ -1,4 +1,5 @@
-package Clinic.Client.fxGUI;
+package Clinic.Client.fxGUI.controllers;
+import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Token;
 import Util.Exceptions.IncorrectPayloadException;
 import javafx.event.ActionEvent;
@@ -15,7 +16,7 @@ public class loginController extends baseController{
     public TextField passField;
     public TextField userField;
     public Label output;
-
+    //hey yaa
     private Stage stage;
     private Parent root;
     private Session session;

@@ -14,7 +14,7 @@ title __FXGUI's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.Session {
+      class Clinic.Client.fxGUI.util.Session {
           - dataObject : Object
           + Session()
           + getDataObject()
@@ -26,7 +26,7 @@ title __FXGUI's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      abstract class Clinic.Client.fxGUI.baseController {
+      abstract class Clinic.Client.fxGUI.controllers.baseController {
           + root : Parent
           + stage : Stage
           {abstract} + initWithData()
@@ -39,7 +39,7 @@ title __FXGUI's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.loginController {
+      class Clinic.Client.fxGUI.controllers.loginController {
           + loginPage : AnchorPane
           + output : Label
           + passField : TextField
@@ -56,7 +56,7 @@ title __FXGUI's Class Diagram__\n
 
   namespace Clinic.Client {
     namespace fxGUI {
-      class Clinic.Client.fxGUI.doctorHomePageController {
+      class Clinic.Client.fxGUI.controllers.doctorHomePageController {
           + data : String
           + output : Label
           + doOutput()
@@ -68,11 +68,11 @@ title __FXGUI's Class Diagram__\n
   
 
   Clinic.Client.fxGUI.FxGUI -up-|> javafx.application.Application
-  Clinic.Client.fxGUI.Session o-- Clinic.Client.ClientSecretary : client
-  Clinic.Client.fxGUI.Session o-- Clinic.Core.Token : token
-  Clinic.Client.fxGUI.loginController -up-|> Clinic.Client.fxGUI.baseController
-  Clinic.Client.fxGUI.loginController o-- Clinic.Client.fxGUI.Session : session
-  Clinic.Client.fxGUI.doctorHomePageController -up-|> Clinic.Client.fxGUI.baseController
+  Clinic.Client.fxGUI.util.Session o-- Clinic.Client.ClientSecretary : client
+  Clinic.Client.fxGUI.util.Session o-- Clinic.Core.Token : token
+  Clinic.Client.fxGUI.controllers.loginController -up-|> Clinic.Client.fxGUI.controllers.baseController
+  Clinic.Client.fxGUI.controllers.loginController o-- Clinic.Client.fxGUI.util.Session : session
+  Clinic.Client.fxGUI.controllers.doctorHomePageController -up-|> Clinic.Client.fxGUI.controllers.baseController
 
 
 right footer

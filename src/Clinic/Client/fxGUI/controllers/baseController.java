@@ -1,6 +1,6 @@
-package Clinic.Client.fxGUI;
+package Clinic.Client.fxGUI.controllers;
 
-import javafx.event.ActionEvent;
+import Clinic.Client.fxGUI.util.Session;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

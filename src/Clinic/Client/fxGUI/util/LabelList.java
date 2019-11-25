@@ -1,4 +1,4 @@
-package Clinic.Client.fxGUI;
+package Clinic.Client.fxGUI.util;
 
 import Clinic.Core.Doctor;
 import javafx.geometry.Orientation;
