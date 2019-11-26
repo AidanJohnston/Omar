@@ -5,6 +5,7 @@ import Clinic.Server.Data.DataReader;
 import Clinic.Server.Data.DataWriter;
 import Util.*;
 import Util.Exceptions.IncorrectPayloadException;
+import Util.PayloadBoys.login;
 
 import java.util.ArrayList;
 
@@ -14,8 +15,21 @@ public class ServerDirector {
      * do this public Method login(){ return this.getClass().getEnclosingMethod(); }
      * //
      */
-    public Token login(Util.PayloadBoys.login l) throws IncorrectPayloadException {
-        UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
+    public Token login(login l) throws IncorrectPayloadException {
+        //UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
+        UserType type;
+        type = UserType.DOCTOR;
+        switch(l.password){
+            case "d":
+                type = UserType.DOCTOR;
+                break;
+            case "p":
+                type = UserType.PATIENT;
+                break;
+            case "s":
+                type = UserType.STAFF;
+                break;
+        }
         int userID = 1;
         System.out.println("Login Params: " + l.username + " " + l.password);
         Token token = new Token(type, userID);

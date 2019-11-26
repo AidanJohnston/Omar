@@ -24,6 +24,10 @@ public class Token implements Serializable{
         this.userID = userID;
     }
 
+    public UserType getType(){
+        return type;
+    }
+
     public int getUserID() {
         return userID;
     }

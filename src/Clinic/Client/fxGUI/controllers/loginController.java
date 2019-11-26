@@ -2,6 +2,7 @@ package Clinic.Client.fxGUI.controllers;
 import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Token;
 import Util.Exceptions.IncorrectPayloadException;
+import Util.UserType;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
@@ -16,7 +17,6 @@ public class loginController extends baseController{
     public TextField passField;
     public TextField userField;
     public Label output;
-    //hey yaa
     private Stage stage;
     private Parent root;
     private Session session;
@@ -45,10 +45,10 @@ public class loginController extends baseController{
             }
 
             session.setDataObject("Logged in as " + userField.getText());
-            if(pass.equalsIgnoreCase("d")){
+            if(session.getToken().getType() == UserType.DOCTOR){
                 switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, session);
             }
-            if(pass.equalsIgnoreCase("p")){
+            if(session.getToken().getType() == UserType.PATIENT){
                 switchScene(loginPage, "patientHomePage.fxml", patientHomePageController.class, session);
             }
         }
