@@ -57,7 +57,6 @@ public class ServerDirector {
         list.add(new Doctor("Dawson"));
         list.add(new Doctor("John"));
         list.add(new Doctor("Mai"));
-        DataWriter d = new DataWriter();
         DataReader dd = new DataReader();
         try {
             return dd.readDoctors();
@@ -81,5 +80,12 @@ public class ServerDirector {
     public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {return null;}
     public Object setSchedule(Object params) throws IncorrectPayloadException {return null;}
     public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {return null;}
-    public Object getAllPatient(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllPatient(Object params) throws IncorrectPayloadException {
+        DataReader reader = new DataReader();
+        try{
+            return reader.readPatients();
+        }catch(Exception e){
+            return e;
+        }
+    }
 }
