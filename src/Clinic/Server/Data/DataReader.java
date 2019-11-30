@@ -12,9 +12,10 @@ public class DataReader {
     public ArrayList<Appointment> readAppointments() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Appointment> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("appointments.xml");
+            FileInputStream fout = new FileInputStream(FileNames.APPOINTMENTS);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Appointment>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
@@ -26,9 +27,10 @@ public class DataReader {
     public ArrayList<Diagnosis> readDiagnoses() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Diagnosis> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("diagnoses.xml");
+            FileInputStream fout = new FileInputStream(FileNames.DIAGNOSES);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Diagnosis>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
@@ -40,9 +42,10 @@ public class DataReader {
     public ArrayList<Doctor> readDoctors() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Doctor> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("doctors.xml");
+            FileInputStream fout = new FileInputStream(FileNames.DOCTORS);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Doctor>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
@@ -54,9 +57,10 @@ public class DataReader {
     public ArrayList<Patient> readPatients() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Patient> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("patients.xml");
+            FileInputStream fout = new FileInputStream(FileNames.PATIENTS);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Patient>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
@@ -68,9 +72,10 @@ public class DataReader {
     public ArrayList<Prescription> readPrescription() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Prescription> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("prescriptions.xml");
+            FileInputStream fout = new FileInputStream(FileNames.PRESCRIPTIONS);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Prescription>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
@@ -82,9 +87,10 @@ public class DataReader {
     public ArrayList<Schedule> readSchedule() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Schedule> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("schedules.xml");
+            FileInputStream fout = new FileInputStream(FileNames.SCHEDULES);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Schedule>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
@@ -96,9 +102,10 @@ public class DataReader {
     public ArrayList<Staff> readStaff() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Staff> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("staff.xml");
+            FileInputStream fout = new FileInputStream(FileNames.STAFF);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Staff>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
@@ -111,9 +118,10 @@ public class DataReader {
     public ArrayList<User> readUser() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<User> objs = null;
         try {
-            FileInputStream fout = new FileInputStream("users.xml");
+            FileInputStream fout = new FileInputStream(FileNames.USERS);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<User>)oout.readObject();
+            oout.close();
         }catch (UnsupportedEncodingException e) {
                 System.out.println("This VM does not support the Latin-1 character set.");
             }catch (IOException e) {
