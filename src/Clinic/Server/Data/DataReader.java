@@ -24,6 +24,21 @@ public class DataReader {
         return objs;
     }
 
+    public ArrayList<Credentials> readCredentials() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
+        ArrayList<Credentials> objs = null;
+        try {
+            FileInputStream fout = new FileInputStream(FileNames.CREDENTIALS);
+            ObjectInputStream oout = new ObjectInputStream(fout);
+            objs = (ArrayList<Credentials>)oout.readObject();
+            oout.close();
+        }catch (UnsupportedEncodingException e) {
+                System.out.println("This VM does not support the Latin-1 character set.");
+            }catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        return objs;
+    }
+
     public ArrayList<Diagnosis> readDiagnoses() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
         ArrayList<Diagnosis> objs = null;
         try {

@@ -22,6 +22,14 @@ public class DataWriter {
         oout.close();
     }
 
+    public void writeCredentials(ArrayList<Credentials> objs) throws IllegalArgumentException, IllegalAccessException, IOException {
+        new PrintWriter(FileNames.CREDENTIALS).close();
+        FileOutputStream fout = new FileOutputStream(FileNames.CREDENTIALS);
+        ObjectOutputStream oout = new ObjectOutputStream(fout);
+        oout.writeObject(objs);
+        oout.close();
+    }
+
     public void writeDiagnoses(ArrayList<Diagnosis> objs) throws IllegalArgumentException, IllegalAccessException, IOException {
         new PrintWriter(FileNames.DIAGNOSES).close();
         FileOutputStream fout = new FileOutputStream(FileNames.DIAGNOSES);

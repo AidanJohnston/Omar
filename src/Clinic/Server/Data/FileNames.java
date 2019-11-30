@@ -8,6 +8,7 @@ public final class FileNames //Yo we're using this one its like 10000000 times b
 {
     public static final String 
     APPOINTMENTS,
+    CREDENTIALS,
     DIAGNOSES,
     DOCTORS,
     PATIENTS,
@@ -21,6 +22,7 @@ public static final Collection<String> ALL_PATHS;
     static {
         ALL_PATHS = Collections.unmodifiableCollection(Arrays.asList(
             APPOINTMENTS = "appointments.txt",
+            CREDENTIALS = "credentials.txt",
             DIAGNOSES = "diagnoses.txt",
             DOCTORS = "doctors.txt",
             PATIENTS = "patients.txt",
