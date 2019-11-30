@@ -3,6 +3,7 @@ package Clinic.Server;
 import Clinic.Core.*;
 import Clinic.Server.Data.DataReader;
 import Clinic.Server.Data.DataWriter;
+import Clinic.Server.Data.Queries;
 import Util.*;
 import Util.Exceptions.IncorrectPayloadException;
 
@@ -14,13 +15,8 @@ public class ServerDirector {
      * do this public Method login(){ return this.getClass().getEnclosingMethod(); }
      * //
      */
-    public Token login(Util.PayloadBoys.login l) throws IncorrectPayloadException {
-        UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
-        int userID = 1;
-        System.out.println("Login Params: " + l.username + " " + l.password);
-        Token token = new Token(type, userID);
-
-        return token;
+    public Object login(Object params) throws IncorrectPayloadException {
+        return new Queries().login((Credentials)params);
     }
 
     public Object logout(Object params) throws IncorrectPayloadException {

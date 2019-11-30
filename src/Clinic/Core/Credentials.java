@@ -24,6 +24,14 @@ public class Credentials implements Serializable{
         type = _type;
     }
 
+    public String getUsername(){
+        return username;
+    }
+
+    public String getHashword(){
+        return hashword;
+    }
+
     public int getID(){
         return userID;
     }
