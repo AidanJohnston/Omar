@@ -12,17 +12,8 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class ServerDirector {
-    /*
-     * This should stay dead, but just in case everything goes wrong and we need to
-     * do this public Method login(){ return this.getClass().getEnclosingMethod(); }
-     * //
-     */
     public Object login(Object params) throws LoginFailedException {
         return new Token(new Queries().login((Credentials)params).getType(), UUID.randomUUID());
-    }
-
-    public Object logout(Object params) throws IncorrectPayloadException {
-        return null;
     }
 
     public Object createAppointment(Object params) throws IncorrectPayloadException {
