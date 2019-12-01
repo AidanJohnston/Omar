@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * ServerSecretary.java - This class handles the requests from clients, such as finding information, removing information
@@ -59,14 +60,11 @@ public class ServerSecretary {
       * @return boolean
       */
      private boolean findToken(Token token) {
-
-          boolean flag = false;
-
-          for(Token var : clientTokens) {
-               if(var.getUserID() == token.getUserID())
-                    flag = true;
-          }
-          return flag;
+          return (clientTokens
+          .stream()
+          .filter(t -> t.getUserID() == token.getUserID())
+          .collect(Collectors.toList())
+          .size() == 1);
      }
 
      /**
@@ -86,25 +84,11 @@ public class ServerSecretary {
 
           //Attempting to send back to the server
           try{
-               Method method = director.getClass().getMethod(payload.getType(), payload.getObject().getClass());
+               Method method = director.getClass().getMethod(payload.getType(), Object.class);
                object = method.invoke(director, payload.getObject());
                
                if(object.getClass() == Token.class){
                     clientTokens.add((Token)object);
-               }
-
-               if(Exception.class.isAssignableFrom(object.getClass())){
-                    //UH OH
-                    //Sending message to client
-                    //this should never happen because functions throw exceptions, they don't return them ever.
-                    //Stop.
-                    System.out.println("This should not have happened, stop returning exceptions already");
-                    client.sendToClient(
-                         new Payload(
-                              payload.getId(),
-                              RequestType.ERROR,
-                              object,
-                              payload.getStartTime()));
                }else{
                     //Sending message to client
                     client.sendToClient(
@@ -115,8 +99,6 @@ public class ServerSecretary {
                               payload.getStartTime()));
                }
 
-               
-
                //This statement is here to calm the compiler, because we are using reflection it doesn't know what method that it is going to be run.
                //Because of this, it doesn't think that IncorrectPayload exception will be thrown, even thought every one of the ServerDirector methods throws IncorrectPayloadException
                if(false){
@@ -126,7 +108,7 @@ public class ServerSecretary {
           catch (InvocationTargetException e ) {
                if(e.getCause() instanceof ServerException){
                     try {
-                         client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e, payload.getStartTime()));
+                         client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, (ServerException)e.getCause(), payload.getStartTime()));
                     }
                     catch (IOException e1) {
                          e1.printStackTrace();
