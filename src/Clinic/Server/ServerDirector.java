@@ -13,7 +13,8 @@ import java.util.UUID;
 
 public class ServerDirector {
     public Object login(Object params) throws LoginFailedException {
-        return new Token(new Queries().login((Credentials)params).getType(), UUID.randomUUID());
+        Credentials user = new Queries().login((Credentials)params);
+        return new Token(user.getType(), UUID.randomUUID(), user.getID());
     }
 
     public Object createAppointment(Object params) throws IncorrectPayloadException {
@@ -33,7 +34,7 @@ public class ServerDirector {
     }
 
     public Object getAllAppointmentOfPatient(Object params) throws IncorrectPayloadException {
-        return null;
+        return new Queries().getAppsPatient((Patient)params);
     }
 
     public Object getAllDoctor(Object params) throws IncorrectPayloadException {
