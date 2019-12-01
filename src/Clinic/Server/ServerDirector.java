@@ -3,9 +3,9 @@ package Clinic.Server;
 import Clinic.Core.*;
 import Clinic.Server.Data.DataReader;
 import Clinic.Server.Data.DataWriter;
+import Clinic.Server.Data.Queries;
 import Util.*;
 import Util.Exceptions.IncorrectPayloadException;
-import Util.PayloadBoys.login;
 
 import java.util.ArrayList;
 
@@ -15,26 +15,8 @@ public class ServerDirector {
      * do this public Method login(){ return this.getClass().getEnclosingMethod(); }
      * //
      */
-    public Token login(login l) throws IncorrectPayloadException {
-        //UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
-        UserType type;
-        type = UserType.DOCTOR;
-        switch(l.password){
-            case "d":
-                type = UserType.DOCTOR;
-                break;
-            case "p":
-                type = UserType.PATIENT;
-                break;
-            case "s":
-                type = UserType.STAFF;
-                break;
-        }
-        int userID = 1;
-        System.out.println("Login Params: " + l.username + " " + l.password);
-        Token token = new Token(type, userID);
-
-        return token;
+    public Object login(Object params) throws IncorrectPayloadException {
+        return new Queries().login((Credentials)params);
     }
 
     public Object logout(Object params) throws IncorrectPayloadException {
@@ -71,7 +53,6 @@ public class ServerDirector {
         list.add(new Doctor("Dawson"));
         list.add(new Doctor("John"));
         list.add(new Doctor("Mai"));
-        DataWriter d = new DataWriter();
         DataReader dd = new DataReader();
         try {
             return dd.readDoctors();
@@ -95,5 +76,12 @@ public class ServerDirector {
     public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {return null;}
     public Object setSchedule(Object params) throws IncorrectPayloadException {return null;}
     public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {return null;}
-    public Object getAllPatient(Object params) throws IncorrectPayloadException {return null;}
+    public Object getAllPatient(Object params) throws IncorrectPayloadException {
+        DataReader reader = new DataReader();
+        try{
+            return reader.readPatients();
+        }catch(Exception e){
+            return e;
+        }
+    }
 }

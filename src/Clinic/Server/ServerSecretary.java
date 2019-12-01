@@ -86,19 +86,36 @@ public class ServerSecretary {
           try{
                Method method = director.getClass().getMethod(payload.getType(), payload.getObject().getClass());
                object = method.invoke(director, payload.getObject());
-     
-               //Sending message to client
-               client.sendToClient(
-                    new Payload(
-                            payload.getId(),
-                            RequestType.SUCCESS,
-                            object,
-                            payload.getStartTime()));
+               
+               if(object.getClass() == Token.class){
+                    clientTokens.add((Token)object);
+               }
+
+               if(Exception.class.isAssignableFrom(object.getClass())){
+                    //UH OH
+                    //Sending message to client
+                    client.sendToClient(
+                         new Payload(
+                              payload.getId(),
+                              RequestType.ERROR,
+                              object,
+                              payload.getStartTime()));
+               }else{
+                    //Sending message to client
+                    client.sendToClient(
+                         new Payload(
+                              payload.getId(),
+                              RequestType.SUCCESS,
+                              object,
+                              payload.getStartTime()));
+               }
+
+               
 
                //This statement is here to calm the compiler, because we are using reflection it doesn't know what method that it is going to be run.
                //Because of this, it doesn't think that IncorrectPayload exception will be thrown, even thought every one of the ServerDirector methods throws IncorrectPayloadException
                if(false){
-                    throw new IncorrectPayloadException("You dumb fuck how did you get here");
+                    throw new IncorrectPayloadException("How did you get here");
                }
           }
           catch (Exception e ) {

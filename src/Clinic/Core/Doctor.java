@@ -20,7 +20,6 @@ public class Doctor extends User implements Serializable{
     private double startHour;
     private double endHour;
     private Schedule schedule;
-    private List<Patient> patients;
 
     /**
      * Constructor for the Doctor class
@@ -37,7 +36,6 @@ public class Doctor extends User implements Serializable{
      * @param startHour
      * @param endHour
      * @param schedule
-     * @param patients
      */
     public Doctor(
             String FName,
@@ -51,15 +49,13 @@ public class Doctor extends User implements Serializable{
             String rank,
             double startHour,
             double endHour,
-            Schedule schedule,
-            List<Patient> patients) {
+            Schedule schedule) {
         super(FName, LName, birthday, SIN, adress, ID, phoneNumber);
         this.specialty = specialty;
         this.rank = rank;
         this.startHour = startHour;
         this.endHour = endHour;
         this.schedule = schedule;
-        this.patients = patients;
     }
     public Doctor(String FName) {
         super(FName);
@@ -161,26 +157,6 @@ public class Doctor extends User implements Serializable{
      */
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
-    }
-
-    /**
-     * Gets a list of the doctors patients, included all patients.  Current, pass, and future
-     *
-     * @return List of Patients
-     * @see Patient
-     */
-    public List<Patient> getPatients() {
-        return patients;
-    }
-
-    /**
-     * Added a patient to the doctors list of patients
-     *
-     * @param patient
-     * @see Patient
-     */
-    public void addCurrentPatient(Patient patient) {
-        this.patients.add(patient);
     }
 
     public String getFname() {

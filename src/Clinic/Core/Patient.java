@@ -17,7 +17,6 @@ public class Patient extends User {
     private Date healthCardExpiry;
     private String province;
     private Schedule schedule;
-    private List<Doctor> doctors;
     private List<Diagnosis> diagnoses;
     private List<Prescription> prescriptions;
 
@@ -36,7 +35,6 @@ public class Patient extends User {
      * @param healthCardExpiry
      * @param province
      * @param schedule
-     * @param doctors
      * @param diagnoses
      * @param prescriptions
      */
@@ -54,7 +52,6 @@ public class Patient extends User {
             Date healthCardExpiry,
             String province,
             Schedule schedule,
-            List<Doctor> doctors,
             List<Diagnosis> diagnoses,
             List<Prescription> prescriptions) {
         super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
@@ -62,7 +59,6 @@ public class Patient extends User {
         this.healthCardExpiry = healthCardExpiry;
         this.province = province;
         this.schedule = schedule;
-        this.doctors = doctors;
         this.diagnoses = diagnoses;
         this.prescriptions = prescriptions;
     }
@@ -141,26 +137,6 @@ public class Patient extends User {
     }
 
     /**
-     * Gets a list of doctors that the patient has previously had, currently has, and will have in the future
-     *
-     * @return doctors
-     * @see Doctor
-     */
-    public List<Doctor> getDoctors() {
-        return doctors;
-    }
-
-    /**
-     * Sets the list of previous doctors, current doctors, and future doctors for the patient
-     *
-     * @param doctors
-     * @see Doctor
-     */
-    public void setDoctors(List<Doctor> doctors) {
-        this.doctors = doctors;
-    }
-
-    /**
      * Gets a list of all diagnoses given to the patient
      *
      * @return diagnoses
@@ -198,16 +174,6 @@ public class Patient extends User {
      */
     public void setPrescriptions(List<Prescription> prescriptions) {
         this.prescriptions = prescriptions;
-    }
-
-    /**
-     * Added a doctor to the Doctors list
-     *
-     * @param doctor
-     * @see Doctor
-     */
-    public void addDoctor(Doctor doctor) {
-        this.doctors.add(doctor);
     }
 
     /**
