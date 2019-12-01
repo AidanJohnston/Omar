@@ -51,11 +51,11 @@ public class loginController extends baseController{
             }
 
             session.setDataObject("Logged in as " + userField.getText());
-            if(session.getToken().getType() == UserType.DOCTOR){
-                switchScene(loginPage, "doctorHomePage.fxml", doctorHomePageController.class, session);
+            if(session.getToken().getType().equals(UserType.DOCTOR)){
+                switchScene(loginPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
             }
-            if(session.getToken().getType() == UserType.PATIENT){
-                switchScene(loginPage, "patientHomePage.fxml", patientHomePageController.class, session);
+            if(session.getToken().getType().equals(UserType.PATIENT)){
+                switchScene(loginPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
             }
         }
     }
