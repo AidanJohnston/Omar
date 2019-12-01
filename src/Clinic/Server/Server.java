@@ -11,7 +11,7 @@ public class Server {
     public static void main(String args[]) throws InterruptedException {
         
         ServerSecretary serverSecretary = new ServerSecretary();
-        System.out.print("Starting server");
+        System.out.print("Starting server\n");
         MyServer myServer = new MyServer(6969, serverSecretary);
         System.out.println("Server Started");
     }

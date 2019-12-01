@@ -58,12 +58,16 @@ public class ServerSecretary {
       * @param token
       * @return boolean
       */
-     private boolean findToken(Token token) {
-          return (clientTokens
-          .stream()
-          .filter(t -> t.getUserID() == token.getUserID())
-          .collect(Collectors.toList())
-          .size() == 1);
+     private Token findToken(Token token) {
+          try{
+               return (clientTokens
+                    .stream()
+                    .filter(t -> t.getUserID() == token.getUserID())
+                    .collect(Collectors.toList())
+                    .get(0));
+          }catch(IndexOutOfBoundsException e){
+               return null;
+          }
      }
 
      /**
@@ -85,9 +89,13 @@ public class ServerSecretary {
           
           try{
                if(!payload.getType().equals(RequestType.LOGIN)){
-                    if(!findToken(payload.getToken())){
+                    if(findToken(payload.getToken()) == null){
                         throw new  InvalidTokenException("Client session is not valid");
                     }
+               }
+               if(payload.getType().equals(RequestType.LOGOUT)){
+                    clientTokens.remove(findToken(payload.getToken()));
+                    return;
                }
 
                Method method = director.getClass().getMethod(payload.getType(), Object.class);
@@ -96,15 +104,14 @@ public class ServerSecretary {
                if(object.getClass() == Token.class){
                     clientTokens.add((Token)object);
                     //Sending message to client
-                    System.out.println("Sending");
-                    client.sendToClient(
-                         new Payload(
-                              payload.getId(),
-                              RequestType.SUCCESS,
-                              object,
-                              payload.getStartTime()));
-                    System.out.println("Sent");
                }
+               client.sendToClient(
+                    new Payload(
+                         payload.getId(),
+                         RequestType.SUCCESS,
+                         object,
+                         payload.getStartTime()));
+               
 
                //This statement is here to calm the compiler, because we are using reflection it doesn't know what method that it is going to be run.
                //Because of this, it doesn't think that IncorrectPayload exception will be thrown, even thought every one of the ServerDirector methods throws IncorrectPayloadException
