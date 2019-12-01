@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,15 +9,13 @@ import java.util.List;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Schedule {
+public class Schedule implements Serializable {
     private List<Appointment> appointmentList;
 
     /**
      * Constructor for the Schedule class
      */
     public Schedule() {
-
-        //DO NOTHING
 
     }
 
