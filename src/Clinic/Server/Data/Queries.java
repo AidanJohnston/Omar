@@ -25,19 +25,28 @@ public class Queries {
         }
     }
 
-    public ArrayList<Appointment> getAppsPatient(Patient p){
+    public ArrayList<Appointment> getAppsPatient(int p){
         return new ArrayList<Appointment>(new DataReader()
             .readAppointments()
             .stream()
-            .filter(a -> a.getPatient() == p.getID())
+            .filter(a -> a.getPatientID() == p)
             .collect(Collectors.toList()));
     }
 
-    public ArrayList<Appointment> getFutureAppsPatient(Patient p){
+    public ArrayList<Appointment> getFutureAppsPatient(int p){
         return new ArrayList<Appointment>(new DataReader()
             .readAppointments()
             .stream()
-            .filter(a -> a.getPatient() == p.getID())
+            .filter(a -> a.getPatientID() == p)
+            .filter(a -> a.getDate().isAfter(LocalDate.now()))
+            .collect(Collectors.toList()));
+    }
+
+    public ArrayList<Appointment> getFutureAppsDoctor(int d){
+        return new ArrayList<Appointment>(new DataReader()
+            .readAppointments()
+            .stream()
+            .filter(a -> a.getDoctorID() == d)
             .filter(a -> a.getDate().isAfter(LocalDate.now()))
             .collect(Collectors.toList()));
     }
