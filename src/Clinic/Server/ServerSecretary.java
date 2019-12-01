@@ -84,7 +84,7 @@ public class ServerSecretary {
           //Attempting to send back to the server
           
           try{
-               if(payload.getType() != RequestType.LOGIN){
+               if(!payload.getType().equals(RequestType.LOGIN)){
                     if(!findToken(payload.getToken())){
                         throw new  InvalidTokenException("Client session is not valid");
                     }
@@ -95,14 +95,15 @@ public class ServerSecretary {
                
                if(object.getClass() == Token.class){
                     clientTokens.add((Token)object);
-               }else{
                     //Sending message to client
+                    System.out.println("Sending");
                     client.sendToClient(
                          new Payload(
                               payload.getId(),
                               RequestType.SUCCESS,
                               object,
                               payload.getStartTime()));
+                    System.out.println("Sent");
                }
 
                //This statement is here to calm the compiler, because we are using reflection it doesn't know what method that it is going to be run.
