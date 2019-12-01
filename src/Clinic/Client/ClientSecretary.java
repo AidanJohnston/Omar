@@ -59,7 +59,7 @@ public class ClientSecretary {
         System.out.println("Client: received response from server: ");
         System.out.println("Type: " + task.getPayload().getType());
         System.out.println("Ping: " +  task.getPayload().getPing() + "ms");
-        if(task.getPayload().getType() == RequestType.ERROR) {
+        if(task.getPayload().getType().equals(RequestType.ERROR)) {
             throw (ServerException)task.getPayload().getObject();
         }
         return task;
@@ -75,7 +75,7 @@ public class ClientSecretary {
                 ClientTask task = tasklist.get(i);
 
                 task.setReturnValue(payload.getObject());
-                if(payload.getType() == RequestType.ERROR){
+                if(payload.getType().equals(RequestType.ERROR)){
                     System.out.println("Incoming payload failed");
                 }
                 task.setFlag(true);
