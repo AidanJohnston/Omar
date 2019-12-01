@@ -33,7 +33,7 @@ public class LabelList extends FlowPane {
         ArrayList<String> data = new ArrayList<String>();
 
         for(Appointment app : appointments){
-            data.add(app.getPatient().getFName() + " " + app.getPatient().getLName() + " : " + app.getID());
+            data.add(app.getPatient().getFName() + " " + app.getPatient().getLName() + " : " + app.getDate().toString());
         }
         init(data);
     }
