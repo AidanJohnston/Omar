@@ -142,10 +142,10 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public List<Schedule> getScheduleAll(Token token) throws Exception {
+    public ArrayList<Schedule> getScheduleAll(Token token) throws Exception {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_GET_ALL, token);
-        return (List<Schedule>) prepareTask(payload).getReturnValue();
+        return (ArrayList<Schedule>) prepareTask(payload).getReturnValue();
     }
 
     /**
@@ -168,10 +168,10 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public List<Appointment> getCurrentAppointmentPatient(Token token, Patient patient) throws ServerException {
+    public ArrayList<Appointment> getCurrentAppointmentPatient(Token token, Patient patient) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATENT_CURRENT_ALL, token, patient);
-        return (List<Appointment>) prepareTask(payload).getReturnValue();
+        return (ArrayList<Appointment>) prepareTask(payload).getReturnValue();
     }
 
     /**
@@ -227,16 +227,18 @@ public class ClientSecretary {
         prepareTask(payload);
     }
 
-    public List<Prescription> getPrescriptionAll(Patient patient, Token token) throws ServerException {
+    public ArrayList<Prescription> getPrescriptionAll(Patient patient, Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.PRESCRIPTION_GET_ALL_PATIENT, token, patient);
-        return (List<Prescription>) prepareTask(payload);
+        Object o = prepareTask(payload);
+        return (ArrayList<Prescription>)o;
     }
 
-    public List<Diagnosis> getDiagnosisAll(Patient patient, Token token) throws ServerException {
+    public ArrayList<Diagnosis> getDiagnosisAll(Patient patient, Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DIAGNOSIS_GET_ALL_PATIENT, token, patient);
-        return (List<Diagnosis>) prepareTask(payload);
+        Object o = prepareTask(payload);
+        return (ArrayList<Diagnosis>)o;
     }
 
     public void setScheduleDoctor(Schedule schedule, Token token) throws ServerException {
@@ -245,15 +247,17 @@ public class ClientSecretary {
         prepareTask(payload);
     }
 
-    public List<Appointment> getAppointmentsCurrentDoctor(int id, Token token) throws ServerException {
+    public ArrayList<Appointment> getAppointmentsCurrentDoctor(int id, Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_DOCTOR_CURRENT_ALL, token, id);
-        return (List<Appointment>) prepareTask(payload);
+        Object o = prepareTask(payload);
+        return (ArrayList<Appointment>)o;
     }
 
-    public List<Patient> getPatientAll(Token token) throws ServerException {
+    public ArrayList<Patient> getPatientAll(Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.PATIENT_GET_ALL, token);
-        return (List<Patient>) prepareTask(payload);
+        Object o = prepareTask(payload);
+        return (ArrayList<Patient>)o;
     }
 }
