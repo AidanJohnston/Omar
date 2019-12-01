@@ -16,8 +16,6 @@ public class Schedule {
      */
     public Schedule() {
 
-        //DO NOTHING
-
     }
 
     /**

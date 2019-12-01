@@ -37,4 +37,9 @@ public class Staff extends User {
             String phoneNumber) {
         super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
     }
+
+    /**
+     * Empty Constructor
+     */
+    public Staff() {}
 }

@@ -64,6 +64,10 @@ public class Patient extends User {
     }
 
     /**
+     * Empty Constructor
+     */
+    public Patient() {}
+    /**
      * Gets the health care number of the patient
      *
      * @return healthCardNumber
