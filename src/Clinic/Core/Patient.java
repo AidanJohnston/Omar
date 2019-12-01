@@ -64,6 +64,10 @@ public class Patient extends User implements Serializable {
         this.prescriptions = prescriptions;
     }
 
+    public Patient(int id) {
+        super(id);
+    }
+
     /**
      * Empty Constructor
      */

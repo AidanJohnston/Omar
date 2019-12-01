@@ -58,6 +58,9 @@ public class Doctor extends User implements Serializable{
         this.scheduleID = scheduleID;
     }
 
+    public Doctor(int id) {
+        super(id);
+    }
     /**
      * Empty Constructor
      */

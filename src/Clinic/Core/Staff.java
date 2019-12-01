@@ -39,6 +39,9 @@ public class Staff extends User implements Serializable {
         super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
     }
 
+    public Staff(int id) {
+        super(id);
+    }
     /**
      * Empty Constructor
      */
