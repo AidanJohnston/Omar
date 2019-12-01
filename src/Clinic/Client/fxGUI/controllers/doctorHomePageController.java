@@ -3,6 +3,7 @@ package Clinic.Client.fxGUI.controllers;
 import Clinic.Client.ClientSecretary;
 import Clinic.Client.fxGUI.util.LabelList;
 import Clinic.Client.fxGUI.util.Session;
+import Clinic.Core.Appointment;
 import Clinic.Core.Doctor;
 import Util.Exceptions.IncorrectPayloadException;
 import Util.Exceptions.ServerException;
@@ -32,6 +33,17 @@ public class doctorHomePageController extends baseController {
         }catch(ServerException ex){
             System.out.println("Payload machine broke");
         }
+
+    }
+
+    public void showAllAppointments(){
+        ArrayList<Appointment> appointments = new ArrayList<>();
+        ClientSecretary client = session.getClient();
+        //appointments = client.getAppointmentsCurrentDoctor(session.getToken().getUserID(), session.getToken());
+        session.setDataObject(appointments);
+        switchScene(doctorHomePage, "../pages/doctorAppointmentsPage.fxml", DoctorAppointmentsPageController.class, session);
+        // TODO: get them actually
+        // make an appointmentsPage with all the appointments
 
     }
 

@@ -75,6 +75,7 @@ public class ClientSecretary {
                 ClientTask task = tasklist.get(i);
 
                 task.setReturnValue(payload.getObject());
+                task.setPayload(payload);
                 if(payload.getType().equals(RequestType.ERROR)){
                     System.out.println("Incoming payload failed");
                 }

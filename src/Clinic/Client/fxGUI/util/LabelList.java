@@ -1,5 +1,6 @@
 package Clinic.Client.fxGUI.util;
 
+import Clinic.Core.Appointment;
 import Clinic.Core.Doctor;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
@@ -27,6 +28,15 @@ public class LabelList extends FlowPane {
         init(data);
     }
 
+    public LabelList(ArrayList<Appointment> appointments, Appointment a){
+        //d is unused because java is dumb and thinks all methods with arraylist params are the same signature
+        ArrayList<String> data = new ArrayList<String>();
+
+        for(Appointment app : appointments){
+            data.add(app.getPatient().getFName() + " " + app.getPatient().getLName() + " : " + app.getID());
+        }
+        init(data);
+    }
 
 
     private LabelList(ArrayList<String> data){
