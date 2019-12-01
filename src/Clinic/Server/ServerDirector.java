@@ -30,17 +30,16 @@ public class ServerDirector {
     }
 
     public Object getCurrentAppointmentOfPatient(Object params) throws IncorrectPayloadException {
-        return new Queries().getFutureAppsPatient((Patient)params);
+        return new Queries().getFutureAppsPatient((int)params);
     }
 
     public Object getAllAppointmentOfPatient(Object params) throws IncorrectPayloadException {
-        return new Queries().getAppsPatient((Patient)params);
+        return new Queries().getAppsPatient((int)params);
     }
 
     public Object getAllDoctor(Object params) throws IncorrectPayloadException {
-        DataReader dd = new DataReader();
         try {
-            return dd.readDoctors();
+            return new DataReader().readDoctors();
         } catch (Exception e) {
             e.printStackTrace();
             return e;
@@ -51,11 +50,12 @@ public class ServerDirector {
     public Object getAllDiagnosisFromPatient(Object params) throws IncorrectPayloadException {return null;}
     public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {return null;}
     public Object setSchedule(Object params) throws IncorrectPayloadException {return null;}
-    public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {return null;}
+    public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {
+        return new Queries().getFutureAppsDoctor((int)params);
+    }
     public Object getAllPatient(Object params) throws IncorrectPayloadException {
-        DataReader reader = new DataReader();
         try{
-            return reader.readPatients();
+            return new DataReader().readPatients();
         }catch(Exception e){
             return e;
         }
