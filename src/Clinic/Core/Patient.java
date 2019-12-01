@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  * @version 1.0
  * @see User
  */
-public class Patient extends User {
+public class Patient extends User implements Serializable {
 
     private int healthCardNumber;
     private Date healthCardExpiry;

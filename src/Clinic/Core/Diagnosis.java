@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Diagnosis {
+public class Diagnosis implements Serializable {
 
     private String name;
     private Date date;

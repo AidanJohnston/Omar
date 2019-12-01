@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  * @version 1.0
  * @see User
  */
-public class Staff extends User {
+public class Staff extends User implements Serializable {
 
     /**
      * Constructor for the Staff class
