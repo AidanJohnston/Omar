@@ -10,18 +10,17 @@ import java.util.stream.Collectors;
 
 public class Queries {
     public Credentials login(Credentials creds) throws LoginFailedException{
+        try{
         Credentials match = new DataReader()
             .readCredentials()
             .stream()
-            .filter(c -> c.getUsername() == creds.getUsername())
-            .filter(c -> c.getHashword() == creds.getHashword())
+            .filter(c -> c.getUsername().equals(creds.getUsername()))
+            //.filter(c -> c.getHashword().equals(creds.getUsername()))
             .collect(Collectors.toList())
             .get(0);
-
-        if(match == null){
-            throw new LoginFailedException("Could not find matching credentials");
+            return match;
+        }catch(IndexOutOfBoundsException e){
+            throw new LoginFailedException("Username or Password incorrect");
         }
-        
-        return match;
     }
 }

@@ -2,20 +2,27 @@ package Clinic.Server.Data;
 
 import Clinic.Core.*;
 import Util.UserType;
+import Util.Exceptions.LoginFailedException;
 
 import java.util.ArrayList;
 
 public class DataPopulate {
-    public static void main(String args[]){
-        popDoc();
+    public static void main(String args[]) throws LoginFailedException {
+        //popDoc();
         popCreds();
+        /*ArrayList<Credentials> creds = new DataReader().readCredentials();
+
+
+        Credentials c = new Queries().login(new Credentials("seannn", "p"));
+        int i = 1;
+        */
     }
 
     private static void popCreds(){
         ArrayList<Credentials> creds = new ArrayList<>();
-        creds.add(new Credentials("sean", "p", 1, UserType.PATIENT));
-        creds.add(new Credentials("sean", "d", 2, UserType.DOCTOR));
-        creds.add(new Credentials("sean", "s", 3, UserType.STAFF));
+        creds.add(new Credentials("seanp", "p", 1, UserType.PATIENT));
+        creds.add(new Credentials("seand", "d", 2, UserType.DOCTOR));
+        creds.add(new Credentials("seans", "s", 3, UserType.STAFF));
         DataWriter d = new DataWriter();
         try {
             d.writeCredentials(creds);
