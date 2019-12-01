@@ -41,7 +41,6 @@ public class createDoctorPageController extends baseController{
                 bdayField.getValue(),
                 Integer.parseInt(sinField.getText()),
                 addressField.getText(),
-                null,
                 phoneField.getText(),
                 specField.getText()
         );
