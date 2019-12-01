@@ -4,6 +4,7 @@ import Clinic.Core.*;
 import Util.UserType;
 import Util.Exceptions.LoginFailedException;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,6 +30,15 @@ public class Queries {
             .readAppointments()
             .stream()
             .filter(a -> a.getPatient() == p.getID())
+            .collect(Collectors.toList()));
+    }
+
+    public ArrayList<Appointment> getFutureAppsPatient(Patient p){
+        return new ArrayList<Appointment>(new DataReader()
+            .readAppointments()
+            .stream()
+            .filter(a -> a.getPatient() == p.getID())
+            .filter(a -> a.getDate().isAfter(LocalDate.now()))
             .collect(Collectors.toList()));
     }
 }

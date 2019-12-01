@@ -3,6 +3,7 @@ package Clinic.Core;
 import Util.RequestType;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 /**
  * Appointment.java - A class for storing the time, patient, doctor, diagnosis, and prescription from an appointment.
@@ -16,6 +17,7 @@ public class Appointment implements Serializable {
     private int ID;
     private int patientID;
     private int doctorID;
+    private LocalDate date;
     private Diagnosis diagnosis;
     private Prescription prescription;
 
@@ -32,6 +34,10 @@ public class Appointment implements Serializable {
         this.doctorID = doctor;
         this.diagnosis = diagnosis;
         this.prescription = prescription;
+    }
+
+    public LocalDate getDate(){
+        return date;
     }
 
     /**
