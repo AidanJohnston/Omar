@@ -9,6 +9,7 @@ import Util.Exceptions.IncorrectPayloadException;
 import Util.Exceptions.LoginFailedException;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class ServerDirector {
     /*
@@ -17,8 +18,7 @@ public class ServerDirector {
      * //
      */
     public Object login(Object params) throws LoginFailedException {
-        Credentials foundCredentials = new Queries().login((Credentials)params);
-        return new Token(foundCredentials.getType(), foundCredentials.getID());
+        return new Token(new Queries().login((Credentials)params).getType(), UUID.randomUUID());
     }
 
     public Object logout(Object params) throws IncorrectPayloadException {
@@ -46,15 +46,6 @@ public class ServerDirector {
     }
 
     public Object getAllDoctor(Object params) throws IncorrectPayloadException {
-        if(params.getClass() == astupididea.class){
-            return this.getClass().getEnclosingMethod();
-        }
-        ArrayList<Doctor> list = new ArrayList<>();
-        list.add(new Doctor("Aidan"));
-        list.add(new Doctor("Sean"));
-        list.add(new Doctor("Dawson"));
-        list.add(new Doctor("John"));
-        list.add(new Doctor("Mai"));
         DataReader dd = new DataReader();
         try {
             return dd.readDoctors();
@@ -62,15 +53,6 @@ public class ServerDirector {
             e.printStackTrace();
             return e;
         }
-        
-        /*
-        try {
-            //d.writeDoctors(list);
-        } catch (Exception e) {
-            return e;
-        }
-        return list;
-        */
     }
     public Object getDoctorWithId(Object params) throws IncorrectPayloadException {return null;}
     public Object setDoctor(Object params) throws IncorrectPayloadException {return null;}

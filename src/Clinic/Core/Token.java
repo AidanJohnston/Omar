@@ -1,8 +1,8 @@
 package Clinic.Core;
 
-
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.util.UUID;
 
 import Util.UserType;
 
@@ -12,14 +12,14 @@ import Util.UserType;
 public class Token implements Serializable{
 
     private UserType type;
-    private int userID;
+    private UUID userID;
 
     /**
      * The constructor for the login token
      * @param type Type of user logged in
      * @param userID Their unique id
      */
-    public Token (UserType type, int userID) {
+    public Token (UserType type, UUID userID) {
         this.type = type;
         this.userID = userID;
     }
@@ -28,11 +28,7 @@ public class Token implements Serializable{
         return type;
     }
 
-    public int getUserID() {
+    public UUID getUserID() {
         return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
     }
 }

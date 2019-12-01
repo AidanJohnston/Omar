@@ -4,10 +4,12 @@ import Clinic.Core.*;
 import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
 import Util.Exceptions.IncorrectPayloadException;
+import Util.Exceptions.ServerException;
 import Util.RequestType;
 import Util.UserType;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -121,13 +123,19 @@ public class ServerSecretary {
                     throw new IncorrectPayloadException("How did you get here");
                }
           }
-          catch (Exception e ) {
-               try {
-                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e, payload.getStartTime()));
+          catch (InvocationTargetException e ) {
+               if(e.getCause() instanceof ServerException){
+                    try {
+                         client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e, payload.getStartTime()));
+                    }
+                    catch (IOException e1) {
+                         e1.printStackTrace();
+                    }
+               }else{
+                    e.printStackTrace();
                }
-               catch (IOException e1) {
-                    e1.printStackTrace();
-               }
+          }catch(Exception e){
+               e.printStackTrace();
           }
      }
 
