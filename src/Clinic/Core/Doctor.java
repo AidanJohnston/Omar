@@ -19,7 +19,7 @@ public class Doctor extends User implements Serializable{
     private String rank;
     private double startHour;
     private double endHour;
-    private int scheduleID;
+    private Schedule schedule;
 
     /**
      * Constructor for the Doctor class
@@ -35,7 +35,7 @@ public class Doctor extends User implements Serializable{
      * @param rank
      * @param startHour
      * @param endHour
-     * @param scheduleID
+     * @param schedule
      */
     public Doctor(
             String FName,
@@ -49,13 +49,13 @@ public class Doctor extends User implements Serializable{
             String rank,
             double startHour,
             double endHour,
-            int scheduleID) {
+            Schedule schedule) {
         super(FName, LName, birthday, SIN, adress, ID, phoneNumber);
         this.specialty = specialty;
         this.rank = rank;
         this.startHour = startHour;
         this.endHour = endHour;
-        this.scheduleID = scheduleID;
+        this.schedule = schedule;
     }
 
     public Doctor(int id) {
@@ -153,8 +153,8 @@ public class Doctor extends User implements Serializable{
      * @return schedule
      * @see Schedule
      */
-    public int getSchedule() {
-        return scheduleID;
+    public Schedule getSchedule() {
+        return schedule;
     }
 
     /**
@@ -164,7 +164,7 @@ public class Doctor extends User implements Serializable{
      * @see Schedule
      */
     public void setSchedule(Schedule schedule) {
-        this.scheduleID = scheduleID;
+        this.schedule = schedule;
     }
 
     public String getFname() {
