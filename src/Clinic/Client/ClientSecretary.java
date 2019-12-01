@@ -181,10 +181,10 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public List<Appointment> getAppointmentPatientAll(Token token, Patient patient) throws ServerException {
+    public ArrayList<Appointment> getAppointmentPatientAll(Token token, Patient patient) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATIENT_ALL, token, patient);
-        return (List<Appointment>) prepareTask(payload).getReturnValue();
+        return (ArrayList<Appointment>) prepareTask(payload).getReturnValue();
     }
     /**
      * Returns a list of all doctors
