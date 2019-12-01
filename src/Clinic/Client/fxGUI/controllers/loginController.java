@@ -3,6 +3,7 @@ import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Token;
 import Util.Exceptions.IncorrectPayloadException;
 import Util.Exceptions.LoginFailedException;
+import Util.Exceptions.ServerException;
 import Util.UserType;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
@@ -46,8 +47,8 @@ public class loginController extends baseController{
                 System.out.println("Login Failed");
                 output.setText("Login Failed");
             }
-            catch(IncorrectPayloadException ex){
-                System.out.print("Payload machine broke");
+            catch(ServerException ex) {
+                System.out.println("Server machine broke");
             }
 
             session.setDataObject("Logged in as " + userField.getText());
