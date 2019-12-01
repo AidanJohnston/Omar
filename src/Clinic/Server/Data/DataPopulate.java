@@ -16,6 +16,12 @@ public class DataPopulate {
         creds.add(new Credentials("sean", "p", 1, UserType.PATIENT));
         creds.add(new Credentials("sean", "d", 2, UserType.DOCTOR));
         creds.add(new Credentials("sean", "s", 3, UserType.STAFF));
+        DataWriter d = new DataWriter();
+        try {
+            d.writeCredentials(creds);
+        } catch (Exception e) {
+            System.out.println("Writer broke");
+        }
     }
 
     private static void popDoc(){
