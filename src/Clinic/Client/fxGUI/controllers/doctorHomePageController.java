@@ -4,6 +4,7 @@ import Clinic.Client.fxGUI.util.LabelList;
 import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Doctor;
 import Util.Exceptions.IncorrectPayloadException;
+import Util.Exceptions.ServerException;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -22,12 +23,12 @@ public class doctorHomePageController extends baseController {
         data = session.getDataObject().toString();
     }
 
-    public void showAllDoctors(){
+    public void showAllDoctors() {
         try{
             ArrayList<Doctor> doctors = session.getClient().getDoctorAll(session.getToken());
             LabelList results = new LabelList(doctors,  new Doctor(null));
             mainbox.getChildren().add(results);
-        }catch(IncorrectPayloadException ex){
+        }catch(ServerException ex){
             System.out.println("Payload machine broke");
         }
 
