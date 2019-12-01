@@ -12,6 +12,10 @@ public class DataPopulate {
         popCreds();
     }
 
+    private static void popApps(){
+        
+    }    
+
     private static void popCreds(){
         ArrayList<Credentials> creds = new ArrayList<>();
         creds.add(new Credentials("seanp", "p", 1, UserType.PATIENT));

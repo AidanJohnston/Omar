@@ -14,8 +14,8 @@ import java.io.Serializable;
 public class Appointment implements Serializable {
 
     private int ID;
-    private Patient patient;
-    private Doctor doctor;
+    private int patientID;
+    private int doctorID;
     private Diagnosis diagnosis;
     private Prescription prescription;
 
@@ -27,15 +27,11 @@ public class Appointment implements Serializable {
      * @param diagnosis the diagnosis
      * @param prescription the prescription
      */
-    public Appointment(){}
-
-    public Appointment(Patient patient, Doctor doctor, Diagnosis diagnosis, Prescription prescription) {
-        this.patient = patient;
-        this.doctor = doctor;
+    public Appointment(int patient, int doctor, Diagnosis diagnosis, Prescription prescription) {
+        this.patientID = patient;
+        this.doctorID = doctor;
         this.diagnosis = diagnosis;
         this.prescription = prescription;
-
-        RequestType.class.getMethods();
     }
 
     /**
@@ -59,8 +55,8 @@ public class Appointment implements Serializable {
      *
      * @return patient
      */
-    public Patient getPatient() {
-        return patient;
+    public int getPatient() {
+        return patientID;
     }
 
     /**
@@ -68,8 +64,8 @@ public class Appointment implements Serializable {
      *
      * @param patient
      */
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPatient(int patient) {
+        this.patientID = patient;
     }
 
     /**
@@ -77,8 +73,8 @@ public class Appointment implements Serializable {
      *
      * @return doctor
      */
-    public Doctor getDoctor() {
-        return doctor;
+    public int getDoctor() {
+        return doctorID;
     }
 
     /**
@@ -87,7 +83,7 @@ public class Appointment implements Serializable {
      * @param doctor
      */
     public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
+        this.doctorID = doctor.getID();
     }
 
     /**

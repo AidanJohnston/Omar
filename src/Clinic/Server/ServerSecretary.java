@@ -62,7 +62,7 @@ public class ServerSecretary {
           try{
                return (clientTokens
                     .stream()
-                    .filter(t -> t.getUserID() == token.getUserID())
+                    .filter(t -> t.getTokenID().equals(token.getTokenID()))
                     .collect(Collectors.toList())
                     .get(0));
           }catch(IndexOutOfBoundsException e){

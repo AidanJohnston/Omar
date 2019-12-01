@@ -11,16 +11,24 @@ import java.util.stream.Collectors;
 public class Queries {
     public Credentials login(Credentials creds) throws LoginFailedException{
         try{
-        Credentials match = new DataReader()
-            .readCredentials()
-            .stream()
-            .filter(c -> c.getUsername().equals(creds.getUsername()))
-            .filter(c -> c.getHashword().equals(creds.getHashword()))
-            .collect(Collectors.toList())
-            .get(0);
+            Credentials match = new DataReader()
+                .readCredentials()
+                .stream()
+                .filter(c -> c.getUsername().equals(creds.getUsername()))
+                .filter(c -> c.getHashword().equals(creds.getHashword()))
+                .collect(Collectors.toList())
+                .get(0);
             return match;
         }catch(IndexOutOfBoundsException e){
             throw new LoginFailedException("Username or Password incorrect");
         }
+    }
+
+    public ArrayList<Appointment> getAppsPatient(Patient p){
+        return new ArrayList<Appointment>(new DataReader()
+            .readAppointments()
+            .stream()
+            .filter(a -> a.getPatient() == p.getID())
+            .collect(Collectors.toList()));
     }
 }
