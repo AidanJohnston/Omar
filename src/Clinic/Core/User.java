@@ -56,6 +56,11 @@ public class User implements Serializable{
         this.loginToken = loginToken;
     }
     public User(String FName) { this.FName = FName;}
+
+    public User(int id) {
+        this.ID = id;
+    }
+
     /**
      * Gets the users first name
      *
