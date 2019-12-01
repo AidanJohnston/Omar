@@ -16,7 +16,9 @@ public class Appointment implements Serializable {
 
     private int ID;
     private int patientID;
+    private Patient patient;
     private int doctorID;
+    private Doctor doctor;
     private LocalDate date;
     private Diagnosis diagnosis;
     private Prescription prescription;
@@ -29,9 +31,11 @@ public class Appointment implements Serializable {
      * @param diagnosis the diagnosis
      * @param prescription the prescription
      */
-    public Appointment(int patient, int doctor, Diagnosis diagnosis, Prescription prescription) {
-        this.patientID = patient;
-        this.doctorID = doctor;
+    public Appointment(Patient patient, Doctor doctor, LocalDate date, Diagnosis diagnosis, Prescription prescription) {
+        this.patient = patient;
+        this.doctor = doctor;
+        this.patientID = patient.getID();
+        this.doctorID = doctor.getID();
         this.diagnosis = diagnosis;
         this.prescription = prescription;
     }
@@ -65,8 +69,12 @@ public class Appointment implements Serializable {
      *
      * @return patient
      */
-    public int getPatient() {
+    public int getPatientID() {
         return patientID;
+    }
+
+    public Patient getPatient(){
+        return patient;
     }
 
     /**
@@ -83,8 +91,12 @@ public class Appointment implements Serializable {
      *
      * @return doctor
      */
-    public int getDoctor() {
+    public int getDoctorID() {
         return doctorID;
+    }
+
+    public Doctor getDoctor(){
+        return doctor;
     }
 
     /**
