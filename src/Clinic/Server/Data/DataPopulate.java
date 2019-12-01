@@ -10,12 +10,13 @@ public class DataPopulate {
     public static void main(String args[]) throws LoginFailedException {
         //popDoc();
         popCreds();
-        /*ArrayList<Credentials> creds = new DataReader().readCredentials();
+        //*
+        ArrayList<Credentials> creds = new DataReader().readCredentials();
 
 
-        Credentials c = new Queries().login(new Credentials("seannn", "p"));
+        Credentials c = new Queries().login(new Credentials("seand", "d"));
         int i = 1;
-        */
+        //*/
     }
 
     private static void popCreds(){

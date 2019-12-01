@@ -15,7 +15,7 @@ public class Queries {
             .readCredentials()
             .stream()
             .filter(c -> c.getUsername().equals(creds.getUsername()))
-            //.filter(c -> c.getHashword().equals(creds.getUsername()))
+            .filter(c -> c.getHashword().equals(creds.getHashword()))
             .collect(Collectors.toList())
             .get(0);
             return match;
