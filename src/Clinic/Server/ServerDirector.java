@@ -45,14 +45,31 @@ public class ServerDirector {
             return e;
         }
     }
-    public Object getDoctorWithId(Object params) throws IncorrectPayloadException {return null;}
-    public Object setDoctor(Object params) throws IncorrectPayloadException {return null;}
-    public Object getAllDiagnosisFromPatient(Object params) throws IncorrectPayloadException {return null;}
-    public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {return null;}
-    public Object setSchedule(Object params) throws IncorrectPayloadException {return null;}
+
+    public Object getDoctorWithId(Object params) throws IncorrectPayloadException {
+        return null;
+    }
+    
+    public Object setDoctor(Object params) throws IncorrectPayloadException {
+        return null;
+    }
+    
+    public Object getAllDiagnosisFromPatient(Object params) throws IncorrectPayloadException {
+        return null;
+    }
+    
+    public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {
+        return null;
+    }
+    
+    public Object setSchedule(Object params) throws IncorrectPayloadException {
+        return null;
+    }
+    
     public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {
         return new Queries().getFutureAppsDoctor((int)params);
     }
+    
     public Object getAllPatient(Object params) throws IncorrectPayloadException {
         try{
             return new DataReader().readPatients();
