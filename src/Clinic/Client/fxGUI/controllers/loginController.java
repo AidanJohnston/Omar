@@ -36,8 +36,7 @@ public class loginController extends baseController{
     public void tryLogin(ActionEvent e){
         String user = userField.getText();
         String pass = passField.getText();
-        if(userField.getText().equalsIgnoreCase("sean")){
-            output.setText("You did it!");
+
             try{
                 ClientSecretary client = session.getClient();
                 Token token = client.login(user, pass);
@@ -59,9 +58,4 @@ public class loginController extends baseController{
                 switchScene(loginPage, "patientHomePage.fxml", patientHomePageController.class, session);
             }
         }
-        else{
-            output.setText("Wrong :" + userField.getText() + " " + passField.getText());
-        }
     }
-
-}
