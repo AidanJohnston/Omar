@@ -30,11 +30,11 @@ public class ServerDirector {
     }
 
     public Object getCurrentAppointmentOfPatient(Object params) throws IncorrectPayloadException {
-        return new Queries().getFutureAppsPatient((int)params);
+        return new Queries().getFutureAppsPatient((Patient)params);
     }
 
     public Object getAllAppointmentOfPatient(Object params) throws IncorrectPayloadException {
-        return new Queries().getAppsPatient((int)params);
+        return new Queries().getAppsPatient((Patient)params);
     }
 
     public Object getAllDoctor(Object params) throws IncorrectPayloadException {
@@ -67,7 +67,7 @@ public class ServerDirector {
     }
     
     public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {
-        return new Queries().getFutureAppsDoctor((int)params);
+        return new Queries().getFutureAppsDoctor((Doctor)params);
     }
     
     public Object getAllPatient(Object params) throws IncorrectPayloadException {
