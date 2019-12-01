@@ -1,5 +1,6 @@
 package Clinic.Client.fxGUI.controllers;
 
+import Clinic.Client.ClientSecretary;
 import Clinic.Client.fxGUI.util.LabelList;
 import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Doctor;
@@ -36,6 +37,13 @@ public class doctorHomePageController extends baseController {
 
     public void logout(ActionEvent e)
     {
+        try{
+            ClientSecretary client = session.getClient();
+            client.logout(session.getToken());
+        }
+        catch(ServerException ex){
+            System.out.println("Logout Failed, doing it anyways");
+        }
         switchScene(doctorHomePage, "../pages/loginPage.fxml", loginController.class, session);
     }
 }
