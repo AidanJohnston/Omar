@@ -3,8 +3,7 @@ package Clinic.Server;
 import Clinic.Core.*;
 import Clinic.Server.Connection.ConnectionToClient;
 import Clinic.Server.Connection.MyServer;
-import Util.Exceptions.IncorrectPayloadException;
-import Util.Exceptions.ServerException;
+import Util.Exceptions.*;
 import Util.RequestType;
 import Util.UserType;
 
@@ -83,7 +82,14 @@ public class ServerSecretary {
 
 
           //Attempting to send back to the server
+          
           try{
+               if(payload.getType() != RequestType.LOGIN){
+                    if(!findToken(payload.getToken())){
+                        throw new  InvalidTokenException("Client session is not valid");
+                    }
+               }
+
                Method method = director.getClass().getMethod(payload.getType(), Object.class);
                object = method.invoke(director, payload.getObject());
                
@@ -132,7 +138,7 @@ public class ServerSecretary {
                if(clientTokens.get(i).getUserID() == payload.getToken().getUserID()) {
                     clientTokens.remove(i);
                     try {
-                         client.sendToClient(new Payload(payload.getId(),RequestType.LOGOUT,"Successfully logged out."));
+                         client.sendToClient(new Payload(payload.getId(),RequestType.SUCCESS,"Successfully logged out."));
                     }
                     catch (IOException e) {
                          e.printStackTrace();
