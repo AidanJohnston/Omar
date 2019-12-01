@@ -12,7 +12,7 @@ public class patientHomePageController extends baseController {
     private GridPane patientHomePage;
 
     public void logout(ActionEvent actionEvent) {
-        switchScene(patientHomePage, "loginPage.fxml", loginController.class, session);
+        switchScene(patientHomePage, "../pages/loginPage.fxml", loginController.class, session);
     }
 
     @Override
