@@ -39,9 +39,14 @@ public class doctorHomePageController extends baseController {
     public void showAllAppointments(){
         ArrayList<Appointment> appointments = new ArrayList<>();
         ClientSecretary client = session.getClient();
-        //appointments = client.getAppointmentsCurrentDoctor(session.getToken().getUserID(), session.getToken());
-        session.setDataObject(appointments);
-        switchScene(doctorHomePage, "../pages/doctorAppointmentsPage.fxml", DoctorAppointmentsPageController.class, session);
+        try{
+            appointments = client.getAppointmentsCurrentDoctor(session.getToken().getUserID(), session.getToken());
+            session.setDataObject(appointments);
+            switchScene(doctorHomePage, "../pages/doctorAppointmentsPage.fxml", DoctorAppointmentsPageController.class, session);
+        }catch(ServerException ex){
+            System.out.println("Couldn't get the appointments");
+        }
+
         // TODO: get them actually
         // make an appointmentsPage with all the appointments
 
