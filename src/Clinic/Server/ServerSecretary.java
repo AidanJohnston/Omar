@@ -58,12 +58,16 @@ public class ServerSecretary {
       * @param token
       * @return boolean
       */
-     private boolean findToken(Token token) {
-          return (clientTokens
-          .stream()
-          .filter(t -> t.getUserID() == token.getUserID())
-          .collect(Collectors.toList())
-          .size() == 1);
+     private Token findToken(Token token) {
+          try{
+               return (clientTokens
+                    .stream()
+                    .filter(t -> t.getUserID() == token.getUserID())
+                    .collect(Collectors.toList())
+                    .get(0));
+          }catch(IndexOutOfBoundsException e){
+               return null;
+          }
      }
 
      /**
@@ -85,9 +89,12 @@ public class ServerSecretary {
           
           try{
                if(!payload.getType().equals(RequestType.LOGIN)){
-                    if(!findToken(payload.getToken())){
+                    if(findToken(payload.getToken()) == null){
                         throw new  InvalidTokenException("Client session is not valid");
                     }
+               }else if(payload.getType().equals(RequestType.LOGOUT)){
+                    clientTokens.remove(findToken(payload.getToken()));
+                    return;
                }
 
                Method method = director.getClass().getMethod(payload.getType(), Object.class);
