@@ -49,6 +49,9 @@ public class loginController extends baseController{
                 if(session.getToken().getType().equals(UserType.PATIENT)){
                     switchScene(loginPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
                 }
+                if(session.getToken().getType().equals(UserType.STAFF)){
+                    switchScene(loginPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+                }
 
             }
             catch(LoginFailedException ex){

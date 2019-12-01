@@ -48,6 +48,15 @@ public class User implements Serializable{
         this.ID = ID;
         this.phoneNumber = phoneNumber;
     }
+
+    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, String phoneNumber) {
+        this.FName = FName;
+        this.LName = LName;
+        this.brithday = brithday;
+        this.SIN = SIN;
+        this.adress = adress;
+        this.phoneNumber = phoneNumber;
+    }
     /**
      * Constructor used for logging out.a
      * @param loginToken
