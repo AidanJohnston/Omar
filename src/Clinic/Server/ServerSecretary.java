@@ -94,6 +94,9 @@ public class ServerSecretary {
                if(Exception.class.isAssignableFrom(object.getClass())){
                     //UH OH
                     //Sending message to client
+                    //this should never happen because functions throw exceptions, they don't return them ever.
+                    //Stop.
+                    System.out.println("This should not have happened, stop returning exceptions already");
                     client.sendToClient(
                          new Payload(
                               payload.getId(),
@@ -120,7 +123,7 @@ public class ServerSecretary {
           }
           catch (Exception e ) {
                try {
-                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e.getMessage(), payload.getStartTime()));
+                    client.sendToClient(new Payload(payload.getId(), RequestType.ERROR, e, payload.getStartTime()));
                }
                catch (IOException e1) {
                     e1.printStackTrace();

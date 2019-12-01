@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Queries {
-    public Object login(Credentials creds){
+    public Credentials login(Credentials creds) throws LoginFailedException{
         Credentials match = new DataReader()
             .readCredentials()
             .stream()
@@ -19,7 +19,7 @@ public class Queries {
             .get(0);
 
         if(match == null){
-            return new LoginFailedException("Could not find matching credentials");
+            throw new LoginFailedException("Could not find matching credentials");
         }
         
         return match;

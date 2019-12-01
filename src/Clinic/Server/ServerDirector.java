@@ -6,6 +6,7 @@ import Clinic.Server.Data.DataWriter;
 import Clinic.Server.Data.Queries;
 import Util.*;
 import Util.Exceptions.IncorrectPayloadException;
+import Util.Exceptions.LoginFailedException;
 
 import java.util.ArrayList;
 
@@ -15,8 +16,9 @@ public class ServerDirector {
      * do this public Method login(){ return this.getClass().getEnclosingMethod(); }
      * //
      */
-    public Object login(Object params) throws IncorrectPayloadException {
-        return new Queries().login((Credentials)params);
+    public Object login(Object params) throws LoginFailedException {
+        Credentials foundCredentials = new Queries().login((Credentials)params);
+        return new Token(foundCredentials.getType(), foundCredentials.getID());
     }
 
     public Object logout(Object params) throws IncorrectPayloadException {
