@@ -36,6 +36,6 @@ public class doctorHomePageController extends baseController {
 
     public void logout(ActionEvent e)
     {
-        switchScene(doctorHomePage, "loginPage.fxml", loginController.class, session);
+        switchScene(doctorHomePage, "../pages/loginPage.fxml", loginController.class, session);
     }
 }
