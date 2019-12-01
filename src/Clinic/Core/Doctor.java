@@ -73,6 +73,10 @@ public class Doctor extends User implements Serializable{
         this.specialty = specialty;
     }
 
+    public Doctor(String FName, String Lname, LocalDate birthday, int SIN, String address, String phoneNumber, String specialty) {
+        super(FName, Lname, birthday, SIN, address, phoneNumber);
+        this.specialty = specialty;
+    }
 
 
     /**
