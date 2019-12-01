@@ -25,6 +25,10 @@ public class Credentials implements Serializable{
         type = _type;
     }
 
+    /**
+     * Empty Constructor
+     */
+    public Credentials() {}
     public String getUsername(){
         return username;
     }

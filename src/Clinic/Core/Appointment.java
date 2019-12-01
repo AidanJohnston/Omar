@@ -43,6 +43,10 @@ public class Appointment implements Serializable {
     }
 
     /**
+     * Empty Constructor
+     */
+    public Appointment() {}
+    /**
      * Gets the appointment ID
      * @return ID
      */

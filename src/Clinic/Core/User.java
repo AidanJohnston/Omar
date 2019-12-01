@@ -24,6 +24,11 @@ public class User implements Serializable{
     private Token loginToken;
 
     /**
+     * Empty Constructor
+     */
+    public User() {}
+
+    /**
      * Constructor for the user class
      *
      * @param FName
@@ -63,7 +68,7 @@ public class User implements Serializable{
     /**
      * Sets the users first name
      *
-     * @param fname
+     * @param _FName
      */
     public void setFName(String _FName) {
         FName = _FName;

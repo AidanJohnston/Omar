@@ -1,5 +1,6 @@
 package Clinic.Core;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,12 +9,12 @@ import java.util.Date;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Prescription {
+public class Prescription implements Serializable {
     private String name;
     private Date date;
     private String note;
     private String instructions;
-
+    private int appointmentID;
     /**
      * Constructor for Prescription Class
      *
@@ -21,14 +22,20 @@ public class Prescription {
      * @param date
      * @param note
      * @param instructions
+     * @param appointmentID
      */
-    public Prescription(String name, Date date, String note, String instructions) {
+    public Prescription(String name, Date date, String note, String instructions, int appointmentID) {
         this.name = name;
         this.date = date;
         this.note = note;
         this.instructions = instructions;
+        this.appointmentID = appointmentID;
     }
 
+    /**
+     * Empty Constructor
+     */
+    public Prescription() {}
     /**
      * Gets the name of the prescription
      *
@@ -36,6 +43,22 @@ public class Prescription {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Gets the appointment ID
+     * @return appointmentID
+     */
+    public int getAppointmentID() {
+        return appointmentID;
+    }
+
+    /**
+     * Sets the appointmentID
+     * @param appointmentID
+     */
+    public void setAppointmentID(int appointmentID) {
+        this.appointmentID = appointmentID;
     }
 
     /**
