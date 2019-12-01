@@ -41,6 +41,15 @@ public class loginController extends baseController{
                 ClientSecretary client = session.getClient();
                 Token token = client.login(user, pass);
                 session.setToken(token);
+
+                session.setDataObject("Logged in as " + userField.getText());
+                if(session.getToken().getType().equals(UserType.DOCTOR)){
+                    switchScene(loginPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
+                }
+                if(session.getToken().getType().equals(UserType.PATIENT)){
+                    switchScene(loginPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
+                }
+
             }
             catch(LoginFailedException ex){
                 System.out.println("Login Failed");
@@ -50,12 +59,6 @@ public class loginController extends baseController{
                 System.out.println("Server machine broke");
             }
 
-            session.setDataObject("Logged in as " + userField.getText());
-            if(session.getToken().getType().equals(UserType.DOCTOR)){
-                switchScene(loginPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
-            }
-            if(session.getToken().getType().equals(UserType.PATIENT)){
-                switchScene(loginPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
-            }
+
         }
     }

@@ -27,6 +27,8 @@ public class Appointment implements Serializable {
      * @param diagnosis the diagnosis
      * @param prescription the prescription
      */
+    public Appointment(){}
+
     public Appointment(Patient patient, Doctor doctor, Diagnosis diagnosis, Prescription prescription) {
         this.patient = patient;
         this.doctor = doctor;
