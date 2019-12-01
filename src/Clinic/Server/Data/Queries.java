@@ -2,8 +2,7 @@ package Clinic.Server.Data;
 
 import Clinic.Core.*;
 import Util.UserType;
-import Util.Exceptions.LoginFailedException;
-
+import Util.Exceptions.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,5 +48,20 @@ public class Queries {
             .filter(a -> a.getDoctorID() == d.getID())
             .filter(a -> a.getDate().isAfter(LocalDate.now()))
             .collect(Collectors.toList()));
+    }
+
+    public Doctor getDoctorByID(Doctor doc) throws DoctorNotFoundException {
+        try{
+            Doctor match = new DataReader()
+                .readDoctors()
+                .stream()
+                .filter(d -> d.getID() == doc.getID())
+                .collect(Collectors.toList())
+                .get(0);
+            return match;
+        }
+        catch(IndexOutOfBoundsException e){
+            throw new DoctorNotFoundException("Doctor not found");
+        }
     }
 }

@@ -5,9 +5,7 @@ import Clinic.Server.Data.DataReader;
 import Clinic.Server.Data.DataWriter;
 import Clinic.Server.Data.Queries;
 import Util.*;
-import Util.Exceptions.IncorrectPayloadException;
-import Util.Exceptions.LoginFailedException;
-
+import Util.Exceptions.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -18,6 +16,9 @@ public class ServerDirector {
     }
 
     public Object createAppointment(Object params) throws IncorrectPayloadException {
+        ArrayList<Appointment> apps = new DataReader().readAppointments();
+        apps.add((Appointment)params);
+        new DataWriter().writeAppointments(apps);
         return null;
     }
 
@@ -38,16 +39,11 @@ public class ServerDirector {
     }
 
     public Object getAllDoctor(Object params) throws IncorrectPayloadException {
-        try {
-            return new DataReader().readDoctors();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return e;
-        }
+        return new DataReader().readDoctors();
     }
 
-    public Object getDoctorWithId(Object params) throws IncorrectPayloadException {
-        return null;
+    public Object getDoctorWithId(Object params) throws DoctorNotFoundException {
+        return new Queries().getDoctorByID((Doctor)params);
     }
     
     public Object setDoctor(Object params) throws IncorrectPayloadException {
@@ -71,10 +67,20 @@ public class ServerDirector {
     }
     
     public Object getAllPatient(Object params) throws IncorrectPayloadException {
-        try{
-            return new DataReader().readPatients();
-        }catch(Exception e){
-            return e;
-        }
+        return new DataReader().readPatients();
+    }
+
+    public Object createDoctor(Object params) throws IncorrectPayloadException {
+        ArrayList<Doctor> list = new DataReader().readDoctors();
+        list.add((Doctor)params);
+        new DataWriter().writeDoctors(list);
+        return null;
+    }
+
+    public Object createPatient(Object params) throws IncorrectPayloadException {
+        ArrayList<Patient> list = new DataReader().readPatients();
+        list.add((Patient)params);
+        new DataWriter().writePatients(list);
+        return null;
     }
 }
