@@ -28,7 +28,7 @@ public final class RequestType //Yo we're using this one its like 10000000 times
 public static final Collection<String> ALL_PATHS;
     static {
         ALL_PATHS = Collections.unmodifiableCollection(Arrays.asList(
-        SUCCESS = "update",
+        SUCCESS = "success",
         LOGIN = "login",
         LOGOUT = "logout",
         ERROR = "error",
