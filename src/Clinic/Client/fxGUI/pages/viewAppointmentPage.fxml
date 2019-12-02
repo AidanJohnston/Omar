@@ -29,8 +29,8 @@
            alignment="CENTER" style="-fx-font-size: 28"></Label>
     <ComboBox fx:id="appointmentCombo" GridPane.columnIndex="0" GridPane.rowIndex="1"></ComboBox>
 
-    <Button text="View" fx:id="search" onAction="#search" GridPane.columnIndex="1" GridPane.rowIndex="1"></Button>
-    <Button text="Edit" fx:id="edit" onAction="#edit" GridPane.columnIndex="2" GridPane.rowIndex="1"></Button>>
+    <Button text="View" onAction="#search" GridPane.columnIndex="1" GridPane.rowIndex="1"></Button>
+    <Button text="Edit" onAction="#edit" GridPane.columnIndex="2" GridPane.rowIndex="1"></Button>
 
     <Label text="Doctor Name" GridPane.columnIndex="0" GridPane.rowIndex="2"></Label>
     <Label text="Date" GridPane.columnIndex="0" GridPane.rowIndex="3"></Label>

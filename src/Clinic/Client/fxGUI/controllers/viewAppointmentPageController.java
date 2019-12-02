@@ -32,8 +32,6 @@ public class viewAppointmentPageController extends baseController{
 
     ArrayList<Appointment> appointmentArrayList;
 
-
-    @Override
     public void initWithData(Session _session) {
         if(session.getToken().getType().equals(UserType.STAFF)) {
             try {
@@ -63,7 +61,7 @@ public class viewAppointmentPageController extends baseController{
     }
 
 
-    public void search(javafx.event.ActionEvent actionEvent) {
+    public void search() {
         doctorName.setText(appointmentCombo.getValue().getDoctor().toString());
         date.setText(appointmentCombo.getValue().getDate().toString());
         time.setText(appointmentCombo.getValue().getTime());
@@ -72,7 +70,7 @@ public class viewAppointmentPageController extends baseController{
     }
 
 
-    public void edit(javafx.event.ActionEvent actionEvent) {
+    public void edit() {
         session.setDataObject(appointmentCombo.getValue());
         switchScene(viewAppointmentPage, "../page/createAppointmentPage.fxml", createAppointmentPageController.class, session);
     }

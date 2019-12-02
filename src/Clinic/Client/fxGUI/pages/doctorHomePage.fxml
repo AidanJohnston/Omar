@@ -33,7 +33,7 @@
                 <Button text="Browse Patients"  GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
                 <Button text="Switch to Patient View" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
                 <Button text="Search Doctor" GridPane.rowIndex="4" GridPane.columnIndex="0" maxWidth="Infinity"  onAction="#searchDoctor"></Button>
-                <Button text="View Appointments" onAction="#viewAppointment" GridPane.columnIndex="0" GridPane.rowIndex="4" maxWidth="Infinity"></Button>
+                <Button text="View Appointments" onAction="#viewAppointment" GridPane.columnIndex="1" GridPane.rowIndex="4" maxWidth="Infinity"></Button>
 
 </GridPane>
 
