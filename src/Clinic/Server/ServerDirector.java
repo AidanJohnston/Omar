@@ -157,4 +157,52 @@ public class ServerDirector {
             throw new IncorrectPayloadException("Invalid payload");
         }
     }
+
+    public Object deletePatient(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Patient> list = new DataReader().readPatients();
+            Patient sta = (Patient)params;
+            list.removeIf(s -> s.getID() == sta.getID());
+            new DataWriter().writePatients(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object deleteDoctor(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Doctor> list = new DataReader().readDoctors();
+            Doctor doc = (Doctor)params;
+            list.removeIf(d -> d.getID() == doc.getID());
+            new DataWriter().writeDoctors(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object deleteAppointment(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Appointment> list = new DataReader().readAppointments();
+            Appointment app = (Appointment)params;
+            list.removeIf(a -> a.getID() == app.getID());
+            new DataWriter().writeAppointments(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object deleteStaff(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Staff> list = new DataReader().readStaff();
+            Staff sta = (Staff)params;
+            list.removeIf(s -> s.getID() == sta.getID());
+            new DataWriter().writeStaff(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
 }

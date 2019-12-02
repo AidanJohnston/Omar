@@ -27,7 +27,11 @@ public final class RequestType //Yo we're using this one its like 10000000 times
             UPDATE_PATIENT,
             UPDATE_DOCTOR,
             UPDATE_APPOINTMENT,
-            UPDATE_STAFF;
+            UPDATE_STAFF,
+            DELETE_PATIENT,
+            DELETE_APPOINTMENT,
+            DELETE_DOCTOR,
+            DELETE_STAFF;
     // etc.
 
 public static final Collection<String> ALL_PATHS;
@@ -54,7 +58,11 @@ public static final Collection<String> ALL_PATHS;
         UPDATE_PATIENT = "updatePatient",
         UPDATE_DOCTOR = "updateDoctor",
         UPDATE_APPOINTMENT = "updateAppointment",
-        UPDATE_STAFF = "updateStaff"
+        UPDATE_STAFF = "updateStaff",
+        DELETE_PATIENT = "deletePatient",
+        DELETE_DOCTOR = "deleteDoctor",
+        DELETE_APPOINTMENT = "deleteAppointment",
+        DELETE_STAFF = "deleteStaff"
         ));
     }
 }
