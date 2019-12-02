@@ -299,6 +299,13 @@ public class ClientSecretary {
         prepareTask(payload);
     }
 
+    public Token createAccount(Patient patient, Credentials creds) throws ServerException {
+        avaiableID++;
+        Object[] objs = {patient, creds};
+        Payload payload = new Payload(avaiableID, RequestType.CREATE_ACCOUNT,objs);
+        return (Token)prepareTask(payload).getReturnValue();
+    }
+
     public void createStaff(Staff staff, Credentials creds, Token token) throws ServerException {
         avaiableID++;
         Object[]objs={staff, creds};
