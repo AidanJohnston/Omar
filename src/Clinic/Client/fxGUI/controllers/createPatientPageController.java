@@ -46,7 +46,7 @@ public class createPatientPageController extends baseController{
             ClientSecretary client = session.getClient();
             client.createPatient(newPatient, session.getToken());
 
-            switchScene(createPatientPage, "../pages/staffHomePage", staffHomePageController.class, session);
+            switchScene(createPatientPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
 
         }catch(ServerException e){
             System.out.println("Create patient failed");

@@ -99,8 +99,10 @@ public class ServerSecretary {
                     Method method = director.getClass().getMethod(payload.getType(), Object.class);
                     object = method.invoke(director, payload.getObject());
 
-                    if(object.getClass() == Token.class){
-                         clientTokens.add((Token)object);
+                    if(object != null){
+                         if(object.getClass()==Token.class){
+                              clientTokens.add((Token)object);
+                         }
                          //Sending message to client
                     }
                }
