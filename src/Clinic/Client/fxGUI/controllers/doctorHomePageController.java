@@ -22,7 +22,7 @@ public class doctorHomePageController extends baseController {
 
     public void initWithData(Session _session){
         session = _session;
-        data = session.getDataObject().toString();
+        //data = session.getDataObject().toString();
     }
 
     public void showAllDoctors() {
@@ -69,5 +69,10 @@ public class doctorHomePageController extends baseController {
 
     public void viewAppointment() {
         switchScene(doctorHomePage, "../pages/viewAppointmentPage.fxml", viewAppointmentPageController.class, session);
+    }
+
+    public void makeAppointment(ActionEvent actionEvent) {
+        session.setDataObject(null);
+        switchScene(doctorHomePage, "../pages/createAppointmentPage.fxml", createAppointmentPageController.class, session);
     }
 }
