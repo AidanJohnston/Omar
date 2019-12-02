@@ -32,7 +32,7 @@
     <Label text="Date" GridPane.columnIndex="0" GridPane.rowIndex="2" maxWidth="Infinity"
            alignment="CENTER" style="-fx-font-size: 14"></Label>
 
-    <TextField promptText="" focusTraversable="true" fx:id="name" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextField promptText="" focusTraversable="true" fx:id="doctorName" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     <DatePicker focusTraversable="true" fx:id="date" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
     <Button text="Search" fx:id="nameButton" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#searchDoctorName"></Button>

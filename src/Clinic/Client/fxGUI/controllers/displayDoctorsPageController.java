@@ -9,14 +9,15 @@ import javafx.scene.layout.GridPane;
 import javax.swing.text.html.ListView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class displayDoctorsPageController extends baseController {
 
-    public  Session session;
+    public Session session;
     GridPane viewDoctors;
-    public TextField name;
-    public TextField date;
+    public TextField doctorName;
+    public TextField doctorDate;
 
     public Button nameButton;
     public Button dateButton;
@@ -38,11 +39,26 @@ public class displayDoctorsPageController extends baseController {
     }
 
     public void searchDoctorDate(ActionEvent actionEvent) {
+        doctorDisplay.getItems().removeAll(doctorList);
+        try{
+            doctorList = session.getClient().searchDoctorDate(LocalDate.parse(doctorDate.getText()), session.getToken());
+        } catch (ServerException e) {
+            e.printStackTrace();
+        }
 
+
+        doctorDisplay.getItems().addAll(doctorList);
     }
 
     public void searchDoctorName(ActionEvent actionEvent) {
+        doctorDisplay.getItems().removeAll(doctorList);
+        try{
+            doctorList = session.getClient().searchDoctorName(doctorName.getText(), session.getToken());
+        } catch (ServerException e) {
+            e.printStackTrace();
+        }
 
+        doctorDisplay.getItems().addAll(doctorList);
     }
 
     public void view(ActionEvent actionEvent) {

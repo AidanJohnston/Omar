@@ -5,6 +5,8 @@ import Clinic.Client.GUI.MyGUI;
 import Clinic.Core.*;
 import Util.Exceptions.*;
 import Util.RequestType;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -307,5 +309,16 @@ public class ClientSecretary {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.UPDATE_APPOINTMENT, token, appointment);
         prepareTask(payload);
+    }
+
+    public ArrayList<Doctor> searchDoctorName(String name, Token token) throws ServerException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.GET_DOCTOR_BY_NAME, token, name);
+        return (ArrayList<Doctor>) prepareTask(payload).getReturnValue();
+    }
+    public ArrayList<Doctor> searchDoctorDate(LocalDate localDate, Token token) throws ServerException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.GET_DOCTOR_BY_DATE, token, localDate);
+        return (ArrayList<Doctor>) prepareTask(payload).getReturnValue();
     }
 }
