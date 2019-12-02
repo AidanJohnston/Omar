@@ -23,7 +23,8 @@ public final class RequestType //Yo we're using this one its like 10000000 times
             APPOINTMENT_DOCTOR_CURRENT_ALL,
             PATIENT_GET_ALL,
             DOCTOR_CREATE,
-            PATIENT_CREATE;
+            PATIENT_CREATE,
+            APPOINTMENT_ALL;
     // etc.
 
 public static final Collection<String> ALL_PATHS;
@@ -34,7 +35,6 @@ public static final Collection<String> ALL_PATHS;
         LOGOUT = "logout",
         ERROR = "error",
         APPOINTMENT_CREATE = "createAppointment",
-        APPOINTMENT_DOCTOR_ALL = "getAllAppopintmentOfDoctor",
         APPOINTMENT_PATIENT_CURRENT_ALL = "getCurrentAppointmentOfPatient",
         APPOINTMENT_PATIENT_ALL = "getAllAppointmentOfPatient",
         DOCTOR_GET_ALL = "getAllDoctor",
@@ -43,10 +43,12 @@ public static final Collection<String> ALL_PATHS;
         DOCTOR_UPDATE_GIVEN_DOCTOR = "setDoctor",
         DIAGNOSIS_GET_ALL_PATIENT = "getAllDiagnosisFromPatient",
         PRESCRIPTION_GET_ALL_PATIENT = "getAllPrescriptionFromPatient",
+        APPOINTMENT_DOCTOR_ALL = "getAllAppopintmentOfDoctor",
         APPOINTMENT_DOCTOR_CURRENT_ALL = "getCurrentAppointmentDoctor",
         PATIENT_GET_ALL = "getAllPatient",
         DOCTOR_CREATE = "createDoctor",
-        PATIENT_CREATE = "createPatient"
+        PATIENT_CREATE = "createPatient",
+        APPOINTMENT_ALL = "getAllAppointments"
         ));
     }
 }
