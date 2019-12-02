@@ -1,6 +1,7 @@
 package Clinic.Core;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -15,7 +16,7 @@ import java.util.Date;
 public class User implements Serializable{
     private String FName;
     private String LName;
-    private Date brithday;
+    private LocalDate brithday;
     private int SIN;
     private String adress;
     private int ID;
@@ -39,7 +40,7 @@ public class User implements Serializable{
      * @param ID
      * @param phoneNumber
      */
-    public User(String FName, String LName, Date brithday, int SIN, String adress, int ID, String phoneNumber) {
+    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, int ID, String phoneNumber) {
         this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
@@ -49,7 +50,7 @@ public class User implements Serializable{
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String FName, String LName, Date brithday, int SIN, String adress, String phoneNumber) {
+    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, String phoneNumber) {
         this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
@@ -112,7 +113,7 @@ public class User implements Serializable{
      * @return birthday
      * @see Date
      */
-    public Date getBrithday() {
+    public LocalDate getBrithday() {
         return brithday;
     }
 
@@ -122,7 +123,7 @@ public class User implements Serializable{
      * @param brithday
      * @see Date
      */
-    public void setBrithday(Date brithday) {
+    public void setBrithday(LocalDate brithday) {
         this.brithday = brithday;
     }
 

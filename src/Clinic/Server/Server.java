@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Server {
 
     public static void main(String args[]) throws InterruptedException, AppointmentNotFoundException {
-        ArrayList<Appointment> list = new Queries().getFutureAppsDoctor(new Doctor(2));
+        //ArrayList<Appointment> list = new Queries().getFutureAppsDoctor(new Doctor(2));
         ServerSecretary serverSecretary = new ServerSecretary();
         System.out.print("Starting server\n");
         MyServer myServer = new MyServer(6969, serverSecretary);

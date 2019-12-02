@@ -16,6 +16,9 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import Clinic.Client.ClientSecretary;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class createDoctorPageController extends baseController{
 
     public Session session;
@@ -36,6 +39,7 @@ public class createDoctorPageController extends baseController{
     }
 
     public void createDoctor(ActionEvent actionEvent) {
+
         Doctor newDoctor = new Doctor(
                 fnameField.getText(),
                 lnameField.getText(),

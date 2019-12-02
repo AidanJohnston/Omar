@@ -266,7 +266,7 @@ public class ClientSecretary {
     public ArrayList<Appointment> getAppointmentsCurrentDoctor(int doctorID, Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_DOCTOR_CURRENT_ALL, token, new Doctor(doctorID));
-        Object o = prepareTask(payload);
+        Object o = prepareTask(payload).getReturnValue();
         return (ArrayList<Appointment>)o;
     }
 
