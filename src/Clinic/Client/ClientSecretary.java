@@ -223,8 +223,9 @@ public class ClientSecretary {
      * @param token
      * @throws IncorrectPayloadException
      */
-    public void createDoctor(Doctor doctor, Token token) throws ServerException {
+    public void createDoctor(Doctor doctor, Credentials creds, Token token) throws ServerException {
         avaiableID++;
+        Object[] objs = {doctor, creds};
         Payload payload = new Payload(avaiableID, RequestType.DOCTOR_CREATE, token, doctor);
         prepareTask(payload);
     }

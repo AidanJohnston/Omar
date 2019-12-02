@@ -1,6 +1,7 @@
 package Clinic.Client.fxGUI.controllers;
 
 import Clinic.Client.fxGUI.util.Session;
+import Clinic.Core.Credentials;
 import Clinic.Core.Doctor;
 import Clinic.Core.Token;
 import Util.Exceptions.IncorrectPayloadException;
@@ -29,16 +30,17 @@ public class createDoctorPageController extends baseController{
     public DatePicker bdayField;
     public TextField sinField;
     public TextField addressField;
-    public TextField idField;
     public TextField phoneField;
     public TextField specField;
     public TextField rankField;
+    public TextField userField;
+    public TextField passField;
 
     public void initWithData(Session _session) {
         session = _session;
     }
 
-    public void createDoctor(ActionEvent actionEvent) {
+    public void createDoctor() {
 
         Doctor newDoctor = new Doctor(
                 fnameField.getText(),
@@ -50,11 +52,10 @@ public class createDoctorPageController extends baseController{
                 specField.getText()
         );
         newDoctor.setRank(rankField.getText());
-        System.out.println("AGHJ");
-
+        Credentials creds = new Credentials(userField.getText(), passField.getText());
         try{
             ClientSecretary client = session.getClient();
-            client.createDoctor(newDoctor, session.getToken());
+            client.createDoctor(newDoctor, creds, session.getToken());
 
             switchScene(createDoctorPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
 

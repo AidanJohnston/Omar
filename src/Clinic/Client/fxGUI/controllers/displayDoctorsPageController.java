@@ -2,20 +2,22 @@ package Clinic.Client.fxGUI.controllers;
 
 import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Doctor;
+import Clinic.Core.User;
 import Util.Exceptions.ServerException;
+import Util.UserType;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
-import javax.swing.text.html.ListView;
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class displayDoctorsPageController extends baseController {
 
     public Session session;
-    GridPane viewDoctors;
+    public GridPane displayDoctorsPage;
     public TextField doctorName;
     public TextField doctorDate;
 
@@ -65,7 +67,13 @@ public class displayDoctorsPageController extends baseController {
 
     }
 
-    public void back(ActionEvent actionEvent) {
-        switchScene(viewDoctors, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+    public void back() {
+        if(session.getToken().getType() == UserType.DOCTOR){
+            switchScene(displayDoctorsPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
+        }
+        if(session.getToken().getType()== UserType.PATIENT){
+            switchScene(displayDoctorsPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
+        }
+
     }
 }
