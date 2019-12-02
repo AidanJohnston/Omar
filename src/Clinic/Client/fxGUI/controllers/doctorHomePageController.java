@@ -67,4 +67,7 @@ public class doctorHomePageController extends baseController {
         switchScene(doctorHomePage, "../pages/displayDoctorsPage.fxml", displayDoctorsPageController.class, session);
     }
 
+    public void viewAppointment() {
+        switchScene(doctorHomePage, "../pages/viewAppointmentPage.fxml", viewAppointmentPageController.class, session);
+    }
 }

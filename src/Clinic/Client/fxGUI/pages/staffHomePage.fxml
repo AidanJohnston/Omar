@@ -32,5 +32,6 @@
     <Button text="Create Patient" onAction="#createPatient" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
     <Button text="Create Appointment" onAction="#createAppointment" GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
     <Button text="Create Staff" onAction="#createStaff" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
+    <Button text="View Appointments" onAction="#viewAppointment" GridPane.columnIndex="2" GridPane.rowIndex="3" maxWidth="Infinity"></Button>
 </GridPane>
 
