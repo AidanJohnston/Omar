@@ -294,4 +294,10 @@ public class ClientSecretary {
         Payload payload = new Payload(avaiableID, RequestType.PATIENT_CREATE, token, patient);
         prepareTask(payload);
     }
+
+    public void createStaff(Staff staff, Token token) throws ServerException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.CREATE_STAFF, token, staff);
+        prepareTask(payload);
+    }
 }
