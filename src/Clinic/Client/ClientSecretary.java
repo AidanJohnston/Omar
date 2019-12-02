@@ -223,7 +223,7 @@ public class ClientSecretary {
      */
     public void setDoctor(Doctor doctor, Token token) throws ServerException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_UPDATE_GIVEN_DOCTOR, token, doctor);
+        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_CREATE, token, doctor);
         prepareTask(payload);
     }
 
