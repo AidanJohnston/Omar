@@ -25,7 +25,6 @@ public class DataWriter {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
 
     public void writeCredentials(ArrayList<Credentials> objs) {
