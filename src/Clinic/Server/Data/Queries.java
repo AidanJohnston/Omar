@@ -86,4 +86,18 @@ public class Queries {
             throw new PatientNotFoundException("Patient Not Found");
         }
     }
+
+    public ArrayList<Prescription> getPrescriptions(Patient p){
+        return new ArrayList<Prescription>(getAppsPatient(p)
+            .stream()
+            .map(a -> a.getPrescription())
+            .collect(Collectors.toList()));
+    }
+
+    public ArrayList<Diagnosis> getDiagnoses(Patient p){
+        return new ArrayList<Diagnosis>(getAppsPatient(p)
+            .stream()
+            .map(a -> a.getDiagnosis())
+            .collect(Collectors.toList()));
+    }
 }
