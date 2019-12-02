@@ -107,11 +107,10 @@ public class ClientSecretary {
      * @return Boolean
      * @throws IncorrectPayloadException
      */
-    public boolean logout(Token token) throws ServerException {
+    public void logout(Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.LOGOUT, token);
-
-        return (boolean) prepareTask(payload).getReturnValue();
+        prepareTask(payload).getReturnValue();
     }
 
     /**
@@ -282,5 +281,17 @@ public class ClientSecretary {
         Payload payload = new Payload(avaiableID, RequestType.PATIENT_GET_ALL, token);
         Object o = prepareTask(payload);
         return (ArrayList<Patient>)o;
+    }
+
+    /**
+     * Creates a patient given a patient
+     * @param patient
+     * @param token
+     * @throws ServerException
+     */
+    public void createPatient(Patient patient, Token token) throws ServerException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.PATIENT_CREATE, token);
+        prepareTask(payload);
     }
 }
