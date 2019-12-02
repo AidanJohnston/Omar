@@ -27,12 +27,12 @@
     <Label text="Doctor Displau" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
            alignment="CENTER" style="-fx-font-size: 28"></Label>
     <Label fx:id="fname" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
-    <Label fx:id="lname" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
-    <Label fx:id="specialty" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
-    <Label fx:id="rank" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
-    <Label fx:id="startHour" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
-    <Label fx:id="endHour" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    <Label fx:id="lname" GridPane.columnIndex="0" GridPane.rowIndex="2"></Label>
+    <Label fx:id="specialty" GridPane.columnIndex="0" GridPane.rowIndex="3"></Label>
+    <Label fx:id="rank" GridPane.columnIndex="0" GridPane.rowIndex="4"></Label>
+    <Label fx:id="startHour" GridPane.columnIndex="0" GridPane.rowIndex="5"></Label>
+    <Label fx:id="endHour" GridPane.columnIndex="0" GridPane.rowIndex="6"></Label>
 
-    <Button text="Back" onAction="#back" GridPane.columnIndex="0" GridPane.rowIndex="2" ></Button>
+    <Button text="Back" onAction="#back" GridPane.columnIndex="0" GridPane.rowIndex="7" ></Button>
 </GridPane>
 
