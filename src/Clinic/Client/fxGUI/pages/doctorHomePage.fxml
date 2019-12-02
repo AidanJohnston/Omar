@@ -26,10 +26,9 @@
 
                 <Label text="Doctor Home" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
                        alignment="CENTER" style="-fx-font-size: 28"></Label>
-                <Button text="Logout" fx:id="logoutbutton" onAction="#logout" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                <Button text="Logout" fx:id="logoutbutton" onAction="#logout" GridPane.columnIndex="1" GridPane.rowIndex="5"
                         maxWidth="Infinity" ></Button>
                 <Button text="View/Edit Schedule" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
-                <Button text="View Appointments" onAction="#showAllAppointments" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
                 <Button text="Browse Patients"  GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
                 <Button text="Switch to Patient View" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
                 <Button text="Search Doctor" GridPane.rowIndex="4" GridPane.columnIndex="0" maxWidth="Infinity"  onAction="#searchDoctor"></Button>

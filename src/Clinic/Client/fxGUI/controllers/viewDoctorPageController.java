@@ -20,8 +20,6 @@ public class viewDoctorPageController extends baseController {
     public Label lname;
     public Label specialty;
     public Label rank;
-    public Label startHour;
-    public Label endHour;
 
     public Button back;
 
@@ -39,8 +37,6 @@ public class viewDoctorPageController extends baseController {
         lname.setText(doctor.getLName());
         specialty.setText(doctor.getSpecialty());
         rank.setText(doctor.getRank());
-        startHour.setText(doctor.getStartHour().toString());
-        endHour.setText(doctor.getEndHour().toString());
     }
 
     public void back() {
@@ -49,6 +45,9 @@ public class viewDoctorPageController extends baseController {
         }
         if (session.getToken().getType() == UserType.PATIENT) {
             switchScene(viewDoctorPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
+        }
+        if (session.getToken().getType() == UserType.STAFF) {
+            switchScene(viewDoctorPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
         }
 
     }

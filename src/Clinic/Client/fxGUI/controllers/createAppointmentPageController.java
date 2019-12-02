@@ -73,6 +73,7 @@ public class createAppointmentPageController extends baseController{
 
                 if(session.getToken().getType() == UserType.STAFF)switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
                 if(session.getToken().getType() == UserType.PATIENT)switchScene(createAppointmentPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
+                if(session.getToken().getType() == UserType.DOCTOR)switchScene(createAppointmentPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
 
 
             }catch(ServerException ex){
@@ -95,7 +96,10 @@ public class createAppointmentPageController extends baseController{
                 }
 
 
-                switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+                if(session.getToken().getType() == UserType.STAFF)switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+                if(session.getToken().getType() == UserType.PATIENT)switchScene(createAppointmentPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
+                if(session.getToken().getType() == UserType.DOCTOR)switchScene(createAppointmentPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
+
             }catch(ServerException ex){
                 System.out.print("Failed Making appointment");
             }

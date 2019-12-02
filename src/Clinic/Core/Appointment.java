@@ -35,6 +35,8 @@ public class Appointment implements Serializable {
      * @param diagnosis the diagnosis
      * @param prescription the prescription
      */
+
+
     public Appointment(Patient patient, Doctor doctor, LocalDate date, String time, Diagnosis diagnosis, Prescription prescription) {
         this.patient = patient;
         this.doctor = doctor;
@@ -57,6 +59,9 @@ public class Appointment implements Serializable {
     public LocalDate getDate(){
         return date;
     }
+
+    public String toString(){
+        return this.getPatient() + ", " + this.getDoctor() + " at " + this.getDate().toString();    }
 
     public void setDate(LocalDate _date){
         this.date = _date;
@@ -122,10 +127,13 @@ public class Appointment implements Serializable {
      *
      * @param doctor
      */
-    public void setDoctor(Doctor doctor) {
+    public void setDoctorId(Doctor doctor) {
         this.doctorID = doctor.getID();
     }
-
+    public void setDoctor(Doctor doctor){
+        this.doctor = doctor;
+        setDoctorId(doctor);
+    }
     /**
      * Sets the diagnosis from the appointment
      *

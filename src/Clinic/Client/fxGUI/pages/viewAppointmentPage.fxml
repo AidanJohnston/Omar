@@ -43,5 +43,6 @@
     <Label  fx:id="time" GridPane.rowIndex="4"></Label>
     <Label  fx:id="diagnosis" GridPane.rowIndex="5"></Label>
     <Label  fx:id="prescription" GridPane.rowIndex="6"></Label>
+    <Button text="Back" onAction="#back" GridPane.columnIndex="2" GridPane.rowIndex="7"></Button>
 
 </GridPane>

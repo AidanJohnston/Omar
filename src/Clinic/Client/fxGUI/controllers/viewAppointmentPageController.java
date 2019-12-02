@@ -6,12 +6,12 @@ import Clinic.Core.Prescription;
 import Util.Exceptions.ServerException;
 import Util.RequestType;
 import Util.UserType;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 public class viewAppointmentPageController extends baseController{
@@ -33,7 +33,8 @@ public class viewAppointmentPageController extends baseController{
     ArrayList<Appointment> appointmentArrayList;
 
     public void initWithData(Session _session) {
-        if(session.getToken().getType().equals(UserType.STAFF)) {
+        session = _session;
+        if(session.getToken().getType() == (UserType.STAFF)) {
             try {
                 appointmentArrayList = session.getClient().getAllAppointment(session.getToken());
             } catch (ServerException e) {
@@ -55,7 +56,7 @@ public class viewAppointmentPageController extends baseController{
             } catch (ServerException e) {
                 e.printStackTrace();
             }
-            edit.setDisable(true);
+            //edit.setDisable(true);
             appointmentCombo.getItems().addAll(appointmentArrayList);
         }
     }
@@ -72,6 +73,13 @@ public class viewAppointmentPageController extends baseController{
 
     public void edit() {
         session.setDataObject(appointmentCombo.getValue());
-        switchScene(viewAppointmentPage, "../page/createAppointmentPage.fxml", createAppointmentPageController.class, session);
+        switchScene(viewAppointmentPage, "../pages/createAppointmentPage.fxml", createAppointmentPageController.class, session);
+    }
+
+    public void back(ActionEvent actionEvent) {
+        if(session.getToken().getType() == UserType.STAFF)switchScene(viewAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+        if(session.getToken().getType() == UserType.PATIENT)switchScene(viewAppointmentPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
+        if(session.getToken().getType() == UserType.DOCTOR)switchScene(viewAppointmentPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
+
     }
 }

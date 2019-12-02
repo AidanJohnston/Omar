@@ -31,7 +31,7 @@
 
 
 
-    <Button text="Request Appointment" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
+    <Button text="Request Appointment" onAction="#createAppointment" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
     <Button text="Search Doctor" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity"  onAction="#searchDoctor"></Button>
     <Button text="View Appointments" onAction="#viewAppointment" GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity"></Button>
 </GridPane>
