@@ -8,6 +8,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
+import java.time.LocalDate;
+
 public class createPatientPageController extends baseController{
 
     private Session session;
@@ -18,7 +20,6 @@ public class createPatientPageController extends baseController{
     public DatePicker bdayField;
     public TextField sinField;
     public TextField addressField;
-    public TextField idField;
     public TextField phoneField;
     public TextField hcnumField;
     public DatePicker hcexpField;
@@ -43,10 +44,12 @@ public class createPatientPageController extends baseController{
 
         try{
             ClientSecretary client = session.getClient();
-            //client.
-            throw new ServerException("");
-        }catch(ServerException e){
+            client.createPatient(newPatient, session.getToken());
 
+            switchScene(createPatientPage, "../pages/staffHomePage", staffHomePageController.class, session);
+
+        }catch(ServerException e){
+            System.out.println("Create patient failed");
         }
 
     }
