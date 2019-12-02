@@ -10,6 +10,7 @@ import Util.Exceptions.ServerException;
 import Util.UserType;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -27,15 +28,16 @@ public class createAppointmentPageController extends baseController{
     private ArrayList<Patient> availablePatients;
     private ArrayList<Doctor> availableDoctors;
 
-
-
+    public ComboBox<Patient> patientBox;
+    public ComboBox<Doctor> doctorBox;
 
     public void initWithData(Session _session){
         session = _session;
         popAvailable();
+
+        patientBox.getItems().addAll(availablePatients);
+        doctorBox.getItems().addAll(availableDoctors);
     }
-
-
 
     private void popAvailable(){
         try{
@@ -43,9 +45,12 @@ public class createAppointmentPageController extends baseController{
             availableDoctors = client.getDoctorAll(session.getToken());
             availablePatients = client.getPatientAll(session.getToken());
         }catch(ServerException ex){
-            System.out.println("Failed gettng doctors or patients");
+            System.out.println("Failed getting doctors or patients");
         }
+
     }
 
+    public void createAppointment() {
 
+    }
 }
