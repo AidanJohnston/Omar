@@ -31,10 +31,7 @@
 
 
 
-    <Button text="Create Appointment" onAction="#createAppointment" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
-    <Button text="View Active Appointments" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity" ></Button>
-    <Button text="Browse Appointment History" GridPane.rowIndex="3" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
-    <Button text="View Prescriptions/Diagnoses" GridPane.rowIndex="3" GridPane.columnIndex="1" maxWidth="Infinity" ></Button>
-    <Button text="Search Doctor" GridPane.rowIndex="4" GridPane.columnIndex="0" maxWidth="Infinity"  onAction="#searchDoctor"></Button>
-    <Button text="View Appointments" onAction="#viewAppointment" GridPane.columnIndex="2" GridPane.rowIndex="3" maxWidth="Infinity"></Button>
+    <Button text="Request Appointment" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
+    <Button text="Search Doctor" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity"  onAction="#searchDoctor"></Button>
+    <Button text="View Appointments" onAction="#viewAppointment" GridPane.columnIndex="3" GridPane.rowIndex="0" maxWidth="Infinity"></Button>
 </GridPane>
