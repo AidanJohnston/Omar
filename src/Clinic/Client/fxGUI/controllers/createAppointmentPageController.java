@@ -64,6 +64,8 @@ public class createAppointmentPageController extends baseController{
         try{
             ClientSecretary client = session.getClient();
             client.makeAppointment(session.getToken(),newAppointment);
+
+            switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
         }catch(ServerException ex){
             System.out.print("Failed Making appointment");
         }
