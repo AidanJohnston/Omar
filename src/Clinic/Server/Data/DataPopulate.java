@@ -42,8 +42,8 @@ public class DataPopulate {
     private static void popDoc() {
         ArrayList<Doctor> list = new ArrayList<>();
 
-        list.add(new Doctor("Orange", "Lube", LocalDate.of(1999, 5, 27), 420, "69 Hello Street", 129, "8076303284", "Fucking Bitches", "Head Doctor", LocalTime.of(9, 0), LocalTime.of(5, 0)));
-        list.add(new Doctor("Sean", "Dexor", LocalDate.of(1999, 7, 23), 403, "69 Suck my ass Street", 2, "87630483", "Fucking Biteches", "Second Doctor", LocalTime.of(9, 0), LocalTime.of(5, 0)));
+        list.add(new Doctor("Aidan", "Johnston", LocalDate.of(1999, 5, 27), 420, "25 Street rd.", 129, "8076303284", "Surgery", "Head Doctor", LocalTime.of(9, 0), LocalTime.of(5, 0)));
+        list.add(new Doctor("Sean", "Dunlop", LocalDate.of(1999, 7, 23), 403, "658 Boulevard street", 2, "87630483", "Pharmacist", "Second Doctor", LocalTime.of(9, 0), LocalTime.of(5, 0)));
 
         DataWriter d = new DataWriter();
         // write some example info to the database xml
@@ -74,7 +74,7 @@ public class DataPopulate {
     private static  void popStaff() {
         ArrayList<Staff> list = new ArrayList<>();
 
-        list.add(new Staff("Rebeka", "Dismo", LocalDate.of(1954, 1, 14), 130, "43 HiThrer street", 123, "807-2415235"));
+        list.add(new Staff("Rebeka", "Dismo", LocalDate.of(1954, 1, 14), 130, "43 first street", 123, "807-2415235"));
         new DataWriter().writeStaff(list);
     }
 
