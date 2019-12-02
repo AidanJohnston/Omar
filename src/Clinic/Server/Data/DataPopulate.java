@@ -75,6 +75,7 @@ public class DataPopulate {
         ArrayList<Staff> list = new ArrayList<>();
 
         list.add(new Staff("Rebeka", "Dismo", LocalDate.of(1954, 1, 14), 130, "43 HiThrer street", 123, "807-2415235"));
+        new DataWriter().writeStaff(list);
     }
 
 
