@@ -122,6 +122,33 @@ public class ServerDirector {
         }
     }
 
+    public Object createStaff(Object params) throws IncorrectPayloadException {
+        ArrayList<Staff> list = new DataReader().readStaff();
+        ArrayList<Credentials> credList = new DataReader().readCredentials();
+        try{
+            Object[] objs = (Object[])params;
+            Staff sta = (Staff)(objs[0]);
+            Credentials creds = (Credentials)(objs[1]);
+            
+            sta.setID((list
+                .stream()
+                .mapToInt(d -> d.getID())
+                .max())
+                .getAsInt() + 1);
+            list.add(sta);
+
+            creds.setID(sta.getID());
+            creds.setType(UserType.STAFF);
+            credList.add(creds);
+
+            new DataWriter().writeStaff(list);
+            new DataWriter().writeCredentials(credList);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
     public Object getAllAppointments(Object params) {
         return new DataReader().readAppointments();
     }
