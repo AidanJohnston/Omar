@@ -64,4 +64,6 @@ public class Queries {
             throw new DoctorNotFoundException("Doctor not found");
         }
     }
+
+    
 }

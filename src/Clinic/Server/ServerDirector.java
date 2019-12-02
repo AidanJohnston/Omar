@@ -16,9 +16,15 @@ public class ServerDirector {
     }
 
     public Object createAppointment(Object params) throws IncorrectPayloadException {
-        ArrayList<Appointment> apps = new DataReader().readAppointments();
-        apps.add((Appointment)params);
-        new DataWriter().writeAppointments(apps);
+        ArrayList<Appointment> list = new DataReader().readAppointments();
+        Appointment app = (Appointment)params;
+        app.setID((list
+            .stream()
+            .mapToInt(d -> d.getID())
+            .max())
+            .getAsInt() + 1);
+        list.add(app);
+        new DataWriter().writeAppointments(list);
         return null;
     }
 
@@ -72,14 +78,26 @@ public class ServerDirector {
 
     public Object createDoctor(Object params) throws IncorrectPayloadException {
         ArrayList<Doctor> list = new DataReader().readDoctors();
-        list.add((Doctor)params);
+        Doctor doc = (Doctor)params;
+        doc.setID((list
+            .stream()
+            .mapToInt(d -> d.getID())
+            .max())
+            .getAsInt() + 1);
+        list.add(doc);
         new DataWriter().writeDoctors(list);
         return null;
     }
 
     public Object createPatient(Object params) throws IncorrectPayloadException {
         ArrayList<Patient> list = new DataReader().readPatients();
-        list.add((Patient)params);
+        Patient pat = (Patient)params;
+        pat.setID((list
+            .stream()
+            .mapToInt(d -> d.getID())
+            .max())
+            .getAsInt() + 1);
+        list.add(pat);
         new DataWriter().writePatients(list);
         return null;
     }
