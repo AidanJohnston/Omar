@@ -37,7 +37,8 @@ public final class RequestType //Yo we're using this one its like 10000000 times
             GET_DOCTOR_BY_NAME,
             GET_DOCTOR_BY_DATE,
             GET_PATIENT_BY_NAME,
-            GET_STAFF_BY_NAME;
+            GET_STAFF_BY_NAME,
+            CREATE_ACCOUNT;
     // etc.
 
 public static final Collection<String> ALL_PATHS;
@@ -73,7 +74,8 @@ public static final Collection<String> ALL_PATHS;
         GET_DOCTOR_BY_NAME = "getDocByName",
         GET_DOCTOR_BY_DATE = "getDocByDate",
         GET_PATIENT_BY_NAME = "getPatByName",
-        GET_STAFF_BY_NAME = "getStaffByName"
+        GET_STAFF_BY_NAME = "getStaffByName",
+        CREATE_ACCOUNT = "createAccount"
         ));
     }
 }
