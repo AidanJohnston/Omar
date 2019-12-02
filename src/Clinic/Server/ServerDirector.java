@@ -111,6 +111,7 @@ public class ServerDirector {
             ArrayList<Patient> list = new DataReader().readPatients();
             Patient pat = (Patient)params;
             list.removeIf(p -> p.getID() == pat.getID());
+            list.add(pat);
             new DataWriter().writePatients(list);
             return null;
         }catch(NullPointerException e){
@@ -123,6 +124,7 @@ public class ServerDirector {
             ArrayList<Doctor> list = new DataReader().readDoctors();
             Doctor doc = (Doctor)params;
             list.removeIf(d -> d.getID() == doc.getID());
+            list.add(doc);
             new DataWriter().writeDoctors(list);
             return null;
         }catch(NullPointerException e){
@@ -135,6 +137,7 @@ public class ServerDirector {
             ArrayList<Appointment> list = new DataReader().readAppointments();
             Appointment app = (Appointment)params;
             list.removeIf(a -> a.getID() == app.getID());
+            list.add(app);
             new DataWriter().writeAppointments(list);
             return null;
         }catch(NullPointerException e){
@@ -147,6 +150,7 @@ public class ServerDirector {
             ArrayList<Staff> list = new DataReader().readStaff();
             Staff sta = (Staff)params;
             list.removeIf(s -> s.getID() == sta.getID());
+            list.add(sta);
             new DataWriter().writeStaff(list);
             return null;
         }catch(NullPointerException e){
