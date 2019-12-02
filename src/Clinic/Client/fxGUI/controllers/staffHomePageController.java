@@ -28,6 +28,10 @@ public class staffHomePageController extends baseController{
         switchScene(staffHomePage, "../pages/createDoctorPage.fxml", createDoctorPageController.class, session);
     }
 
+    public void createPatient(){
+        switchScene(staffHomePage, "../pages/createPatientPage.fxml", createPatientPageController.class, session);
+    }
+
     public void logout(ActionEvent e)
     {
         try{

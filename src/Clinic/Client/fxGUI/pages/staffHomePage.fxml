@@ -29,7 +29,7 @@
     <Button text="Logout" fx:id="logoutbutton" onAction="#logout" GridPane.columnIndex="1" GridPane.rowIndex="4"
             maxWidth="Infinity" ></Button>
     <Button text="Create Doctor" onAction="#createDoctor" GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" ></Button>
-    <Button text="Create Patient" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
+    <Button text="Create Patient" onAction="#createPatient" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
     <Button text="Create Appointment"  GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
     <Button text="Button Time" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
 </GridPane>

@@ -13,8 +13,8 @@
 <GridPane hgap="10" vgap="10" alignment="CENTER"
           xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="Clinic.Client.fxGUI.controllers.createDoctorPageController"
-          fx:id="createDoctorPage"
+          fx:controller="Clinic.Client.fxGUI.controllers.createPatientPageController"
+          fx:id="createPatientPage"
           prefHeight="400.0" prefWidth="600.0">
     <padding><Insets top="25" left="25" right="25" bottom="25"></Insets> </padding>
 
@@ -39,9 +39,11 @@
            alignment="CENTER" style="-fx-font-size: 28"></Label>
     <Label text="Phone Number: " GridPane.columnIndex="0" GridPane.rowIndex="6" maxWidth="Infinity"
            alignment="CENTER" style="-fx-font-size: 28"></Label>
-    <Label text="Specialty: " GridPane.columnIndex="0" GridPane.rowIndex="7" maxWidth="Infinity"
+    <Label text="Health Card Number" GridPane.columnIndex="0" GridPane.rowIndex="7" maxWidth="Infinity"
            alignment="CENTER" style="-fx-font-size: 28"></Label>
-    <Label text="Rank: " GridPane.columnIndex="0" GridPane.rowIndex="8" maxWidth="Infinity"
+    <Label text="Health Card Expiry" GridPane.columnIndex="0" GridPane.rowIndex="8" maxWidth="Infinity"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+    <Label text="Province" GridPane.columnIndex="0" GridPane.rowIndex="9" maxWidth="Infinity"
            alignment="CENTER" style="-fx-font-size: 28"></Label>
 
     <TextField promptText="First Name" focusTraversable="true" fx:id="fnameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
@@ -50,10 +52,11 @@
     <TextField promptText="SIN" focusTraversable="true" fx:id="sinField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
     <TextField promptText="Address" focusTraversable="true" fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
     <TextField promptText="Phone Number" focusTraversable="true" fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-    <TextField promptText="Specialty" focusTraversable="true" fx:id="specField" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-    <TextField promptText="Rank" focusTraversable="true" fx:id="rankField" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+    <TextField promptText="Health Card Number" focusTraversable="true" fx:id="hcnumField" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <DatePicker  focusTraversable="true" fx:id="hcexpField" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+    <TextField promptText="Province" focusTraversable="true" fx:id="provinceField" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
 
-    <Button text="Submit" fx:id="submitButton" onAction="#createDoctor" GridPane.columnIndex="1" GridPane.rowIndex="9"
+    <Button text="Submit" fx:id="submitButton" onAction="#createPatient" GridPane.columnIndex="1" GridPane.rowIndex="10"
             maxWidth="Infinity" ></Button>
 </GridPane>
 
