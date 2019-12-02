@@ -47,4 +47,8 @@ public class staffHomePageController extends baseController{
     public void createAppointment() {
         switchScene(staffHomePage, "../pages/createAppointmentPage.fxml", createAppointmentPageController.class, session);
     }
+
+    public void createStaff() {
+        switchScene(staffHomePage, "../pages/createStaffPage.fxml", createStaffPageController.class, session);
+    }
 }

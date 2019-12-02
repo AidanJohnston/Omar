@@ -28,7 +28,7 @@ public class createStaffPageController extends baseController {
         session = _session;
     }
 
-    public void createStaff(ActionEvent actionEvent) {
+    public void createStaff() {
 
         Staff staff = new Staff(
             fnameField.getText(),

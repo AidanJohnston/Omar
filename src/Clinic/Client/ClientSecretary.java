@@ -298,7 +298,7 @@ public class ClientSecretary {
 
     public void createStaff(Staff staff, Token token) throws ServerException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.CREATE_STAFF, token, staff);
-        prepareTask(payload);
+        //Payload payload = new Payload(avaiableID, RequestType.CREATE_STAFF, token, staff);
+        //prepareTask(payload);
     }
 }

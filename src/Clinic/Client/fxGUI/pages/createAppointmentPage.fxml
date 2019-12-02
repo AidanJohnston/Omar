@@ -35,6 +35,7 @@
            alignment="CENTER" style="-fx-font-size: 28"></Label>
     <Label text="Time: " GridPane.columnIndex="0" GridPane.rowIndex="4" maxWidth="Infinity"
            alignment="CENTER" style="-fx-font-size: 28"></Label>
+    <Button text="Set Prescription" fx:id="addScriptButton" onAction="#addScript" GridPane.columnIndex="0" GridPane.rowIndex="5"></Button>
 
 
     <ComboBox focusTraversable="true" fx:id="patientBox" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
