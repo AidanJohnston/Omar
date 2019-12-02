@@ -15,9 +15,6 @@ public class Diagnosis implements Serializable {
     private String name;
     private LocalDate date;
     private String notes;
-    private int appointmentID;
-    private int patientID;
-    private int doctorID;
 
     /**
      * Constructor for the Diagnosis class
@@ -25,15 +22,11 @@ public class Diagnosis implements Serializable {
      * @param name
      * @param date
      * @param notes
-     * @param appointmentID
      */
-    public Diagnosis(String name, LocalDate date, String notes, int appointmentID, int patientID, int doctorID) {
+    public Diagnosis(String name, LocalDate date, String notes) {
         this.name = name;
         this.date = date;
         this.notes = notes;
-        this.appointmentID = appointmentID;
-        this.patientID = patientID;
-        this.doctorID = doctorID;
     }
 
     /**
@@ -94,35 +87,4 @@ public class Diagnosis implements Serializable {
         this.notes = notes;
     }
 
-    /**
-     * gets the appointmentID
-     * @return appointmentID
-     */
-    public int getAppointmentID() {
-        return appointmentID;
-    }
-
-    /**
-     * Sets the appointmentID
-     * @param appointmentID
-     */
-    public void setAppointmentID(int appointmentID) {
-        this.appointmentID = appointmentID;
-    }
-
-    public int getPatientID() {
-        return patientID;
-    }
-
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
-    }
-
-    public int getDoctorID() {
-        return doctorID;
-    }
-
-    public void setDoctorID(int doctorID) {
-        this.doctorID = doctorID;
-    }
 }

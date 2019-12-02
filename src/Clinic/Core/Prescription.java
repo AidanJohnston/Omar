@@ -15,9 +15,6 @@ public class Prescription implements Serializable {
     private LocalDate date;
     private String note;
     private String instructions;
-    private int appointmentID;
-    private int patientID;
-    private int doctorID;
     /**
      * Constructor for Prescription Class
      *
@@ -25,16 +22,12 @@ public class Prescription implements Serializable {
      * @param date
      * @param note
      * @param instructions
-     * @param appointmentID
      */
-    public Prescription(String name, LocalDate date, String note, String instructions, int appointmentID, int patientID, int doctorID) {
+    public Prescription(String name, LocalDate date, String note, String instructions) {
         this.name = name;
         this.date = date;
         this.note = note;
         this.instructions = instructions;
-        this.appointmentID = appointmentID;
-        this.patientID = patientID;
-        this.doctorID = doctorID;
     }
 
     /**
@@ -48,22 +41,6 @@ public class Prescription implements Serializable {
      */
     public String getName() {
         return name;
-    }
-
-    /**
-     * Gets the appointment ID
-     * @return appointmentID
-     */
-    public int getAppointmentID() {
-        return appointmentID;
-    }
-
-    /**
-     * Sets the appointmentID
-     * @param appointmentID
-     */
-    public void setAppointmentID(int appointmentID) {
-        this.appointmentID = appointmentID;
     }
 
     /**
@@ -127,21 +104,5 @@ public class Prescription implements Serializable {
      */
     public void setInstructions(String instructions) {
         this.instructions = instructions;
-    }
-
-    public int getPatientID() {
-        return patientID;
-    }
-
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
-    }
-
-    public int getDoctorID() {
-        return doctorID;
-    }
-
-    public void setDoctorID(int doctorID) {
-        this.doctorID = doctorID;
     }
 }
