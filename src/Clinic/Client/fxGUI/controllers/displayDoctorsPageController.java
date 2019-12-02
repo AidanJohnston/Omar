@@ -35,6 +35,7 @@ public class displayDoctorsPageController extends baseController {
             e.printStackTrace();
         }
 
+        doctorDisplay.getItems().removeAll();
         doctorDisplay.getItems().addAll(doctorList);
     }
 
@@ -45,6 +46,7 @@ public class displayDoctorsPageController extends baseController {
             e.printStackTrace();
         }
 
+        doctorDisplay.getItems().removeAll();
         doctorDisplay.getItems().addAll(doctorList);
     }
 
@@ -55,6 +57,7 @@ public class displayDoctorsPageController extends baseController {
             e.printStackTrace();
         }
 
+        doctorDisplay.getItems().removeAll();
         doctorDisplay.getItems().addAll(doctorList);
     }
 
