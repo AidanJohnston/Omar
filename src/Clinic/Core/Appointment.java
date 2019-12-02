@@ -3,7 +3,6 @@ package Clinic.Core;
 import Util.RequestType;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 
 /**

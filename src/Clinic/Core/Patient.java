@@ -1,7 +1,6 @@
 package Clinic.Core;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -51,12 +50,12 @@ public class Patient extends User implements Serializable {
     public Patient(
             String FName,
             String LName,
-            LocalDate brithday,
+            Date brithday,
             int SIN,
             String adress,
             String phoneNumber,
             int healthCardNumber,
-            LocalDate healthCardExpiry,
+            Date healthCardExpiry,
             String province) {
         super(FName, LName, brithday, SIN, adress, phoneNumber);
         this.healthCardNumber = healthCardNumber;
