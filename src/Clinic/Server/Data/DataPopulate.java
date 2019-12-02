@@ -35,7 +35,7 @@ public class DataPopulate {
         ArrayList<Doctor> list = new ArrayList<>();
 
         list.add(new Doctor("Orange", "Lube", LocalDate.of(1999, 5, 27), 420, "69 Hello Street", 129, "8076303284", "Fucking Bitches", "Head Doctor", 0, 2));
-        list.add(new Doctor("Sean", "Dexor", LocalDate.of(1999, 7, 23), 403, "69 Suck my ass Street", 265, "87630483", "Fucking Biteches", "Second Doctor", 0, 1));
+        list.add(new Doctor("Sean", "Dexor", LocalDate.of(1999, 7, 23), 403, "69 Suck my ass Street", 2, "87630483", "Fucking Biteches", "Second Doctor", 0, 1));
 
         DataWriter d = new DataWriter();
         //write some example info to the database xml
