@@ -4,6 +4,7 @@ import javax.print.Doc;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
@@ -17,8 +18,8 @@ import java.util.List;
 public class Doctor extends User implements Serializable{
     private String specialty;
     private String rank;
-    private double startHour;
-    private double endHour;
+    private LocalTime startHour;
+    private LocalTime endHour;
 
     /**
      * Constructor for the Doctor class
@@ -45,8 +46,8 @@ public class Doctor extends User implements Serializable{
             String phoneNumber,
             String specialty,
             String rank,
-            double startHour,
-            double endHour) {
+            LocalTime startHour,
+            LocalTime endHour) {
         super(FName, LName, birthday, SIN, adress, ID, phoneNumber);
         this.specialty = specialty;
         this.rank = rank;
@@ -116,7 +117,7 @@ public class Doctor extends User implements Serializable{
      *
      * @return startHours
      */
-    public double getStartHour() {
+    public LocalTime getStartHour() {
         return startHour;
     }
 
@@ -125,7 +126,7 @@ public class Doctor extends User implements Serializable{
      *
      * @param startHour
      */
-    public void setStartHour(double startHour) {
+    public void setStartHour(LocalTime startHour) {
         this.startHour = startHour;
     }
 
@@ -134,7 +135,7 @@ public class Doctor extends User implements Serializable{
      *
      * @return endHour
      */
-    public double getEndHour() {
+    public LocalTime getEndHour() {
         return endHour;
     }
 
@@ -143,7 +144,7 @@ public class Doctor extends User implements Serializable{
      *
      * @param endHour
      */
-    public void setEndHour(double endHour) {
+    public void setEndHour(LocalTime endHour) {
         this.endHour = endHour;
     }
 
