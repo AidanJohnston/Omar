@@ -64,7 +64,8 @@ public class displayDoctorsPageController extends baseController {
     }
 
     public void view(ActionEvent actionEvent) {
-
+        session.setDataObject(doctorDisplay.getValue().getID());
+        switchScene(displayDoctorsPage, "../pages/viewDoctorPage.fxml", viewDoctorPageController.class, session);
     }
 
     public void back() {

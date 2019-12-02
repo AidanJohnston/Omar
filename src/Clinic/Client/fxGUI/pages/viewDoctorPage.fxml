@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language JavaScript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.fxml.FXMLLoader.*?>
+
+<?import javafx.geometry.Insets?>
+
+<GridPane hgap="10" vgap="10" alignment="CENTER"
+          xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Clinic.Client.fxGUI.controllers.viewDoctorPageController"
+          fx:id="viewDoctorPage"
+          prefHeight="400.0" prefWidth="600.0">
+    <padding><Insets top="25" left="25" right="25" bottom="25"></Insets> </padding>
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50">
+        </ColumnConstraints>
+        <ColumnConstraints  hgrow="ALWAYS" percentWidth="50">
+        </ColumnConstraints>
+    </columnConstraints>
+
+    <Label text="Doctor Displau" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+    <Label fx:id="fname" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    <Label fx:id="lname" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    <Label fx:id="specialty" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    <Label fx:id="rank" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    <Label fx:id="startHour" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    <Label fx:id="endHour" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+
+    <Button text="Back" onAction="#back" GridPane.columnIndex="0" GridPane.rowIndex="2" ></Button>
+</GridPane>
+
