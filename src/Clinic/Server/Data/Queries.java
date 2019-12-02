@@ -7,6 +7,7 @@ import Util.Exceptions.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Queries {
@@ -116,5 +117,33 @@ public class Queries {
             .stream()
             .map(a -> a.getDiagnosis())
             .collect(Collectors.toList()));
+    }
+
+    public ArrayList<Doctor> getDocByName(String name) throws DoctorNotFoundException{
+        Predicate<Doctor> p1 = d -> d.getFName().contains(name);
+        Predicate<Doctor> p2 = d ->d.getLName().contains(name);
+        try{
+            return new ArrayList<Doctor>(new DataReader()
+                .readDoctors()
+                .stream()
+                .filter(p1.or(p2))
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new DoctorNotFoundException("No Doctors were found with the given name");
+        }
+    }
+
+    public ArrayList<Doctor> getDocByDate(LocalDate date) throws DoctorNotFoundException {
+        Predicate<Appointment> p1 = a -> a.getDate().equals(date);
+        try{
+            return new ArrayList<Doctor>(new DataReader()
+                .readAppointments()
+                .stream()
+                .filter(p1.negate())
+                .map(a -> a.getDoctor())
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new DoctorNotFoundException("No Doctors were found on the given date");
+        }
     }
 }

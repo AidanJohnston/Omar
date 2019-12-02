@@ -6,6 +6,8 @@ import Clinic.Server.Data.DataWriter;
 import Clinic.Server.Data.Queries;
 import Util.*;
 import Util.Exceptions.*;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -251,5 +253,21 @@ public class ServerDirector {
         }catch(NullPointerException e){
             throw new IncorrectPayloadException("Invalid payload");
         }
+    }
+
+    public Object getDocByName(Object params) throws DoctorNotFoundException {
+        return new Queries().getDocByName((String)params);
+    }
+
+    public Object getDocByDate(Object params) throws DoctorNotFoundException{
+        return new Queries().getDocByDate((LocalDate)params);
+    }
+
+    public Object getPatByName(Object params){
+        return null;
+    }
+
+    public Object getStaffByName(Object params){
+        return null;
     }
 }
