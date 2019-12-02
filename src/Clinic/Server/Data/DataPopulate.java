@@ -9,6 +9,7 @@ import Util.Exceptions.LoginFailedException;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -79,8 +80,8 @@ public class DataPopulate {
     private static void popAppointment() {
         ArrayList<Appointment> list = new ArrayList<>();
 
-        list.add(new Appointment(new DataReader().readPatients().get(0), new DataReader().readDoctors().get(0), LocalDateTime.of(2020, 12, 2, 16, 0), new Diagnosis(), new Prescription()));
-        list.add(new Appointment(new DataReader().readPatients().get(1), new DataReader().readDoctors().get(1), LocalDateTime.of(2018, 12, 2, 12, 0), new Diagnosis("Sick", new Date(2018, 12, 2), "You are sick"), new Prescription("Drug", new Date(2018, 12, 2), "Cures being sick", "Take once an hour")));
+        list.add(new Appointment(new DataReader().readPatients().get(0), new DataReader().readDoctors().get(0), LocalDate.of(2020, 12, 2), LocalTime.of(16, 0), new Diagnosis(), new Prescription()));
+        list.add(new Appointment(new DataReader().readPatients().get(1), new DataReader().readDoctors().get(1), LocalDate.of(2018, 12, 2), LocalTime.of(12, 0), new Diagnosis("Sick", new Date(2018, 12, 2), "You are sick"), new Prescription("Drug", new Date(2018, 12, 2), "Cures being sick", "Take once an hour")));
 
         DataWriter d = new DataWriter();
         //write some example info to the database xml

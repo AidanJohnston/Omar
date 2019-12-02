@@ -5,6 +5,7 @@ import Util.RequestType;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 /**
@@ -21,7 +22,8 @@ public class Appointment implements Serializable {
     private Patient patient;
     private int doctorID;
     private Doctor doctor;
-    private LocalDateTime date;
+    private LocalDate date;
+    private LocalTime time;
     private Diagnosis diagnosis;
     private Prescription prescription;
 
@@ -33,7 +35,7 @@ public class Appointment implements Serializable {
      * @param diagnosis the diagnosis
      * @param prescription the prescription
      */
-    public Appointment(Patient patient, Doctor doctor, LocalDateTime date, Diagnosis diagnosis, Prescription prescription) {
+    public Appointment(Patient patient, Doctor doctor, LocalDate date, LocalTime time, Diagnosis diagnosis, Prescription prescription) {
         this.patient = patient;
         this.doctor = doctor;
         this.patientID = patient.getID();
@@ -41,9 +43,18 @@ public class Appointment implements Serializable {
         this.diagnosis = diagnosis;
         this.prescription = prescription;
         this.date = date;
+        this.time = time;
     }
 
-    public LocalDateTime getDate(){
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
+    public LocalDate getDate(){
         return date;
     }
 
