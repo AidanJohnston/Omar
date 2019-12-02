@@ -17,7 +17,7 @@ public class User implements Serializable{
     private String FName;
     private String LName;
     private LocalDate brithday;
-    private int SIN;
+    private long SIN;
     private String adress;
     private int ID;
     private String phoneNumber;
@@ -40,7 +40,7 @@ public class User implements Serializable{
      * @param ID
      * @param phoneNumber
      */
-    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, int ID, String phoneNumber) {
+    public User(String FName, String LName, LocalDate brithday, long SIN, String adress, int ID, String phoneNumber) {
         this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
@@ -50,7 +50,7 @@ public class User implements Serializable{
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, String phoneNumber) {
+    public User(String FName, String LName, LocalDate brithday, long SIN, String adress, String phoneNumber) {
         this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
@@ -132,7 +132,7 @@ public class User implements Serializable{
      *
      * @return SIN
      */
-    public int getSIN() {
+    public long getSIN() {
         return SIN;
     }
 
@@ -141,7 +141,7 @@ public class User implements Serializable{
      *
      * @param SIN
      */
-    public void setSIN(int SIN) {
+    public void setSIN(long SIN) {
         this.SIN = SIN;
     }
 
