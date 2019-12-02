@@ -103,7 +103,6 @@ public class ServerSecretary {
                          if(object.getClass()==Token.class){
                               clientTokens.add((Token)object);
                          }
-                         //Sending message to client
                     }
                }
                
@@ -114,7 +113,6 @@ public class ServerSecretary {
                          object,
                          payload.getStartTime()));
                
-
                //This statement is here to calm the compiler, because we are using reflection it doesn't know what method that it is going to be run.
                //Because of this, it doesn't think that IncorrectPayload exception will be thrown, even thought every one of the ServerDirector methods throws IncorrectPayloadException
                if(false){
