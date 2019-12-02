@@ -221,7 +221,7 @@ public class ClientSecretary {
      * @param token
      * @throws IncorrectPayloadException
      */
-    public void setDoctor(Doctor doctor, Token token) throws ServerException {
+    public void createDoctor(Doctor doctor, Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DOCTOR_CREATE, token, doctor);
         prepareTask(payload);
@@ -289,9 +289,10 @@ public class ClientSecretary {
      * @param token
      * @throws ServerException
      */
-    public void createPatient(Patient patient, Token token) throws ServerException {
+    public void createPatient(Patient patient, Credentials creds, Token token) throws ServerException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.PATIENT_CREATE, token, patient);
+        Object[] objs = {patient, creds};
+        Payload payload = new Payload(avaiableID, RequestType.PATIENT_CREATE, token, objs);
         prepareTask(payload);
     }
 }

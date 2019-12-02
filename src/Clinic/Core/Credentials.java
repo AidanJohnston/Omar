@@ -45,6 +45,14 @@ public class Credentials implements Serializable{
         return type;
     }
 
+    public void setID(int ID){
+        userID = ID;
+    }
+
+    public void setType(UserType t){
+        type = t;
+    }
+
     private String hashPassword(String passwordToHash){
         try {
             // Create MessageDigest instance for MD5

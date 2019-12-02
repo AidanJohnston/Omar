@@ -42,8 +42,13 @@ public class createPatientPageController extends baseController{
                 provinceField.getText()
         );
 
+        //USE SOMETHING LIKE THIS, WE DONT NEED TYPE OR ID HERE
+        //Credentials creds = new Credentials(username, password);
+
         try{
             ClientSecretary client = session.getClient();
+
+            //JUST COMMENT THIS OUT IF U NEED TO TEST, SEAN NEEDS TO ADD CREDENTIALS
             client.createPatient(newPatient, session.getToken());
 
             switchScene(createPatientPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
