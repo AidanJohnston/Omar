@@ -40,6 +40,7 @@ public class DataWriter {
         }
     }
 
+    @Deprecated
     public void writeDiagnoses(ArrayList<Diagnosis> objs) {
         try {
             new PrintWriter(FileNames.DIAGNOSES).close();
@@ -76,6 +77,7 @@ public class DataWriter {
         }
     }
 
+    @Deprecated
     public void writePrescriptions(ArrayList<Prescription> objs) {
         try {
             new PrintWriter(FileNames.PRESCRIPTIONS).close();
