@@ -3,6 +3,8 @@ package Clinic.Server.Data;
 import Clinic.Core.*;
 import Util.UserType;
 import Util.Exceptions.*;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -41,7 +43,7 @@ public class Queries {
                 .readAppointments()
                 .stream()
                 .filter(a -> a.getPatientID() == p.getID())
-                //.filter(a -> a.getDate().isAfter(LocalDate.now()))
+                .filter(a -> a.getDate().isAfter(LocalDate.now()))
                 .collect(Collectors.toList()));
         }catch(NullPointerException e){
             throw new AppointmentNotFoundException("No appointments were found for the given patient");
@@ -66,7 +68,7 @@ public class Queries {
                 .readAppointments()
                 .stream()
                 .filter(a -> a.getDoctorID() == d.getID())
-                //.filter(a -> a.getDate().isAfter(LocalDate.now()))
+                .filter(a -> a.getDate().isAfter(LocalDate.now()))
                 .collect(Collectors.toList()));
         }catch(NullPointerException e){
             throw new AppointmentNotFoundException("No appointments were found for the given patient");
