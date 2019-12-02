@@ -130,7 +130,7 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public boolean makeAppointment(Token token, Appointment appointment) throws Exception {
+    public boolean makeAppointment(Token token, Appointment appointment) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_CREATE, token, appointment);
         return (boolean) prepareTask(payload).getReturnValue();
@@ -142,7 +142,7 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public ArrayList<Appointment> getAllAppointment(Token token) throws Exception {
+    public ArrayList<Appointment> getAllAppointment(Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_ALL, token);
         return (ArrayList<Appointment>) prepareTask(payload).getReturnValue();
@@ -155,7 +155,7 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public ArrayList<Appointment> getAppointmentsDoctorAll(Token token, int doctorID) throws Exception {
+    public ArrayList<Appointment> getAppointmentsDoctorAll(Token token, int doctorID) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_DOCTOR_ALL, token, doctorID);
         return (ArrayList<Appointment>) prepareTask(payload).getReturnValue();

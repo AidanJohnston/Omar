@@ -1,6 +1,7 @@
 package Clinic.Client.fxGUI.controllers;
 
 import Clinic.Client.fxGUI.util.Session;
+import Clinic.Core.Appointment;
 import Clinic.Core.Doctor;
 import Clinic.Core.Patient;
 import Clinic.Core.Token;
@@ -10,13 +11,11 @@ import Util.Exceptions.ServerException;
 import Util.UserType;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import Clinic.Client.ClientSecretary;
+import java.time.LocalTime;
 
 import java.util.ArrayList;
 
@@ -30,6 +29,8 @@ public class createAppointmentPageController extends baseController{
 
     public ComboBox<Patient> patientBox;
     public ComboBox<Doctor> doctorBox;
+    public DatePicker dayField;
+    public TextField timeField;
 
     public void initWithData(Session _session){
         session = _session;
@@ -51,6 +52,23 @@ public class createAppointmentPageController extends baseController{
     }
 
     public void createAppointment() {
+        Appointment newAppointment = new Appointment(
+                patientBox.getValue(),
+                doctorBox.getValue(),
+                dayField.getValue(),
+                timeField.getText(),
+                null,
+                null
+        );
+
+        try{
+            ClientSecretary client = session.getClient();
+            client.makeAppointment(session.getToken(),newAppointment);
+        }catch(ServerException ex){
+            System.out.print("Failed Making appointment");
+        }
 
     }
+
+
 }

@@ -23,7 +23,7 @@ public class Appointment implements Serializable {
     private int doctorID;
     private Doctor doctor;
     private LocalDate date;
-    private LocalTime time;
+    private String time;
     private Diagnosis diagnosis;
     private Prescription prescription;
 
@@ -35,7 +35,7 @@ public class Appointment implements Serializable {
      * @param diagnosis the diagnosis
      * @param prescription the prescription
      */
-    public Appointment(Patient patient, Doctor doctor, LocalDate date, LocalTime time, Diagnosis diagnosis, Prescription prescription) {
+    public Appointment(Patient patient, Doctor doctor, LocalDate date, String time, Diagnosis diagnosis, Prescription prescription) {
         this.patient = patient;
         this.doctor = doctor;
         this.patientID = patient.getID();
@@ -46,11 +46,11 @@ public class Appointment implements Serializable {
         this.time = time;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

@@ -40,7 +40,7 @@
     <ComboBox focusTraversable="true" fx:id="patientBox" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     <ComboBox focusTraversable="true" fx:id="doctorBox" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
     <DatePicker focusTraversable="true" fx:id="dayField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <TextField promptText="HH:MM" focusTraversable="true" fx:id="sinField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <TextField promptText="HH:MM" focusTraversable="true" fx:id="timeField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
 
     <Button text="Submit" fx:id="submitButton" onAction="#createAppointment" GridPane.columnIndex="1" GridPane.rowIndex="9"
