@@ -32,6 +32,11 @@ public class createAppointmentPageController extends baseController{
         }
         else{
             isnewAppointment = false;
+            Appointment app =(Appointment) session.getDataObject();
+            patientBox.setValue(app.getPatient());
+            doctorBox.setValue(app.getDoctor());
+            dayField.setValue(app.getDate());
+            timeField.setText(app.getTime());
         }
 
         patientBox.getItems().addAll(availablePatients);
@@ -79,7 +84,7 @@ public class createAppointmentPageController extends baseController{
 
             try{
                 ClientSecretary client = session.getClient();
-                client.makeAppointment(session.getToken(), appointment);
+                client.editAppointment( appointment, session.getToken());
 
                 switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
             }catch(ServerException ex){
@@ -93,7 +98,14 @@ public class createAppointmentPageController extends baseController{
 
     public void addScript() {
         if(isnewAppointment){
-            session.setDataObject(new Appointment());
+            session.setDataObject(new Appointment(
+                    patientBox.getValue(),
+                    doctorBox.getValue(),
+                    dayField.getValue(),
+                    timeField.getText(),
+                    null,
+                    null
+            ));
         }
         switchScene(createAppointmentPage, "../pages/createPrescriptionPage.fxml", createPrescriptionPageController.class, session);
     }
