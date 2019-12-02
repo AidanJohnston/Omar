@@ -25,26 +25,12 @@ public class DataWriter {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
 
     public void writeCredentials(ArrayList<Credentials> objs) {
         try {
             new PrintWriter(FileNames.CREDENTIALS).close();
             FileOutputStream fout = new FileOutputStream(FileNames.CREDENTIALS);
-            ObjectOutputStream oout = new ObjectOutputStream(fout);
-            oout.writeObject(objs);
-            oout.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Deprecated
-    public void writeDiagnoses(ArrayList<Diagnosis> objs) {
-        try {
-            new PrintWriter(FileNames.DIAGNOSES).close();
-            FileOutputStream fout = new FileOutputStream(FileNames.DIAGNOSES);
             ObjectOutputStream oout = new ObjectOutputStream(fout);
             oout.writeObject(objs);
             oout.close();
@@ -69,19 +55,6 @@ public class DataWriter {
         try {
             new PrintWriter(FileNames.PATIENTS).close();
             FileOutputStream fout = new FileOutputStream(FileNames.PATIENTS);
-            ObjectOutputStream oout = new ObjectOutputStream(fout);
-            oout.writeObject(objs);
-            oout.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Deprecated
-    public void writePrescriptions(ArrayList<Prescription> objs) {
-        try {
-            new PrintWriter(FileNames.PRESCRIPTIONS).close();
-            FileOutputStream fout = new FileOutputStream(FileNames.PRESCRIPTIONS);
             ObjectOutputStream oout = new ObjectOutputStream(fout);
             oout.writeObject(objs);
             oout.close();
