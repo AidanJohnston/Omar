@@ -28,7 +28,7 @@ public class createAppointmentPageController extends baseController{
     private ArrayList<Doctor> availableDoctors;
 
 
-    
+
 
     public void initWithData(Session _session){
         session = _session;

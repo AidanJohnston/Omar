@@ -1,6 +1,7 @@
 package Clinic.Core;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class Patient extends User implements Serializable {
 
     private int healthCardNumber;
-    private Date healthCardExpiry;
+    private LocalDate healthCardExpiry;
     private String province;
 
     /**
@@ -33,13 +34,13 @@ public class Patient extends User implements Serializable {
     public Patient(
             String FName,
             String LName,
-            Date brithday,
+            LocalDate brithday,
             int SIN,
             String adress,
             int ID,
             String phoneNumber,
             int healthCardNumber,
-            Date healthCardExpiry,
+            LocalDate healthCardExpiry,
             String province) {
         super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
         this.healthCardNumber = healthCardNumber;
@@ -50,12 +51,12 @@ public class Patient extends User implements Serializable {
     public Patient(
             String FName,
             String LName,
-            Date brithday,
+            LocalDate brithday,
             int SIN,
             String adress,
             String phoneNumber,
             int healthCardNumber,
-            Date healthCardExpiry,
+            LocalDate healthCardExpiry,
             String province) {
         super(FName, LName, brithday, SIN, adress, phoneNumber);
         this.healthCardNumber = healthCardNumber;
@@ -94,7 +95,7 @@ public class Patient extends User implements Serializable {
      *
      * @return
      */
-    public Date getHealthCardExpiry() {
+    public LocalDate getHealthCardExpiry() {
         return healthCardExpiry;
     }
 
@@ -103,7 +104,7 @@ public class Patient extends User implements Serializable {
      *
      * @param healthCardExpiry
      */
-    public void setHealthCardExpiry(Date healthCardExpiry) {
+    public void setHealthCardExpiry(LocalDate healthCardExpiry) {
         this.healthCardExpiry = healthCardExpiry;
     }
 
