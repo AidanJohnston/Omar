@@ -65,7 +65,7 @@ public class DataPopulate {
         } catch (Exception e) {
             System.out.println("Writer broke");
         }
-        new ServerDirector().createPatient(new Patient("Aidan", "Johnston", new Date(1999, 5, 25), 2525, "Hey there this is an adress",  52352, "607-2343", 242, new Date(2020, 12, 23), "ON"));
+        //new ServerDirector().createPatient(new Patient("Aidan", "Johnston", new Date(1999, 5, 25), 2525, "Hey there this is an adress",  52352, "607-2343", 242, new Date(2020, 12, 23), "ON"));
         
     }
 
