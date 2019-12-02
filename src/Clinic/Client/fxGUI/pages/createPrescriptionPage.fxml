@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language JavaScript?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.fxml.FXMLLoader.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+
+<GridPane hgap="10" vgap="10" alignment="CENTER"
+          xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Clinic.Client.fxGUI.controllers.createPrescriptionPageController"
+          fx:id="createPrescriptionPage"
+          prefHeight="400.0" prefWidth="600.0">
+    <padding><Insets top="25" left="25" right="25" bottom="25"></Insets> </padding>
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50">
+        </ColumnConstraints>
+        <ColumnConstraints  hgrow="ALWAYS" percentWidth="50">
+        </ColumnConstraints>
+    </columnConstraints>
+
+    <Label text="Create New Prescription" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+    <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+    <Label text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="2" maxWidth="Infinity"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+    <Label text="Notes: " GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+    <Label text="Instructions: " GridPane.columnIndex="0" GridPane.rowIndex="4" maxWidth="Infinity"
+           alignment="CENTER" style="-fx-font-size: 28"></Label>
+
+    <TextField promptText="Name" focusTraversable="true" fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <DatePicker focusTraversable="true" fx:id="dateField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <TextField promptText="Notes" focusTraversable="true" fx:id="noteField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <TextField promptText="Instructions" focusTraversable="true" fx:id="instructionField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Button text="Submit" fx:id="submitButton" onAction="#createPrescription" GridPane.columnIndex="1" GridPane.rowIndex="9"
+            maxWidth="Infinity" ></Button>
+</GridPane>
+
