@@ -24,38 +24,54 @@ public class Queries {
         }
     }
 
-    public ArrayList<Appointment> getAppsPatient(Patient p){
-        return new ArrayList<Appointment>(new DataReader()
-            .readAppointments()
-            .stream()
-            .filter(a -> a.getPatientID() == p.getID())
-            .collect(Collectors.toList()));
+    public ArrayList<Appointment> getAppsPatient(Patient p) throws AppointmentNotFoundException {
+        try{
+            return new ArrayList<Appointment>(new DataReader()
+                .readAppointments()
+                .stream()
+                .filter(a -> a.getPatientID() == p.getID())
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new AppointmentNotFoundException("No appointments were found for the given patient");
+        }
     }
 
-    public ArrayList<Appointment> getFutureAppsPatient(Patient p){
-        return new ArrayList<Appointment>(new DataReader()
-            .readAppointments()
-            .stream()
-            .filter(a -> a.getPatientID() == p.getID())
-            .filter(a -> a.getDate().isAfter(LocalDate.now()))
-            .collect(Collectors.toList()));
+    public ArrayList<Appointment> getFutureAppsPatient(Patient p) throws AppointmentNotFoundException {
+        try{
+            return new ArrayList<Appointment>(new DataReader()
+                .readAppointments()
+                .stream()
+                .filter(a -> a.getPatientID() == p.getID())
+                //.filter(a -> a.getDate().isAfter(LocalDate.now()))
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new AppointmentNotFoundException("No appointments were found for the given patient");
+        }
     }
 
-    public ArrayList<Appointment> getAppsDoctor(Doctor d){
-        return new ArrayList<Appointment>(new DataReader()
-            .readAppointments()
-            .stream()
-            .filter(a -> a.getDoctorID() == d.getID())
-            .collect(Collectors.toList()));
+    public ArrayList<Appointment> getAppsDoctor(Doctor d) throws AppointmentNotFoundException {
+        try{
+            return new ArrayList<Appointment>(new DataReader()
+                .readAppointments()
+                .stream()
+                .filter(a -> a.getDoctorID() == d.getID())
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new AppointmentNotFoundException("No appointments were found for the given patient");
+        }
     }
 
-    public ArrayList<Appointment> getFutureAppsDoctor(Doctor d){
-        return new ArrayList<Appointment>(new DataReader()
-            .readAppointments()
-            .stream()
-            .filter(a -> a.getDoctorID() == d.getID())
-            .filter(a -> a.getDate().isAfter(LocalDate.now()))
-            .collect(Collectors.toList()));
+    public ArrayList<Appointment> getFutureAppsDoctor(Doctor d) throws AppointmentNotFoundException {
+        try{
+            return new ArrayList<Appointment>(new DataReader()
+                .readAppointments()
+                .stream()
+                .filter(a -> a.getDoctorID() == d.getID())
+                //.filter(a -> a.getDate().isAfter(LocalDate.now()))
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new AppointmentNotFoundException("No appointments were found for the given patient");
+        }
     }
 
     public Doctor getDoctorByID(Doctor doc) throws DoctorNotFoundException {
@@ -87,14 +103,14 @@ public class Queries {
         }
     }
 
-    public ArrayList<Prescription> getPrescriptions(Patient p){
+    public ArrayList<Prescription> getPrescriptions(Patient p) throws AppointmentNotFoundException {
         return new ArrayList<Prescription>(getAppsPatient(p)
             .stream()
             .map(a -> a.getPrescription())
             .collect(Collectors.toList()));
     }
 
-    public ArrayList<Diagnosis> getDiagnoses(Patient p){
+    public ArrayList<Diagnosis> getDiagnoses(Patient p) throws AppointmentNotFoundException {
         return new ArrayList<Diagnosis>(getAppsPatient(p)
             .stream()
             .map(a -> a.getDiagnosis())
