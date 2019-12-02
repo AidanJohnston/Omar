@@ -263,11 +263,11 @@ public class ServerDirector {
         return new Queries().getDocByDate((LocalDate)params);
     }
 
-    public Object getPatByName(Object params){
-        return null;
+    public Object getPatByName(Object params) throws PatientNotFoundException {
+        return new Queries().getPatByName((String)params);
     }
 
-    public Object getStaffByName(Object params){
-        return null;
+    public Object getStaffByName(Object params) throws StaffNotFoundException {
+        return new Queries().getStaByName((String)params);
     }
 }

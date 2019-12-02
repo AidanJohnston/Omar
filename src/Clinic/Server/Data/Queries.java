@@ -146,4 +146,32 @@ public class Queries {
             throw new DoctorNotFoundException("No Doctors were found on the given date");
         }
     }
+
+    public ArrayList<Patient> getPatByName(String name) throws PatientNotFoundException{
+        Predicate<Patient> p1 = d -> d.getFName().contains(name);
+        Predicate<Patient> p2 = d ->d.getLName().contains(name);
+        try{
+            return new ArrayList<Patient>(new DataReader()
+                .readPatients()
+                .stream()
+                .filter(p1.or(p2))
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new PatientNotFoundException("No Patients were found with the given name");
+        }
+    }
+
+    public ArrayList<Staff> getStaByName(String name) throws StaffNotFoundException{
+        Predicate<Staff> p1 = d -> d.getFName().contains(name);
+        Predicate<Staff> p2 = d ->d.getLName().contains(name);
+        try{
+            return new ArrayList<Staff>(new DataReader()
+                .readStaff()
+                .stream()
+                .filter(p1.or(p2))
+                .collect(Collectors.toList()));
+        }catch(NullPointerException e){
+            throw new StaffNotFoundException("No Staff were found with the given name");
+        }
+    }
 }
