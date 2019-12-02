@@ -130,7 +130,7 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public void makeAppointment(Token token, Appointment appointment) throws Exception {
+    public void makeAppointment(Token token, Appointment appointment) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_CREATE, token, appointment);
         prepareTask(payload).getReturnValue();
