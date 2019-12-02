@@ -35,29 +35,29 @@ public class displayDoctorsPageController extends baseController {
             e.printStackTrace();
         }
 
-        doctorDisplay.getItems().removeAll();
         doctorDisplay.getItems().addAll(doctorList);
     }
 
     public void searchDoctorDate(ActionEvent actionEvent) {
+        doctorDisplay.getItems().removeAll(doctorList);
         try{
             doctorList = session.getClient().searchDoctorDate(LocalDate.parse(doctorDate.getText()), session.getToken());
         } catch (ServerException e) {
             e.printStackTrace();
         }
 
-        doctorDisplay.getItems().removeAll();
+
         doctorDisplay.getItems().addAll(doctorList);
     }
 
     public void searchDoctorName(ActionEvent actionEvent) {
+        doctorDisplay.getItems().removeAll(doctorList);
         try{
             doctorList = session.getClient().searchDoctorName(doctorName.getText(), session.getToken());
         } catch (ServerException e) {
             e.printStackTrace();
         }
 
-        doctorDisplay.getItems().removeAll();
         doctorDisplay.getItems().addAll(doctorList);
     }
 
