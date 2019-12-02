@@ -27,6 +27,7 @@ public class DoctorAppointmentsPageController extends baseController{
     public void showAllAppointments(){
         ArrayList<Appointment> appointments = (ArrayList<Appointment>)session.getDataObject();
         LabelList results = new LabelList(appointments, new Appointment());
+        resultsBox = new VBox();
         resultsBox.getChildren().add(results);
         doctorAppointmentsPage.getChildren().add(resultsBox);
     }
