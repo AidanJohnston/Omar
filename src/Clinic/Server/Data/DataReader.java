@@ -93,20 +93,6 @@ public class DataReader {
         return objs;
     }
 
-    public ArrayList<Schedule> readSchedule() {
-        ArrayList<Schedule> objs = null;
-        try {
-            FileInputStream fout = new FileInputStream(FileNames.SCHEDULES);
-            ObjectInputStream oout = new ObjectInputStream(fout);
-            objs = (ArrayList<Schedule>)oout.readObject();
-            oout.close();
-        }catch (Exception e) {
-            System.out.println("This VM does not support the Latin-1 character set.");
-            System.out.println(e.getMessage());
-        }
-        return objs;
-    }
-
     public ArrayList<Staff> readStaff() {
         ArrayList<Staff> objs = null;
         try {

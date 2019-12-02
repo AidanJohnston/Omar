@@ -88,18 +88,6 @@ public class DataWriter {
         }
     }
 
-    public void writeSchedules(ArrayList<Schedule> objs) {
-        try {
-            new PrintWriter(FileNames.SCHEDULES).close();
-            FileOutputStream fout = new FileOutputStream(FileNames.SCHEDULES);
-            ObjectOutputStream oout = new ObjectOutputStream(fout);
-            oout.writeObject(objs);
-            oout.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void writeStaff(ArrayList<Staff> objs) {
         try {
             new PrintWriter(FileNames.APPOINTMENTS).close();

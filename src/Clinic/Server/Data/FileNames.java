@@ -13,7 +13,6 @@ public final class FileNames //Yo we're using this one its like 10000000 times b
     DOCTORS,
     PATIENTS,
     PRESCRIPTIONS,
-    SCHEDULES,
     STAFF,
     USERS;
     // etc.
@@ -27,7 +26,6 @@ public static final Collection<String> ALL_PATHS;
             DOCTORS = "doctors.txt",
             PATIENTS = "patients.txt",
             PRESCRIPTIONS = "prescriptions.txt",
-            SCHEDULES = "schedules.txt",
             STAFF = "staff.txt",
             USERS = "users.txt"
         ));
