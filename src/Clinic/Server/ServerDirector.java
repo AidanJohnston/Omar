@@ -74,28 +74,37 @@ public class ServerDirector {
 
     public Object createDoctor(Object params) throws IncorrectPayloadException {
         ArrayList<Doctor> list = new DataReader().readDoctors();
-        Doctor doc = (Doctor)params;
-        doc.setID((list
-            .stream()
-            .mapToInt(d -> d.getID())
-            .max())
-            .getAsInt() + 1);
-        list.add(doc);
-        new DataWriter().writeDoctors(list);
-        return null;
+        try{
+            Doctor doc = (Doctor)params;
+            doc.setID((list
+                .stream()
+                .mapToInt(d -> d.getID())
+                .max())
+                .getAsInt() + 1);
+            list.add(doc);
+            new DataWriter().writeDoctors(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
     }
 
     public Object createPatient(Object params) throws IncorrectPayloadException {
         ArrayList<Patient> list = new DataReader().readPatients();
-        Patient pat = (Patient)params;
-        pat.setID((list
-            .stream()
-            .mapToInt(d -> d.getID())
-            .max())
-            .getAsInt() + 1);
-        list.add(pat);
-        new DataWriter().writePatients(list);
-        return null;
+        try{
+            Patient pat = (Patient)params;
+            pat.setID((list
+                .stream()
+                .mapToInt(d -> d.getID())
+                .max())
+                .getAsInt() + 1);
+            list.add(pat);
+            new DataWriter().writePatients(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+        
     }
 
     public Object getAllAppointments(Object params) {
