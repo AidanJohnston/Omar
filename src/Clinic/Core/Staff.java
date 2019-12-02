@@ -27,7 +27,7 @@ public class Staff extends User implements Serializable {
     public Staff(
             String FName,
             String LName,
-            LocalDate brithday,
+            Date brithday,
             int SIN,
             String adress,
             int ID,

@@ -38,7 +38,7 @@ public class Doctor extends User implements Serializable{
     public Doctor(
             String FName,
             String LName,
-            LocalDate birthday,
+            Date birthday,
             int SIN,
             String adress,
             int ID,
@@ -64,12 +64,12 @@ public class Doctor extends User implements Serializable{
     public Doctor(String FName) {
         super(FName);
     }
-    public Doctor(String FName, String Lname, LocalDate birthday, int SIN, String address, int ID, String phoneNumber, String specialty) {
+    public Doctor(String FName, String Lname, Date birthday, int SIN, String address, int ID, String phoneNumber, String specialty) {
         super(FName, Lname, birthday, SIN, address, ID, phoneNumber);
         this.specialty = specialty;
     }
 
-    public Doctor(String FName, String Lname, LocalDate birthday, int SIN, String address, String phoneNumber, String specialty) {
+    public Doctor(String FName, String Lname, Date birthday, int SIN, String address, String phoneNumber, String specialty) {
         super(FName, Lname, birthday, SIN, address, phoneNumber);
         this.specialty = specialty;
     }
