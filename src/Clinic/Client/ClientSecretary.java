@@ -130,10 +130,10 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public boolean makeAppointment(Token token, Appointment appointment) throws Exception {
+    public void makeAppointment(Token token, Appointment appointment) throws Exception {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_CREATE, token, appointment);
-        return (boolean) prepareTask(payload).getReturnValue();
+        prepareTask(payload).getReturnValue();
     }
 
     /**

@@ -81,7 +81,7 @@ public class DataPopulate {
     private static void popAppointment() {
         ArrayList<Appointment> list = new ArrayList<>();
 
-        list.add(new Appointment(new DataReader().readPatients().get(0), new DataReader().readDoctors().get(0), LocalDate.of(2020, 12, 2), LocalTime.of(16, 0), new Diagnosis(), new Prescription()));
+        list.add(new Appointment(new DataReader().readPatients().get(0), new DataReader().readDoctors().get(1), LocalDate.of(2020, 12, 2), LocalTime.of(16, 0), new Diagnosis(), new Prescription()));
         list.add(new Appointment(new DataReader().readPatients().get(1), new DataReader().readDoctors().get(1), LocalDate.of(2018, 12, 2), LocalTime.of(12, 0), new Diagnosis("Sick", new Date(2018, 12, 2), "You are sick"), new Prescription("Drug", new Date(2018, 12, 2), "Cures being sick", "Take once an hour")));
 
         DataWriter d = new DataWriter();
