@@ -65,8 +65,8 @@ public class DataWriter {
 
     public void writeStaff(ArrayList<Staff> objs) {
         try {
-            new PrintWriter(FileNames.APPOINTMENTS).close();
-            FileOutputStream fout = new FileOutputStream("patients.txt");
+            new PrintWriter(FileNames.STAFF).close();
+            FileOutputStream fout = new FileOutputStream(FileNames.STAFF);
             ObjectOutputStream oout = new ObjectOutputStream(fout);
             oout.writeObject(objs);
             oout.close();
