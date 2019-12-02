@@ -47,7 +47,7 @@
     <TextField promptText="Address" focusTraversable="true" fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
     <TextField promptText="Phone Number" focusTraversable="true" fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
-    <Button text="Submit" fx:id="submitButton" onAction="#createDoctor" GridPane.columnIndex="1" GridPane.rowIndex="9"
+    <Button text="Submit" fx:id="submitButton" onAction="#createStaff" GridPane.columnIndex="1" GridPane.rowIndex="9"
             maxWidth="Infinity" ></Button>
 </GridPane>
 

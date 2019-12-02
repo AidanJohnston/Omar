@@ -54,7 +54,7 @@ public class createDoctorPageController extends baseController{
 
         try{
             ClientSecretary client = session.getClient();
-            client.setDoctor(newDoctor, session.getToken());
+            client.createDoctor(newDoctor, session.getToken());
 
             switchScene(createDoctorPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
 

@@ -3,6 +3,7 @@ package Clinic.Client.fxGUI.controllers;
 import Clinic.Client.ClientSecretary;
 import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Staff;
+import Util.Exceptions.ServerException;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -41,9 +42,12 @@ public class createStaffPageController extends baseController {
 
         try {
             ClientSecretary client = session.getClient();
-            client.createStaff
+            client.createStaff(staff, session.getToken());
+
+            switchScene(createStaffPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+
+        } catch (ServerException e) {
+            e.printStackTrace();
         }
-
-
     }
 }
