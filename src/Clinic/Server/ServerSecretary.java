@@ -82,7 +82,7 @@ public class ServerSecretary {
           System.out.println("Handling Request from: " + client.getName());
           System.out.println("Type: " + payload.getType());
           System.out.println("Ping: " + payload.getPing() + "ms");
-          Object object;
+          Object object = null;
 
 
           //Attempting to send back to the server
@@ -95,16 +95,16 @@ public class ServerSecretary {
                }
                if(payload.getType().equals(RequestType.LOGOUT)){
                     clientTokens.remove(findToken(payload.getToken()));
-                    return;
-               }
+               }else{
+                    Method method = director.getClass().getMethod(payload.getType(), Object.class);
+                    object = method.invoke(director, payload.getObject());
 
-               Method method = director.getClass().getMethod(payload.getType(), Object.class);
-               object = method.invoke(director, payload.getObject());
-               
-               if(object.getClass() == Token.class){
-                    clientTokens.add((Token)object);
-                    //Sending message to client
+                    if(object.getClass() == Token.class){
+                         clientTokens.add((Token)object);
+                         //Sending message to client
+                    }
                }
+               
                client.sendToClient(
                     new Payload(
                          payload.getId(),
