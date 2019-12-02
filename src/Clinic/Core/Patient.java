@@ -15,7 +15,7 @@ import java.util.List;
 public class Patient extends User implements Serializable {
 
     private int healthCardNumber;
-    private LocalDate healthCardExpiry;
+    private Date healthCardExpiry;
     private String province;
 
     /**
@@ -34,13 +34,13 @@ public class Patient extends User implements Serializable {
     public Patient(
             String FName,
             String LName,
-            LocalDate brithday,
+            Date brithday,
             int SIN,
             String adress,
             int ID,
             String phoneNumber,
             int healthCardNumber,
-            LocalDate healthCardExpiry,
+            Date healthCardExpiry,
             String province) {
         super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
         this.healthCardNumber = healthCardNumber;
@@ -95,7 +95,7 @@ public class Patient extends User implements Serializable {
      *
      * @return
      */
-    public LocalDate getHealthCardExpiry() {
+    public Date getHealthCardExpiry() {
         return healthCardExpiry;
     }
 
@@ -104,7 +104,7 @@ public class Patient extends User implements Serializable {
      *
      * @param healthCardExpiry
      */
-    public void setHealthCardExpiry(LocalDate healthCardExpiry) {
+    public void setHealthCardExpiry(Date healthCardExpiry) {
         this.healthCardExpiry = healthCardExpiry;
     }
 
