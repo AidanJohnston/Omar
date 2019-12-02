@@ -1,6 +1,7 @@
 package Clinic.Core;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,26 +13,27 @@ import java.util.Date;
 public class Diagnosis implements Serializable {
 
     private String name;
-    private Date date;
-    private Doctor doctor;
+    private LocalDate date;
     private String notes;
     private int appointmentID;
+    private int patientID;
+    private int doctorID;
 
     /**
      * Constructor for the Diagnosis class
      *
      * @param name
      * @param date
-     * @param doctor
      * @param notes
      * @param appointmentID
      */
-    public Diagnosis(String name, Date date, Doctor doctor, String notes, int appointmentID) {
+    public Diagnosis(String name, LocalDate date, String notes, int appointmentID, int patientID, int doctorID) {
         this.name = name;
         this.date = date;
-        this.doctor = doctor;
         this.notes = notes;
         this.appointmentID = appointmentID;
+        this.patientID = patientID;
+        this.doctorID = doctorID;
     }
 
     /**
@@ -61,7 +63,7 @@ public class Diagnosis implements Serializable {
      *
      * @return date
      */
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -70,26 +72,8 @@ public class Diagnosis implements Serializable {
      *
      * @param date
      */
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    /**
-     * Gets the doctor who gave the diagnosis
-     *
-     * @return doctor
-     */
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    /**
-     * Sets the doctor who gave the diagnosis
-     *
-     * @param doctor
-     */
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
     }
 
     /**
@@ -124,5 +108,21 @@ public class Diagnosis implements Serializable {
      */
     public void setAppointmentID(int appointmentID) {
         this.appointmentID = appointmentID;
+    }
+
+    public int getPatientID() {
+        return patientID;
+    }
+
+    public void setPatientID(int patientID) {
+        this.patientID = patientID;
+    }
+
+    public int getDoctorID() {
+        return doctorID;
+    }
+
+    public void setDoctorID(int doctorID) {
+        this.doctorID = doctorID;
     }
 }
