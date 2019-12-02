@@ -282,4 +282,16 @@ public class ClientSecretary {
         Object o = prepareTask(payload);
         return (ArrayList<Patient>)o;
     }
+
+    /**
+     * Creates a patient given a patient
+     * @param patient
+     * @param token
+     * @throws ServerException
+     */
+    public void createPatient(Patient patient, Token token) throws ServerException {
+        avaiableID++;
+        Payload payload = new Payload(avaiableID, RequestType.PATIENT_CREATE, token);
+        prepareTask(payload);
+    }
 }
