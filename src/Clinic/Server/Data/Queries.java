@@ -58,7 +58,7 @@ public class Queries {
                 .filter(a -> a.getDoctorID() == d.getID())
                 .collect(Collectors.toList()));
         }catch(NullPointerException e){
-            throw new AppointmentNotFoundException("No appointments were found for the given patient");
+            throw new AppointmentNotFoundException("No appointments were found for the given doctor");
         }
     }
 
@@ -71,7 +71,7 @@ public class Queries {
                 .filter(a -> a.getDate().isAfter(LocalDate.now()))
                 .collect(Collectors.toList()));
         }catch(NullPointerException e){
-            throw new AppointmentNotFoundException("No appointments were found for the given patient");
+            throw new AppointmentNotFoundException("No appointments were found for the given doctor");
         }
     }
 

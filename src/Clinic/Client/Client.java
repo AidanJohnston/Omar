@@ -21,7 +21,7 @@ public class Client {
         clientSecretary.setMyClient(myClient);
         Token a = clientSecretary.login("seand", "d");
 
-        ArrayList<Appointment> list = clientSecretary.getAppointmentsCurrentDoctor(a.getUserID(), a);
+        ArrayList<Appointment> list = clientSecretary.getAppointmentsDoctorAll(a, a.getUserID());
         System.out.println(list);
     }
 }
