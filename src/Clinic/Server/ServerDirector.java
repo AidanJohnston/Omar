@@ -28,14 +28,6 @@ public class ServerDirector {
         return null;
     }
 
-    public Object getAllSchedule(Object params) throws IncorrectPayloadException {
-        return null;
-    }
-
-    public Object getScheduleOfDoctor(Object params) throws IncorrectPayloadException {
-        return null;
-    }
-
     public Object getCurrentAppointmentOfPatient(Object params) throws IncorrectPayloadException {
         return new Queries().getFutureAppsPatient((Patient)params);
     }
@@ -52,6 +44,10 @@ public class ServerDirector {
         return new Queries().getDoctorByID((Doctor)params);
     }
     
+    public Object getPatientWithId(Object params) throws PatientNotFoundException {
+        return new Queries().getPatientByID((Patient)params);
+    }
+
     public Object setDoctor(Object params) throws IncorrectPayloadException {
         return null;
     }
@@ -64,10 +60,10 @@ public class ServerDirector {
         return null;
     }
     
-    public Object setSchedule(Object params) throws IncorrectPayloadException {
-        return null;
+    public Object getAllAppopintmentOfDoctor(Object params) {
+        return new Queries().getAppsDoctor((Doctor)params);
     }
-    
+
     public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {
         return new Queries().getFutureAppsDoctor((Doctor)params);
     }
@@ -100,5 +96,9 @@ public class ServerDirector {
         list.add(pat);
         new DataWriter().writePatients(list);
         return null;
+    }
+
+    public Object getAllAppointments(Object params) {
+        return new DataReader().readAppointments();
     }
 }

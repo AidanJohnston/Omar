@@ -41,6 +41,14 @@ public class Queries {
             .collect(Collectors.toList()));
     }
 
+    public ArrayList<Appointment> getAppsDoctor(Doctor d){
+        return new ArrayList<Appointment>(new DataReader()
+            .readAppointments()
+            .stream()
+            .filter(a -> a.getDoctorID() == d.getID())
+            .collect(Collectors.toList()));
+    }
+
     public ArrayList<Appointment> getFutureAppsDoctor(Doctor d){
         return new ArrayList<Appointment>(new DataReader()
             .readAppointments()
@@ -65,5 +73,17 @@ public class Queries {
         }
     }
 
-    
+    public Patient getPatientByID(Patient pat) throws PatientNotFoundException {
+        try{
+            Patient match = new DataReader()
+                .readPatients()
+                .stream()
+                .filter(p -> p.getID() == pat.getID())
+                .collect(Collectors.toList())
+                .get(0);
+            return match;
+        }catch(IndexOutOfBoundsException e){
+            throw new PatientNotFoundException("Patient Not Found");
+        }
+    }
 }
