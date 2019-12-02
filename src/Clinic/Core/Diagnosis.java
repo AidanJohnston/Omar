@@ -1,5 +1,7 @@
 package Clinic.Core;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -8,11 +10,10 @@ import java.util.Date;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Diagnosis {
+public class Diagnosis implements Serializable {
 
     private String name;
-    private Date date;
-    private Doctor doctor;
+    private LocalDate date;
     private String notes;
 
     /**
@@ -20,16 +21,18 @@ public class Diagnosis {
      *
      * @param name
      * @param date
-     * @param doctor
      * @param notes
      */
-    public Diagnosis(String name, Date date, Doctor doctor, String notes) {
+    public Diagnosis(String name, LocalDate date, String notes) {
         this.name = name;
         this.date = date;
-        this.doctor = doctor;
         this.notes = notes;
     }
 
+    /**
+     * Empty Constructor
+     */
+    public Diagnosis() {}
     /**
      * Gets the name of the diagnosis
      *
@@ -53,7 +56,7 @@ public class Diagnosis {
      *
      * @return date
      */
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -62,26 +65,8 @@ public class Diagnosis {
      *
      * @param date
      */
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    /**
-     * Gets the doctor who gave the diagnosis
-     *
-     * @return doctor
-     */
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    /**
-     * Sets the doctor who gave the diagnosis
-     *
-     * @param doctor
-     */
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
     }
 
     /**
@@ -101,4 +86,5 @@ public class Diagnosis {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
 }

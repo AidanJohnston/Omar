@@ -1,6 +1,6 @@
 package Util.Exceptions;
 
-public class NotImplementedYetException extends Exception {
+public class NotImplementedYetException extends ServerException {
     public NotImplementedYetException(String msg) {
         super(msg);
     }

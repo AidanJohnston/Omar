@@ -15,6 +15,7 @@ public class Session {
         dataObject = _dataObject;
     }
 
+
     public Object getDataObject(){
         return dataObject;
     }

@@ -4,6 +4,7 @@ import javax.print.Doc;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
@@ -17,10 +18,8 @@ import java.util.List;
 public class Doctor extends User implements Serializable{
     private String specialty;
     private String rank;
-    private double startHour;
-    private double endHour;
-    private Schedule schedule;
-    private List<Patient> patients;
+    private LocalTime startHour;
+    private LocalTime endHour;
 
     /**
      * Constructor for the Doctor class
@@ -36,8 +35,6 @@ public class Doctor extends User implements Serializable{
      * @param rank
      * @param startHour
      * @param endHour
-     * @param schedule
-     * @param patients
      */
     public Doctor(
             String FName,
@@ -49,18 +46,26 @@ public class Doctor extends User implements Serializable{
             String phoneNumber,
             String specialty,
             String rank,
-            double startHour,
-            double endHour,
-            Schedule schedule,
-            List<Patient> patients) {
+            LocalTime startHour,
+            LocalTime endHour) {
         super(FName, LName, birthday, SIN, adress, ID, phoneNumber);
         this.specialty = specialty;
         this.rank = rank;
         this.startHour = startHour;
         this.endHour = endHour;
-        this.schedule = schedule;
-        this.patients = patients;
     }
+
+    public String toString(){
+        return this.getFName() + " " + this.getLName();
+    }
+
+    public Doctor(int id) {
+        super(id);
+    }
+    /**
+     * Empty Constructor
+     */
+    public Doctor() {}
     public Doctor(String FName) {
         super(FName);
     }
@@ -69,6 +74,10 @@ public class Doctor extends User implements Serializable{
         this.specialty = specialty;
     }
 
+    public Doctor(String FName, String Lname, LocalDate birthday, int SIN, String address, String phoneNumber, String specialty) {
+        super(FName, Lname, birthday, SIN, address, phoneNumber);
+        this.specialty = specialty;
+    }
 
 
     /**
@@ -112,7 +121,7 @@ public class Doctor extends User implements Serializable{
      *
      * @return startHours
      */
-    public double getStartHour() {
+    public LocalTime getStartHour() {
         return startHour;
     }
 
@@ -121,7 +130,7 @@ public class Doctor extends User implements Serializable{
      *
      * @param startHour
      */
-    public void setStartHour(double startHour) {
+    public void setStartHour(LocalTime startHour) {
         this.startHour = startHour;
     }
 
@@ -130,7 +139,7 @@ public class Doctor extends User implements Serializable{
      *
      * @return endHour
      */
-    public double getEndHour() {
+    public LocalTime getEndHour() {
         return endHour;
     }
 
@@ -139,48 +148,8 @@ public class Doctor extends User implements Serializable{
      *
      * @param endHour
      */
-    public void setEndHour(double endHour) {
+    public void setEndHour(LocalTime endHour) {
         this.endHour = endHour;
-    }
-
-    /**
-     * Gets the doctor schedule
-     *
-     * @return schedule
-     * @see Schedule
-     */
-    public Schedule getSchedule() {
-        return schedule;
-    }
-
-    /**
-     * Sets the doctors schedule
-     *
-     * @param schedule
-     * @see Schedule
-     */
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
-    }
-
-    /**
-     * Gets a list of the doctors patients, included all patients.  Current, pass, and future
-     *
-     * @return List of Patients
-     * @see Patient
-     */
-    public List<Patient> getPatients() {
-        return patients;
-    }
-
-    /**
-     * Added a patient to the doctors list of patients
-     *
-     * @param patient
-     * @see Patient
-     */
-    public void addCurrentPatient(Patient patient) {
-        this.patients.add(patient);
     }
 
     public String getFname() {

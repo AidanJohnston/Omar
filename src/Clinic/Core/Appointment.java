@@ -3,6 +3,10 @@ package Clinic.Core;
 import Util.RequestType;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 
 /**
  * Appointment.java - A class for storing the time, patient, doctor, diagnosis, and prescription from an appointment.
@@ -14,8 +18,12 @@ import java.io.Serializable;
 public class Appointment implements Serializable {
 
     private int ID;
+    private int patientID;
     private Patient patient;
+    private int doctorID;
     private Doctor doctor;
+    private LocalDate date;
+    private String time;
     private Diagnosis diagnosis;
     private Prescription prescription;
 
@@ -27,15 +35,33 @@ public class Appointment implements Serializable {
      * @param diagnosis the diagnosis
      * @param prescription the prescription
      */
-    public Appointment(Patient patient, Doctor doctor, Diagnosis diagnosis, Prescription prescription) {
+    public Appointment(Patient patient, Doctor doctor, LocalDate date, String time, Diagnosis diagnosis, Prescription prescription) {
         this.patient = patient;
         this.doctor = doctor;
+        this.patientID = patient.getID();
+        this.doctorID = doctor.getID();
         this.diagnosis = diagnosis;
         this.prescription = prescription;
-
-        RequestType.class.getMethods();
+        this.date = date;
+        this.time = time;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public LocalDate getDate(){
+        return date;
+    }
+
+    /**
+     * Empty Constructor
+     */
+    public Appointment() {}
     /**
      * Gets the appointment ID
      * @return ID
@@ -57,7 +83,11 @@ public class Appointment implements Serializable {
      *
      * @return patient
      */
-    public Patient getPatient() {
+    public int getPatientID() {
+        return patientID;
+    }
+
+    public Patient getPatient(){
         return patient;
     }
 
@@ -66,8 +96,8 @@ public class Appointment implements Serializable {
      *
      * @param patient
      */
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPatient(int patient) {
+        this.patientID = patient;
     }
 
     /**
@@ -75,7 +105,11 @@ public class Appointment implements Serializable {
      *
      * @return doctor
      */
-    public Doctor getDoctor() {
+    public int getDoctorID() {
+        return doctorID;
+    }
+
+    public Doctor getDoctor(){
         return doctor;
     }
 
@@ -85,7 +119,7 @@ public class Appointment implements Serializable {
      * @param doctor
      */
     public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
+        this.doctorID = doctor.getID();
     }
 
     /**

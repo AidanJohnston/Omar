@@ -1,5 +1,7 @@
 package Clinic.Core;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -8,12 +10,11 @@ import java.util.Date;
  * @author Aidan Johnston
  * @version 1.0
  */
-public class Prescription {
+public class Prescription implements Serializable {
     private String name;
-    private Date date;
+    private LocalDate date;
     private String note;
     private String instructions;
-
     /**
      * Constructor for Prescription Class
      *
@@ -22,13 +23,18 @@ public class Prescription {
      * @param note
      * @param instructions
      */
-    public Prescription(String name, Date date, String note, String instructions) {
+    public Prescription(String name, LocalDate date, String note, String instructions) {
+
         this.name = name;
         this.date = date;
         this.note = note;
         this.instructions = instructions;
     }
 
+    /**
+     * Empty Constructor
+     */
+    public Prescription() {}
     /**
      * Gets the name of the prescription
      *
@@ -52,7 +58,7 @@ public class Prescription {
      *
      * @return Date of the prescription
      */
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -61,7 +67,7 @@ public class Prescription {
      *
      * @param date
      */
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

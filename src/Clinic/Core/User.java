@@ -2,6 +2,7 @@ package Clinic.Core;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * User.java - A class for storing basic information about members of the clinic
@@ -16,12 +17,17 @@ public class User implements Serializable{
     private String FName;
     private String LName;
     private LocalDate brithday;
-    private int SIN;
+    private long SIN;
     private String adress;
     private int ID;
     private String phoneNumber;
 
     private Token loginToken;
+
+    /**
+     * Empty Constructor
+     */
+    public User() {}
 
     /**
      * Constructor for the user class
@@ -34,13 +40,22 @@ public class User implements Serializable{
      * @param ID
      * @param phoneNumber
      */
-    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, int ID, String phoneNumber) {
+    public User(String FName, String LName, LocalDate brithday, long SIN, String adress, int ID, String phoneNumber) {
         this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
         this.SIN = SIN;
         this.adress = adress;
         this.ID = ID;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User(String FName, String LName, LocalDate brithday, long SIN, String adress, String phoneNumber) {
+        this.FName = FName;
+        this.LName = LName;
+        this.brithday = brithday;
+        this.SIN = SIN;
+        this.adress = adress;
         this.phoneNumber = phoneNumber;
     }
     /**
@@ -51,6 +66,11 @@ public class User implements Serializable{
         this.loginToken = loginToken;
     }
     public User(String FName) { this.FName = FName;}
+
+    public User(int id) {
+        this.ID = id;
+    }
+
     /**
      * Gets the users first name
      *
@@ -63,7 +83,7 @@ public class User implements Serializable{
     /**
      * Sets the users first name
      *
-     * @param fname
+     * @param _FName
      */
     public void setFName(String _FName) {
         FName = _FName;
@@ -91,7 +111,7 @@ public class User implements Serializable{
      * Gets the users birthday
      *
      * @return birthday
-     * @see LocalDate
+     * @see Date
      */
     public LocalDate getBrithday() {
         return brithday;
@@ -101,7 +121,7 @@ public class User implements Serializable{
      * Setes the users birthday
      *
      * @param brithday
-     * @see LocalDate
+     * @see Date
      */
     public void setBrithday(LocalDate brithday) {
         this.brithday = brithday;
@@ -112,7 +132,7 @@ public class User implements Serializable{
      *
      * @return SIN
      */
-    public int getSIN() {
+    public long getSIN() {
         return SIN;
     }
 
@@ -121,7 +141,7 @@ public class User implements Serializable{
      *
      * @param SIN
      */
-    public void setSIN(int SIN) {
+    public void setSIN(long SIN) {
         this.SIN = SIN;
     }
 

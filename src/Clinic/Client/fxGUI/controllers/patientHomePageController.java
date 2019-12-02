@@ -1,6 +1,8 @@
 package Clinic.Client.fxGUI.controllers;
 
+import Clinic.Client.ClientSecretary;
 import Clinic.Client.fxGUI.util.Session;
+import Util.Exceptions.ServerException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
@@ -12,7 +14,14 @@ public class patientHomePageController extends baseController {
     private GridPane patientHomePage;
 
     public void logout(ActionEvent actionEvent) {
-        switchScene(patientHomePage, "loginPage.fxml", loginController.class, session);
+        try{
+            ClientSecretary client = session.getClient();
+            client.logout(session.getToken());
+        }
+        catch(ServerException ex){
+            System.out.println("Logout Failed, doing it anyways");
+        }
+        switchScene(patientHomePage, "../pages/loginPage.fxml", loginController.class, session);
     }
 
     @Override

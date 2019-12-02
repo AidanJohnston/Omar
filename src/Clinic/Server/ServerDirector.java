@@ -3,89 +3,206 @@ package Clinic.Server;
 import Clinic.Core.*;
 import Clinic.Server.Data.DataReader;
 import Clinic.Server.Data.DataWriter;
+import Clinic.Server.Data.Queries;
 import Util.*;
-import Util.Exceptions.IncorrectPayloadException;
-
+import Util.Exceptions.*;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class ServerDirector {
-    /*
-     * This should stay dead, but just in case everything goes wrong and we need to
-     * do this public Method login(){ return this.getClass().getEnclosingMethod(); }
-     * //
-     */
-    public Token login(Util.PayloadBoys.login l) throws IncorrectPayloadException {
-        UserType type = UserType.DOCTOR; // REPLACE WITH DATABASE LOOKUP
-        int userID = 1;
-        System.out.println("Login Params: " + l.username + " " + l.password);
-        Token token = new Token(type, userID);
-
-        return token;
-    }
-
-    public Object logout(Object params) throws IncorrectPayloadException {
-        return null;
+    public Object login(Object params) throws LoginFailedException {
+        Credentials user = new Queries().login((Credentials)params);
+        return new Token(user.getType(), UUID.randomUUID(), user.getID());
     }
 
     public Object createAppointment(Object params) throws IncorrectPayloadException {
+        ArrayList<Appointment> list = new DataReader().readAppointments();
+        Appointment app = (Appointment)params;
+        app.setID((list
+            .stream()
+            .mapToInt(d -> d.getID())
+            .max())
+            .getAsInt() + 1);
+        list.add(app);
+        new DataWriter().writeAppointments(list);
         return null;
     }
 
-    public Object getAllSchedule(Object params) throws IncorrectPayloadException {
-        return null;
+    public Object getCurrentAppointmentOfPatient(Object params) throws AppointmentNotFoundException {
+        return new Queries().getFutureAppsPatient((Patient)params);
     }
 
-    public Object getScheduleOfDoctor(Object params) throws IncorrectPayloadException {
-        return null;
-    }
-
-    public Object getCurrentAppointmentOfPatient(Object params) throws IncorrectPayloadException {
-        return null;
-    }
-
-    public Object getAllAppointmentOfPatient(Object params) throws IncorrectPayloadException {
-        return null;
+    public Object getAllAppointmentOfPatient(Object params) throws AppointmentNotFoundException {
+        return new Queries().getAppsPatient((Patient)params);
     }
 
     public Object getAllDoctor(Object params) throws IncorrectPayloadException {
-        if(params.getClass() == astupididea.class){
-            return this.getClass().getEnclosingMethod();
-        }
-        ArrayList<Doctor> list = new ArrayList<>();
-        list.add(new Doctor("Aidan"));
-        list.add(new Doctor("Sean"));
-        list.add(new Doctor("Dawson"));
-        list.add(new Doctor("John"));
-        list.add(new Doctor("Mai"));
-        DataReader dd = new DataReader();
-        try {
-            return dd.readDoctors();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return e;
-        }
-        
-        /*
-        try {
-            //d.writeDoctors(list);
-        } catch (Exception e) {
-            return e;
-        }
-        return list;
-        */
+        return new DataReader().readDoctors();
     }
-    public Object getDoctorWithId(Object params) throws IncorrectPayloadException {return null;}
-    public Object setDoctor(Object params) throws IncorrectPayloadException {return null;}
-    public Object getAllDiagnosisFromPatient(Object params) throws IncorrectPayloadException {return null;}
-    public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {return null;}
-    public Object setSchedule(Object params) throws IncorrectPayloadException {return null;}
-    public Object getCurrentAppointmentDoctor(Object params) throws IncorrectPayloadException {return null;}
+
+    public Object getDoctorWithId(Object params) throws DoctorNotFoundException {
+        return new Queries().getDoctorByID((Doctor)params);
+    }
+    
+    public Object getPatientWithId(Object params) throws PatientNotFoundException {
+        return new Queries().getPatientByID((Patient)params);
+    }
+    
+    public Object getAllDiagnosisFromPatient(Object params) throws AppointmentNotFoundException {
+        return new Queries().getDiagnoses((Patient)params);
+    }
+    
+    public Object getAllPrescriptionFromPatient(Object params) throws AppointmentNotFoundException {
+        return new Queries().getPrescriptions((Patient)params);
+    }
+    
+    public Object getAllAppopintmentOfDoctor(Object params) throws AppointmentNotFoundException{
+        return new Queries().getAppsDoctor((Doctor)params);
+    }
+
+    public Object getCurrentAppointmentDoctor(Object params) throws AppointmentNotFoundException{
+        return new Queries().getFutureAppsDoctor((Doctor)params);
+    }
+    
     public Object getAllPatient(Object params) throws IncorrectPayloadException {
-        DataReader reader = new DataReader();
+        return new DataReader().readPatients();
+    }
+
+    public Object createDoctor(Object params) throws IncorrectPayloadException {
+        ArrayList<Doctor> list = new DataReader().readDoctors();
         try{
-            return reader.readPatients();
-        }catch(Exception e){
-            return e;
+            Doctor doc = (Doctor)params;
+            doc.setID((list
+                .stream()
+                .mapToInt(d -> d.getID())
+                .max())
+                .getAsInt() + 1);
+            list.add(doc);
+            new DataWriter().writeDoctors(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object createPatient(Object params) throws IncorrectPayloadException {
+        ArrayList<Patient> list = new DataReader().readPatients();
+        try{
+            Patient pat = (Patient)params;
+            pat.setID((list
+                .stream()
+                .mapToInt(d -> d.getID())
+                .max())
+                .getAsInt() + 1);
+            list.add(pat);
+            new DataWriter().writePatients(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object getAllAppointments(Object params) {
+        return new DataReader().readAppointments();
+    }
+
+    public Object updatePatient(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Patient> list = new DataReader().readPatients();
+            Patient pat = (Patient)params;
+            list.removeIf(p -> p.getID() == pat.getID());
+            list.add(pat);
+            new DataWriter().writePatients(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object updateDoctor(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Doctor> list = new DataReader().readDoctors();
+            Doctor doc = (Doctor)params;
+            list.removeIf(d -> d.getID() == doc.getID());
+            list.add(doc);
+            new DataWriter().writeDoctors(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object updateAppointment(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Appointment> list = new DataReader().readAppointments();
+            Appointment app = (Appointment)params;
+            list.removeIf(a -> a.getID() == app.getID());
+            list.add(app);
+            new DataWriter().writeAppointments(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object updateStaff(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Staff> list = new DataReader().readStaff();
+            Staff sta = (Staff)params;
+            list.removeIf(s -> s.getID() == sta.getID());
+            list.add(sta);
+            new DataWriter().writeStaff(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object deletePatient(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Patient> list = new DataReader().readPatients();
+            Patient sta = (Patient)params;
+            list.removeIf(s -> s.getID() == sta.getID());
+            new DataWriter().writePatients(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object deleteDoctor(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Doctor> list = new DataReader().readDoctors();
+            Doctor doc = (Doctor)params;
+            list.removeIf(d -> d.getID() == doc.getID());
+            new DataWriter().writeDoctors(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object deleteAppointment(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Appointment> list = new DataReader().readAppointments();
+            Appointment app = (Appointment)params;
+            list.removeIf(a -> a.getID() == app.getID());
+            new DataWriter().writeAppointments(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
+        }
+    }
+
+    public Object deleteStaff(Object params) throws IncorrectPayloadException {
+        try{
+            ArrayList<Staff> list = new DataReader().readStaff();
+            Staff sta = (Staff)params;
+            list.removeIf(s -> s.getID() == sta.getID());
+            new DataWriter().writeStaff(list);
+            return null;
+        }catch(NullPointerException e){
+            throw new IncorrectPayloadException("Invalid payload");
         }
     }
 }
