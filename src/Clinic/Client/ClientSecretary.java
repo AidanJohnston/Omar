@@ -237,7 +237,7 @@ public class ClientSecretary {
     public ArrayList<Prescription> getPrescriptionAll(int patientID, Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.PRESCRIPTION_GET_ALL_PATIENT, token, patientID);
-        Object o = prepareTask(payload);
+        Object o = prepareTask(payload).getReturnValue();
         return (ArrayList<Prescription>)o;
     }
 
@@ -251,7 +251,7 @@ public class ClientSecretary {
     public ArrayList<Diagnosis> getDiagnosisAll(int patientID, Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.DIAGNOSIS_GET_ALL_PATIENT, token, patientID);
-        Object o = prepareTask(payload);
+        Object o = prepareTask(payload).getReturnValue();
         return (ArrayList<Diagnosis>)o;
     }
 
@@ -279,7 +279,7 @@ public class ClientSecretary {
     public ArrayList<Patient> getPatientAll(Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.PATIENT_GET_ALL, token);
-        Object o = prepareTask(payload);
+        Object o = prepareTask(payload).getReturnValue();
         return (ArrayList<Patient>)o;
     }
 
