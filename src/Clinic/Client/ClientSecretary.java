@@ -143,23 +143,23 @@ public class ClientSecretary {
      * @return
      * @throws IncorrectPayloadException
      */
-    public ArrayList<Schedule> getScheduleAll(Token token) throws Exception {
+    public ArrayList<Appointment> getAllAppointment(Token token) throws Exception {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_GET_ALL, token);
-        return (ArrayList<Schedule>) prepareTask(payload).getReturnValue();
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_ALL, token);
+        return (ArrayList<Appointment>) prepareTask(payload).getReturnValue();
     }
 
     /**
      * Gets the schedule of a specific doctor
      * @param token
-     * @param id
+     * @param doctorID
      * @return
      * @throws IncorrectPayloadException
      */
-    public Schedule getScheduleDoctor(Token token, int id) throws Exception {
+    public ArrayList<Appointment> getAppointmentsDoctorAll(Token token, int doctorID) throws Exception {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_GET_DOCTOR, token, id);
-        return (Schedule) prepareTask(payload).getReturnValue();
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_DOCTOR_ALL, token, doctorID);
+        return (ArrayList<Appointment>) prepareTask(payload).getReturnValue();
     }
 
     /**
@@ -171,7 +171,7 @@ public class ClientSecretary {
      */
     public ArrayList<Appointment> getCurrentAppointmentPatient(Token token, Patient patient) throws ServerException {
         avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATENT_CURRENT_ALL, token, patient);
+        Payload payload = new Payload(avaiableID, RequestType.APPOINTMENT_PATIENT_CURRENT_ALL, token, patient);
         return (ArrayList<Appointment>) prepareTask(payload).getReturnValue();
     }
 
@@ -256,17 +256,6 @@ public class ClientSecretary {
         return (ArrayList<Diagnosis>)o;
     }
 
-    /**
-     * Overwrites a doctors schedule given a schedule
-     * @param schedule
-     * @param token
-     * @throws ServerException
-     */
-    public void setScheduleDoctor(Schedule schedule, Token token) throws ServerException {
-        avaiableID++;
-        Payload payload = new Payload(avaiableID, RequestType.SCHEDULE_SET_GIVEN_SCHEDULE, token, schedule);
-        prepareTask(payload);
-    }
 
     /**
      * Gets an array list of a doctors appointmetns given a doctors id

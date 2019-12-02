@@ -16,8 +16,6 @@ public class Staff extends User implements Serializable {
 
     /**
      * Constructor for the Staff class
-     *  @param username
-     * @param password
      * @param FName
      * @param LName
      * @param brithday
@@ -27,8 +25,6 @@ public class Staff extends User implements Serializable {
      * @param phoneNumber
      */
     public Staff(
-            String username,
-            String password,
             String FName,
             String LName,
             LocalDate brithday,
