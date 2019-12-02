@@ -1,7 +1,9 @@
 package Clinic.Server.Data;
 
 import Clinic.Core.*;
+import Clinic.Server.ServerDirector;
 import Util.UserType;
+import Util.Exceptions.IncorrectPayloadException;
 import Util.Exceptions.LoginFailedException;
 
 import java.io.Serializable;
@@ -10,7 +12,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class DataPopulate {
-    public static void main(String args[]) throws LoginFailedException {
+    public static void main(String args[]) throws LoginFailedException, IncorrectPayloadException {
+        ArrayList<Patient> pats = new DataReader().readPatients();
+        
         popDoc();
         popCreds();
         popPatient();
@@ -18,7 +22,7 @@ public class DataPopulate {
         popAppointment();
     }
 
-    private static void popCreds(){
+    private static void popCreds() {
         ArrayList<Credentials> creds = new ArrayList<>();
 
         creds.add(new Credentials("seanp", "p", 1, UserType.PATIENT));
@@ -32,14 +36,16 @@ public class DataPopulate {
         }
     }
 
-    private static void popDoc(){
+    private static void popDoc() {
         ArrayList<Doctor> list = new ArrayList<>();
 
-        list.add(new Doctor("Orange", "Lube", new Date(1999, 5, 27), 420, "69 Hello Street", 129, "8076303284", "Fucking Bitches", "Head Doctor", 0, 2));
-        list.add(new Doctor("Sean", "Dexor", new Date(1999, 7, 23), 403, "69 Suck my ass Street", 2, "87630483", "Fucking Biteches", "Second Doctor", 0, 1));
+        list.add(new Doctor("Orange", "Lube", new Date(1999, 5, 27), 420, "69 Hello Street", 129, "8076303284",
+                "Fucking Bitches", "Head Doctor", 0, 2));
+        list.add(new Doctor("Sean", "Dexor", new Date(1999, 7, 23), 403, "69 Suck my ass Street", 2, "87630483",
+                "Fucking Biteches", "Second Doctor", 0, 1));
 
         DataWriter d = new DataWriter();
-        //write some example info to the database xml
+        // write some example info to the database xml
         try {
             d.writeDoctors(list);
         } catch (Exception e) {
@@ -47,12 +53,12 @@ public class DataPopulate {
         }
     }
 
-    private static void popPatient() {
+    private static void popPatient() throws IncorrectPayloadException {
         ArrayList<Patient> list = new ArrayList<>();
 
         list.add(new Patient("Dawson", "Aevo", new Date(2000, 3, 26 ), 696969, "420 oh heck yeah Street", 14, "80-7259803", 2525, new Date(2020, 1, 12), "ON"));
-        list.add(new Patient("Aidan", "Johnston", new Date(1999, 5, 25), 2525, "Hey there this is an adress",  52352, "607-2343", 242, new Date(2020, 12, 23), "ON"));
-
+        //list.add(new Patient("Aidan", "Johnston", new Date(1999, 5, 25), 2525, "Hey there this is an adress",  52352, "607-2343", 242, new Date(2020, 12, 23), "ON"));
+        
         DataWriter d = new DataWriter();
         //write some example info to the database xml
         try {
@@ -60,6 +66,8 @@ public class DataPopulate {
         } catch (Exception e) {
             System.out.println("Writer broke");
         }
+        new ServerDirector().createPatient(new Patient("Aidan", "Johnston", new Date(1999, 5, 25), 2525, "Hey there this is an adress",  52352, "607-2343", 242, new Date(2020, 12, 23), "ON"));
+        
     }
 
     private static  void popStaff() {
