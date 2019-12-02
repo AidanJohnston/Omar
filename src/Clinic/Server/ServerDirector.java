@@ -53,11 +53,11 @@ public class ServerDirector {
     }
     
     public Object getAllDiagnosisFromPatient(Object params) throws IncorrectPayloadException {
-        return null;
+        return new Queries().getDiagnoses((Patient)params);
     }
     
     public Object getAllPrescriptionFromPatient(Object params) throws IncorrectPayloadException {
-        return null;
+        return new Queries().getPrescriptions((Patient)params);
     }
     
     public Object getAllAppopintmentOfDoctor(Object params) {
