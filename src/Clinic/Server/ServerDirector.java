@@ -104,7 +104,6 @@ public class ServerDirector {
         }catch(NullPointerException e){
             throw new IncorrectPayloadException("Invalid payload");
         }
-        
     }
 
     public Object getAllAppointments(Object params) {
