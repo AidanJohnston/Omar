@@ -33,6 +33,11 @@ public class loginController extends baseController{
 
     }
 
+    public void newAccount(){
+        session.setDataObject("new");
+        switchScene(loginPage, "../pages/createPatientPage.fxml", createPatientPageController.class, session);
+    }
+
     public void tryLogin(ActionEvent e){
         String user = userField.getText();
         String pass = passField.getText();

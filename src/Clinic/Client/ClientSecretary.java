@@ -226,7 +226,7 @@ public class ClientSecretary {
     public void createDoctor(Doctor doctor, Credentials creds, Token token) throws ServerException {
         avaiableID++;
         Object[] objs = {doctor, creds};
-        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_CREATE, token, doctor);
+        Payload payload = new Payload(avaiableID, RequestType.DOCTOR_CREATE, token, objs);
         prepareTask(payload);
     }
 
@@ -297,6 +297,13 @@ public class ClientSecretary {
         Object[] objs = {patient, creds};
         Payload payload = new Payload(avaiableID, RequestType.PATIENT_CREATE, token, objs);
         prepareTask(payload);
+    }
+
+    public Token createAccount(Patient patient, Credentials creds) throws ServerException {
+        avaiableID++;
+        Object[] objs = {patient, creds};
+        Payload payload = new Payload(avaiableID, RequestType.CREATE_ACCOUNT,objs);
+        return (Token)prepareTask(payload).getReturnValue();
     }
 
     public void createStaff(Staff staff, Credentials creds, Token token) throws ServerException {

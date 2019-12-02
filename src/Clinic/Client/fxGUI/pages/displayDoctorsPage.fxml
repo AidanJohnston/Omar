@@ -19,17 +19,21 @@
     <padding><Insets top="25" left="25" right="25" bottom="25"></Insets> </padding>
 
     <columnConstraints>
-        <ColumnConstraints hgrow="ALWAYS" percentWidth="50">
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="33">
         </ColumnConstraints>
-        <ColumnConstraints  hgrow="ALWAYS" percentWidth="50">
+        <ColumnConstraints  hgrow="ALWAYS" percentWidth="33">
+        </ColumnConstraints>
+        <ColumnConstraints  hgrow="ALWAYS" percentWidth="33">
         </ColumnConstraints>
     </columnConstraints>
 
     <Label text="Display Doctor" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
            alignment="CENTER" style="-fx-font-size: 28"></Label>
-    <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity"
+    <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1"
            alignment="CENTER" style="-fx-font-size: 14"></Label>
-    <Label text="Date" GridPane.columnIndex="0" GridPane.rowIndex="2" maxWidth="Infinity"
+    <Label text="Date" GridPane.columnIndex="0" GridPane.rowIndex="2"
+           alignment="CENTER" style="-fx-font-size: 14"></Label>
+    <Label text="Select Doctor" GridPane.columnIndex="0" GridPane.rowIndex="3"
            alignment="CENTER" style="-fx-font-size: 14"></Label>
 
     <TextField promptText="" focusTraversable="true" fx:id="doctorName" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
@@ -38,10 +42,10 @@
     <Button text="Search" fx:id="nameButton" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#searchDoctorName"></Button>
     <Button text="Search" fx:id="dateButton" GridPane.columnIndex="2" GridPane.rowIndex="2" onAction="#searchDoctorDate"></Button>
 
-    <ComboBox focusTraversable="true" fx:id="doctorDisplay" GridPane.columnIndex="0" GridPane.rowIndex="3"></ComboBox>
+    <ComboBox focusTraversable="true" fx:id="doctorDisplay" GridPane.columnIndex="1" GridPane.rowIndex="3"></ComboBox>
 
-    <Button text="View" onAction="#view" GridPane.columnIndex="2" GridPane.rowIndex="4" ></Button>
-    <Button text="Back" onAction="#back" GridPane.columnIndex="2" GridPane.rowIndex="5" ></Button>
+    <Button text="View" onAction="#view" GridPane.columnIndex="2" GridPane.rowIndex="3" ></Button>
+    <Button text="Back" onAction="#back" GridPane.columnIndex="2" GridPane.rowIndex="4" ></Button>
 
 
 </GridPane>

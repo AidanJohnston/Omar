@@ -32,7 +32,10 @@ public class createPatientPageController extends baseController{
 
     public void initWithData(Session _session){
 
+
+
         session = _session;
+
 
        hcnumField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
@@ -63,18 +66,32 @@ public class createPatientPageController extends baseController{
 
         //USE SOMETHING LIKE THIS, WE DONT NEED TYPE OR ID HERE
         Credentials creds = new Credentials(userField.getText(), passField.getText());
+        if(session.getDataObject().toString().equalsIgnoreCase("new")){
+            try{
+                ClientSecretary client = session.getClient();
 
-        try{
-            ClientSecretary client = session.getClient();
+                //JUST COMMENT THIS OUT IF U NEED TO TEST, SEAN NEEDS TO ADD CREDENTIALS
+                //client.createPatient(newPatient, creds ,session.getToken());
+                session.setToken(client.createAccount(newPatient,creds));
+                switchScene(createPatientPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
 
-            //JUST COMMENT THIS OUT IF U NEED TO TEST, SEAN NEEDS TO ADD CREDENTIALS
-            client.createPatient(newPatient, creds ,session.getToken());
+            }catch(ServerException e){
+                System.out.println("Create account failed");
+            }
+        }else{
+            try{
+                ClientSecretary client = session.getClient();
 
-            switchScene(createPatientPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+                //JUST COMMENT THIS OUT IF U NEED TO TEST, SEAN NEEDS TO ADD CREDENTIALS
+                client.createPatient(newPatient, creds ,session.getToken());
 
-        }catch(ServerException e){
-            System.out.println("Create patient failed");
+                switchScene(createPatientPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+
+            }catch(ServerException e){
+                System.out.println("Create patient failed");
+            }
         }
+
 
     }
 

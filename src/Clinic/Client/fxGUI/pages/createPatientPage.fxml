@@ -27,7 +27,7 @@
         </ColumnConstraints>
     </columnConstraints>
 
-    <Label text="Create New Doctor" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
+    <Label text="Create New Patient" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.columnSpan="2"
            alignment="CENTER" style="-fx-font-size: 28"></Label>
     <Label text="First Name: " GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity"
            alignment="CENTER" style="-fx-font-size: 28"></Label>

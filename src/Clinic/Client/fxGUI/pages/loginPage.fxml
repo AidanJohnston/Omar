@@ -23,6 +23,7 @@
                     <TextField promptText="username" focusTraversable="true" fx:id="userField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                     <PasswordField promptText="password" focusTraversable="true" fx:id="passField" onAction="#tryLogin" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                     <Button text="Login" onAction="#tryLogin" GridPane.rowIndex="3" GridPane.columnIndex="1"></Button>
+                    <Button text="Create Account" onAction="#newAccount" GridPane.rowIndex="4" GridPane.columnIndex="1"></Button>
                     <Label fx:id="output" GridPane.columnIndex="0" GridPane.rowIndex="4"></Label>
                 </GridPane>
 
