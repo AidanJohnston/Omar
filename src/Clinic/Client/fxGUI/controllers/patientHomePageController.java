@@ -35,4 +35,9 @@ public class patientHomePageController extends baseController {
     public void viewAppointment() {
         switchScene(patientHomePage, "../pages/viewAppointmentPage.fxml", viewAppointmentPageController.class, session);
     }
+
+    public void createAppointment() {
+        session.setDataObject(null);
+        switchScene(patientHomePage, "../pages/createAppointmentPage.fxml", createAppointmentPageController.class, session);
+    }
 }

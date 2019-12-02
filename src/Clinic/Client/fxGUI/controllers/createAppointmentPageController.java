@@ -3,6 +3,7 @@ package Clinic.Client.fxGUI.controllers;
 import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.*;
 import Util.Exceptions.ServerException;
+import Util.UserType;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import Clinic.Client.ClientSecretary;
@@ -70,7 +71,10 @@ public class createAppointmentPageController extends baseController{
                 ClientSecretary client = session.getClient();
                 client.makeAppointment(session.getToken(), appointment);
 
-                switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+                if(session.getToken().getType() == UserType.STAFF)switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+                if(session.getToken().getType() == UserType.PATIENT)switchScene(createAppointmentPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
+
+
             }catch(ServerException ex){
                 System.out.print("Failed Making appointment");
             }
