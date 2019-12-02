@@ -88,7 +88,7 @@ public class ServerSecretary {
           //Attempting to send back to the server
           
           try{
-               if(!payload.getType().equals(RequestType.LOGIN) || !payload.getType().equals(RequestType.CREATE_ACCOUNT)){
+               if(!(payload.getType().equals(RequestType.LOGIN)) && !(payload.getType().equals(RequestType.CREATE_ACCOUNT))){
                     if(findToken(payload.getToken()) == null){
                         throw new  InvalidTokenException("Client session is not valid");
                     }
