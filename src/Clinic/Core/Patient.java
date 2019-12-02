@@ -64,6 +64,10 @@ public class Patient extends User implements Serializable {
         this.province = province;
     }
 
+    public String toString(){
+        return this.getFName() + " " + this.getLName();
+    }
+
     public Patient(int id) {
         super(id);
     }

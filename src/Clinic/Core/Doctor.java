@@ -54,6 +54,10 @@ public class Doctor extends User implements Serializable{
         this.endHour = endHour;
     }
 
+    public String toString(){
+        return this.getFName() + " " + this.getLName();
+    }
+
     public Doctor(int id) {
         super(id);
     }

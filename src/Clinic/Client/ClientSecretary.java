@@ -279,7 +279,7 @@ public class ClientSecretary {
     public ArrayList<Patient> getPatientAll(Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.PATIENT_GET_ALL, token);
-        Object o = prepareTask(payload);
+        Object o = prepareTask(payload).getReturnValue();
         return (ArrayList<Patient>)o;
     }
 
