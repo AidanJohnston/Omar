@@ -70,15 +70,25 @@ public class ServerDirector {
 
     public Object createDoctor(Object params) throws IncorrectPayloadException {
         ArrayList<Doctor> list = new DataReader().readDoctors();
+        ArrayList<Credentials> credList = new DataReader().readCredentials();
         try{
-            Doctor doc = (Doctor)params;
+            Object[] objs = (Object[])params;
+            Doctor doc = (Doctor)(objs[0]);
+            Credentials creds = (Credentials)(objs[1]);
+
             doc.setID((list
                 .stream()
                 .mapToInt(d -> d.getID())
                 .max())
                 .getAsInt() + 1);
             list.add(doc);
+
+            creds.setID(doc.getID());
+            creds.setType(UserType.DOCTOR);
+            credList.add(creds);
+
             new DataWriter().writeDoctors(list);
+            new DataWriter().writeCredentials(credList);
             return null;
         }catch(NullPointerException e){
             throw new IncorrectPayloadException("Invalid payload");
@@ -87,15 +97,25 @@ public class ServerDirector {
 
     public Object createPatient(Object params) throws IncorrectPayloadException {
         ArrayList<Patient> list = new DataReader().readPatients();
+        ArrayList<Credentials> credList = new DataReader().readCredentials();
         try{
-            Patient pat = (Patient)params;
+            Object[] objs = (Object[])params;
+            Patient pat = (Patient)(objs[0]);
+            Credentials creds = (Credentials)(objs[1]);
+            
             pat.setID((list
                 .stream()
                 .mapToInt(d -> d.getID())
                 .max())
                 .getAsInt() + 1);
             list.add(pat);
+
+            creds.setID(pat.getID());
+            creds.setType(UserType.PATIENT);
+            credList.add(creds);
+
             new DataWriter().writePatients(list);
+            new DataWriter().writeCredentials(credList);
             return null;
         }catch(NullPointerException e){
             throw new IncorrectPayloadException("Invalid payload");
