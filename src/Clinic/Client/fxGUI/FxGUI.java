@@ -35,7 +35,7 @@ public class FxGUI extends Application {
             loginController controller = loader.<loginController>getController();
             controller.initWithData(new Session(null,clientSecretary, null));
             primaryStage.show();
-        }catch(IOException e){
+        }catch(Exception e){
             System.out.println("GUI machine broke");
             throw new Exception("GUI MACHINE BROKE");
         }

@@ -6,7 +6,8 @@ import java.util.Collections;
 
 public final class RequestType //Yo we're using this one its like 10000000 times better
 {
-    public static final String SUCCESS,
+    public static final String
+            SUCCESS,
             LOGIN,
             LOGOUT,
             ERROR,
