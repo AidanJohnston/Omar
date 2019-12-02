@@ -58,6 +58,10 @@ public class Appointment implements Serializable {
         return date;
     }
 
+    public void setDate(LocalDate _date){
+        this.date = _date;
+    }
+
     /**
      * Empty Constructor
      */

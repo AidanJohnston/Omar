@@ -1,21 +1,11 @@
 package Clinic.Client.fxGUI.controllers;
 
 import Clinic.Client.fxGUI.util.Session;
-import Clinic.Core.Appointment;
-import Clinic.Core.Doctor;
-import Clinic.Core.Patient;
-import Clinic.Core.Token;
-import Util.Exceptions.IncorrectPayloadException;
-import Util.Exceptions.LoginFailedException;
+import Clinic.Core.*;
 import Util.Exceptions.ServerException;
-import Util.UserType;
-import javafx.event.ActionEvent;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 import Clinic.Client.ClientSecretary;
-import java.time.LocalTime;
 
 import java.util.ArrayList;
 
@@ -23,6 +13,8 @@ public class createAppointmentPageController extends baseController{
 
     public Session session;
     public GridPane createAppointmentPage;
+
+    private boolean isnewAppointment;
 
     private ArrayList<Patient> availablePatients;
     private ArrayList<Doctor> availableDoctors;
@@ -35,6 +27,17 @@ public class createAppointmentPageController extends baseController{
     public void initWithData(Session _session){
         session = _session;
         popAvailable();
+        if(session.getDataObject() == null){
+            isnewAppointment = true;
+        }
+        else{
+            isnewAppointment = false;
+            Appointment app =(Appointment) session.getDataObject();
+            patientBox.setValue(app.getPatient());
+            doctorBox.setValue(app.getDoctor());
+            dayField.setValue(app.getDate());
+            timeField.setText(app.getTime());
+        }
 
         patientBox.getItems().addAll(availablePatients);
         doctorBox.getItems().addAll(availableDoctors);
@@ -52,25 +55,58 @@ public class createAppointmentPageController extends baseController{
     }
 
     public void createAppointment() {
-        Appointment newAppointment = new Appointment(
-                patientBox.getValue(),
-                doctorBox.getValue(),
-                dayField.getValue(),
-                timeField.getText(),
-                null,
-                null
-        );
+        Appointment appointment = new Appointment();
+        if(isnewAppointment){
+            appointment = new Appointment(
+                    patientBox.getValue(),
+                    doctorBox.getValue(),
+                    dayField.getValue(),
+                    timeField.getText(),
+                    null,
+                    null
+            );
 
-        try{
-            ClientSecretary client = session.getClient();
-            client.makeAppointment(session.getToken(),newAppointment);
+            try{
+                ClientSecretary client = session.getClient();
+                client.makeAppointment(session.getToken(), appointment);
 
-            switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
-        }catch(ServerException ex){
-            System.out.print("Failed Making appointment");
+                switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+            }catch(ServerException ex){
+                System.out.print("Failed Making appointment");
+            }
         }
+        else{
+            appointment = (Appointment)session.getDataObject();
+            appointment.setPatient(patientBox.getValue().getID());
+            appointment.setDoctor(doctorBox.getValue());
+            appointment.setDate(dayField.getValue());
+            appointment.setTime(timeField.getText());
+
+            try{
+                ClientSecretary client = session.getClient();
+                client.editAppointment( appointment, session.getToken());
+
+                switchScene(createAppointmentPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
+            }catch(ServerException ex){
+                System.out.print("Failed Making appointment");
+            }
+        }
+
+
 
     }
 
-
+    public void addScript() {
+        if(isnewAppointment){
+            session.setDataObject(new Appointment(
+                    patientBox.getValue(),
+                    doctorBox.getValue(),
+                    dayField.getValue(),
+                    timeField.getText(),
+                    null,
+                    null
+            ));
+        }
+        switchScene(createAppointmentPage, "../pages/createPrescriptionPage.fxml", createPrescriptionPageController.class, session);
+    }
 }

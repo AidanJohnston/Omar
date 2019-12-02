@@ -32,5 +32,8 @@
                 <Button text="View Appointments" onAction="#showAllAppointments" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" ></Button>
                 <Button text="Browse Patients"  GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
                 <Button text="Switch to Patient View" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" ></Button>
-            </GridPane>
+                <Button text="Search Doctor" GridPane.rowIndex="4" GridPane.columnIndex="0" maxWidth="Infinity"  onAction="#searchDoctor"></Button>
+
+
+</GridPane>
 

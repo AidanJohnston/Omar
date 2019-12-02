@@ -2,6 +2,7 @@ package Clinic.Client.fxGUI.controllers;
 
 import Clinic.Client.ClientSecretary;
 import Clinic.Client.fxGUI.util.Session;
+import Clinic.Core.Credentials;
 import Clinic.Core.Staff;
 import Util.Exceptions.ServerException;
 import javafx.scene.control.DatePicker;
@@ -22,13 +23,15 @@ public class createStaffPageController extends baseController {
     public TextField addressField;
     public TextField idField;
     public TextField phoneField;
+    public TextField userField;
+    public TextField passField;
 
     @Override
     public void initWithData(Session _session) {
         session = _session;
     }
 
-    public void createStaff(ActionEvent actionEvent) {
+    public void createStaff() {
 
         Staff staff = new Staff(
             fnameField.getText(),
@@ -39,10 +42,10 @@ public class createStaffPageController extends baseController {
             0,
             phoneField.getText()
         );
-
+        Credentials creds = new Credentials(userField.getText(), passField.getText());
         try {
             ClientSecretary client = session.getClient();
-            client.createStaff(staff, session.getToken());
+            client.createStaff(staff, creds, session.getToken());
 
             switchScene(createStaffPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
 

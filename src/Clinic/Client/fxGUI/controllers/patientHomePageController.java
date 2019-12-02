@@ -28,4 +28,8 @@ public class patientHomePageController extends baseController {
     public void initWithData(Session _session) {
         session = _session;
     }
+
+    public void searchDoctor(ActionEvent actionEvent) {
+        switchScene(patientHomePage, "../pages/displayDoctorsPage.fxml", displayDoctorsPageController.class, session);
+    }
 }

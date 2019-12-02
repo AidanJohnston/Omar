@@ -2,6 +2,7 @@ package Clinic.Client.fxGUI.controllers;
 
 import Clinic.Client.ClientSecretary;
 import Clinic.Client.fxGUI.util.Session;
+import Clinic.Core.Credentials;
 import Clinic.Core.Patient;
 import Util.Exceptions.ServerException;
 import javafx.scene.control.DatePicker;
@@ -26,6 +27,8 @@ public class createPatientPageController extends baseController{
     public TextField hcnumField;
     public DatePicker hcexpField;
     public TextField provinceField;
+    public TextField userField;
+    public TextField passField;
 
     public void initWithData(Session _session){
 
@@ -59,13 +62,13 @@ public class createPatientPageController extends baseController{
         );
 
         //USE SOMETHING LIKE THIS, WE DONT NEED TYPE OR ID HERE
-        //Credentials creds = new Credentials(username, password);
+        Credentials creds = new Credentials(userField.getText(), passField.getText());
 
         try{
             ClientSecretary client = session.getClient();
 
             //JUST COMMENT THIS OUT IF U NEED TO TEST, SEAN NEEDS TO ADD CREDENTIALS
-            client.createPatient(newPatient, session.getToken());
+            client.createPatient(newPatient, creds ,session.getToken());
 
             switchScene(createPatientPage, "../pages/staffHomePage.fxml", staffHomePageController.class, session);
 
