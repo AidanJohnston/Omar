@@ -65,7 +65,7 @@ public class viewAppointmentPageController extends baseController{
 
     public void search(javafx.event.ActionEvent actionEvent) {
         doctorName.setText(appointmentCombo.getValue().getDoctor().toString());
-        date.setText(appointmentCombo.getValue().getDate().toString();
+        date.setText(appointmentCombo.getValue().getDate().toString());
         time.setText(appointmentCombo.getValue().getTime());
         diagnosis.setText(appointmentCombo.getValue().getDiagnosis().getName());
         prescription.setText(appointmentCombo.getValue().getPrescription().getName());
