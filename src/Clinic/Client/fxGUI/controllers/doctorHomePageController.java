@@ -63,4 +63,8 @@ public class doctorHomePageController extends baseController {
         }
         switchScene(doctorHomePage, "../pages/loginPage.fxml", loginController.class, session);
     }
+    public void searchDoctor(ActionEvent actionEvent) {
+        switchScene(doctorHomePage, "../pages/displayDoctorsPage.fxml", displayDoctorsPageController.class, session);
+    }
+
 }
