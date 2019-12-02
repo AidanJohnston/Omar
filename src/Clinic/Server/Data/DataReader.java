@@ -37,20 +37,6 @@ public class DataReader {
         return objs;
     }
 
-    public ArrayList<Diagnosis> readDiagnoses() {
-        ArrayList<Diagnosis> objs = null;
-        try {
-            FileInputStream fout = new FileInputStream(FileNames.DIAGNOSES);
-            ObjectInputStream oout = new ObjectInputStream(fout);
-            objs = (ArrayList<Diagnosis>)oout.readObject();
-            oout.close();
-        }catch (Exception e) {
-            System.out.println("This VM does not support the Latin-1 character set.");
-            System.out.println(e.getMessage());
-        }
-        return objs;
-    }
-
     public ArrayList<Doctor> readDoctors() {
         ArrayList<Doctor> objs = null;
         try {
@@ -71,20 +57,6 @@ public class DataReader {
             FileInputStream fout = new FileInputStream(FileNames.PATIENTS);
             ObjectInputStream oout = new ObjectInputStream(fout);
             objs = (ArrayList<Patient>)oout.readObject();
-            oout.close();
-        }catch (Exception e) {
-            System.out.println("This VM does not support the Latin-1 character set.");
-            System.out.println(e.getMessage());
-        }
-        return objs;
-    }
-    
-    public ArrayList<Prescription> readPrescription() {
-        ArrayList<Prescription> objs = null;
-        try {
-            FileInputStream fout = new FileInputStream(FileNames.PRESCRIPTIONS);
-            ObjectInputStream oout = new ObjectInputStream(fout);
-            objs = (ArrayList<Prescription>)oout.readObject();
             oout.close();
         }catch (Exception e) {
             System.out.println("This VM does not support the Latin-1 character set.");
