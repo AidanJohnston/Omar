@@ -107,11 +107,10 @@ public class ClientSecretary {
      * @return Boolean
      * @throws IncorrectPayloadException
      */
-    public boolean logout(Token token) throws ServerException {
+    public void logout(Token token) throws ServerException {
         avaiableID++;
         Payload payload = new Payload(avaiableID, RequestType.LOGOUT, token);
-
-        return (boolean) prepareTask(payload).getReturnValue();
+        prepareTask(payload).getReturnValue();
     }
 
     /**
