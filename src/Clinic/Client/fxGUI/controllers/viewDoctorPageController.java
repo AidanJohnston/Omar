@@ -30,9 +30,8 @@ public class viewDoctorPageController extends baseController {
         session = _session;
         Doctor doctor = new Doctor();
         try {
-            doctor = session.getClient().getDoctorWithID((int)session.getDataObject(), session.getToken());
-        }
-        catch (ServerException e ) {
+            doctor = session.getClient().getDoctorWithID((int) session.getDataObject(), session.getToken());
+        } catch (ServerException e) {
             e.printStackTrace();
         }
 
@@ -45,11 +44,12 @@ public class viewDoctorPageController extends baseController {
     }
 
     public void back() {
-        if(session.getToken().getType() == UserType.DOCTOR){
+        if (session.getToken().getType() == UserType.DOCTOR) {
             switchScene(viewDoctorPage, "../pages/doctorHomePage.fxml", doctorHomePageController.class, session);
         }
-        if(session.getToken().getType()== UserType.PATIENT){
+        if (session.getToken().getType() == UserType.PATIENT) {
             switchScene(viewDoctorPage, "../pages/patientHomePage.fxml", patientHomePageController.class, session);
         }
 
     }
+}
