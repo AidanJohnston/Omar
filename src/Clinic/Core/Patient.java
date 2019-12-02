@@ -2,8 +2,6 @@ package Clinic.Core;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.List;
 
 /**
  * Patient.java - A class for storing information relative to patients
@@ -14,7 +12,7 @@ import java.util.List;
  */
 public class Patient extends User implements Serializable {
 
-    private int healthCardNumber;
+    private long healthCardNumber;
     private LocalDate healthCardExpiry;
     private String province;
 
@@ -35,11 +33,11 @@ public class Patient extends User implements Serializable {
             String FName,
             String LName,
             LocalDate brithday,
-            int SIN,
+            long SIN,
             String adress,
             int ID,
             String phoneNumber,
-            int healthCardNumber,
+            long healthCardNumber,
             LocalDate healthCardExpiry,
             String province) {
         super(FName, LName, brithday, SIN, adress, ID, phoneNumber);
@@ -52,10 +50,10 @@ public class Patient extends User implements Serializable {
             String FName,
             String LName,
             LocalDate brithday,
-            int SIN,
+            long SIN,
             String adress,
             String phoneNumber,
-            int healthCardNumber,
+            long healthCardNumber,
             LocalDate healthCardExpiry,
             String province) {
         super(FName, LName, brithday, SIN, adress, phoneNumber);
@@ -81,7 +79,7 @@ public class Patient extends User implements Serializable {
      *
      * @return healthCardNumber
      */
-    public int getHealthCardNumber() {
+    public long getHealthCardNumber() {
         return healthCardNumber;
     }
 
@@ -90,7 +88,7 @@ public class Patient extends User implements Serializable {
      *
      * @param healthCardNumber
      */
-    public void setHealthCardNumber(int healthCardNumber) {
+    public void setHealthCardNumber(long healthCardNumber) {
         this.healthCardNumber = healthCardNumber;
     }
 

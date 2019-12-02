@@ -10,6 +10,8 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Insets?>
 
+<?import com.sun.javafx.scene.control.skin.IntegerField?>
+<?import com.sun.javafx.scene.control.skin.DoubleField?>
 <GridPane hgap="10" vgap="10" alignment="CENTER"
           xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
@@ -52,7 +54,7 @@
     <TextField promptText="SIN" focusTraversable="true" fx:id="sinField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
     <TextField promptText="Address" focusTraversable="true" fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
     <TextField promptText="Phone Number" focusTraversable="true" fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-    <TextField promptText="Health Card Number" focusTraversable="true" fx:id="hcnumField" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <TextField promptText="Health Card Number"  focusTraversable="true" fx:id="hcnumField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
     <DatePicker  focusTraversable="true" fx:id="hcexpField" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
     <TextField promptText="Province" focusTraversable="true" fx:id="provinceField" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
 

@@ -5,7 +5,9 @@ import Clinic.Client.fxGUI.util.Session;
 import Clinic.Core.Patient;
 import Util.Exceptions.ServerException;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextField.*;
 import javafx.scene.layout.GridPane;
 
 import java.time.LocalDate;
@@ -26,7 +28,21 @@ public class createPatientPageController extends baseController{
     public TextField provinceField;
 
     public void initWithData(Session _session){
+
         session = _session;
+
+       hcnumField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+
+                hcnumField.setText(oldValue);
+
+            }
+        });
+        sinField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                sinField.setText(oldValue);
+            }
+        });
     }
 
     public void createPatient(){
@@ -34,10 +50,10 @@ public class createPatientPageController extends baseController{
                 fnameField.getText(),
                 lnameField.getText(),
                 bdayField.getValue(),
-                Integer.parseInt(sinField.getText()),
+                Long.parseLong(sinField.getText()),
                 addressField.getText(),
                 phoneField.getText(),
-                Integer.parseInt(hcnumField.getText()),
+                Long.parseLong(hcnumField.getText()),
                 hcexpField.getValue(),
                 provinceField.getText()
         );
