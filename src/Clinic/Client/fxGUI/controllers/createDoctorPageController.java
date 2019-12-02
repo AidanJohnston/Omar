@@ -29,6 +29,7 @@ public class createDoctorPageController extends baseController{
     public TextField idField;
     public TextField phoneField;
     public TextField specField;
+    public TextField rankField;
 
     public void initWithData(Session _session) {
         session = _session;
@@ -44,7 +45,7 @@ public class createDoctorPageController extends baseController{
                 phoneField.getText(),
                 specField.getText()
         );
-
+        newDoctor.setRank(rankField.getText());
         System.out.println("AGHJ");
 
         try{

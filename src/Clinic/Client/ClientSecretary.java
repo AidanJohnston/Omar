@@ -257,7 +257,7 @@ public class ClientSecretary {
 
 
     /**
-     * Gets an array list of a doctors appointmetns given a doctors id
+     * Gets an array list of a doctors appointments given a doctors id
      * @param doctorID
      * @param token
      * @return

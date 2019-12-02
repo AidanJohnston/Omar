@@ -48,6 +48,22 @@ public class Patient extends User implements Serializable {
         this.province = province;
     }
 
+    public Patient(
+            String FName,
+            String LName,
+            LocalDate brithday,
+            int SIN,
+            String adress,
+            String phoneNumber,
+            int healthCardNumber,
+            LocalDate healthCardExpiry,
+            String province) {
+        super(FName, LName, brithday, SIN, adress, phoneNumber);
+        this.healthCardNumber = healthCardNumber;
+        this.healthCardExpiry = healthCardExpiry;
+        this.province = province;
+    }
+
     public Patient(int id) {
         super(id);
     }
