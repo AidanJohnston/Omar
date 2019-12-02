@@ -15,8 +15,9 @@ import java.util.Date;
 
 public class DataPopulate {
     public static void main(String args[]) throws LoginFailedException, IncorrectPayloadException {
-        ArrayList<Patient> pats = new DataReader().readPatients();
-        
+        //ArrayList<Patient> pats = new DataReader().readPatients();
+        //ArrayList<Doctor> docs = new DataReader().readDoctors();
+
         popDoc();
         popCreds();
         popPatient();
