@@ -1,7 +1,6 @@
 package Clinic.Core;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -27,7 +26,7 @@ public class Staff extends User implements Serializable {
     public Staff(
             String FName,
             String LName,
-            LocalDate brithday,
+            Date brithday,
             int SIN,
             String adress,
             int ID,

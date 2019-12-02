@@ -1,7 +1,7 @@
 package Clinic.Core;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * User.java - A class for storing basic information about members of the clinic
@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class User implements Serializable{
     private String FName;
     private String LName;
-    private LocalDate brithday;
+    private Date brithday;
     private int SIN;
     private String adress;
     private int ID;
@@ -39,7 +39,7 @@ public class User implements Serializable{
      * @param ID
      * @param phoneNumber
      */
-    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, int ID, String phoneNumber) {
+    public User(String FName, String LName, Date brithday, int SIN, String adress, int ID, String phoneNumber) {
         this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
@@ -49,7 +49,7 @@ public class User implements Serializable{
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String FName, String LName, LocalDate brithday, int SIN, String adress, String phoneNumber) {
+    public User(String FName, String LName, Date brithday, int SIN, String adress, String phoneNumber) {
         this.FName = FName;
         this.LName = LName;
         this.brithday = brithday;
@@ -110,9 +110,9 @@ public class User implements Serializable{
      * Gets the users birthday
      *
      * @return birthday
-     * @see LocalDate
+     * @see Date
      */
-    public LocalDate getBrithday() {
+    public Date getBrithday() {
         return brithday;
     }
 
@@ -120,9 +120,9 @@ public class User implements Serializable{
      * Setes the users birthday
      *
      * @param brithday
-     * @see LocalDate
+     * @see Date
      */
-    public void setBrithday(LocalDate brithday) {
+    public void setBrithday(Date brithday) {
         this.brithday = brithday;
     }
 
