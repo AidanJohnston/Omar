@@ -9,8 +9,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
-import javax.xml.soap.Text;
-
 public class createDiagnosisPageController extends baseController {
 
     private Session session;
